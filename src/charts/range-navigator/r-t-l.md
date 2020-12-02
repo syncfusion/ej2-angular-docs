@@ -1,0 +1,43 @@
+---
+title: " RangeNavigator Selecting Range | Angular "
+
+component: "RangeNavigator"
+
+description: "The range navigator provides RTL (right-to-left) support. Axis labels, series types are rendered right to left when we enabled rtl property."
+---
+
+# RTL
+
+The range navigator provides RTL (right-to-left) support. This can be enabled using the “enableRtl” property.
+
+{% tab template="rangenavigator/rtl", sourceFiles="app/**/*.ts" %}
+
+```typescript
+
+import { Component, OnInit } from '@angular/core';
+import { datasrc } from 'datasource.ts'
+
+@Component({
+    selector: 'app-container',
+    template:
+    `<ejs-rangenavigator id="rn-container" valueType='DateTime' [value]='value' [enableRtl]='enableRtl' labelFormat='MMM-yy'>
+            <e-rangenavigator-series-collection>
+                <e-rangenavigator-series [dataSource]='chartData' type='Area' xName='x' yName='y' width=2>
+                </e-rangenavigator-series>
+            </e-rangenavigator-series-collection>
+        </ejs-rangenavigator>`
+})
+export class AppComponent implements OnInit {
+    public enableRtl: boolean;
+    public chartData: Object[];
+    public value: Object[];
+    ngOnInit(): void {
+        this.chartData = datasrc;
+        this.value=[new Date('2017-09-01'), new Date('2018-02-01')];
+        this.enableRtl = true;
+    }
+}
+
+```
+
+{% endtab %}
