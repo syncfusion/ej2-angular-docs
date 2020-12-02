@@ -1,0 +1,5 @@
+* [Getting Started](avatar/getting-started.md)
+* [Types](avatar/types.md)
+* [Avatar customization](avatar/how-to/avatar-customization.md)
+* [Integrate avatar into Listview](avatar/how-to/integrate-avatar-into-listview.md)
+* [Integrate avatar into Badge](avatar/how-to/integrate-avatar-into-badge.md)
