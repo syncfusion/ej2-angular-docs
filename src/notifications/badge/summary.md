@@ -1,0 +1,5 @@
+* [Getting Started](badge/getting-started.md)
+* [Types](badge/types.md)
+* [Badge customization](badge/how-to/badge-customization.md)
+* [Integrate badge into Listview](badge/how-to/integrate-badge-into-listview.md)
+* [Dynamic badge content](badge/how-to/dynamic-badge-content.md)
