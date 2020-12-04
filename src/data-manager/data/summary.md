@@ -1,0 +1,6 @@
+* [Getting Started](data/getting-started.md)
+* [Data Binding](data/data-binding.md)
+* [Adaptors](data/adaptors.md)
+* [Querying](data/querying.md)
+* [CRUD Data operations](data/manipulation.md)
+* [How To](data/how-to.md)
