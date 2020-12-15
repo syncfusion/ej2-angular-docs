@@ -6,9 +6,9 @@ description: "Learn how to perform export of SFDT to other MS Word formats and P
 
 # Server-side export
 
-## Sfdt to Docx export
+## SFDT to DOCX export
 
-Document editor supports server-side export of **Syncfusion Document Text (.sfdt)** to Doc, Docx, Rtf, Txt, WordML, Html formats using server-side helper **Syncfusion.EJ2.DocumentEditor** available in ASP.NET Core & ASP.NET MVC platform in the below nugets.
+Document editor supports server-side export of **Syncfusion Document Text (.SFDT)** to Doc, DOCX, RTF, Txt, WordML, Html formats using server-side helper **Syncfusion.EJ2.DocumentEditor** available in ASP.NET Core & ASP.NET MVC platform in the below NuGet's.
 
 * [Syncfusion.EJ2.WordEditor.AspNet.Core](https://www.nuget.org/packages/Syncfusion.EJ2.WordEditor.AspNet.Core)
 * [Syncfusion.EJ2.WordEditor.AspNet.Mvc5](https://www.nuget.org/packages/Syncfusion.EJ2.WordEditor.AspNet.Mvc5)

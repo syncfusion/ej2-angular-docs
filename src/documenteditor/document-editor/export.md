@@ -8,7 +8,7 @@ description: "Learn how to export the contents of JavaScript document editor as 
 
 Document editor exports the document into various known file formats in client-side such as Microsoft Word document (.docx), text document (.txt), and its own format called **Syncfusion Document Text (.sfdt)**.
 
-## Sfdt export
+## SFDT export
 
 The following example shows how to export documents in document editor as Syncfusion document text (.sfdt).
 

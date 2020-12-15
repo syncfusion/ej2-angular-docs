@@ -6,7 +6,7 @@ description: "Learn the built-in dialog support in JavaScript document editor an
 
 # Dialog
 
-Documenteditor provides dialog support to major operations such as insert or edit hyperlink, formatting text, paragraph, style, list and table properties.
+Document editor provides dialog support to major operations such as insert or edit hyperlink, formatting text, paragraph, style, list and table properties.
 
 ## Font Dialog
 
