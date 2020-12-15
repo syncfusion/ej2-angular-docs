@@ -14,10 +14,7 @@ mandatory to render that template.
 
 ```typescript
 
-import { Component, ViewChild } from '@angular/core';
-import { enableRipple, createElement } from '@syncfusion/ej2-base';
-
-enableRipple(true);
+import { Component} from '@angular/core';
 
 @Component({
     selector: 'app-container',
