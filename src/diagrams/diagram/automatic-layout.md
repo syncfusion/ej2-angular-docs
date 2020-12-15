@@ -137,7 +137,7 @@ export class AppComponent {
 
 The radial tree layout arranges nodes on a virtual concentric circle around a root node. Sub-trees formed by the branching of child nodes are located radially around the child nodes. This arrangement result in an ever-expanding concentric arrangement with radial proximity to the root node indicating the node level in the hierarchy. The layout [`root`](../api/diagram/layout) property can be used to define the root node of the layout. When no root node is set, the algorithm automatically considers one of the diagram nodes as the root node.
 
-To arrange nodes in a radial tree structure, set the [`type`](../api/diagram/layout) of the layout as `radialtree`.
+To arrange nodes in a radial tree structure, set the [`type`](../api/diagram/layout) of the layout as `RadialTree`.
 
 >Note: If you want to use radial tree layout in diagram, you need to inject DataBinding and RadialTree in the diagram.
 
@@ -289,7 +289,7 @@ export class AppComponent {
 
 ### Organizational Chart
 
-An organizational chart is a diagram that displays the structure of an organization and relationships. To create an organizational chart, the [`type`](../api/diagram/layout) of layout should be set as an `organizationalchart`.
+An organizational chart is a diagram that displays the structure of an organization and relationships. To create an organizational chart, the [`type`](../api/diagram/layout) of layout should be set as an `OrganizationalChart`.
 The following code example illustrates how to create an organizational chart.
 
 {% tab template="diagram/automaticlayout/organizationalchart", sourceFiles="app/**/*.ts", isDefaultActive=true %}

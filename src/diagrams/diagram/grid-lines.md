@@ -216,13 +216,13 @@ export class AppComponent {
 
 ## Snap to objects
 
-The snap to object provides visual cues to assist with aligning and spacing diagram elements. A node can be snapped with its neighbouring objects based on certain alignments. Such alignments are visually represented as smart guides.
+The snap to object provides visual cues to assist with aligning and spacing diagram elements. A node can be snapped with its neighboring objects based on certain alignments. Such alignments are visually represented as smart guides.
 
 The [`snapObjectDistance`](../api/diagram/snapSettings/#snapobjectdistance) property allows you to define minimum distance between the selected object and the nearest object.
 
 The [`snapAngle`](../api/diagram/snapSettings/#snapangle) property allows you to define the snap angle by which the object needs to be rotated.
 
-The [`snapconstraints`](../api/diagram/snapSettings/#constraints) property allows you to enable or disable the certain features of the snapping, refer to `snapconstraints`.
+The [`snapConstraints`](../api/diagram/snapSettings/#constraints) property allows you to enable or disable the certain features of the snapping, refer to `snapConstraints`.
 
 {% tab template="diagram/gridLines/snapobjects", sourceFiles="app/**/*.ts" , isDefaultActive=true %}
 

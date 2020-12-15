@@ -28,7 +28,7 @@ cd my-app
 
 ## Adding Syncfusion Diagram package
 
-All the available Essential JS 2 packages are published in [`npmjs.com`](https://www.npmjs.com/~syncfusionorg) registry.
+All the available Essential JS 2 packages are published in [`Node Package Manager`](https://www.npmjs.com/~syncfusionorg) registry.
 
 To install Diagram component, use the following command.
 
@@ -201,7 +201,7 @@ export class AppComponent {
 
 ### Connect two Nodes with a Connector
 
-Add two node to the diagram as shown in the previous example. Connect these nodes by adding a connector using the `connector` property and refer the source and target end by using the `sourceNode` and `tagetNode` properties.
+Add two node to the diagram as shown in the previous example. Connect these nodes by adding a connector using the `connector` property and refer the source and target end by using the `sourceNode` and `targetNode` properties.
 
 {% tab template="diagram/getting-started/connectnode", sourceFiles="app/**/*.ts", isDefaultActive=true %}
 

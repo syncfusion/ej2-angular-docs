@@ -195,7 +195,7 @@ export class AppComponent {
 
 ## History change event
 
-The [`historychange`](../api/diagram) event triggers, whenever the interaction of the node and connector is take place.
+The [`historyChange`](../api/diagram) event triggers, whenever the interaction of the node and connector is take place.
 
 ```typescript
 @Component({

@@ -13,7 +13,7 @@ This article describes the API migration process of Diagram component from Essen
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td><b>Behaviour</b></td>
+<td><b>Behavior</b></td>
 <td><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -63,7 +63,7 @@ This article describes the API migration process of Diagram component from Essen
     public backgroundImage;
     constructor() {
     this.backgroundImage = {
-        aligment: "XMidYMind",
+        alignment: "XMidYMind",
         }
     };
 
@@ -195,7 +195,7 @@ This article describes the API migration process of Diagram component from Essen
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td><b>Behaviour</b></td>
+<td><b>Behavior</b></td>
 <td><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -231,7 +231,7 @@ This article describes the API migration process of Diagram component from Essen
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td><b>Behaviour</b></td>
+<td><b>Behavior</b></td>
 <td><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -262,11 +262,11 @@ This article describes the API migration process of Diagram component from Essen
                     keyModifiers: KeyModifiers.Shift
                 },
                 canExecute: function(args) {
-                    let diagram = $("#diagramcontent").ejDiagram("instance");
+                    let diagram = $("#diagramContent").ejDiagram("instance");
                     return diagram.model.selectedItems.children.length;
                 },
                 execute: function(args) {
-                    let diagram = $("#diagramcontent").ejDiagram("instance");
+                    let diagram = $("#diagramContent").ejDiagram("instance");
                     diagram.copy();
                     diagram.paste();
                 }
@@ -342,11 +342,11 @@ This article describes the API migration process of Diagram component from Essen
                     keyModifiers: KeyModifiers.Shift
                 },
                 canExecute: function(args) {
-                    let diagram = $("#diagramcontent").ejDiagram("instance");
+                    let diagram = $("#diagramContent").ejDiagram("instance");
                     return diagram.model.selectedItems.children.length;
                 },
                 execute: function(args) {
-                    let diagram = $("#diagramcontent").ejDiagram("instance");
+                    let diagram = $("#diagramContent").ejDiagram("instance");
                     diagram.copy();
                     diagram.paste();
                     }
@@ -423,11 +423,11 @@ This article describes the API migration process of Diagram component from Essen
                     keyModifiers: KeyModifiers.Shift
                 },
                 canExecute: function(args) {
-                    let diagram = $("#diagramcontent").ejDiagram("instance");
+                    let diagram = $("#diagramContent").ejDiagram("instance");
                     return diagram.model.selectedItems.children.length;
                 },
                 execute: function(args) {
-                    let diagram = $("#diagramcontent").ejDiagram("instance");
+                    let diagram = $("#diagramContent").ejDiagram("instance");
                     diagram.copy();
                     diagram.paste();
                     }
@@ -503,11 +503,11 @@ This article describes the API migration process of Diagram component from Essen
                     keyModifiers: KeyModifiers.Shift
                 },
                 canExecute: function(args) {
-                    let diagram = $("#diagramcontent").ejDiagram("instance");
+                    let diagram = $("#diagramContent").ejDiagram("instance");
                     return diagram.model.selectedItems.children.length;
                 },
                 execute: function(args) {
-                    let diagram = $("#diagramcontent").ejDiagram("instance");
+                    let diagram = $("#diagramContent").ejDiagram("instance");
                     diagram.copy();
                     diagram.paste();
                     }
@@ -584,11 +584,11 @@ This article describes the API migration process of Diagram component from Essen
                     keyModifiers: KeyModifiers.Shift
                 },
                 canExecute: function(args) {
-                    let diagram = $("#diagramcontent").ejDiagram("instance");
+                    let diagram = $("#diagramContent").ejDiagram("instance");
                     return diagram.model.selectedItems.children.length;
                 },
                 execute: function(args) {
-                    let diagram = $("#diagramcontent").ejDiagram("instance");
+                    let diagram = $("#diagramContent").ejDiagram("instance");
                     diagram.copy();
                     diagram.paste();
                     }
@@ -666,11 +666,11 @@ This article describes the API migration process of Diagram component from Essen
                     keyModifiers: KeyModifiers.Shift
                 },
                 canExecute: function(args) {
-                    let diagram = $("#diagramcontent").ejDiagram("instance");
+                    let diagram = $("#diagramContent").ejDiagram("instance");
                     return diagram.model.selectedItems.children.length;
                 },
                 execute: function(args) {
-                    let diagram = $("#diagramcontent").ejDiagram("instance");
+                    let diagram = $("#diagramContent").ejDiagram("instance");
                     diagram.copy();
                     diagram.paste();
                     }
@@ -749,11 +749,11 @@ This article describes the API migration process of Diagram component from Essen
                     keyModifiers: KeyModifiers.Shift
                 },
                 canExecute: function(args) {
-                    let diagram = $("#diagramcontent").ejDiagram("instance");
+                    let diagram = $("#diagramContent").ejDiagram("instance");
                     return diagram.model.selectedItems.children.length;
                 },
                 execute: function(args) {
-                    let diagram = $("#diagramcontent").ejDiagram("instance");
+                    let diagram = $("#diagramContent").ejDiagram("instance");
                     diagram.copy();
                     diagram.paste();
                     }
@@ -810,7 +810,7 @@ This article describes the API migration process of Diagram component from Essen
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td><b>Behaviour</b></td>
+<td><b>Behavior</b></td>
 <td><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -1433,7 +1433,7 @@ This article describes the API migration process of Diagram component from Essen
             x: 200,
             y: 200
         },
-        linehitPadding: 15
+        lineHitPadding: 15
     };
 
     this.connectors = [connector];
@@ -4277,7 +4277,7 @@ This article describes the API migration process of Diagram component from Essen
 
     <ej-diagram #diagram id="diagram" width="850px" height="700px" [connectors]="connectors" >
     </ej-diagram>
-    <script type="text/x-jsrender" id="mouseovertooltip">
+    <script type="text/x-jsrender" id="mouseOverTooltip">
      <div style="background-color: #F08080; color: white; white-space: nowrap; height: 20px">
         <span style="padding: 5px;">  </span>
      </div>
@@ -4289,7 +4289,7 @@ This article describes the API migration process of Diagram component from Essen
     public connectors;
     constructor() {
     let tooltip = {
-        templateId: "mouseovertooltip",
+        templateId: "mouseOverTooltip",
         alignment: {
             horizontal: "center",
             vertical: "bottom"
@@ -4497,7 +4497,7 @@ This article describes the API migration process of Diagram component from Essen
 
     public connectorTemplate(diagram, connector) {
          if(connector.sourceNode && connector.targetNode){
-            connector.linecolor = "green";
+            connector.lineColor = "green";
             }
      }
     }
@@ -4562,7 +4562,7 @@ This article describes the API migration process of Diagram component from Essen
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td><b>Behaviour</b></td>
+<td><b>Behavior</b></td>
 <td><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -4585,8 +4585,8 @@ This article describes the API migration process of Diagram component from Essen
     public contextMenu;
     public enableContextMenu;
     constructor() {
-        let menuitems = [{ "name": "hyperLink" }];
-        this.contextMenu = {items: menuitems };
+        let menuItems = [{ "name": "hyperLink" }];
+        this.contextMenu = {items: menuItems };
         this.enableContextMenu = true;
     }
 </code></td>
@@ -4633,8 +4633,8 @@ This article describes the API migration process of Diagram component from Essen
     public contextMenu;
     public enableContextMenu;
     constructor() {
-        let menuitems = [{ "text": "ZoomIn" }];
-        this.contextMenu = {items: menuitems };
+        let menuItems = [{ "text": "ZoomIn" }];
+        this.contextMenu = {items: menuItems };
         this.enableContextMenu = true;
     }
 </code>
@@ -4681,8 +4681,8 @@ This article describes the API migration process of Diagram component from Essen
     public contextMenu;
     public enableContextMenu;
     constructor() {
-        let menuitems = [{ "name": "hyperLink" }];
-        this.contextMenu = {items: menuitems };
+        let menuItems = [{ "name": "hyperLink" }];
+        this.contextMenu = {items: menuItems };
         this.enableContextMenu = true;
     }
 </code>
@@ -4729,8 +4729,8 @@ This article describes the API migration process of Diagram component from Essen
     public contextMenu;
     public enableContextMenu;
     constructor() {
-        let menuitems = [{ "name": "zoomin", "text": "ZoomIn","imageUrl": "Images/zoomin.png", "style": "" }];
-        this.contextMenu = {items: menuitems };
+        let menuItems = [{ "name": "zoomin", "text": "ZoomIn","imageUrl": "Images/zoomin.png", "style": "" }];
+        this.contextMenu = {items: menuItems };
         this.enableContextMenu = true;
     }
 </code>
@@ -4776,8 +4776,8 @@ This article describes the API migration process of Diagram component from Essen
     public contextMenu;
     public enableContextMenu;
     constructor() {
-        let menuitems = [{ "name": "zoomin", "text": "ZoomIn","imageUrl": "Images/zoomin.png", "cssClass":"menu", "style": "" }];
-        this.contextMenu = {items: menuitems };
+        let menuItems = [{ "name": "zoomin", "text": "ZoomIn","imageUrl": "Images/zoomin.png", "cssClass":"menu", "style": "" }];
+        this.contextMenu = {items: menuItems };
         this.enableContextMenu = true;
     }
 </code>
@@ -5007,7 +5007,7 @@ This article describes the API migration process of Diagram component from Essen
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td><b>Behaviour</b></td>
+<td><b>Behavior</b></td>
 <td><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -6033,7 +6033,7 @@ This article describes the API migration process of Diagram component from Essen
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td><b>Behaviour</b></td>
+<td><b>Behavior</b></td>
 <td><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -6072,8 +6072,8 @@ This article describes the API migration process of Diagram component from Essen
 <code>
 
     public diagram: DiagramComponent;
-    public getNodeDefaults(node: NoderModel, diagram: Diagram): NodeModel   {
-        node.style = { fill: 'lightgrey', strokeColor: 'none', strokeWidth: 2 };
+    public getNodeDefaults(node: NodeModel, diagram: Diagram): NodeModel   {
+        node.style = { fill: 'blue', strokeColor: 'none', strokeWidth: 2 };
     return node;
 }
 </code></td>
@@ -6156,7 +6156,7 @@ This article describes the API migration process of Diagram component from Essen
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td><b>Behaviour</b></td>
+<td><b>Behavior</b></td>
 <td><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -6207,7 +6207,7 @@ This article describes the API migration process of Diagram component from Essen
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td><b>Behaviour</b></td>
+<td><b>Behavior</b></td>
 <td><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -6258,7 +6258,7 @@ This article describes the API migration process of Diagram component from Essen
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td><b>Behaviour</b></td>
+<td><b>Behavior</b></td>
 <td><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -6311,7 +6311,7 @@ This article describes the API migration process of Diagram component from Essen
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td><b>Behaviour</b></td>
+<td><b>Behavior</b></td>
 <td><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -6338,7 +6338,7 @@ This article describes the API migration process of Diagram component from Essen
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td><b>Behaviour</b></td>
+<td><b>Behavior</b></td>
 <td><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -6360,60 +6360,12 @@ This article describes the API migration process of Diagram component from Essen
 </tr>
 </table>
 
-## GetDescription
-
-<!-- markdownlint-disable MD033 -->
-<table>
-<tr>
-<td><b>Behaviour</b></td>
-<td><b>API in Essential JS 1</b></td>
-<td><b>API in Essential JS 2</b></td>
-</tr>
-
-<tr>
-<td><b>Allows to get the custom description<b></td>
-<td><b>Not applicable</b>
-</td>
-<td>
-<b>Property</b>:<i>`getDescription`</i>
-</br>
-</br>
-<b>HTML</b>
-<code>
-
-     <ejs-diagram #diagram id="diagram" width="850px" height="700px" [getDescription]="getAccessibility" [nodes]="nodes">
-    </ejs-diagram>
-</code>
-<b>Script</b>
-<code>
-
-    public getAccessibility(object: ConnectorModel, diagram: Diagram): string {
-        let value: string;
-        if (object instanceof Connector) {
-            value = 'clicked on Connector';
-        } else {
-            value = undefined;
-        }
-        return value;
-    }
-    public nodes: NodeModel[] = [{
-            id: 'node1', width: 100, height: 100, offsetX: 100, offsetY: 100,
-        },
-        {
-            id: 'node2', width: 100, height: 100, offsetX: 300, offsetY: 100,
-            shape: { type: 'Basic', shape: 'Ellipse' },
-        }];
-    }
-</code></td>
-</tr>
-</table>
-
 ## GetCustomTool
 
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td><b>Behaviour</b></td>
+<td><b>Behavior</b></td>
 <td><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -6468,7 +6420,7 @@ This article describes the API migration process of Diagram component from Essen
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td><b>Behaviour</b></td>
+<td><b>Behavior</b></td>
 <td><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -6503,7 +6455,7 @@ This article describes the API migration process of Diagram component from Essen
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td><b>Behaviour</b></td>
+<td><b>Behavior</b></td>
 <td><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -6631,7 +6583,7 @@ This article describes the API migration process of Diagram component from Essen
 <code>
 
         public created() {
-            let diagram = $("#diagramcontent").ejDiagram("instance");
+            let diagram = $("#diagramContent").ejDiagram("instance");
             diagram.model.historyManager.pop();
         }
 </code>
@@ -6657,10 +6609,10 @@ This article describes the API migration process of Diagram component from Essen
 <code>
 
         public created() {
-            let entry = { object: node, prevState: node.empInfo };
+            let entry = { object: node, prevState: node.employeeInfo };
             this.diagram.model.historyManager.push(entry);
             let value = { role: "New role" };
-            node.empInfo = value;
+            node.employeeInfo = value;
         }
 </code>
 <code>
@@ -6727,11 +6679,11 @@ This article describes the API migration process of Diagram component from Essen
             redo: customUndoRedo
         }
         public created() {
-        let diagram = $("#diagramcontent").ejDiagram("instance");
+        let diagram = $("#diagramContent").ejDiagram("instance");
         let node: Node = args.object;
-        let currentState = node.empInfo;
+        let currentState = node.employeeInfo;
 
-        node.empInfo = args.prevState;
+        node.employeeInfo = args.prevState;
 
         args.prevState = currentState;
         }
@@ -6793,7 +6745,7 @@ This article describes the API migration process of Diagram component from Essen
 </br>
 <code>
 
-    let diagram = $("#diagramcontent").ejDiagram("instance");
+    let diagram = $("#diagramContent").ejDiagram("instance");
     diagram.model.historyManager.redoStack();
 </code>
 </td>
@@ -6818,7 +6770,7 @@ This article describes the API migration process of Diagram component from Essen
         height: 100,
     }]
     public created() {
-    let diagram = $("#diagramcontent").ejDiagram("instance");
+    let diagram = $("#diagramContent").ejDiagram("instance");
     diagram.historyList.redoStack();
     }
 </code></td>
@@ -6951,11 +6903,11 @@ This article describes the API migration process of Diagram component from Essen
             redo: customUndoRedo
         }
         public created() {
-        let diagram = $("#diagramcontent").ejDiagram("instance");
+        let diagram = $("#diagramContent").ejDiagram("instance");
         let node = args.object;
-        let currentState = node.empInfo;
+        let currentState = node.employeeInfo;
 
-        node.empInfo = args.prevState;
+        node.employeeInfo = args.prevState;
 
         args.prevState = currentState;
         }
@@ -7033,7 +6985,7 @@ This article describes the API migration process of Diagram component from Essen
             redo: customUndoRedo
         }
         public created() {
-    let diagram = $("#diagramcontent").ejDiagram("instance");
+    let diagram = $("#diagramContent").ejDiagram("instance");
     diagram.model.historyManager.undoStack();
     }
     }
@@ -7193,7 +7145,7 @@ This article describes the API migration process of Diagram component from Essen
         }]
 
         public created() {
-            let diagram = $("#diagramcontent").ejDiagram("instance");
+            let diagram = $("#diagramContent").ejDiagram("instance");
             diagram.model.historyManager.canLog();
         }
 </code>
@@ -7234,7 +7186,7 @@ This article describes the API migration process of Diagram component from Essen
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td><b>Behaviour</b></td>
+<td><b>Behavior</b></td>
 <td><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -7261,7 +7213,7 @@ This article describes the API migration process of Diagram component from Essen
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td><b>Behaviour</b></td>
+<td><b>Behavior</b></td>
 <td><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -7963,7 +7915,7 @@ This article describes the API migration process of Diagram component from Essen
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td><b>Behaviour</b></td>
+<td><b>Behavior</b></td>
 <td><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -7999,7 +7951,7 @@ This article describes the API migration process of Diagram component from Essen
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td><b>Behaviour</b></td>
+<td><b>Behavior</b></td>
 <td><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -8695,7 +8647,7 @@ This article describes the API migration process of Diagram component from Essen
     constructor() {
         this.nodes = [{
     name: "Patient", offsetX: 100, offsetY: 100, borderWidth: 2, borderColor: "black",
-    type: "umlclassifier", classifier: ClassifierShapes.Class
+    type: "UmlClassifier", classifier: ClassifierShapes.Class
     }];
     }
 </code>
@@ -8726,7 +8678,7 @@ This article describes the API migration process of Diagram component from Essen
     offsetY: 100,
     borderWidth: 2,
     borderColor: "black",
-    type: "umlclassifier",
+    type: "UmlClassifier",
     classifier: ClassifierShapes.Class,
     "class": {
         name: "Patient",
@@ -8761,7 +8713,7 @@ This article describes the API migration process of Diagram component from Essen
     offsetY: 100,
     borderWidth: 2,
     borderColor: "black",
-    type: "umlclassifier",
+    type: "UmlClassifier",
     classifier: ClassifierShapes.Class,
     "class": {
         name: "Patient",
@@ -8795,7 +8747,7 @@ This article describes the API migration process of Diagram component from Essen
     offsetY: 100,
     borderWidth: 2,
     borderColor: "black",
-    type: "umlclassifier",
+    type: "UmlClassifier",
     classifier: ClassifierShapes.Class,
     "class": {
         name: "Patient",
@@ -8830,7 +8782,7 @@ This article describes the API migration process of Diagram component from Essen
     offsetY: 100,
     borderWidth: 2,
     borderColor: "black",
-    type: "umlclassifier",
+    type: "UmlClassifier",
     classifier: ClassifierShapes.Class,
     "class": {
         name: "Patient",
@@ -8866,7 +8818,7 @@ This article describes the API migration process of Diagram component from Essen
     offsetY: 100,
     borderWidth: 2,
     borderColor: "black",
-    type: "umlclassifier",
+    type: "UmlClassifier",
     classifier: ClassifierShapes.Class,
     "class": {
         name: "Patient",
@@ -8901,7 +8853,7 @@ This article describes the API migration process of Diagram component from Essen
     offsetY: 100,
     borderWidth: 2,
     borderColor: "black",
-    type: "umlclassifier",
+    type: "UmlClassifier",
     classifier: ClassifierShapes.Class,
     "class": {
         name: "Patient",
@@ -8936,7 +8888,7 @@ This article describes the API migration process of Diagram component from Essen
     offsetY: 100,
     borderWidth: 2,
     borderColor: "black",
-    type: "umlclassifier",
+    type: "UmlClassifier",
     classifier: ClassifierShapes.Class,
     "class": {
         name: "Patient", methods: [{ name: "getHistory" }]
@@ -8970,7 +8922,7 @@ This article describes the API migration process of Diagram component from Essen
     offsetY: 100,
     borderWidth: 2,
     borderColor: "black",
-    type: "umlclassifier",
+    type: "UmlClassifier",
     classifier: ClassifierShapes.Class,
     "class": {
         name: "Patient",
@@ -9008,7 +8960,7 @@ This article describes the API migration process of Diagram component from Essen
     offsetY: 100,
     borderWidth: 2,
     borderColor: "black",
-    type: "umlclassifier",
+    type: "UmlClassifier",
     classifier: ClassifierShapes.Class,
     "class": {
         name: "Patient",
@@ -9049,7 +9001,7 @@ This article describes the API migration process of Diagram component from Essen
     offsetY: 100,
     borderWidth: 2,
     borderColor: "black",
-    type: "umlclassifier",
+    type: "UmlClassifier",
     classifier: ClassifierShapes.Class,
     "class": {
         name: "Patient",
@@ -9091,7 +9043,7 @@ This article describes the API migration process of Diagram component from Essen
         offsetY: 100,
         borderWidth: 2,
         borderColor: "black",
-        type: "umlclassifier",
+        type: "UmlClassifier",
         classifier: ClassifierShapes.Class,
         "class": {
             name: "Patient",
@@ -9133,7 +9085,7 @@ This article describes the API migration process of Diagram component from Essen
     offsetY: 100,
     borderWidth: 2,
     borderColor: "black",
-    type: "umlclassifier",
+    type: "UmlClassifier",
     classifier: ClassifierShapes.Class,
     "class": {
         name: "Patient",
@@ -9171,7 +9123,7 @@ This article describes the API migration process of Diagram component from Essen
     offsetY: 100,
     borderWidth: 2,
     borderColor: "black",
-    type: "umlclassifier",
+    type: "UmlClassifier",
     classifier: ClassifierShapes.Class,
     "class": {
         name: "Patient",
@@ -9211,7 +9163,7 @@ This article describes the API migration process of Diagram component from Essen
             offsetX: 100,
             offsetY: 100,
             collapseIcon: {
-                shape:"arrowup",
+                shape:"ArrowUp",
                 width:10,
                 height:10
                 },
@@ -9270,7 +9222,7 @@ This article describes the API migration process of Diagram component from Essen
             offsetX: 100,
             offsetY: 100,
             collapseIcon: {
-                shape:"arrowup",
+                shape:"ArrowUp",
                 width:10,
                 height:10,
                 borderColor: "red"
@@ -9331,7 +9283,7 @@ This article describes the API migration process of Diagram component from Essen
             offsetX: 100,
             offsetY: 100,
             collapseIcon: {
-                shape:"arrowup",
+                shape:"ArrowUp",
                 width:10,
                 height:10,
                 borderWidth: "2"
@@ -9391,7 +9343,7 @@ This article describes the API migration process of Diagram component from Essen
             offsetX: 100,
             offsetY: 100,
             collapseIcon: {
-                shape:"arrowup",
+                shape:"ArrowUp",
                 width:10,
                 height:10,
                 fillColor: "green"
@@ -9451,7 +9403,7 @@ This article describes the API migration process of Diagram component from Essen
             offsetX: 100,
             offsetY: 100,
             collapseIcon: {
-                shape:"arrowup",
+                shape:"ArrowUp",
                 width:10,
                 height:10
                 },
@@ -9508,7 +9460,7 @@ This article describes the API migration process of Diagram component from Essen
             offsetX: 100,
             offsetY: 100,
             collapseIcon: {
-                shape:"arrowup",
+                shape:"ArrowUp",
                 width:10,
                 height:10,
                 horizontalAlignment:HorizontalAlignment.Left
@@ -9569,7 +9521,7 @@ This article describes the API migration process of Diagram component from Essen
             offsetX: 100,
             offsetY: 100,
             collapseIcon: {
-                shape:"arrowup",
+                shape:"ArrowUp",
                 width:10,
                 height:10,
                 margin:{ left: 5 }
@@ -9633,7 +9585,7 @@ This article describes the API migration process of Diagram component from Essen
             offsetX: 100,
             offsetY: 100,
             collapseIcon: {
-                shape:"arrowup",
+                shape:"ArrowUp",
                 width:10,
                 height:10,
                 offset:Point(0,0.5)
@@ -9696,14 +9648,14 @@ This article describes the API migration process of Diagram component from Essen
             offsetX: 100,
             offsetY: 100,
             collapseIcon: {
-                shape:"arrowup",
+                shape:"ArrowUp",
                 width:10,
                 height:10
                 },
             expandIcon: {
                 height: 10,
                 width: 10,
-                shape: "arrowdown"
+                shape: "ArrowDown"
                 }
         }]
 </code>
@@ -9756,7 +9708,7 @@ This article describes the API migration process of Diagram component from Essen
             offsetX: 100,
             offsetY: 100,
             collapseIcon: {
-                shape:"arrowup",
+                shape:"ArrowUp",
                 width:10,
                 height:10,
                 verticalAlignment:VerticalAlignment.Top
@@ -9764,7 +9716,7 @@ This article describes the API migration process of Diagram component from Essen
             expandIcon: {
                 height: 10,
                 width: 10,
-                shape: "arrowdown",
+                shape: "ArrowDown",
                 verticalAlignment:VerticalAlignment.Top
                 }
         }]
@@ -10233,7 +10185,7 @@ This article describes the API migration process of Diagram component from Essen
 <code>
 
     public nodes: NodeModel[] =  [{
-        name: "dataobject",
+        name: "dataObject",
         type: "bpmn",
         shape: BPMNShapes.DataObject,
         data: {
@@ -10290,7 +10242,7 @@ This article describes the API migration process of Diagram component from Essen
 <code>
 
     public nodes: NodeModel[] = [{
-        name: "dataobject",
+        name: "dataObject",
         type: "bpmn",
         shape: BPMNShapes.DataObject,
         data: {
@@ -10353,7 +10305,7 @@ This article describes the API migration process of Diagram component from Essen
         offsetY: 100,
         borderWidth: 2,
         borderColor: "black",
-        type: "umlclassifier",
+        type: "UmlClassifier",
         classifier: ClassifierShapes.Enumeration,
         enumeration: {
             name: "AccountType",
@@ -10386,7 +10338,7 @@ This article describes the API migration process of Diagram component from Essen
         offsetY: 100,
         borderWidth: 2,
         borderColor: "black",
-        type: "umlclassifier",
+        type: "UmlClassifier",
         classifier: ClassifierShapes.Enumeration,
         enumeration: {
             name: "AccountType",
@@ -10419,7 +10371,7 @@ This article describes the API migration process of Diagram component from Essen
         offsetY: 100,
         borderWidth: 2,
         borderColor: "black",
-        type: "umlclassifier",
+        type: "UmlClassifier",
         classifier: ClassifierShapes.Enumeration,
         enumeration: {
             name: "AccountType",
@@ -10453,7 +10405,7 @@ This article describes the API migration process of Diagram component from Essen
         offsetY: 100,
         borderWidth: 2,
         borderColor: "black",
-        type: "umlclassifier",
+        type: "UmlClassifier",
         classifier: ClassifierShapes.Enumeration,
         enumeration: {
             name: "AccountType",
@@ -10605,7 +10557,7 @@ This article describes the API migration process of Diagram component from Essen
         };
             this.nodes =  [node1, node2, node3];
             this.layout= {
-            type: "hierarchicaltree"
+            type: "HierarchicalTree"
         }
         }
 </code>
@@ -10801,23 +10753,23 @@ This article describes the API migration process of Diagram component from Essen
                 gradient: gradient1
             }
         }];
-    public stopscol: StopModel[] = [];
+    public stopsCol: StopModel[] = [];
     public stops1: StopModel = {
         color: 'white',
         offset: 0
     };
-    stopscol.push(stops1);
+    stopsCol.push(stops1);
     public stops2: StopModel = {
         color: 'red',
         offset: 50
     };
-    stopscol.push(stops2);
+    stopsCol.push(stops2);
     public gradient1: LinearGradientModel = {
         x1: 0,
         x2: 50,
         y1: 0,
         y2: 50,
-        stops: stopscol,
+        stops: stopsCol,
         type: 'Linear'
     };
 </code></td>
@@ -10877,23 +10829,23 @@ This article describes the API migration process of Diagram component from Essen
                 gradient: gradient1
             }
         }]
-    public stopscol: StopModel[] = [];
+    public stopsCol: StopModel[] = [];
     public stops1: StopModel = {
         color: 'white',
         offset: 0
     };
-    stopscol.push(stops1);
+    stopsCol.push(stops1);
     public stops2: StopModel = {
         color: 'red',
         offset: 50
     };
-    stopscol.push(stops2);
+    stopsCol.push(stops2);
     public gradient1: LinearGradientModel = {
         x1: 0,
         x2: 50,
         y1: 0,
         y2: 50,
-        stops: stopscol,
+        stops: stopsCol,
         type: 'Linear'
     };
 </code></td>
@@ -10956,23 +10908,23 @@ This article describes the API migration process of Diagram component from Essen
                 gradient: gradient1
             }
         }]
-    public stopscol: StopModel[] = [];
+    public stopsCol: StopModel[] = [];
     public stops1: StopModel = {
         color: 'white',
         offset: 0
     };
-    stopscol.push(stops1);
+    stopsCol.push(stops1);
     public stops2: StopModel = {
         color: 'red',
         offset: 50
     };
-    stopscol.push(stops2);
+    stopsCol.push(stops2);
     public gradient1: LinearGradientModel = {
         x1: 0,
         x2: 50,
         y1: 0,
         y2: 50,
-        stops: stopscol,
+        stops: stopsCol,
         type: 'Linear'
     };
 
@@ -11036,23 +10988,23 @@ This article describes the API migration process of Diagram component from Essen
                 gradient: gradient1
             }
         }]
-    public stopscol: StopModel[] = [];
+    public stopsCol: StopModel[] = [];
     public stops1: StopModel = {
         color: 'white',
         offset: 0
     };
-    stopscol.push(stops1);
+    stopsCol.push(stops1);
     public stops2: StopModel = {
         color: 'red',
         offset: 50
     };
-    stopscol.push(stops2);
+    stopsCol.push(stops2);
     public gradient1: LinearGradientModel = {
         x1: 0,
         x2: 50,
         y1: 0,
         y2: 50,
-        stops: stopscol,
+        stops: stopsCol,
         type: 'Linear'
     };
 </code></td>
@@ -11114,23 +11066,23 @@ This article describes the API migration process of Diagram component from Essen
                 gradient: gradient1
             }
         }]
-    public stopscol: StopModel[] = [];
+    public stopsCol: StopModel[] = [];
     public stops1: StopModel = {
         color: 'white',
         offset: 0
     };
-    stopscol.push(stops1);
+    stopsCol.push(stops1);
     public stops2: StopModel = {
         color: 'red',
         offset: 50
     };
-    stopscol.push(stops2);
+    stopsCol.push(stops2);
     public gradient1: LinearGradientModel = {
         x1: 0,
         x2: 50,
         y1: 0,
         y2: 50,
-        stops: stopscol,
+        stops: stopsCol,
         type: 'Linear'
     };
 </code></td>
@@ -11963,7 +11915,7 @@ This article describes the API migration process of Diagram component from Essen
     constructor() {
         this.nodes = [{
     name: "Patient", offsetX: 100, offsetY: 100, borderWidth: 2, borderColor: "black",
-    type: "umlclassifier", classifier: ClassifierShapes.interface
+    type: "UmlClassifier", classifier: ClassifierShapes.interface
     }];
     }
 </code>
@@ -11994,7 +11946,7 @@ This article describes the API migration process of Diagram component from Essen
     offsetY: 100,
     borderWidth: 2,
     borderColor: "black",
-    type: "umlclassifier",
+    type: "UmlClassifier",
     classifier: ClassifierShapes.interface,
     "interface": {
         name: "Patient",
@@ -12029,7 +11981,7 @@ This article describes the API migration process of Diagram component from Essen
     offsetY: 100,
     borderWidth: 2,
     borderColor: "black",
-    type: "umlclassifier",
+    type: "UmlClassifier",
     classifier: ClassifierShapes.interface,
     "interface": {
         name: "Patient",
@@ -12064,7 +12016,7 @@ This article describes the API migration process of Diagram component from Essen
     offsetY: 100,
     borderWidth: 2,
     borderColor: "black",
-    type: "umlclassifier",
+    type: "UmlClassifier",
     classifier: ClassifierShapes.interface,
     "interface": {
         name: "Patient",
@@ -12099,7 +12051,7 @@ This article describes the API migration process of Diagram component from Essen
     offsetY: 100,
     borderWidth: 2,
     borderColor: "black",
-    type: "umlclassifier",
+    type: "UmlClassifier",
     classifier: ClassifierShapes.interface,
     "interface": {
         name: "Patient",
@@ -12135,7 +12087,7 @@ This article describes the API migration process of Diagram component from Essen
     offsetY: 100,
     borderWidth: 2,
     borderColor: "black",
-    type: "umlclassifier",
+    type: "UmlClassifier",
     classifier: ClassifierShapes.interface,
     "interface": {
         name: "Patient",
@@ -12171,7 +12123,7 @@ This article describes the API migration process of Diagram component from Essen
     offsetY: 100,
     borderWidth: 2,
     borderColor: "black",
-    type: "umlclassifier",
+    type: "UmlClassifier",
     classifier: ClassifierShapes.interface,
     "interface": {
         name: "Patient", methods: [{ name: "getHistory" }]
@@ -12205,7 +12157,7 @@ This article describes the API migration process of Diagram component from Essen
     offsetY: 100,
     borderWidth: 2,
     borderColor: "black",
-    type: "umlclassifier",
+    type: "UmlClassifier",
     classifier: ClassifierShapes.interface,
     "interface": {
         name: "Patient",
@@ -12244,7 +12196,7 @@ This article describes the API migration process of Diagram component from Essen
     offsetY: 100,
     borderWidth: 2,
     borderColor: "black",
-    type: "umlclassifier",
+    type: "UmlClassifier",
     classifier: ClassifierShapes.interface,
     "interface": {
         name: "Patient",
@@ -12286,7 +12238,7 @@ This article describes the API migration process of Diagram component from Essen
     offsetY: 100,
     borderWidth: 2,
     borderColor: "black",
-    type: "umlclassifier",
+    type: "UmlClassifier",
     classifier: ClassifierShapes.interface,
     "interface": {
         name: "Patient",
@@ -12329,7 +12281,7 @@ This article describes the API migration process of Diagram component from Essen
     offsetY: 100,
     borderWidth: 2,
     borderColor: "black",
-    type: "umlclassifier",
+    type: "UmlClassifier",
     classifier: ClassifierShapes.interface,
     "interface": {
         name: "Patient",
@@ -12372,7 +12324,7 @@ This article describes the API migration process of Diagram component from Essen
     offsetY: 100,
     borderWidth: 2,
     borderColor: "black",
-    type: "umlclassifier",
+    type: "UmlClassifier",
     classifier: ClassifierShapes.interface,
     "interface": {
         name: "Patient",
@@ -12411,7 +12363,7 @@ This article describes the API migration process of Diagram component from Essen
     offsetY: 100,
     borderWidth: 2,
     borderColor: "black",
-    type: "umlclassifier",
+    type: "UmlClassifier",
     classifier: ClassifierShapes.interface,
     "interface": {
         name: "Patient",
@@ -12501,7 +12453,7 @@ This article describes the API migration process of Diagram component from Essen
             id: 'connector'
         }]
         public layout: object = {
-            type: "hierarchicaltree"
+            type: "HierarchicalTree"
         }
 </code></td>
 </tr>
@@ -12668,7 +12620,7 @@ This article describes the API migration process of Diagram component from Essen
             width: 100,
             cssClass:"hoverLane",
             addInfo: addInfo,
-            fillColor:"lightgrey"
+            fillColor:"blue"
         }
     ]
     }];
@@ -13219,7 +13171,7 @@ This article describes the API migration process of Diagram component from Essen
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td style="width: 20%;"><b>Behaviour</b></td>
+<td style="width: 20%;"><b>Behavior</b></td>
 <td style="width: 40%;"><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -13523,7 +13475,7 @@ This article describes the API migration process of Diagram component from Essen
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td><b>Behaviour</b></td>
+<td><b>Behavior</b></td>
 <td><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -13765,7 +13717,7 @@ This article describes the API migration process of Diagram component from Essen
 
         offset : point(0, 0),
 
-        position :" middleleft",
+        position :" middleLeft",
 
         margin : { left: 5 },
 
@@ -13848,7 +13800,7 @@ This article describes the API migration process of Diagram component from Essen
             this.clonedNodes = [];
             this.cursor = "pointer";
         }
-        CloneTool.prototype.mouseup = function(evt) {
+        CloneTool.prototype.mouseup = function(event) {
             this.diagram.copy();
             this.diagram.paste();
         }
@@ -13945,7 +13897,7 @@ This article describes the API migration process of Diagram component from Essen
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td><b>Behaviour</b></td>
+<td><b>Behavior</b></td>
 <td><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -13981,7 +13933,7 @@ This article describes the API migration process of Diagram component from Essen
 <!-- markdownlint-disable MD033 -->
 <table>
 <tr>
-<td><b>Behaviour</b></td>
+<td><b>Behavior</b></td>
 <td><b>API in Essential JS 1</b></td>
 <td><b>API in Essential JS 2</b></td>
 </tr>
@@ -13997,7 +13949,7 @@ This article describes the API migration process of Diagram component from Essen
 
      <ej-diagram id="diagramCore" width="1000" height="600" [selectedItems]="selectedItems" >
      </ej-diagram>
-     <script type="text/x-jsrender" id="mouseovertooltip">
+     <script type="text/x-jsrender" id="mouseOverTooltip">
      <div style="background-color: #F08080; color: white; white-space: nowrap; height: 20px">
         <span style="padding: 5px;">  </span>
     </div>
@@ -14007,7 +13959,7 @@ This article describes the API migration process of Diagram component from Essen
 <code>
 
     public nodes=[{
-            name: "elizabeth",
+            name: "Elizabeth",
             width: 70,
             height: 40,
             offsetX: 100,
@@ -14015,7 +13967,7 @@ This article describes the API migration process of Diagram component from Essen
             Designation: "Managing Director"
         }]
         public tooltip= {
-            templateId: "mouseovertooltip",
+            templateId: "mouseOverTooltip",
             relativeMode: RelativeMode.Mouse,
         }
 </code>
@@ -14056,7 +14008,7 @@ This article describes the API migration process of Diagram component from Essen
 
      <ej-diagram id="diagramCore" width="1000" height="600" [selectedItems]="selectedItems" >
      </ej-diagram>
-     <script type="text/x-jsrender" id="mouseovertooltip">
+     <script type="text/x-jsrender" id="mouseOverTooltip">
      <div style="background-color: #F08080; color: white; white-space: nowrap; height: 20px">
         <span style="padding: 5px;">  </span>
     </div>
@@ -14066,7 +14018,7 @@ This article describes the API migration process of Diagram component from Essen
 <code>
 
     public nodes=[{
-            name: "elizabeth",
+            name: "Elizabeth",
             width: 70,
             height: 40,
             offsetX: 100,
@@ -14074,7 +14026,7 @@ This article describes the API migration process of Diagram component from Essen
             Designation: "Managing Director"
         }]
         public tooltip= {
-            templateId: "mouseovertooltip",
+            templateId: "mouseOverTooltip",
             alignment: {
                 horizontal: "center",
                 vertical: "bottom"
@@ -14099,7 +14051,7 @@ This article describes the API migration process of Diagram component from Essen
 
      <ej-diagram id="diagramCore" width="1000" height="600" [selectedItems]="selectedItems" >
      </ej-diagram>
-     <script type="text/x-jsrender" id="mouseovertooltip">
+     <script type="text/x-jsrender" id="mouseOverTooltip">
      <div style="background-color: #F08080; color: white; white-space: nowrap; height: 20px">
         <span style="padding: 5px;">  </span>
     </div>
@@ -14109,7 +14061,7 @@ This article describes the API migration process of Diagram component from Essen
 <code>
 
     public nodes=[{
-            name: "elizabeth",
+            name: "Elizabeth",
             width: 70,
             height: 40,
             offsetX: 100,
@@ -14117,7 +14069,7 @@ This article describes the API migration process of Diagram component from Essen
             Designation: "Managing Director"
         }]
         public tooltip=  {
-            templateId: "mouseovertooltip",
+            templateId: "mouseOverTooltip",
             alignment: {
                 horizontal: "center",
                 vertical: "bottom"
@@ -14142,7 +14094,7 @@ This article describes the API migration process of Diagram component from Essen
 
      <ej-diagram id="diagramCore" width="1000" height="600" [selectedItems]="selectedItems" >
      </ej-diagram>
-     <script type="text/x-jsrender" id="mouseovertooltip">
+     <script type="text/x-jsrender" id="mouseOverTooltip">
      <div style="background-color: #F08080; color: white; white-space: nowrap; height: 20px">
         <span style="padding: 5px;">  </span>
     </div>
@@ -14152,7 +14104,7 @@ This article describes the API migration process of Diagram component from Essen
 <code>
 
     public nodes=[{
-            name: "elizabeth",
+            name: "Elizabeth",
             width: 70,
             height: 40,
             offsetX: 100,
@@ -14160,7 +14112,7 @@ This article describes the API migration process of Diagram component from Essen
             Designation: "Managing Director"
         }]
         public tooltip= {
-            templateId: "mouseovertooltip",
+            templateId: "mouseOverTooltip",
             alignment: {
                 horizontal: "center",
                 vertical: "bottom"
