@@ -3,7 +3,7 @@
 * [Cards](kanban/cards.md)
 * [Data Binding](kanban/data-binding.md)
 * [Swimlane](kanban/swimlane.md)
-* [Priority](kanban/priority.md)
+* [Sorting Cards](kanban/sorting-cards.md)
 * [Card Editing](kanban/dialog.md)
 * [Tooltip](kanban/tooltip.md)
 * [WIP Validation](kanban/validation.md)
