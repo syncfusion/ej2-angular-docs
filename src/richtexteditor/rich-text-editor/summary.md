@@ -6,6 +6,7 @@
 * [Link](rich-text-editor/link.md)
 * [Table](rich-text-editor/table.md)
 * [Markdown](rich-text-editor/markdown.md)
+* [File Browser](rich-text-editor/file-browser.md)
 * [Validation](rich-text-editor/validation.md)
 * [Globalization](rich-text-editor/globalization.md)
 * [Miscellaneous](rich-text-editor/miscellaneous.md)
