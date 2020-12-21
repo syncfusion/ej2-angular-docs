@@ -268,13 +268,17 @@ export class AppComponent {
 
 To create Rich Text Editor with additional features, inject the required modules. The following modules are used to extend Rich Text Editor’s basic functionality.
 
-* `toolbar` - Inject this module to use Toolbar features.
-* `link` - Inject this module to use link features in RTE.
-* `image`- Inject this module to use image features in RTE.
-* `count` - Inject this module to use character count in RTE.
-* `markdownEditor`-Inject this module to use RTE as markdown editor.
-* `htmlEditor` - Inject this module to use RTE as html editor.
-* `quickToolbar` - Inject this module to use quick toolbar feature for the target element.
+* `Toolbar` - Inject this module to use Toolbar feature.
+* `Link` - Inject this module to use link feature in Rich Text Editor.
+* `Image`- Inject this module to use image feature in Rich Text Editor.
+* `Table`- Inject this module to use table feature in Rich Text Editor.
+* `Count` - Inject this module to use character count in Rich Text Editor.
+* `HtmlEditor` - Inject this module to use Rich Text Editor as html editor.
+* `MarkdownEditor`-Inject this module to use Rich Text Editor as markdown editor.
+* `QuickToolbar` - Inject this module to use quick toolbar feature for the target element.
+* `Resize` - Inject this module to use resize feature in Rich Text Editor.
+* `FileManager` - Inject this module to use file browser feature in Rich Text Editor.
+* `PasteCleanup` - Inject this module to use paste cleanup feature in Rich Text Editor.
 
 These modules should be injected into the provider section of `AppModule`.
 
