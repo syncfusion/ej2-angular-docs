@@ -78,6 +78,7 @@ There is a `change` event available in recurrence editor, that triggers on every
 ```typescript
 import { Component} from '@angular/core';
 import { RecurrenceEditorChangeEventArgs } from '@syncfusion/ej2-angular-schedule';
+import { isNullOrUndefined } from "@syncfusion/ej2-base";
 
 @Component({
   selector: 'app-root',
@@ -94,11 +95,13 @@ import { RecurrenceEditorChangeEventArgs } from '@syncfusion/ej2-angular-schedul
 })
 export class AppComponent {
   onChange(args: RecurrenceEditorChangeEventArgs): void {
-    let outputElement: HTMLElement = <HTMLElement>document.querySelector('#rule-output');
-    if(args.value == "") {
-        outputElement.innerText = 'Select Rule';
-    } else {
-        outputElement.innerText = args.value;
+    if (!isNullOrUndefined(args.value)) {
+        let outputElement: HTMLElement = <HTMLElement>document.querySelector('#rule-output');
+        if(args.value == "") {
+            outputElement.innerText = 'Select Rule';
+        } else {
+            outputElement.innerText = args.value;
+        }
     }
   }
 }

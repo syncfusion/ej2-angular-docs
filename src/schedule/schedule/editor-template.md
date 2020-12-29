@@ -200,6 +200,45 @@ export class AppComponent {
 
 {% endtab %}
 
+### How to prevent the default focus of the editor widow
+
+When we open the editor window, by default it will be focus to the `Subject` field. And we can able to prevent the default focusing of the editor window using the `popupOpen` event as shown in the following code example.
+
+{% tab template="schedule/editor-window", iframeHeight="588px", sourceFiles="app/**/*.ts" %}
+
+```typescript
+import { Component, ViewChild } from '@angular/core';
+import { EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService, PopupOpenEventArgs, ScheduleComponent } from '@syncfusion/ej2-angular-schedule';
+import { eventsData} from './datasource.ts';
+@Component({
+  selector: 'app-root',
+  providers: [DayService, WeekService, WorkWeekService, MonthService],
+  // specifies the template string for the Schedule component
+  template: `<ejs-schedule #scheduleObj width='100%' height='550px' [selectedDate]='selectedDate' [views]='views' [eventSettings]='eventSettings' (popupOpen)='onPopupOpen($event)'></ejs-schedule>`
+})
+
+
+export class AppComponent {
+    @ViewChild("scheduleObj")
+    public scheduleObj: ScheduleComponent;
+    public selectedDate: Date = new Date(2018, 1, 15);
+    public views: Array<string> = ['Day', 'Week', 'WorkWeek', 'Month'];
+    public eventSettings: EventSettingsModel = {
+        dataSource: eventsData
+    };
+    onPopupOpen(args: PopupOpenEventArgs): void {
+        if (args.type === 'Editor') {
+            let dialog = args.element.ej2_instances[0];
+            dialog.open = function(args) {
+                this.scheduleObj.eventBase.focusElement();
+            };
+        }
+    }
+ }
+```
+
+{% endtab %}
+
 ### Customizing the default time duration in editor window
 
 In default event editor window, start and end time duration are processed based on the `interval` value set within the `timeScale` property. By default, `interval` value is set to 30, and therefore the start/end time duration within the event editor will be in a 30 minutes time difference. You can change this duration value by changing the `duration` option within the `popupOpen` event as shown in the following code example.
@@ -681,6 +720,147 @@ export class AppComponent {
 
 {% endtab %}
 
+### How to save the customized event editor using template
+
+The **e-field** class is not added to each field defined within the template, so you should allow to set those field values externally by using the `popupClose` event.
+
+Note: You can allow to retrieve the data only on the `save` and `delete` option. Data cannot be retrieved on the `close` and `cancel` options in the editor window.
+
+The following code example shows how to save the customized event editor using a template by the `popupClose` event.
+
+{% tab template="schedule/resource-field", iframeHeight="588px", sourceFiles="app/**/*.ts" %}
+
+```typescript
+import { Component } from '@angular/core';
+import { DropDownList } from '@syncfusion/ej2-dropdowns';
+import { DateTimePicker } from '@syncfusion/ej2-calendars';
+import { isNullOrUndefined } from '@syncfusion/ej2-base';
+import { EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService, PopupOpenEventArgs, PopupCloseEventArgs } from '@syncfusion/ej2-angular-schedule';
+import { eventData } from './datasource.ts';
+@Component({
+    selector: 'app-root',
+    providers: [DayService, WeekService, WorkWeekService, MonthService],
+    // specifies the template string for the Schedule component
+    template: `<ejs-schedule width='100%' height='550px' [selectedDate]='selectedDate' [views]='views' [eventSettings]='eventSettings' [showQuickInfo]='showQuickInfo' (popupOpen)='onPopupOpen($event)' (popupClose) ='onPopupClose($event)'>
+    <ng-template #editorTemplate>
+        <table class="custom-event-editor" width="100%" cellpadding="5">
+            <tbody>
+                <tr>
+                    <td class="e-textlabel">Summary</td>
+                    <td colspan="4">
+                        <input id="Subject" class="e-input" type="text" name="Subject" style="width: 100%" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="e-textlabel">Status</td>
+                    <td colspan="4">
+                        <input type="text" id="EventType" name="EventType" style="width: 100%" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="e-textlabel">From</td>
+                    <td colspan="4">
+                        <input id="StartTime" type="text" name="StartTime" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="e-textlabel">To</td>
+                    <td colspan="4">
+                        <input id="EndTime" type="text" name="EndTime" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="e-textlabel">Reason</td>
+                    <td colspan="4">
+                        <textarea id="Description" class="e-input" name="Description" rows="3" cols="50" style="width: 100%; height: 60px !important; resize: vertical"></textarea>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </ng-template>
+    </ejs-schedule>`
+})
+
+export class AppComponent {
+    public selectedDate: Date = new Date(2018, 1, 15);
+    public views: Array<string> = ['Day', 'Week', 'WorkWeek', 'Month'];
+    public showQuickInfo: Boolean = false;
+    public eventSettings: EventSettingsModel = {
+        dataSource: eventData
+    };
+    onPopupOpen(args: PopupOpenEventArgs) : void {
+        if (args.type === 'Editor') {
+            let subjectElement: HTMLInputElement = args.element.querySelector('#Subject') as HTMLInputElement;
+            if (subjectElement) {
+                subjectElement.value = ((<{ [key: string]: Object }>(args.data)).Subject as string) || "";
+            }
+            let statusElement: HTMLInputElement = args.element.querySelector('#EventType') as HTMLInputElement;
+            if (!statusElement.classList.contains('e-dropdownlist')) {
+                let dropDownListObject: DropDownList = new DropDownList({
+                    placeholder: 'Choose status', value: ((<{ [key: string]: Object }>(args.data)).EventType as string),
+                    dataSource: ['New', 'Requested', 'Confirmed']
+                });
+                dropDownListObject.appendTo(statusElement);
+            }
+            let startElement: HTMLInputElement = args.element.querySelector('#StartTime') as HTMLInputElement;
+            if (!startElement.classList.contains('e-datetimepicker')) {
+                startElement.value = (<{ [key: string]: Object }>(args.data)).StartTime as string;
+                new DateTimePicker({ value: new Date(startElement.value) || new Date() }, startElement);
+            }
+            let endElement: HTMLInputElement = args.element.querySelector('#EndTime') as HTMLInputElement;
+            if (!endElement.classList.contains('e-datetimepicker')) {
+                endElement.value = (<{ [key: string]: Object }>(args.data)).EndTime as string;
+                new DateTimePicker({ value: new Date(endElement.value) || new Date() }, endElement);
+            }
+            let descriptionElement: HTMLInputElement = args.element.querySelector('#Description') as HTMLInputElement;
+            if (descriptionElement) {
+                descriptionElement.value = (<{ [key: string]: Object }>(args.data)).Description as string || "";
+            }
+        }
+    }
+    onPopupClose(args: PopupCloseEventArgs) : void {
+        if (args.type === 'Editor' && !isNullOrUndefined(args.data)) {
+            let subjectElement: HTMLInputElement = args.element.querySelector('#Subject') as HTMLInputElement;
+            if (subjectElement ) {
+                (<{ [key: string]: Object }>(args.data)).Subject = subjectElement.value;
+            }
+            let statusElement: HTMLInputElement = args.element.querySelector('#EventType') as HTMLInputElement;
+            if (statusElement) {
+                ((<{ [key: string]: Object }>(args.data)).EventType as string) = statusElement.value;
+            }
+            let startElement: HTMLInputElement = args.element.querySelector('#StartTime') as HTMLInputElement;
+            if (startElement) {
+                (<{ [key: string]: Object }>(args.data)).StartTime = startElement.value;
+            }
+            let endElement: HTMLInputElement = args.element.querySelector('#EndTime') as HTMLInputElement;
+            if (endElement) {
+                (<{ [key: string]: Object }>(args.data)).EndTime = endElement.value;
+            }
+            let descriptionElement: HTMLInputElement = args.element.querySelector('#Description') as HTMLInputElement;
+            if (descriptionElement) {
+                ((<{ [key: string]: Object }>(args.data)).Description as string) = descriptionElement.value;
+            }
+        }
+    }
+}
+```
+
+{% endtab %}
+
+In case, if you need to prevent only specific popups on Scheduler, then you can check the condition based on the popup type. The types of the popup that can be checked within the `popupClose` event are as follows.
+
+| Type | Description |
+|------|-------------|
+| Editor | For Detailed editor window.|
+| QuickInfo | For Quick popup which opens on cell click.|
+| EditEventInfo |For  Quick popup which opens on event click.|
+| ViewEventInfo | For Quick popup which opens on responsive mode.|
+| EventContainer | For more event indicator popup.|
+| RecurrenceAlert | For edit recurrence event alert popup.|
+| DeleteAlert | For delete confirmation popup.|
+| ValidationAlert | For validation alert popup.|
+| RecurrenceValidationAlert | For recurrence validation alert popup.|
+
 ## Quick popups
 
 The quick info popups are the ones that gets opened, when a cell or appointment is single clicked on the desktop mode. On single clicking a cell, you can simply provide a subject and save it. Also, while single clicking on an event, a popup will be displayed where you can get the overview of the event information. You can also edit or delete those events through the options available in it.
@@ -843,7 +1023,7 @@ export class AppComponent {
         if (!isNullOrUndefined(eventData.RecurrenceRule) && eventData.RecurrenceRule !== '') {
             if (args.target.classList.contains('e-edit-series')) {
             currentAction = 'EditSeries';
-            eventData = this.scheduleObj.eventBase.getRecurrenceEvent(eventData);
+            eventData = this.scheduleObj.eventBase.getParentEvent(eventData, true);
             } else {
             currentAction = 'EditOccurrence';
             }
@@ -951,6 +1131,73 @@ export class AppComponent {
         }
     }
 }
+```
+
+{% endtab %}
+
+### How to prevent the display of popup when clicking on the more text indicator
+
+It is possible to prevent the display of popup window by passing the value `true` to `cancel` option within the `MoreEventsClick` event.
+
+{% tab template="schedule/editor-window", iframeHeight="588px", sourceFiles="app/**/*.ts" %}
+
+```typescript
+import { Component } from '@angular/core';
+import { EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService, MoreEventsClickArgs } from '@syncfusion/ej2-angular-schedule';
+import { scheduleData } from './datasource.ts';
+@Component({
+    selector: 'app-root',
+    providers: [DayService, WeekService, WorkWeekService, MonthService],
+    // specifies the template string for the Schedule component
+    template: `<ejs-schedule width='100%' height='550px' [selectedDate]='selectedDate' [views]='views' [currentView]='currentView' [eventSettings]='eventSettings' (moreEventsClick)='onMoreEventsClick($event)'></ejs-schedule>`
+})
+
+
+export class AppComponent {
+    public selectedDate: Date = new Date(2018, 1, 15);
+    public views: Array<string> = ['Day', 'Week', 'WorkWeek', 'Month'];
+    public currentView: string = 'Month';
+    public eventSettings: EventSettingsModel = {
+        dataSource: scheduleData
+    };
+    onMoreEventsClick(args: MoreEventsClickArgs): void {
+        args.cancel = true;
+    }
+}
+```
+
+{% endtab %}
+
+### How to navigate Day view when clicking on more text indicator
+
+The following code example shows you how to customize the `moreEventsClick` property to navigate to the Day view when clicking on the more text indicator.
+
+{% tab template="schedule/editor-window", iframeHeight="588px", sourceFiles="app/**/*.ts" %}
+
+```typescript
+import { Component } from '@angular/core';
+import { EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService, MoreEventsClickArgs } from '@syncfusion/ej2-angular-schedule';
+import { scheduleData } from './datasource.ts';
+@Component({
+    selector: 'app-root',
+    providers: [DayService, WeekService, WorkWeekService, MonthService],
+    // specifies the template string for the Schedule component
+    template: `<ejs-schedule width='100%' height='550px' [selectedDate]='selectedDate' [views]='views' [currentView]='currentView' [eventSettings]='eventSettings' (moreEventsClick)='onMoreEventsClick($event)'></ejs-schedule>`
+})
+
+
+export class AppComponent {
+    public selectedDate: Date = new Date(2018, 1, 15);
+    public views: Array<string> = ['Day', 'Week', 'WorkWeek', 'Month'];
+    public currentView: string = 'Month';
+    public eventSettings: EventSettingsModel = {
+        dataSource: scheduleData
+    };
+    onMoreEventsClick(args: MoreEventsClickArgs): void {
+        args.isPopupOpen = false;
+    }
+}
+
 ```
 
 {% endtab %}
