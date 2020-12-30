@@ -49,6 +49,7 @@
 * [Restrict to type decimal points in a NumericTextBox while editing the numeric column](grid/how-to/restrict-decimal-points-while-grid-editing.md)
 * [Use Edit Template in Foreign Key Column](grid/how-to/use-edit-template-in-foreign-key-column.md)
 * [Customizing filter menu operators list](grid/how-to/customizing-filter-menu-operators-list.md)
+* [Hide sorting options on Excel filter dialog](grid/how-to/hide-sorting-in-excel-filter.md)
 * [Customize filter UI in foreign key column](grid/how-to/customize-filter-in-foreign-key.md)
 * [Use filter bar template in foreign key column](grid/how-to/use-filter-bar-template-in-foreign-key-column.md)
 * [Perform aggregation in Foreign Key Column](grid/how-to/perform-aggregation-in-foreign-key-column.md)
