@@ -341,7 +341,7 @@ Quick commands are opened as context-menu on clicking the corresponding element.
 |----------------|---------|
 |image | 'Replace', 'Align', 'Caption', 'Remove', 'InsertLink', 'Display', 'AltText','Dimension'.|
 | link | 'Open', 'Edit', 'UnLink'.|
-| text | 'Cut', 'Copy', 'Paste'.|
+| text (`Deprecated`) | 'Cut', 'Copy', 'Paste'.|
 | table| 'tableHeader', 'tableRows', 'tableColumns', 'backgroundColor', '-', 'tableRemove', 'alignments', 'tableCellVerticalAlign', 'styles'.|
 
 Custom tool can be added to the corresponding quick toolbar, using [`quickToolbarSettings`](../api/rich-text-editor/#quickToolbarSettings) property.
