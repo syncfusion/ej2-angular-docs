@@ -28,5 +28,5 @@
 * [Open Editor Window Manually](schedule/how-to/open-event-editor-manually.md)
 * [Prevent the Date Navigation](schedule/how-to/prevent-date-navigation.md)
 * [Set Different Working Hours on Different Days](schedule/how-to/set-different-work-hours.md)
-* [Show tooltip with delay](schedule/how-to/show-tool-tip-with-delayed.md)
+* [Show tooltip with delay](schedule/how-to/show-tool-tip-with-delay.md)
 * [Styling and Appearance](schedule/how-to/scheduler-styling.md)

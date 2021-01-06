@@ -520,7 +520,7 @@ Learn how to drag an external item into the Angular Scheduler and the other adva
 
 `youtube:pU9mth6Gfyc`
 
-> By default, drag and drop action is applicable on all Scheduler views, except Agenda and Month-Agenda view.
+> By default, drag and drop action is applicable on all Scheduler views, except Agenda, Month-Agenda and Year view.
 
 {% tab template="schedule/default", sourceFiles="app/**/*.ts", iframeHeight="588px" %}
 
