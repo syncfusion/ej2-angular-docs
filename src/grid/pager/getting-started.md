@@ -9,140 +9,79 @@ description: "Learn how to add and customize the pager in the Essential JS 2."
 This section explains you the steps required to create a simple Pager
 and demonstrate the basic usage of the Pager component in Angular environment.
 
-## Dependencies
+## Setup Angular Environment
 
-Below is the list of minimum dependencies required to use the Pager.
+You can use [`Angular CLI`](https://github.com/angular/angular-cli) to setup your Angular applications.
+To install Angular CLI use the following command.
 
-```javascript
-|-- @syncfusion/ej2-angular-grids
-    |-- @syncfusion/ej2-grids
+```bash
+npm install -g @angular/cli
 ```
 
-## Setup for Local Development
+## Create an Angular Application
 
-* To setup basic `Angular` sample use following commands.
+Start a new Angular application using below Angular CLI command.
 
-```javascript
-git clone https://github.com/angular/quickstart.git quickstart
-cd quickstart
-npm install
+```bash
+ng new my-app
+cd my-app
 ```
 
-For more information, refer to [Angular sample setup](https://angular.io/guide/setup)
+## Adding Syncfusion Pager package
 
-* To install `Pager` packages use below command.
+All the available Essential JS 2 packages are published in [`npmjs.com`](https://www.npmjs.com/~syncfusionorg) registry.
 
-```javascript
+To install Pager component, use the following command.
+
+```bash
 npm install @syncfusion/ej2-angular-grids --save
 ```
 
-The above package installs `Pager dependencies` which are required to render the component in Angular environment.
+> The **--save** will instruct NPM to include the pager package inside of the **dependencies** section of the **package.json**.
 
-## Configuring System JS
+## Registering Pager Module
 
-`Syncfusion Pager packages` need to be mapped in system.config.js configuration file.
-
-* Syncfusion `ej2-angular-grids` packages needs to be mapped in `systemjs.config.js` configuration file.
-
-```javascript
-/**
- * System configuration for Angular samples
- * Adjust as necessary for your application needs.
- */
-(function (global) {
-  System.config({
-    paths: {
-      // paths serve as alias
-      'npm:': 'node_modules/'
-    },
-    // map tells the System loader where to look for things
-    map: {
-      // our app is within the app folder
-      'app': 'app',
-
-      // angular bundles
-      '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
-      '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
-      '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
-      '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
-      '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
-      '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
-      '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
-      '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
-
-      // syncfusion bundles
-      "@syncfusion/ej2-base": "node_modules/@syncfusion/ej2-base/dist/ej2-base.umd.min.js",
-      "@syncfusion/ej2-data": "node_modules/@syncfusion/ej2-data/dist/ej2-data.umd.min.js",
-      "@syncfusion/ej2-grids": "node_modules/@syncfusion/ej2-grids/dist/ej2-grids.umd.min.js",
-      "@syncfusion/ej2-angular-base": "node_modules/@syncfusion/ej2-angular-base/dist/ej2-angular-base.umd.min.js",
-      "@syncfusion/ej2-angular-grids": "node_modules/@syncfusion/ej2-angular-grids/dist/ej2-angular-grids.umd.min.js",
-
-      // other libraries
-      'rxjs':                      'npm:rxjs',
-      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
-    },
-    // packages tells the System loader how to load when no filename and/or no extension
-    packages: {
-      app: {
-        defaultExtension: 'js',
-        meta: {
-          './*.js': {
-            loader: 'systemjs-angular-loader.js'
-          }
-        }
-      },
-      rxjs: {
-        defaultExtension: 'js'
-      }
-    }
-  });
-})(this);
-```
-
-## Adding CSS reference
-
-Combined CSS files are available in the Essential JS 2 package root folder.
-This can be referenced in your [src/styles/styles.css] using following code.
-
-```css
-@import '../../node_modules/@syncfusion/ej2/material.css';
-```
-
-> To refer individual component CSS, please refer to
-[Individual Component theme files](../appearance/theme/#referring-individual-component-theme) section.
-
-## Adding Pager component
-
-Import Pager module into Angular application(app.module.ts) from the package @syncfusion/ej2-angular-grids [src/app/app.module.ts].
-
-Now place the below Pager code in the `app.ts`.
-Here the Pager is rendered with `totalRecordsCount` which is used to render numeric container.
+Import Pager module into Angular application(app.module.ts) from the package **@syncfusion/ej2-angular-grids** [src/app/app.module.ts].
 
 ```typescript
-import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-// import the PagerModule for the Pager component
-import { PagerModule } from '@syncfusion/ej2-angular-grids';
-import { AppComponent }  from './app.component';
+import { NgModule } from '@angular/core';
+import { PagerModule} from '@syncfusion/ej2-angular-grids';
+import { AppComponent } from './app.component';
 
 @NgModule({
-  //declaration of ej2-angular-grids module into NgModule
-  imports:      [ BrowserModule, PagerModule ],
-  declarations: [ AppComponent ],
-  bootstrap:    [ AppComponent ]
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    PagerModule
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
 ```
 
-Modify the template in [src/app/app.component.ts] file to render the `ej2-angular-grids` component.
+## Adding CSS reference
+
+The CSS files are available in ../node_modules/@syncfusion package folder. This can be referenced in [src/styles.css] using following code..
+
+```css
+@import '../node_modules/@syncfusion/ej2-angular-grids/styles/material.css';
+@import '../node_modules/@syncfusion/ej2-base/styles/material.css';
+```
+
+## Adding Pager component
+
+Modify the template in [src/app/app.component.ts] file to render the pager component. Add the Angular pager by using `<ejs-pager>` selector in template section of the app.component.ts file.
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'my-app',
+  selector: 'app-root',
   // specifies the template string for the Pager component
-  template: `<ejs-pager' [totalRecordsCount]='20'>
+  template: `<ejs-pager [totalRecordsCount]='20'>
                </ejs-pager>`
 })
 export class AppComponent implements OnInit {
@@ -162,7 +101,7 @@ export class AppComponent implements OnInit {
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-container',
+    selector: 'app-root',
     template: `<ejs-pager [pageSize]= '1' [totalRecordsCount]='20'>
                 </ejs-pager>`
 })
@@ -188,7 +127,7 @@ and [`pageSize`](#page-size) values.
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-container',
+    selector: 'app-root',
     template: `<ejs-pager [pageSize]='1' [pageCount]='3' [totalRecordsCount]='20'>
                 </ejs-pager>`
 })
@@ -207,7 +146,7 @@ export class AppComponent implements OnInit{
 The quickstart project is configured to compile and run the application in browser. Use the following command to run the application.
 
 ```javascript
-npm start
+ng serve --open
 ```
 
 Output will be appears as follows.
@@ -218,7 +157,7 @@ Output will be appears as follows.
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-container',
+    selector: 'app-root',
     template: `<ejs-pager [pageSize]='8' [pageCount]='3' [totalRecordsCount]='20'>
                 </ejs-pager>`
 })
