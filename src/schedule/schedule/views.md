@@ -511,7 +511,7 @@ import { scheduleData } from './datasource';
   // specifies the template string for the Schedule component
   template: `<ejs-schedule width='100%' height='550px' [selectedDate]="selectedDate" [eventSettings]="eventSettings" >
       <e-views>
-        <e-view option='TimelineYear' displayName: 'Horizontal Timeline Year', isSelected: true><e-view>
+        <e-view option='TimelineYear' displayName='Horizontal Timeline Year' isSelected=true></e-view>
       </e-views>
     </ejs-schedule>`
 })
@@ -531,8 +531,8 @@ The following code example depicts how to group the multiple resources on Timeli
 
 ```typescript
 import { Component } from '@angular/core';
-import { EventSettingsModel, TimelineYearService } from '@syncfusion/ej2-angular-schedule';
-import { scheduleData } from './datasource';
+import { EventSettingsModel, TimelineYearService, GroupModel } from '@syncfusion/ej2-angular-schedule';
+import { resourceData } from './datasource';
 
 @Component({
   selector: 'app-root',
@@ -542,8 +542,8 @@ import { scheduleData } from './datasource';
     <ejs-schedule width="100%" height="550px" [selectedDate]="selectedDate" [views]="views"
       [eventSettings]="eventSettings">
       <e-views>
-        <e-view option='TimelineYear' displayName: 'Horizontal Timeline Year', isSelected: true><e-view>
-          <e-view option='TimelineYear' displayName: 'Vertical Timeline Year', orientation: 'Vertical'><e-view>
+        <e-view option='TimelineYear' displayName='Horizontal Timeline Year' isSelected=true></e-view>
+        <e-view option='TimelineYear' displayName='Vertical Timeline Year' orientation='Vertical' [group]="groupSettings"></e-view>
       </e-views>
       <e-resources>
         <e-resource field="OwnerId" title="Owner" name="Owners"
@@ -559,6 +559,7 @@ export class AppComponent {
     public eventSettings: EventSettingsModel = {
         dataSource: resourceData
     };
+    public groupSettings: GroupModel = { resources: ['Owners'] };
     public allowMultipleOwner: Boolean = true;
     public ownerDataSource: Object[] = [
         { OwnerText: 'Nancy', Id: 1, OwnerColor: '#ffaa00' },
@@ -584,10 +585,10 @@ import { scheduleData } from './datasource';
 @Component({
   selector: 'app-root',
   providers: [TimelineYearService],
-  template: `<ejs-schedule width='100%' height='550px' [selectedDate]='selectedDate' [eventSettings]='eventSettings'>
+  template: `<ejs-schedule width='100%' height='550px' [selectedDate]='selectedDate' [rowAutoHeight]='rowAutoHeight' [eventSettings]='eventSettings'>
   <e-views>
-        <e-view option='TimelineYear' displayName: 'Horizontal Timeline Year', isSelected: true><e-view>
-        <e-view option='TimelineYear' displayName: 'Vertical Timeline Year', orientation: 'Vertical'><e-view>
+        <e-view option='TimelineYear' displayName='Horizontal Timeline Year' isSelected=true></e-view>
+        <e-view option='TimelineYear' displayName='Vertical Timeline Year' orientation='Vertical'></e-view>
   </e-views>
   </ejs-schedule>`
 })

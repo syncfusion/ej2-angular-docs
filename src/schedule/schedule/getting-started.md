@@ -258,7 +258,7 @@ This can be achieved by defining views property to accept the array of object ty
 
 The output will display the Scheduler with the specified view configuration.
 
-{% tab template="schedule/views", iframeHeight="588px" %}
+{% tab template="schedule/views", sourceFiles="app/**/*.ts", iframeHeight="588px" %}
 
 ```typescript
 import { Component } from '@angular/core';
