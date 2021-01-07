@@ -10,7 +10,7 @@ You can render other components inside Toolbar using Angular **ng-template**. Th
 all their functionalities to our Toolbar. We need to use `ng-template` inside the each `e-item` tag with `#template` attribute, which is
 mandatory to render that template.
 
-{% tab template="toolbar/direct-components", sourceFiles="app/**/*.ts,index.css"%}
+{% tab template="toolbar/direct-components", sourceFiles="app/**/*.ts,index.html,index.css"%}
 
 ```typescript
 
