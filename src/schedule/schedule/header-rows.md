@@ -170,7 +170,7 @@ You can customize the text of the header rows and display any images or formatte
 ```typescript
 import { Component } from '@angular/core';
 import { Internationalization } from '@syncfusion/ej2-base';
-import { EventSettingsModel, TimelineMonthService, getWeekNumber } from '@syncfusion/ej2-angular-schedule';
+import { EventSettingsModel, TimelineMonthService, getWeekNumber, getWeekLastDate, CellTemplateArgs } from '@syncfusion/ej2-angular-schedule';
 import { scheduleData } from './datasource';
 
 @Component({
@@ -212,7 +212,7 @@ export class AppComponent {
         return 'Month: ' + this.instance.formatDate((value as CellTemplateArgs).date, { skeleton: 'yMMM' });
     }
     public getWeekDetails(value: CellTemplateArgs): string {
-        return 'Week: ' + getWeekNumber((value as CellTemplateArgs).date);
+        return 'Week: ' + getWeekNumber(getWeekLastDate((value as CellTemplateArgs).date, 0));
     }
 }
 ```
