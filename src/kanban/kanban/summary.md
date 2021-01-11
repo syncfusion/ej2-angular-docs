@@ -16,3 +16,4 @@
 * [Dynamically Change columns](kanban/how-to/dynamically-change-columns.md)
 * [Filtering Cards](kanban/how-to/filter-cards.md)
 * [Searching Cards](kanban/how-to/search-cards.md)
+* [Migration from Essential JS 1](kanban/ej1-api-migration.md)
