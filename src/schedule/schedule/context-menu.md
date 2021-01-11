@@ -133,7 +133,7 @@ export class AppComponent {
             case 'Add':
             case 'AddRecurrence':
                 const selectedCells: Element[] = this.scheduleObj.getSelectedElements();
-                const activeCellsData: CellClickEventArgs = this.scheduleObj.getCellDetails(selectedCells.length > 0 ? selectedCells : selectedTarget);
+                const activeCellsData: CellClickEventArgs = this.scheduleObj.getCellDetails(selectedCells.length > 0 ? selectedCells : this.selectedTarget);
                 if (selectedMenuItem === 'Add') {
                     this.scheduleObj.openEditor(activeCellsData, 'Add');
                 } else {
