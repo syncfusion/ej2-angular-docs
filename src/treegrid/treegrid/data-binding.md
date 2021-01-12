@@ -105,6 +105,26 @@ export class AppComponent implements OnInit {
 
 {% endtab %}
 
+> Herewith we have provided list of reserved properties and the purpose used in TreeGrid. We recommend to avoid these reserved properties for Internal purpose(To get rid of conflicts).
+
+Reserved keywords | Purpose
+-----|-----
+childRecords | Specifies the childRecords of a parentData
+hasChildRecords | Specifies whether the record contains child records
+hasFilteredChildRecords | Specifies whether the record contains filtered child records
+expanded | Specifies whether the child records are expanded
+parentItem | Specifies the parentItem of childRecords
+index | Specifies the index of current record
+level | Specifies the hierarchy level of record
+filterLevel | Specifies the hierarchy level of filtered record
+parentIdMapping | Specifies the parentID
+uniqueID | Specifies the unique ID of a record
+parentUniqueID | Specifies the parent Unique ID of a record
+checkboxState | Specifies the checkbox state of a record
+isSummaryRow | Specifies the summary of a record
+taskData | Specifies the main data
+primaryParent | Specifies the Primary data
+
 ## Remote data
 
 To bind remote data to TreeGrid component, assign service data as an instance of `DataManager` to the [`dataSource`](../api/treegrid/#datasource) property. To interact with remote data source,  provide the endpoint `url` and define the [`hasChildMapping`](../api/treegrid/#haschildmapping) property of treegrid.
