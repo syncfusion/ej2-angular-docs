@@ -174,21 +174,21 @@ import { EventSettingsModel, DayService, WeekService, WorkWeekService, MonthServ
 })
 export class AppComponent {
   public data: object [] = [{
-    Id: 2,
-    EventName: 'Meeting',
-    StartTime: new Date(2018, 1, 15, 10, 0),
-    EndTime: new Date(2018, 1, 15, 12, 30),
-    IsAllDay: false
+    id: 2,
+    eventName: 'Meeting',
+    startTime: new Date(2018, 1, 15, 10, 0),
+    endTime: new Date(2018, 1, 15, 12, 30),
+    isAllDay: false
   }];
   public selectedDate: Date = new Date(2018, 1, 15);
   public eventSettings: EventSettingsModel = {
     dataSource: this.data,
     fields: {
-      id: 'Id',
-      subject: { name: 'EventName' },
-      isAllDay: { name: 'IsAllDay' },
-      startTime: { name: 'StartTime' },
-      endTime: { name: 'EndTime' },
+      id: 'id',
+      subject: { name: 'eventName' },
+      isAllDay: { name: 'isAllDay' },
+      startTime: { name: 'startTime' },
+      endTime: { name: 'endTime' },
     }
   };
 }

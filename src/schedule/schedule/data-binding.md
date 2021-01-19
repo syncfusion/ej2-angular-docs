@@ -146,22 +146,28 @@ You can bind the event data through external ajax request and assign it to the `
 `[src/app/app.ts]`
 
 ```typescript
-import { Component, ViewChild } from '@angular/core';
-import { ScheduleComponent, EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService, AgendaService } from '@syncfusion/ej2-angular-schedule';
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { Ajax } from "@syncfusion/ej2-base";
+import { DataManager, UrlAdaptor, Query } from "@syncfusion/ej2-data";
+import { EventSettingsModel, View, EventRenderedArgs, DayService, WeekService, WorkWeekService, MonthService AgendaService, ResizeService, DragAndDropService, ScheduleComponent } from "@syncfusion/ej2-angular-schedule";
 
 @Component({
-  selector: 'app-root',
-  providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService],
-  // specifies the template string for the Schedule component
-  template: `<ejs-schedule width='100%' height='550px' [selectedDate]="selectedDate" [eventSettings]="eventSettings" (created)='onCreate()'></ejs-schedule>`
+  selector: "app-root",
+  templateUrl: "app.component.html",
+  providers: [ DayService, WeekService, WorkWeekService, MonthService, AgendaService, ResizeService,
+DragAndDropService ]
 })
-export class AppComponent {
-    @ViewChild('scheduleObj', { static: true })
-    public scheduleObj: ScheduleComponent;
-    public selectedDate: Date = new Date(2017, 5, 11);
-    onCreate() {
-    const scheduleObj = this.scheduleObj;  // Schedule instance
-    const ajax = new Ajax('Home/GetData', 'GET', false);
+export class AppComponent implements OnInit {
+  @ViewChild("scheduleObj") public scheduleObj: ScheduleComponent;
+  ngOnInit(): void {}
+
+  public currentDate: Date = new Date(2017, 5, 5);
+  onCreate() {
+    const scheduleObj = this.scheduleObj; // Schedule instance
+    const ajax = new Ajax(
+      "https://ej2services.syncfusion.com/production/web-services/api/Schedule",
+      "GET"
+    );
     ajax.send();
     ajax.onSuccess = (data: string) => {
       scheduleObj.eventSettings.dataSource = JSON.parse(data);
