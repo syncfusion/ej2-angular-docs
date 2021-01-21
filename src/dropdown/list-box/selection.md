@@ -123,7 +123,7 @@ public data: { [key: string]: Object }[] = [
     { text: 'Ferrari LaFerrari' }
 ];
 public selection = {
-    showCheckBox: true,
+    showCheckbox: true,
     showSelectAll: true
  }
 }
