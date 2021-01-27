@@ -21,6 +21,7 @@ End user can perform calculations over a group of values (exclusively for value 
 | Min| Displays the pivot table with minimum value.|
 | Max| Displays the pivot table with maximum value.|
 | Avg| Displays the pivot table values with average.|
+| Median| Displays the pivot table values with median.|
 | Index| Displays the pivot table values with index.|
 | PopulationStDev| Displays the pivot table values with standard deviation of population.|
 | SampleStDev| Displays the pivot table values with sample standard deviation.|
