@@ -905,6 +905,8 @@ export class AppComponent implements OnInit {
 
 ```
 
+> **Note:** Refer to the GitHub sample for quick implementation and testing from [here](https://github.com/SyncfusionExamples/Angular-EJ2-Grid-server-side-exporting).
+
 ## See Also
 
 * [Exporting Grid in Cordova application](./how-to/exporting-grid-in-cordova-application)
