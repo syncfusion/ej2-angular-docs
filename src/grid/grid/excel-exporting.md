@@ -812,6 +812,99 @@ export class AppComponent implements OnInit {
   and if it exceeds more than seven levels then the document will be exported without outline option.
   Please refer the [Microsoft Limitation](https://docs.microsoft.com/en-us/sql/reporting-services/report-builder/exporting-to-microsoft-excel-report-builder-and-ssrs?view=sql-server-2017#ExcelLimitations)
 
+## Exporting Grid in server
+
+The Grid have an option to export the data to Excel in server side using Grid server export library.
+
+### Server Dependencies
+
+The Server side export functionality is shipped in the Syncfusion.EJ2.GridExport package, which is available in Essential Studio and [nuget.org](https://www.nuget.org/).The following list of dependencies is required for Grid server side Excel exporting action.
+
+* Syncfusion.EJ2
+* Syncfusion.EJ2.GridExport
+
+### Server Configuration
+
+The following code snippet shows server configuration using ASP.NET Core Controller Action.
+
+To Export the Grid in server side, You need to call the
+ [`serverExcelExport`](../api/grid/#serverexcelexport) method for passing the Grid properties to server exporting action.
+
+```typescript
+
+        public ActionResult ExcelExport([FromForm] string gridModel)
+        {
+            GridExcelExport exp = new GridExcelExport();
+            Grid gridProperty = ConvertGridObject(gridModel);
+            return exp.ExcelExport<OrdersDetails>(gridProperty, orddata);
+        }
+
+        private Grid ConvertGridObject(string gridProperty)
+        {
+           Grid GridModel = (Grid)Newtonsoft.Json.JsonConvert.DeserializeObject(gridProperty, typeof(Grid));
+           GridColumnModel cols = (GridColumnModel)Newtonsoft.Json.JsonConvert.DeserializeObject(gridProperty, typeof(GridColumnModel));
+           GridModel.Columns = cols.columns;
+           return GridModel;
+        }
+
+        public class GridColumnModel
+        {
+            public List<GridColumn> columns { get; set; }
+        }
+        public IActionResult UrlDatasource([FromBody]DataManagerRequest dm)
+        {
+            IEnumerable DataSource = OrdersDetails.GetAllRecords();
+            DataOperations operation = new DataOperations();
+            int count = DataSource.Cast<OrdersDetails>().Count();
+            return dm.RequiresCounts ? Json(new { result = DataSource, count = count }) : Json(DataSource);
+        }
+
+
+```
+
+```typescript
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ToolbarItems, GridComponent } from '@syncfusion/ej2-angular-grids';
+import { DataManager, UrlAdaptor } from '@syncfusion/ej2-data';
+import { ClickEventArgs } from '@syncfusion/ej2-navigations';
+
+@Component({
+    selector: 'app-root',
+    template: `<ejs-grid #grid id='Grid' [dataSource]='data' [toolbar]='toolbar' height='273px'(toolbarClick)='toolbarClick($event)'>
+                <e-columns>
+                    <e-column field='OrderID' headerText='Order ID' textAlign='Right' width=120></e-column>
+                    <e-column field='CustomerID' headerText='Customer ID' width=150></e-column>
+                    <e-column field='ShipCity' headerText='Ship City' width=150></e-column>
+                    <e-column field='ShipName' headerText='Ship Name' width=150></e-column>
+                </e-columns>
+                </ejs-grid>`
+})
+export class AppComponent implements OnInit {
+
+    public data: DataManager;
+    public toolbar: ToolbarItems[];
+
+    public dataManager: DataManager = new DataManager({
+        url: 'Home/UrlDatasource',
+        adaptor: new UrlAdaptor()
+    });
+
+    @ViewChild('grid')
+    public grid: GridComponent;
+
+    ngOnInit(): void {
+        this.data = this.dataManager;
+        this.toolbar = ['ExcelExport'];
+    }
+    toolbarClick(args: ClickEventArgs): void {
+        if (args.item.id === 'Grid_excelexport') { // 'Grid_excelexport' -> Grid component id + _ + toolbar item name
+            this.grid.serverExcelExport('Home/ExcelExport');
+        }
+    }
+}
+
+```
+
 ## See Also
 
 * [Exporting Grid in Cordova application](./how-to/exporting-grid-in-cordova-application)
