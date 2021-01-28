@@ -200,7 +200,7 @@ export class AppComponent {
 
 {% endtab %}
 
-### How to prevent the default focus of the editor window
+### How to prevent the default focus of the editor widow
 
 When we open the editor window, by default it will be focus to the `Subject` field. And we can able to prevent the default focusing of the editor window using the `popupOpen` event as shown in the following code example.
 

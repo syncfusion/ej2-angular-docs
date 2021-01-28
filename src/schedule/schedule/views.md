@@ -337,6 +337,8 @@ export class AppComponent {
 
 {% endtab %}
 
+> Schedule Height is mandatory to set in pixels for Agenda view.
+
 ### Month Agenda view
 
 A Month-Agenda view shows a month calendar, where clicking on a particular day will display the appointments present on that date below the calendar. The day with appointments are differentiated with a circular dot below the date of the calendar.
@@ -369,6 +371,8 @@ export class AppComponent {
 ```
 
 {% endtab %}
+
+> Schedule Height is mandatory to set in pixels for Month Agenda view.
 
 ### Timeline views – Day, Week, Work Week
 
