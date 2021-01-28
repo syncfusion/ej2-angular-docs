@@ -22,6 +22,6 @@ By default, Syncfusion Angular components supports Tree Shaking and it dose not 
 
 The following steps explains how to run Tree Shaking in an Angular Application.
 
-1. Create an Angular application with Syncfusion EJ2 Angular components as in the [Getting Started](https://ej2.syncfusion.com/angular/documentation/getting-started/angular-cli/) documantation uisng [Angular CLI](https://cli.angular.io/).
+1. Create an Angular application with Syncfusion EJ2 Angular components as in the [Getting Started](https://ej2.syncfusion.com/angular/documentation/getting-started/angular-cli/) documentation using [Angular CLI](https://cli.angular.io/).
 
 2. Run the `ng build --prod` or `ng serve --prod` command to build or serve the application with Tree Shaking enabled.  
