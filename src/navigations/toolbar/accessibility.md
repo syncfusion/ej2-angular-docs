@@ -47,16 +47,16 @@ import { ToolbarComponent } from '@syncfusion/ej2-angular-navigations';
     template: `
         <ejs-toolbar>
           <e-items>
-             <e-item text='Cut' prefixIcon = 'e-cut-icon' showTextOn ='Overflow'></e-item>
-             <e-item text='Copy' prefixIcon = 'e-copy-icon' showTextOn ='Overflow'></e-item>
-             <e-item text='Paste' prefixIcon = 'e-paste-icon' showTextOn ='Overflow'></e-item>
+             <e-item text='Cut' prefixIcon = 'e-cut-icon tb-icons' showTextOn ='Overflow'></e-item>
+             <e-item text='Copy' prefixIcon = 'e-copy-icon tb-icons' showTextOn ='Overflow'></e-item>
+             <e-item text='Paste' prefixIcon = 'e-paste-icon tb-icons' showTextOn ='Overflow'></e-item>
              <e-item type='Separator'></e-item>
-             <e-item text='Undo' prefixIcon = 'e-bold-icon' showTextOn ='Overflow'></e-item>
-             <e-item text='Redo' prefixIcon = 'e-underline-icon' showTextOn ='Overflow'></e-item>
-             <e-item text='Redo' prefixIcon = 'e-italic-icon' showTextOn ='Overflow'></e-item>
+             <e-item text='bold' prefixIcon = 'e-bold-icon tb-icons' showTextOn ='Overflow'></e-item>
+             <e-item text='underline' prefixIcon = 'e-underline-icon tb-icons' showTextOn ='Overflow'></e-item>
+             <e-item text='italic' prefixIcon = 'e-italic-icon tb-icons' showTextOn ='Overflow'></e-item>
              <e-item type='Separator'></e-item>
-             <e-item text='A-Z Sort' prefixIcon = 'e-ascending-icon' showTextOn ='Overflow'></e-item>
-             <e-item text='Z-A Sort' prefixIcon = 'e-descending-icon' showTextOn ='Overflow'></e-item>
+             <e-item text='A-Z Sort' prefixIcon = 'e-ascending-icon tb-icons' showTextOn ='Overflow'></e-item>
+             <e-item text='Z-A Sort' prefixIcon = 'e-descending-icon tb-icons' showTextOn ='Overflow'></e-item>
           </e-items>
         </ejs-toolbar>
         `

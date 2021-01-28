@@ -45,17 +45,17 @@ import { ToolbarComponent } from '@syncfusion/ej2-angular-navigations';
     template: `
         <ejs-toolbar width="300px">
           <e-items>
-             <e-item text='Cut' prefixIcon = 'e-cut-icon'></e-item>
-             <e-item text='Copy' prefixIcon = 'e-copy-icon'></e-item>
-             <e-item text='Paste' prefixIcon = 'e-paste-icon'></e-item>
+             <e-item text='Cut' prefixIcon = 'e-cut-icon tb-icons'></e-item>
+             <e-item text='Copy' prefixIcon = 'e-copy-icon tb-icons'></e-item>
+             <e-item text='Paste' prefixIcon = 'e-paste-icon tb-icons'></e-item>
              <e-item type='Separator'></e-item>
-             <e-item text='Undo' prefixIcon = 'e-bold-icon'></e-item>
-             <e-item text='Redo' prefixIcon = 'e-underline-icon'></e-item>
-             <e-item text='Redo' prefixIcon = 'e-italic-icon'></e-item>
+             <e-item text='bold' prefixIcon = 'e-bold-icon tb-icons'></e-item>
+             <e-item text='underline' prefixIcon = 'e-underline-icon tb-icons'></e-item>
+             <e-item text='italic' prefixIcon = 'e-italic-icon tb-icons'></e-item>
              <e-item type='Separator'></e-item>
-             <e-item text='A-Z Sort' prefixIcon = 'e-ascending-icon'></e-item>
-             <e-item text='Z-A Sort' prefixIcon = 'e-descending-icon'></e-item>
-             <e-item text='Clear' prefixIcon = 'e-clear-icon'></e-item>
+             <e-item text='A-Z Sort' prefixIcon = 'e-ascending-icon tb-icons'></e-item>
+             <e-item text='Z-A Sort' prefixIcon = 'e-descending-icon tb-icons'></e-item>
+             <e-item text='Clear' prefixIcon = 'e-clear-icon tb-icons'></e-item>
           </e-items>
         </ejs-toolbar>
         `
@@ -108,16 +108,16 @@ import { ToolbarComponent } from '@syncfusion/ej2-angular-navigations';
     template: `
         <ejs-toolbar overflowMode = 'Popup' width= 380>
           <e-items>
-             <e-item text='Cut' prefixIcon = 'e-cut-icon' overflow ='Show'></e-item>
-             <e-item text='Copy' prefixIcon = 'e-copy-icon' overflow ='Show'></e-item>
+             <e-item text='Cut' prefixIcon = 'e-cut-icon tb-icons' overflow ='Show'></e-item>
+             <e-item text='Copy' prefixIcon = 'e-copy-icon tb-icons' overflow ='Show'></e-item>
              <e-item text='Paste' prefixIcon = 'e-paste-icon' overflow ='Show'></e-item>
              <e-item type='Separator'></e-item>
-             <e-item text='Undo' prefixIcon = 'e-bold-icon' ></e-item>
-             <e-item text='Redo' prefixIcon = 'e-italic-icon' ></e-item>
-             <e-item text='Redo' prefixIcon = 'e-underline-icon' ></e-item>
+             <e-item text='Bold' prefixIcon = 'e-bold-icon tb-icons' ></e-item>
+             <e-item text='Italic' prefixIcon = 'e-italic-icon tb-icons' ></e-item>
+             <e-item text='underline' prefixIcon = 'e-underline-icon tb-icons' ></e-item>
              <e-item type='Separator'></e-item>
-             <e-item text='A-Z Sort' prefixIcon = 'e-ascending-icon' overflow ='Show'></e-item>
-             <e-item text='Z-A Sort' prefixIcon = 'e-descending-icon' overflow ='Show'></e-item>
+             <e-item text='A-Z Sort' prefixIcon = 'e-ascending-icon tb-icons' overflow ='Show'></e-item>
+             <e-item text='Z-A Sort' prefixIcon = 'e-descending-icon tb-icons' overflow ='Show'></e-item>
           </e-items>
         </ejs-toolbar>
         `
@@ -159,18 +159,18 @@ import { ToolbarComponent } from '@syncfusion/ej2-angular-navigations';
     template: `
         <ejs-toolbar overflowMode = 'Popup' width= 330>
           <e-items>
-             <e-item text='Cut' prefixIcon = 'e-cut-icon' overflow ='Show' showTextOn = 'overflow'></e-item>
-             <e-item text='Copy' prefixIcon = 'e-copy-icon' overflow ='Show' showTextOn = 'overflow'></e-item>
-             <e-item text='Paste' prefixIcon = 'e-paste-icon' overflow ='Show' showTextOn = 'overflow'></e-item>
+             <e-item text='Cut' prefixIcon = 'e-cut-icon tb-icons' overflow ='Show' showTextOn = 'overflow'></e-item>
+             <e-item text='Copy' prefixIcon = 'e-copy-icon tb-icons' overflow ='Show' showTextOn = 'overflow'></e-item>
+             <e-item text='Paste' prefixIcon = 'e-paste-icon tb-icons' overflow ='Show' showTextOn = 'overflow'></e-item>
              <e-item type='Separator'></e-item>
-             <e-item text='Undo' prefixIcon = 'e-bold-icon' overflow ='Show' showTextOn = 'overflow' ></e-item>
-             <e-item text='Redo' prefixIcon = 'e-underline-icon' overflow ='Show' showTextOn = 'overflow' ></e-item>
-             <e-item text='Redo' prefixIcon = 'e-italic-icon' overflow ='Show' showTextOn = 'overflow' ></e-item>
-             <e-item text='Color-Picker' prefixIcon = 'e-color-icon' overflow ='Hide' showTextOn = 'overflow' ></e-item>
+             <e-item text='bold' prefixIcon = 'e-bold-icon tb-icons' overflow ='Show' showTextOn = 'overflow' ></e-item>
+             <e-item text='underline' prefixIcon = 'e-underline-icon tb-icons' overflow ='Show' showTextOn = 'overflow' ></e-item>
+             <e-item text='italic' prefixIcon = 'e-italic-icon tb-icons' overflow ='Show' showTextOn = 'overflow' ></e-item>
+             <e-item text='Color-Picker' prefixIcon = 'e-color-icon tb-icons' overflow ='Hide' showTextOn = 'overflow' ></e-item>
              <e-item type='Separator'></e-item>
-             <e-item text='A-Z Sort' prefixIcon = 'e-ascending-icon' overflow ='Show' showTextOn = 'overflow'></e-item>
-             <e-item text='Z-A Sort' prefixIcon = 'e-descending-icon' overflow ='Show' showTextOn = 'overflow'></e-item>
-             <e-item text='Clear' prefixIcon = 'e-descending-icon' overflow ='Show' showTextOn = 'overflow'></e-item>
+             <e-item text='A-Z Sort' prefixIcon = 'e-ascending-icon tb-icons' overflow ='Show' showTextOn = 'overflow'></e-item>
+             <e-item text='Z-A Sort' prefixIcon = 'e-descending-icon tb-icons' overflow ='Show' showTextOn = 'overflow'></e-item>
+             <e-item text='Clear' prefixIcon = 'e-clear-icon tb-icons' overflow ='Show' showTextOn = 'overflow'></e-item>
           </e-items>
         </ejs-toolbar>
         `
