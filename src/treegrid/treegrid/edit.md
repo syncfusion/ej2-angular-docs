@@ -1158,6 +1158,11 @@ The following code example describes the above behavior.
 public ActionResult DataSource(DataManager dm)
 {
     var DataSource = TreeData.GetTree();
+    DataOperations operation = new DataOperations();
+    if (dm.Where != null && dm.Where.Count > 0)
+    {
+        DataSource = operation.PerformFiltering(DataSource, dm.Where, "and");   //perform filtering  and maintain child records on Expand/Collapse operation
+    }
     var count = DataSource.ToList<TreeData>().Count();
     if (dm.Skip != 0)
     {
