@@ -30,3 +30,4 @@
 * [Set Different Working Hours on Different Days](schedule/how-to/set-different-work-hours.md)
 * [Show tooltip with delay](schedule/how-to/show-tool-tip-with-delay.md)
 * [Styling and Appearance](schedule/how-to/scheduler-styling.md)
+* [Show quick info template](schedule/how-to/quick-info-template.md)
