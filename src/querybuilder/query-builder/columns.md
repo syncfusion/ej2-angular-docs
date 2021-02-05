@@ -287,9 +287,70 @@ export class AppComponent implements OnInit {
 
 {% endtab %}
 
+### Using Template
+
+The value template for a particular column can be specified using the content of the NgTemplate. The `#template` template variable identifies the NgTemplate content as the corresponding column.
+
+{% tab template="query-builder/template", sourceFiles="app/app.component.ts,app/template-driven.html,app/app.module.ts,app/main.ts", isDefaultActive=true %}
+
+```typescript
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { QueryBuilderComponent } from '@syncfusion/ej2-angular-querybuilder';
+import { RuleModel } from '@syncfusion/ej2-querybuilder';
+@Component({
+    selector: 'app-root',
+    templateUrl: `app/template-driven.html`
+})
+
+export class AppComponent implements OnInit {
+@ViewChild('querybuilder') qryBldrObj: QueryBuilderComponent;
+  public paymentDataSource: string[] = ['Cash', 'Debit Card', 'Credit Card', 'Net Banking'];
+  public importRules: RuleModel;
+  public customOperators: any;
+  ngOnInit(): void {
+    this.importRules = {
+      'condition': 'and',
+      'rules': [{
+        'label': 'Transaction Type',
+        'field': 'TransactionType',
+        'type': 'string',
+        'operator': 'equal',
+        'value': 'Expense'
+      },
+      {
+        'label': 'Payment Mode',
+        'field': 'PaymentMode',
+        'type': 'string',
+        'operator': 'equal',
+        'value': 'Cash'
+      }]
+    };
+    this.customOperators = [
+      {value: 'equal', key: 'Equal'},
+      {value: 'notequal', key: 'Not Equal'}
+    ];
+  }
+  
+  transactionChange(e: any, ruleID: string): void {
+    let elem: HTMLElement = document.getElementById(ruleID).querySelector('.e-rule-value');
+    this.qryBldrObj.notifyChange(e.checked === true ? 'Expense' : 'Income', elem, 'value');
+  }
+
+  paymentChange(e: any, ruleID: string): void {
+    let elem: HTMLElement = document.getElementById(ruleID).querySelector('.e-rule-value');
+    this.qryBldrObj.notifyChange(e.value as string, elem, 'value');
+  }
+}
+
+```
+
+{% endtab %}
+
 ## Rule Template
 
 Rule Template allows to define your own user interface for columns. To implement [`ruleTemplate`](https://ej2.syncfusion.com/angular/documentation/api/query-builder/columnsModel/#ruleTemplate) you can create the user interface using `ngTemplate` and assign the values through `actionBegin` event.
+
+The `#ruleTemplate` template variable identifies the NgTemplate content as the corresponding column.
 
 In the following sample, dropdown and slider are used as the custom component and applied `greaterthanorequal` operator to `Age` column.
 
@@ -299,7 +360,7 @@ In the following sample, dropdown and slider are used as the custom component an
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { QueryBuilderComponent } from '@syncfusion/ej2-angular-querybuilder';
 import { ActionEventArgs, RuleModel } from '@syncfusion/ej2-querybuilder';
-import { setValue, compile } from '@syncfusion/ej2-base';
+import { compile } from '@syncfusion/ej2-base';
 import { DataManager, Predicate, Query } from '@syncfusion/ej2-data';
 import { employeeData } from './datasource';
 
@@ -310,7 +371,6 @@ import { employeeData } from './datasource';
 
 export class AppComponent implements OnInit {
 @ViewChild('querybuilder') qryBldrObj: QueryBuilderComponent;
-  public actionArgs: ActionEventArgs;
   public importRules: RuleModel;
   public rangeticks: Object;
 
@@ -318,25 +378,19 @@ export class AppComponent implements OnInit {
     this.importRules = {
       'condition': 'and',
       'rules': [{
-              'label': 'Employee ID',
-              'field': 'EmployeeID',
-              'type': 'number',
-              'operator': 'equal',
-              'value': 1
+        'label': 'Age',
+        'field': 'Age',
+        'type': 'number',
+        'operator': 'greaterthanorequal',
+        'value': 32
       }]
     };
-    this.rangeticks = {
-      placement: 'Before',
-      largeStep: 5,
-      smallStep: 1,
-      showSmallTicks: true
-    };
+    this.rangeticks = { placement: 'Before', largeStep: 5, smallStep: 1, showSmallTicks: true };
   }
 
   actionBegin(args: ActionEventArgs): void {
-    this.actionArgs = args;
-    args.rule.operator = 'greaterthanorequal';
     if (args.requestType === 'template-initialize') {
+      args.rule.operator = 'greaterthanorequal';
       if (args.rule.value === '') {
         args.rule.value = 30;
       }
@@ -353,14 +407,11 @@ export class AppComponent implements OnInit {
     this.refreshTable(this.qryBldrObj.getRule(elem), ruleID);
   }
 
-  sliderCreated(ruleID: string) {
-    let elem: HTMLElement = document.getElementById(ruleID);
-    this.refreshTable(this.qryBldrObj.getRule(elem), ruleID);
-  }
-
-  myFunction(ruleID: string): void {
+  viewDetails(ruleID: string): void {
+    let ruleElem: HTMLElement = document.getElementById(ruleID);
     let element: HTMLElement = document.getElementById(ruleID + '_section');
     if (element.className.indexOf('e-hide') > -1) {
+      this.refreshTable(this.qryBldrObj.getRule(ruleElem), ruleID);
       element.className = element.className.replace('e-hide', '');
       document.getElementById(ruleID + '_option').querySelector('.e-content').textContent = 'Hide Details';
     } else {
@@ -372,19 +423,22 @@ export class AppComponent implements OnInit {
   refreshTable(rule: RuleModel, ruleID: string): void {
     let template: string = '<tr><td>${EmployeeID}</td><td>${FirstName}</td><td>${Age}</td></tr>';
     let compiledFunction: any = compile(template);
-    let predicate: Predicate = this.qryBldrObj.getPredicate({condition: 'and', rules: [rule]});
-    let dataManagerQuery: Query = new Query().select(['EmployeeID', 'FirstName', 'Age']).where(predicate);
-    let result: object[] = new DataManager(employeeData).executeLocal(dataManagerQuery);
+    let dataManagerQuery: Query = this.qryBldrObj.getDataManagerQuery({condition: 'and', rules: [rule]});
+    let dataManager: DataManager = new DataManager(employeeData);
+    dataManager.defaultQuery = dataManagerQuery;
+    let result: object[] = dataManager.executeLocal();
     let table: HTMLElement = document.getElementById(ruleID + '_datatable') as HTMLElement;
-    if (result.length) {
-      table.style.display = 'block';
-    } else {
-      table.style.display = 'none';
+    if (table) {
+      if (result.length) {
+        table.style.display = 'block';
+      } else {
+        table.style.display = 'none';
+      }
+      table.querySelector('tbody').innerHTML = '';
+      result.forEach((data) => {
+          table.querySelector('tbody').appendChild(compiledFunction(data)[0].querySelector('tr'));
+      });
     }
-    table.querySelector('tbody').innerHTML = '';
-    result.forEach((data) => {
-        table.querySelector('tbody').appendChild(compiledFunction(data)[0].querySelector('tr'));
-    });
   }
 }
 
