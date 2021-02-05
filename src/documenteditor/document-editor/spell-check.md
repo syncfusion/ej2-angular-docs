@@ -34,6 +34,14 @@ export class AppComponent {
 * Supports context menu suggestions.
 * Provides built-in options to Ignore, Ignore All, Change, Change All for error words in spell checker dialog.
 
+## Enable SpellCheck
+
+To enable spell check in DocumentEditor, set `enableSpellCheck` property as `true` and then configure SpellCheckSettings.
+
+## Disable SpellCheck
+
+To disable spell check in DocumentEditor, set `enableSpellCheck` property as `false` or remove `enableSpellCheck` property initialization code. The default value of this property is false.
+
 ## Spell check settings
 
 ### Remove Underline

@@ -70,6 +70,17 @@ When local paste is enabled for a document editor instance, you can paste conten
  this.documentEditor..editor.pasteLocal();
 ```
 
+### EnableLocalPaste behaviour
+
+|**EnableLocalPaste** |**Paste behavior details**|
+|--------------------------|----------------------|
+|True |Allows to paste content that is copied from the same Document editor component alone and prevents pasting content from system clipboard. Hence the content copied from outside Document editor component can’t be pasted.<br>Browser limitation of pasting from system clipboard using API and context menu options, will be resolved. So, you can copy and paste content within the Document editor component using API and context menu options too.|
+|False|Allows to paste content from system clipboard. Hence the content copied from both the Document editor component and outside can be pasted.<br>Browser limitation of pasting from system clipboard using API and context menu options, will remain as a limitation.|
+
+Note:
+* Keyboard shortcut for pasting will work properly in both cases.
+* Copying content from Document editor component and pasting outside will work properly in both cases.
+
 ## Paste with formatting
 
 Document Editor provides support to paste the system clipboard data with formatting. To enable clipboard paste with formatting options, set the `enableLocalPaste` property in Document Editor to false and use this .NET Standard library [`Syncfusion.EJ2.WordEditor.AspNet.Core`](<https://www.nuget.org/packages/Syncfusion.EJ2.WordEditor.AspNet.Core/>) by the web API service implementation. This library helps you to paste the system clipboard data with formatting.
