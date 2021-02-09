@@ -985,6 +985,8 @@ export class AppComponent {
 
 ```
 
+{% endtab %}
+
 ## Appointment Resizing
 
 Another way of rescheduling an appointment can be done by resizing it through either of its handlers. To work with resizing functionality, it is necessary to inject the module `Resize` and make sure that `allowResizing` property is set to true.
