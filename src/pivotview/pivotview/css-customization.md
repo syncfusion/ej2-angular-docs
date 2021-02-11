@@ -1,10 +1,10 @@
 ---
-title: "CSS Customization"
+title: "Style and Appearance"
 component: "Pivot Table"
 description: "CSS Customization allows user to hide axis for the pivot by overriding the styles."
 ---
 
-# CSS Customization
+# Style and Appearance
 
 ## Hiding Axis
 
