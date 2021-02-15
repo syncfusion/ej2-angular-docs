@@ -8,6 +8,10 @@ description: "This section helps to learn how to create the Spreadsheet control 
 
 This section explains the steps to create a simple Spreadsheet control with basic features in an Angular environment.
 
+To get start quickly with Angular Spreadsheet using CLI, you can check on this video:
+
+`youtube:2Ozwe37X-7Q`
+
 ## Dependencies
 
 The following list of dependencies are required to use the Spreadsheet control in your application.
