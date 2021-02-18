@@ -20,7 +20,7 @@ template: "<div><input type='checkbox' id='check1' checked=''>Accept</input></di
 
 ## As selector
 
-The template property also allows getting template content through query `selector`. Here, checkbox 'ID' attribute is specified in the template.
+The template property also allows getting template content through query `selector`. Here, button 'ID' attribute is specified in the template.
 
 ```typescript
 template: "#Template"
@@ -53,7 +53,7 @@ import { Component, ViewChild } from '@angular/core';
 
 export class AppComponent {
     @ViewChild('element') element;
-    public templateEle: any = '<input placeholder="Search" style="height:27px;"/>';
+    public templateEle: any = "<div><input type='checkbox' id='check1' checked=''>Accept</input></div>";
     public templateEleId: any = '#Template';
     ngAfterViewInit() {
     }
