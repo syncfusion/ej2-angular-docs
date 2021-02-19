@@ -602,7 +602,7 @@ export class AppComponent {
     };
 
     onDragStart(args: DragEventArgs): void {
-        args.excludeSelectors = 'e-header-cells,e-all-day-cells';
+        args.excludeSelectors = 'e-header-cells,e-header-day,e-header-date,e-all-day-cells';
     }
 }
 ```
@@ -895,7 +895,7 @@ export class AppComponent {
                         DepartmentID: resourceDetails.resourceData.GroupId,
                         ConsultantID: resourceDetails.resourceData.Id
                     };
-                    this.scheduleObj.openEditor(eventData, 'Add', true);
+                    this.scheduleObj.addEvent(eventData);
                     this.isTreeItemDropped = true;
                     this.draggedItemId = event.draggedNodeData.id as string;
                 }
