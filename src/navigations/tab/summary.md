@@ -14,6 +14,7 @@
 * [Add nested Tabs](tab/how-to/add-nested-tabs.md)
 * [Set state persistence of the Tab component](tab/how-to/set-state-persistence-of-the-tab-component.md)
 * [Set custom animation](tab/how-to/set-custom-animation.md)
+* [Disable default Tab animation effects](tab/how-to/disable-default-tab-animation-effects.md)
 * [Load Tab items dynamically](tab/how-to/load-tab-items-dynamically.md)
 * [Create collapsible Tabs](tab/how-to/create-collapsible-tabs.md)
 * [Render other components in Tab using ng-template](tab/how-to/render-other-components-in-tab-using-angular-template.md)

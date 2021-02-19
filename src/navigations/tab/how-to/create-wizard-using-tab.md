@@ -269,11 +269,11 @@ export class AppComponent implements OnInit {
             }
             let displayAmt: any = document.getElementById('amount');
             if (this.ticketType.value === 'Economy Class') {
-                displayAmt.innerText = 'Total payable amount: $' + passCount * (300 + calcFare)
+                displayAmt.innerText = "Total payable amount: $" + passCount * (300 + calcFare)
             } else if (this.ticketType.value === 'Business Class') {
-                displayAmt.innerText = 'Total payable amount: $' + passCount * (500 + calcFare)
+                displayAmt.innerText = "Total payable amount: $" + passCount * (500 + calcFare)
             } else if (this.ticketType.value === 'Common Class') {
-                displayAmt.innerText = 'Total payable amount: $' + passCount * (150 + calcFare)
+                displayAmt.innerText = "Total payable amount: $" + passCount * (150 + calcFare)
             }
         }
     }
