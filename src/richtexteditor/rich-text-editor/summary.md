@@ -16,7 +16,7 @@
 * [IFrame](rich-text-editor/iframe.md)
 * [Third-Party Integration](rich-text-editor/third-party-integration.md)
 * [ExecCommand in Rich Text Editor](rich-text-editor/exec-command.md)
-* [CSS Structure](rich-text-editor/style.md)
+* [Style and appearance](rich-text-editor/style.md)
 * [KeyBoard Support](rich-text-editor/keyboard-support.md)
 * [Accessibility](rich-text-editor/accessibility.md)
 * [Add Google fonts](rich-text-editor/how-to/add-google-fonts.md)
