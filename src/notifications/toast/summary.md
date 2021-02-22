@@ -5,7 +5,7 @@
 * [TimeOut](toast/timeout.md)
 * [Template](toast/template.md)
 * [Animation](toast/animation.md)
-* [CSS Structure](toast/style.md)
+* [Style and appearance](toast/style.md)
 * [Accessibility](toast/accessibility.md)
 * [Prevent duplicate toast display](toast/how-to/prevent-duplicate-toast-display.md)
 * [Restrict the maximum toast to show](toast/how-to/restrict-the-maximum-toast-to-show.md)
