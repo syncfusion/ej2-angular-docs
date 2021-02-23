@@ -23,7 +23,7 @@
 * [Accessibility](treegrid/accessibility.md)
 * [Clipboard](treegrid/clipboard.md)
 * [Globalization](treegrid/global-local.md)
-* [Styling and appearance](treegrid/how-to/treegrid-styling.md)
+* [Styling and appearance](treegrid/treegrid-styling.md)
 * [Refresh the data source](treegrid/how-to/refresh-the-data-source.md)
 * [Enable/Disable Tree Grid and its actions](treegrid/how-to/enable-disable-treegrid-and-its-actions.md)
 * [Change column header Text dynamically](treegrid/how-to/change-header-text-dynamically.md)
