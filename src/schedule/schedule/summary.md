@@ -22,6 +22,7 @@
 * [Recurrence Editor](schedule/recurrence-editor.md)
 * [Globalization](schedule/localization.md)
 * [Accessibility](schedule/accessibility.md)
+* [Styling And Appearance](schedule/scheduler-styling.md)
 * [Migration from Essential JS 1](schedule/ej1-api-migration.md)
 * [Perform CRUD Actions Dynamically](schedule/how-to/add-edit-and-remove-events.md)
 * [Set Default Value for Event Fields](schedule/how-to/set-default-value-for-event-fields.md)
@@ -29,5 +30,4 @@
 * [Prevent the Date Navigation](schedule/how-to/prevent-date-navigation.md)
 * [Set Different Working Hours on Different Days](schedule/how-to/set-different-work-hours.md)
 * [Show tooltip with delay](schedule/how-to/show-tool-tip-with-delay.md)
-* [Styling and Appearance](schedule/how-to/scheduler-styling.md)
 * [Show quick info template](schedule/how-to/quick-info-template.md)
