@@ -4,7 +4,7 @@
 * [Localization](tab/localization.md)
 * [Orientation](tab/orientation.md)
 * [Accessibility](tab/accessibility.md)
-* [CSS Structure](tab/style.md)
+* [Style and Appearance](tab/style.md)
 * [Load content through Ajax](tab/how-to/load-content-through-post.md)
 * [Prevent content swipe selection](tab/how-to/prevent-content-swipe-selection.md)
 * [Customize selected tab styles](tab/how-to/customize-selected-tab-styles.md)

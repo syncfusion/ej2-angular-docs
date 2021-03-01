@@ -2,7 +2,7 @@
 * [Item Configuration](toolbar/item-configuration.md)
 * [Responsive Mode](toolbar/responsive-mode.md)
 * [Accessibility](toolbar/accessibility.md)
-* [CSS Structure](toolbar/style.md)
+* [Style and Appearance](toolbar/style.md)
 * [Set command customization](toolbar/how-to/set-command-customization.md)
 * [Set Essential JS 2 Tooltip to the commands](toolbar/how-to/set-tool-tip-to-the-commands.md)
 * [Set item-wise custom template](toolbar/how-to/set-item-wise-custom-template.md)

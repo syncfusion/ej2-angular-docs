@@ -1,5 +1,5 @@
 ---
-title: "Syncfusion JavaScript Toolbar CSS Structure"
+title: "Syncfusion JavaScript Toolbar Style and Appearance"
 component: "Toolbar"
 description: "Learn about customizing JavaScript Toolbar control."
 ---

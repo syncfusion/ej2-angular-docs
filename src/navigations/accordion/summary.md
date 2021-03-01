@@ -1,7 +1,7 @@
 * [Getting Started](accordion/getting-started.md)
 * [Expand Mode](accordion/expand-mode.md)
 * [Accessibility](accordion/accessibility.md)
-* [CSS Structure](accordion/style.md)
+* [Style and Appearance](accordion/style.md)
 * [Set the nested Accordion](accordion/how-to/set-the-nested-accordion.md)
 * [Load content through Ajax](accordion/how-to/load-content-through-post.md)
 * [Set custom animation](accordion/how-to/set-custom-animation.md)

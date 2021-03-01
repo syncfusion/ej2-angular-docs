@@ -1,5 +1,5 @@
 ---
-title: "Syncfusion JavaScript Accordion CSS Structure"
+title: "Syncfusion JavaScript Accordion Style and Appearance"
 component: "Accordion"
 description: "Learn about customizing JavaScript Accordion control."
 ---

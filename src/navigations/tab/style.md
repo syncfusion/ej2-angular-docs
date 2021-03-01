@@ -1,5 +1,5 @@
 ---
-title: "Syncfusion JavaScript Tab CSS Structure"
+title: "Syncfusion JavaScript Tab Style and Appearance"
 component: "Tab"
 description: "Learn about customizing JavaScript Tab control."
 ---

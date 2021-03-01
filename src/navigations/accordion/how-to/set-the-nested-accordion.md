@@ -6,9 +6,7 @@ description: "This example demonstrates how to create an Essential JS 2 Accordio
 
 # Set the nested Accordion
 
-Accordion supports to render `nested` level of Accordion by using content property. You can give nested Accordion
-content inside the parent Accordion content property by using `id` of nested element. The nested Accordion can be
-rendered with the use of provided events, such as [`clicked`](../../api/accordion#clicked) and [`expanding`](../../api/accordion#expanding).
+You can render Accordion components inside the parent Accordion content using Angular **ng-template**. Through this, we can add content as Accordion components directly with all their functionalities to our Accordion. We need to use `ng-template` inside the each `e-accordionitem` tag with `#content` attribute, which is mandatory to render content. And now use `ng-template` tag with select attribute of id or class name for mapping required content.
 
 {% tab template="accordion/accordion", sourceFiles="app/**/*.ts"   %}
 
@@ -20,14 +18,27 @@ import { ExpandEventArgs, Accordion, AccordionClickArgs} from '@syncfusion/ej2-n
 @Component({
     selector: 'app-container',
     template: `
-     <ejs-accordion #element (expanding)="expanding($event)">
+      <ejs-accordion>
         <e-accordionitems>
-          <e-accordionitem expanded='true'>
+          <e-accordionitem expanded="true">
             <ng-template #header>
               <div>Video</div>
             </ng-template>
             <ng-template #content>
-              <div id="nested_video"></div>
+              <ejs-accordion>
+                <e-accordionitems>
+                  <e-accordionitem>
+                    <ng-template #header>
+                      <div>Video Track 1</div>
+                    </ng-template>
+                  </e-accordionitem>
+                  <e-accordionitem>
+                    <ng-template #header>
+                      <div>Video Track 2</div>
+                    </ng-template>
+                  </e-accordionitem>
+                </e-accordionitems>
+              </ejs-accordion>
             </ng-template>
           </e-accordionitem>
           <e-accordionitem>
@@ -35,7 +46,41 @@ import { ExpandEventArgs, Accordion, AccordionClickArgs} from '@syncfusion/ej2-n
               <div>Music</div>
             </ng-template>
             <ng-template #content>
-             <div id="nested_music"></div>
+              <ejs-accordion>
+                <e-accordionitems>
+                  <e-accordionitem>
+                    <ng-template #header>
+                      <div>Music Track 1</div>
+                    </ng-template>
+                  </e-accordionitem>
+                  <e-accordionitem>
+                    <ng-template #header>
+                      <div>Music Track 2</div>
+                    </ng-template>
+                  </e-accordionitem>
+                  <e-accordionitem>
+                    <ng-template #header>
+                      <div>Music New</div>
+                    </ng-template>
+                    <ng-template #content>
+                      <ejs-accordion>
+                        <e-accordionitems>
+                          <e-accordionitem>
+                            <ng-template #header>
+                              <div>New Track 1</div>
+                            </ng-template>
+                          </e-accordionitem>
+                          <e-accordionitem>
+                            <ng-template #header>
+                              <div>New Track 2</div>
+                            </ng-template>
+                          </e-accordionitem>
+                        </e-accordionitems>
+                      </ejs-accordion>
+                    </ng-template>
+                  </e-accordionitem>
+                </e-accordionitems>
+              </ejs-accordion>
             </ng-template>
           </e-accordionitem>
           <e-accordionitem>
@@ -43,65 +88,28 @@ import { ExpandEventArgs, Accordion, AccordionClickArgs} from '@syncfusion/ej2-n
               <div>Images</div>
             </ng-template>
             <ng-template #content>
-             <div id="nested_images"></div>
+              <ejs-accordion>
+                <e-accordionitems>
+                  <e-accordionitem>
+                    <ng-template #header>
+                      <div>Track 1</div>
+                    </ng-template>
+                  </e-accordionitem>
+                  <e-accordionitem>
+                    <ng-template #header>
+                      <div>Track 2</div>
+                    </ng-template>
+                  </e-accordionitem>
+                </e-accordionitems>
+              </ejs-accordion>
             </ng-template>
           </e-accordionitem>
         </e-accordionitems>
-    </ejs-accordion>
-        `
+      </ejs-accordion>
+      `
 })
 
 export class AppComponent {
-    @ViewChild('element') acrdnInstance: AccordionComponent;
-    public clicked(e: AccordionClickArgs) {
-     let ele: HTMLElement = e.originalEvent.target;
-     if (ele.querySelectorAll('.e-accordion').length > 0) {
-      return;
-     }
-     let nestAcrdn_musNew: Accordion = new Accordion({
-     items: [
-      { header: 'New Track1' },
-      { header: 'New Track2' }
-     ]
-    }, '#nested_musicNew');
-    }
-    public expanding(e: ExpandEventArgs) {
-    if (e.isExpanded && [].indexOf.call(this.acrdnInstance.items, e.item) === 0) {
-      if (e.element.querySelectorAll('.e-accordion').length > 0) {
-        return;
-      }
-    let nestAcrdn_vid: Accordion = new Accordion({
-    items: [
-      { header: 'Video Track1' },
-      { header: 'Video Track2' }
-    ]
-    }, '#nested_video');
-    } else if (e.isExpanded && [].indexOf.call(this.acrdnInstance.items, e.item) === 1) {
-    if (e.element.querySelectorAll('.e-accordion').length > 0) {
-      return;
-    }
-    let nestAcrdn_mus:Accordion = new Accordion({
-      clicked: this.clicked,
-      items: [
-        { header: 'Music Track1' },
-        { header: 'Music Track2' },
-        { header: 'Music New', content: '<div id="nested_musicNew"></div>' }
-      ]
-    }, '#nested_music');
-    } else if (e.isExpanded && [].indexOf.call(this.acrdnInstance.items, e.item) === 2) {
-    if (e.element.querySelectorAll('.e-accordion').length > 0) {
-      return;
-    }
-    let nestAcrdn_img: Accordion = new Accordion({
-      items: [
-        { header: 'Track1' },
-        { header: 'Track2' },
-      ]
-    }, '#nested_images');
-    }
-    }
-    ngAfterViewInit() {
-    }
 }
 ```
 
