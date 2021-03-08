@@ -1,257 +1,182 @@
-# Getting Started ASP .NET MVC with Angular using Project Template
+# Getting Started with Angular CLI as Frontend in ASP.NET MVC 
 
-This document helps you to create a simple ASP.NET MVC application with Angular Framework and Syncfusion Angular UI components (Essential JS 2).
+This document explains hoe to create an ASP.NET MVC framework with an Angular CLI project as the frontend and Syncfusion EJ2 Angular components.
 
-## Prerequisites
-
-Before getting started with Syncfusion Angular Components in ASP.NET MVC with Angular project, check whether the following are installed in the developer machine. 
+## Prerequisite
 
 * .Net Framework 4.5 and above
 * ASP.NET MVC 5
-* Visual Studio 2017
+* Visual Studio 2017 and above
+* NodeJs
+* Angular CLI 
 
-## Create an Angular application with SystemJS
+## Create ASP.NET MVC Web Application
 
-To create an angular application with SystemJS, refer to [`getting started`](https://ej2.syncfusion.com/angular/documentation/getting-started/systemjs/) document.  
+Create a new ASP.NET MVC Web application using theproject temaplate. 
 
-We have created a simple [`angular application with SystemJS`](https://github.com/SyncfusionExamples/EJ2-Angular-using-systemjs) sample using above getting started. We are going to use this sample for creating a simple ASP .NET MVC application with Angular Framework and Syncfusion Angular UI components.
-
-## Create ASP.NET MVC Web application
-
-Create a new project with a project template.
-
-1. Choose File > New > Project in the Visual Studio menu bar.
+1. Choose **File** > **New** > **Project** in the Visual Studio menu bar.
 
 ![create project](images/create-project.png)
 
-2. Select Installed > Visual C# > Web and select the required .NET Framework in the drop-down.
+2. Select  **Visual C#** and  **Web** in the drop-down.
 
-3. Select `ASP.NET Web Application` and change the application name, and then click OK.
+3. Select `ASP.NET Web Application (.NET Framework)` and change the application name, and then click **OK**.
 
 ![Asp.net mvc](images/Asp-mvc.png)
 
-4. Select `Empty` as a project template and add folders and core references for `MVC` and then click OK. The application is created.
+4. Select `MVC` as a project template and then click **OK**. Now the application is created.
 
 ![Empty template](images/template-mvc.png)
 
-## Add new Controller
+## Create Angular CLI Application 
 
-Right-click on the `Controllers` folder and click Add > Controller. 
+1. Open the `Developer Command Prompt` from Visual Studio as shown in the following image.
 
-![Add Controller](images/controller-mvc.png)
+![Developer Console](images/dev-cmd.png)
 
-Select `MVC 5 Controller - Empty` and click Add. 
+2. Create Angular CLI application using the `ng new ClientApp` command as shown in the following image.
 
-![MVC Controller](images/empty-controller.png)
+![Create Angular CLI App](images/cli-cmd.png)
 
-Then named the controller name as `AppController` and click Add. The `AppController.cs` will be created.
+3. Navigate to the ClientApp directory using the `cd ClientApp` command.
 
-![App Controller](images/controller-name.png)
+![Navigate to Angular App root](images/angular-root.png)
 
-Open the `AppController.cs` and add a new view for AppController.
+4. Integrate the Syncfusion Angular components as described in the [Getting Started with Angular CLI](https://ej2.syncfusion.com/angular/documentation/getting-started/angular-cli/) documentation.
 
-![Add view](images/Add-view-mvc.png)
+5. Change the production build `outputPath` in `angular.json` file as `../Scripts/ClientApp`.
 
-Add the View name as `Index`.
+```json
 
-![New View](images/view-name.png)
-
-After that, _Layout.cshtml & Bootstrap Content folder will be automatically generated.
-
-## Integrate Angular with ASP .NET MVC project
-
-Copy the `tslint.json` and `package.json` files from the [`angular application with SystemJS`](https://github.com/SyncfusionExamples/EJ2-Angular-using-systemjs) and paste them into the MVC project folder.
-
-Right-Click on the Project name and add a new folder `ClientApp`. 
-
-Copy all the files from the `src` folder of the `angular application with SystemJS` sample and paste into `ClientApp` folder in MVC project.
-
-To restore the packages, right-click the `package.json` file and select `Restore Packages`.
-
-## Configure Systemjs file
-
-The systemjs.config.js file is used for loading all scripts including Angular and Syncfusion into the browser. 
-
-Open `systemjs.config.js` file and change app folder as `ClientApp/app` and change loader as `ClientApp/systemjs-angular-loader.js`.
-
-```typescript
-/**
- * System configuration for Angular samples
- * Adjust as necessary for your application needs.
- */
-(function (global) {
-  System.config({
-    paths: {
-      // paths serve as alias
-      'npm:': 'node_modules/'
-    },
-    // map tells the System loader where to look for things
-    map: {
-      // our angular app is within the ClientApp folder
-      'app': 'ClientApp/app',
-
-      // angular bundles
-      '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
-      '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
-      '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
-      '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
-      '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
-      '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
-      '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
-      '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
-
-      //Add Syncfusion packages
-      '@syncfusion/ej2-angular-grids':  'npm:@syncfusion/ej2-angular-grids/dist/ej2-angular-grids.umd.min.js',
-      '@syncfusion/ej2-angular-base':'npm:@syncfusion/ej2-angular-base/dist/ej2-angular-base.umd.min.js',
-      '@syncfusion/ej2-base':'npm:@syncfusion/ej2-base/dist/ej2-base.umd.min.js',
-      '@syncfusion/ej2-buttons':'npm:@syncfusion/ej2-buttons/dist/ej2-buttons.umd.min.js',
-      '@syncfusion/ej2-grids':'npm:@syncfusion/ej2-grids/dist/ej2-grids.umd.min.js',
-      '@syncfusion/ej2-calendars':'npm:@syncfusion/ej2-calendars/dist/ej2-calendars.umd.min.js',
-      '@syncfusion/ej2-compression':'npm:@syncfusion/ej2-compression/dist/ej2-compression.umd.min.js',
-      '@syncfusion/ej2-data':'npm:@syncfusion/ej2-data/dist/ej2-data.umd.min.js',
-      '@syncfusion/ej2-dropdowns':'npm:@syncfusion/ej2-dropdowns/dist/ej2-dropdowns.umd.min.js',
-      '@syncfusion/ej2-lists':'npm:@syncfusion/ej2-lists/dist/ej2-lists.umd.min.js',
-      '@syncfusion/ej2-navigations':'npm:@syncfusion/ej2-navigations/dist/ej2-navigations.umd.min.js',
-      '@syncfusion/ej2-popups':'npm:@syncfusion/ej2-popups/dist/ej2-popups.umd.min.js',
-      '@syncfusion/ej2-splitbuttons':'npm:@syncfusion/ej2-splitbuttons/dist/ej2-splitbuttons.umd.min.js',
-      '@syncfusion/ej2-excel-export':'npm:@syncfusion/ej2-excel-export/dist/ej2-excel-export.umd.min.js',
-      '@syncfusion/ej2-inputs':'npm:@syncfusion/ej2-inputs/dist/ej2-inputs.umd.min.js',
-      '@syncfusion/ej2-pdf-export':'npm:@syncfusion/ej2-pdf-export/dist/ej2-pdf-export.umd.min.js',
-      '@syncfusion/ej2-file-utils':'npm:@syncfusion/ej2-file-utils/dist/ej2-file-utils.umd.min.js',
-      
-
-      // other libraries
-      'rxjs':                      'npm:rxjs',
-      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
-    },
-    // packages tells the System loader how to load when no filename and/or no extension
-    packages: {
-      app: {
-        defaultExtension: 'js',
-        meta: {
-          //Change System loader path
-          './*.js': {
-            loader: 'ClientApp/systemjs-angular-loader.js'
-          }
-        }
-        },
-      rxjs: {
-        defaultExtension: 'js'
-      }
-    }
-  });
-})(this);
+"projects": {
+    "ClientApp": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "../Scripts/ClientApp",
 
 ```
 
-## Configure RouteConfig.cs file
+## Configuring ASP.NET MVC Application 
 
-In the `RouteConfig.cs` file, add the controller name as `App` and action as `Index`.
+### For building Angular application using MSBuild
 
-```typescript
-using System;
-using System.Collections.Generic;
-using System.Linq;
+Installing and building the Angular application can be automated everytime when the MVC application is built by changing MSBuild configuration in `.csproj` as shown in the following code sample.
+
+```xml
+
+    <PropertyGroup>
+        <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+        <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+        <IsPackable>false</IsPackable>
+        <SpaRoot>ClientApp\</SpaRoot>
+        <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+        <BuildServerSideRenderer>false</BuildServerSideRenderer>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- Don't publish the SPA source files, but do show them in the project files list -->
+        <Content Remove="$(SpaRoot)**" />
+        <None Remove="$(SpaRoot)**" />
+        <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+    </ItemGroup>
+
+    <Target Name="BeforeBuild" AfterTargets="ComputeFilesToPublish">
+        <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+        <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+        <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build -- --prod -- --base-href /" />
+        <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build:ssr -- --prod" Condition=" '$(BuildServerSideRenderer)' == 'true' " />
+
+        <!-- Include the newly-built files in the publish output -->
+        <ItemGroup>
+            <DistFiles Include="$(SpaRoot)dist\**; $(SpaRoot)dist-server\**" />
+            <DistFiles Include="$(SpaRoot)node_modules\**" Condition="'$(BuildServerSideRenderer)' == 'true'" />
+            <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+                <RelativePath>%(DistFiles.Identity)</RelativePath>
+                <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+                <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+            </ResolvedFileToPublish>
+        </ItemGroup>
+    </Target>
+
+```
+
+### Configure MVC Bundle with Angular production scripts
+
+Configure the MVC bundle with Angular production script and style files in `App_Srart\BundleConfig.cs` as shown in the following code sample.
+
+```cs
+
 using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
+using System.Web.Optimization;
 
-namespace Angular_with_ASP.NET_MVC
+namespace SyncfusionAngularASPNETMVC
 {
-    public class RouteConfig
+    public class BundleConfig
     {
-        public static void RegisterRoutes(RouteCollection routes)
+        // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
+        public static void RegisterBundles(BundleCollection bundles)
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            bundles.Add(new Bundle("~/bundles/clientapp").Include(
+                "~/Scripts/ClientApp/runtime.*",
+                "~/Scripts/ClientApp/polyfills.*",
+                "~/Scripts/ClientApp/main.*"));
 
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "App", action = "Index", id = UrlParameter.Optional }
-            );
-        }
-    }
-}
+            bundles.Add(new StyleBundle("~/Content/clientapp").Include(
+                      "~/Scripts/ClientApp/styles.*"));
 
 ```
 
-## Add References to Layout file
+### Include Angular production scripts in MVC
 
-To load Angular in ASP.NET MVC, include the script references of Angular core modules and Syncfusion JavaScript asset files in _Layout file, and load the component in index.cshtml.
+Include the Angular production scripts and style files in the `Views/Shared/_Layout.cshtml`.
 
-Add the below code into _Layout.cshtml file.
-
-```typescript
-<link rel="stylesheet" href="~/ClientApp/styles.css">
-<script src="~/ClientApp/systemjs.config.js"></script>
-    <script>
-        System.import('/ClientApp/main.js').catch(function (err) { console.error(err); });
-</script>
-
-```
-
-Code snippet of _Layout.cshtml file:
-
-```typescript
-
+```html
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.8.3.js"></script>
-    <base href="/">
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" />
-
-    <!-- Add Grid module style -->
-    <link rel="stylesheet" href="~/ClientApp/styles.css">
-
-    <!-- Polyfill(s) for older browsers -->
-    <script src="~/node_modules/core-js/client/shim.min.js"></script>
-    <script src="~/node_modules/zone.js/dist/zone.js"></script>
-    <script src="~/node_modules/systemjs/dist/system.src.js"></script>
-
-    <script src="~/ClientApp/systemjs.config.js"></script>
-    <script>
-        System.import('/ClientApp/main.js').catch(function (err) { console.error(err); });
-    </script>
-
+    <base href="/" />
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/clientapp")
+    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+    @RenderBody()
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
 
-    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/clientapp")
+    @RenderSection("scripts", required: false)
 </body>
 </html>
 
 ```
 
-Code snippet of index.cshtml file:
+Include the `<app-root>` tag in the `Views/Home/index.cshtml`.
 
-```typescript
+```html
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Home Page";
 }
-<my-app>Loading AppComponent content here ...</my-app>
+
+<app-root></app-root>
 
 ```
-
 ## Run the Application
 
-Run this application and the component will be render.
+Build and run this application from Visual Studio and the component will be rendered.
 
 ![MVC-Output](images/output.png)
 
->Note: For your convenience, we have prepared an [ASP .NET MVC and Angular Sample](https://github.com/SyncfusionExamples/angular-with-asp.net-mvc).
+>Note: For your convenience, we have prepared an [ASP .NET MVC and Angular CLI Sample](https://github.com/SyncfusionExamples/Aspnet-mvc-with-angilar-cli).
