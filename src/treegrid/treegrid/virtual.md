@@ -61,3 +61,4 @@ export class AppComponent implements OnInit {
 * Row count of the page is not depend on the **pageSize** property of the **pageSettings**. Row count for the page is determined by the [`height`](https://ej2.syncfusion.com/angular/documentation/api/treegrid/#height) given to the TreeGrid.
 * The virtual height of the treegrid content is calculated using the row height and total number of records in the data source and hence features which changes row height such as text wrapping are not supported. If you want to increase the row height to accommodate the content then you can specify the row height as below to ensure all the table rows are in same height.
 * Programmatic selection using the **selectRows** method is not supported in virtual scrolling.
+* Frozen column feature is not supported with Virtual Scrolling.
