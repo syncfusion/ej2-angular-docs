@@ -108,6 +108,72 @@ export class AppComponent {
 
 {% endtab %}
 
+### Different options in showing week numbers
+
+By default, week numbers are shown in the Scheduler based on the first day of the year. However, the week numbers can be determined based on the following criteria.
+
+`FirstDay` – The first week of the year is calculated based on the first day of the year.
+
+`FirstFourDayWeek` – The first week of the year begins from the first week with four or more days.
+
+`FirstFullWeek` – The first week of the year begins when meeting the first day of the week (firstDayOfWeek) and the first day of the year.
+
+For more details refer to [this link](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.calendarweekrule?view=net-5.0#remarks)
+
+{% tab template="schedule/default", sourceFiles="app/**/*.ts", iframeHeight="588px" %}
+
+```typescript
+import { Component } from '@angular/core';
+import { EventSettingsModel, DayService, WeekService, MonthService, View } from '@syncfusion/ej2-angular-schedule';
+import { scheduleData } from './datasource';
+
+@Component({
+  selector: 'app-root',
+  providers: [DayService, WeekService, MonthService],
+  // specifies the template string for the Schedule component
+  template: `<ejs-schedule width='100%' height='550px' currentView='Month' [views]="scheduleViews" [showWeekNumber]="showWeekNumber" [weekRule]="weekRule" [selectedDate]="selectedDate" [eventSettings]="eventSettings"></ejs-schedule>`
+})
+export class AppComponent {
+  public selectedDate: Date = new Date(2020, 1, 15);
+  public workWeekDays: number[] = [1, 3, 4, 5];
+  public showWeekNumber: boolean = true;
+  public weekRule: WeekRule = 'FirstFourDayWeek',
+  public scheduleViews: View[] = ['Day', 'Week', 'Month'];
+  public eventSettings: EventSettingsModel = {
+    dataSource: [
+      {
+        Id: 1,
+        Subject: "Explosion of Betelgeuse Star",
+        StartTime: new Date(2020, 1, 15, 9, 30),
+        EndTime: new Date(2020, 1, 15, 11, 0)
+      },
+      {
+        Id: 2,
+        Subject: "Thule Air Crash Report",
+        StartTime: new Date(2020, 1, 12, 12, 0),
+        EndTime: new Date(2020, 1, 12, 14, 0)
+      },
+      {
+        Id: 3,
+        Subject: "Blue Moon Eclipse",
+        StartTime: new Date(2020, 1, 13, 9, 30),
+        EndTime: new Date(2020, 1, 13, 11, 0)
+      },
+      {
+        Id: 4,
+        Subject: "Meteor Showers in 2018",
+        StartTime: new Date(2020, 1, 14, 13, 0),
+        EndTime: new Date(2020, 1, 14, 14, 30)
+      }
+    ]
+  }
+}
+```
+
+{% endtab %}
+
+ **Note**: Enable the `showWeekNumber` property to configure the `weekRule` property. Also, the weekRule property depends on the value of the `firstDayOfWeek` property.
+
 ## Set working hours
 
 Working hours indicates the work hour limit within the Scheduler, which is visually highlighted with an active color on work cells. The working hours can be set on Scheduler using the `workHours` property which is of object type and includes the following sub-options,
