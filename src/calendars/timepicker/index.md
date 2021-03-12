@@ -7,8 +7,8 @@ from popup list or to set a desired time value.
 
 The TimePicker provides the following features.
 
-* **[Time Range](/timepicker/time-range/)**
-* **[Globalization](/timepicker/globalization/)**
-* **[Time Format](/timepicker/getting-started/#setting-the-time-format)**
-* **[Strict Mode](/timepicker/strict-mode/)**
-* **[Accessibility](/timepicker/accessibility/)**
+* [**Time Range**](./time-range/)
+* [**Globalization**](./globalization/)
+* [**Time Format**](./getting-started/#setting-the-time-format)
+* [**Strict Mode**](./strict-mode/)
+* [**Accessibility**](./accessibility/)

@@ -6,9 +6,9 @@ The **Calendar**  is a graphical user interface control that displays a Gregoria
 
 The Calendar provides the following features.
 
-* **[Date Range](date-range/)**
-* **[Multi Selection](multi-select/)**
-* **[Globalization](globalization/)**
-* **[Customization](customization/)**
-* **[Calendar Views](calendar-views/)**
-* **[Accessibility](accessibility/)**
+* [**Date Range**](./date-range/)
+* [**Multi Selection**](./multi-select/)
+* [**Globalization**](./globalization/)
+* [**Customization**](./customization/)
+* [**Calendar Views**](./calendar-views/)
+* [**Accessibility**](./accessibility/)

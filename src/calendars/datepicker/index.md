@@ -5,10 +5,10 @@ or enter a date value.
 
 ## Key Features
 
-* **[Date Range](/datepicker/date-range/)**
-* **[Globalization](/datepicker/globalization/)**
-* **[Date Format](/datepicker/date-format/)**
-* **[Strict Mode](/datepicker/strict-mode/)**
-* **[Customization](/datepicker/customization/)**
-* **[Start View and Depth Restriction](/datepicker/date-views/)**
-* **[Accessibility](/datepicker/accessibility/)**
+* [**Date Range**](./date-range/)
+* [**Globalization**](./globalization/)
+* [**Date Format**](./date-format/)
+* [**Strict Mode**](./strict-mode/)
+* [**Customization**](./customization/)
+* [**Start View and Depth Restriction**](./date-views/)
+* [**Accessibility**](./accessibility/)
