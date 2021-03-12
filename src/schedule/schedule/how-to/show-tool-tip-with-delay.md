@@ -26,7 +26,7 @@ export class AppComponent {
 
   public onCreated(): void {
     // Assigning the tooltip object to the tooltipObj variable.
-    let tooltipObj = this.scheduleObj.element.ej2_instances[1];
+    let tooltipObj = this.scheduleObj.element.ej2_instances[2];
     // Disable the tooltip to follow the mouse pointer position
     tooltipObj.mouseTrail = false;
     // Setting tooltip open delay
