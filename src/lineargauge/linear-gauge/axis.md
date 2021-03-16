@@ -274,6 +274,35 @@ export class AppComponent {
 
 {% endtab %}
 
+## Orientation
+
+By default, the linear gauge is rendered vertically. To change its orientation, the [`orientation`](../api/linear-gauge/linearGaugeModel/#orientation) property must be set to **"Horizontal"**
+
+{% tab template= "linear-gauge/axis", sourceFiles="app/**/*.ts" %}
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+    selector: 'app-container',
+    template: `
+    <ejs-lineargauge id="gauge-container" [axes]='Axes' [orientation]='Orientation'>
+    </ejs-lineargauge>`
+})
+export class AppComponent {
+    public Orientation: string
+    public Axes: Object[] = [{
+        minimum: 20,
+        maximum: 140
+    }];
+    ngOnInit(): void {
+        this.Orientation = "Horizontal";
+    }
+}
+```
+
+{% endtab %}
+
 ## Inverted Axes
 
 [`isInversed`](../api/linear-gauge/axis/#isinversed-boolean) property is used to choose the rendering of axis either bottom to top or top to bottom direction.
