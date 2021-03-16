@@ -193,11 +193,15 @@ export class AppComponent {
 
 ## Switch the chart to multiple axes
 
-In the chart, the user can switch from single axis to multiple axes with the help of the built-in checkbox available inside the chart type dropdown menu in the toolbar. For more information [`refer here`](https://ej2.syncfusion.com/angular/documentation/pivotview/pivot-chart/#multi-axis).
+In the chart, the user can switch from single axis to multiple axes with the help of the built-in checkbox available inside the chart type dropdown menu in the toolbar. For more information [`refer here`](https://ej2.syncfusion.com/angular/documentation/pivotview/pivot-chart/#multiple-axis).
 
 ![output](images/chart-option.png)
 
 <!-- markdownlint-disable MD009 -->
+
+There are two modes available in **Multiple Axis** option: `Stacked` and `Single`. The modes can be changed using “Multiple Axis Mode” drop-down list which appears while clicking the **More...** option.
+
+![output](images/multiple-axis-mode.png)
 
 ## Show or hide legend
 

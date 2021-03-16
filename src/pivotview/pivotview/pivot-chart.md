@@ -704,9 +704,9 @@ export class AppComponent implements OnInit {
 
 {% endtab %}
 
-## Multi Axis
+## Multiple Axis
 
-User can draw the pivot chart with multiple value fields by setting the property [`enableMultiAxis`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/chartSettings/#enablemultiaxis) in [`chartSettings`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/chartSettings/) as **true**. In the below code sample, the pivot chart will be drawn with both value fields "Sold" and "Amount" available in the [`dataSourceSettings`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/dataSourceSettings/).
+User can draw the pivot chart with multiple value fields by setting the property [`enableMultipleAxis`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/chartSettings/#enablemultiaxis) in [`chartSettings`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/chartSettings/) as **true**. In the below code sample, the pivot chart will be drawn with both value fields "Sold" and "Amount" available in the [`dataSourceSettings`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/dataSourceSettings/).
 
 > The multi axis support is not applicable for the accumulation chart types like pie, doughnut, pyramid, and funnel.
 
@@ -743,7 +743,7 @@ export class AppComponent implements OnInit {
         };
 
         this.displayOption = { view: 'Chart' } as DisplayOPtion;
-        this.chartSettings = { enableMultiAxis: true, chartSeries: { type: 'Column' }} as ChartSettings;
+        this.chartSettings = { enableMultipleAxis: true, chartSeries: { type: 'Column' }} as ChartSettings;
     }
 }
 
@@ -786,7 +786,52 @@ export class AppComponent implements OnInit {
         };
 
         this.displayOption = { view: 'Chart' } as DisplayOPtion;
-        this.chartSettings = { enableScrollOnMultiAxis:true,enableMultiAxis: true, chartSeries: { type: 'Column' }} as ChartSettings;
+        this.chartSettings = { enableScrollOnMultiAxis:true, enableMultipleAxis: true, chartSeries: { type: 'Column' }} as ChartSettings;
+    }
+}
+
+```
+
+{% endtab %}
+
+Meanwhile, there is another way to display multiple values in a chart. In this approach, the series drawn from multiple values are grouped and displayed in a single chart. And, based on the values, multiple Y axis scales will be framed with different ranges. This can be achieved by setting the properties [`enableMultipleAxis`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/chartSettings/#enablemultiaxis) as **true** and `multipleAxisMode` as `Single` in [`chartSettings`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/chartSettings/).
+
+In the following code sample, the pivot chart can be seen as a single chart with multiple value fields such as **Sold** and **Amount** that are drawn as multiple Y axis.
+
+{% tab template="pivot-grid/getting-started", sourceFiles="app/app.component.ts,app/app.module.ts" %}
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+import { IDataOptions, DisplayOption, PivotChartService } from '@syncfusion/ej2-angular-pivotview';
+import { ChartSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/chartsettings';
+import { Pivot_Data } from './datasource.ts';
+
+@Component({
+  selector: 'app-container',
+  providers: [PivotChartService],
+  // specifies the template string for the pivot table component
+  template: `<ejs-pivotview #pivotview id='PivotView' height='350' [dataSourceSettings]=dataSourceSettings
+  [chartSettings]='chartSettings' [displayOption]='displayOption'></ejs-pivotview>`
+})
+export class AppComponent implements OnInit {
+    public dataSourceSettings: IDataOptions;
+    public chartSettings: ChartSettings;
+    public displayOption: DisplayOption;
+
+    ngOnInit(): void {
+
+        this.dataSourceSettings = {
+            dataSource: Pivot_Data,
+            expandAll: false,
+            columns: [{ name: 'Year', caption: 'Production Year' }, { name: 'Quarter' }],
+            values: [{ name: 'Sold', caption: 'Units Sold' }, { name: 'Amount', caption: 'Sold Amount' }],
+            rows: [{ name: 'Country' }, { name: 'Products' }],
+            formatSettings: [{ name: 'Amount', format: 'C0' }],
+            filters: []
+        };
+
+        this.displayOption = { view: 'Chart' } as DisplayOPtion;
+        this.chartSettings = { enableMultipleAxis: true, multipleAxisMode : 'Single', chartSeries: { type: 'Column' }} as ChartSettings;
     }
 }
 
