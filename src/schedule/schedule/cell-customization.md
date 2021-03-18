@@ -155,13 +155,16 @@ import { View, DayService, WeekService, TimelineViewsService, MonthService } fro
   selector: 'app-root',
   providers: [DayService, WeekService, TimelineViewsService, MonthService],
   // specifies the template string for the Schedule component
-   template: `<ejs-schedule width='100%' height='550px' [selectedDate]="selectedDate" [(currentView)]="currentView">
+   template: `<ejs-schedule width='100%' height='550px' [selectedDate]="selectedDate" [(currentView)]="currentView" cssClass="schedule-cell-template">
     <ng-template #cellTemplate let-data>
       <div class="templatewrap" *ngIf="data.type == 'workCells'" [innerHTML]="getWorkCellText(data.date)"></div>
       <div class="templatewrap" *ngIf="data.type == 'monthCells'" [innerHTML]="getMonthCellText(data.date)"></div>
     </ng-template>
   </ejs-schedule>`,
   styles: [`
+  .schedule-cell-template.e-schedule .e-month-view .e-work-cells {
+    position: relative;
+  }
   .templatewrap {
   text-align: center;
   /* In MONTH view the cell template is a SIBLING of event templates. So which is necessary to set the parent position relative and the child position absolute with 100% width */
