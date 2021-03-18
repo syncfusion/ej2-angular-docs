@@ -161,7 +161,19 @@ import { View, DayService, WeekService, TimelineViewsService, MonthService } fro
       <div class="templatewrap" *ngIf="data.type == 'monthCells'" [innerHTML]="getMonthCellText(data.date)"></div>
     </ng-template>
   </ejs-schedule>`,
-  styleUrls: ['app/index.css'],
+  styles: [`
+  .templatewrap {
+  text-align: center;
+  /* In MONTH view the cell template is a SIBLING of event templates. So which is necessary to set the parent position relative and the child position absolute with 100% width */
+  position: absolute;
+  width: 100%;
+}
+
+.templatewrap img {
+  width: 20px;
+  height: 20px;
+}
+`],
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
