@@ -10,7 +10,7 @@ The AutoComplete component provides the matched suggestion list when type into t
 
 ## Key features
 
-* **[**Data binding**](./data-binding/)** - Allows binding and accessing the list of items from local or server-side data source.
+* [**Data binding**](./data-binding/) - Allows binding and accessing the list of items from local or server-side data source.
 
 * [**Grouping**](./grouping/) - Supports grouping of logically related items under a single or specific category.
 
