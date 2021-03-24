@@ -218,6 +218,46 @@ export class AppComponent {
 
 >Note: HTML node cannot be exported to image format, like JPEG, PNG, and BMP. It is by design, while exporting the diagram is drawn in a canvas. Further, this canvas is exported into image formats. Currently, drawing in a canvas equivalent from all possible HTML is not feasible. Hence, this limitation.
 
+## HTML Node With Template
+
+Html elements can be embedded in the diagram through [`Html`](../api/diagram/node#shape-shapemodel) type node. The shape property of node allows you to set the type of node. The following code illustrates how an Html node is created with template.
+
+{% tab template="diagram/shapes/html", sourceFiles="app/**/*.ts", isDefaultActive=true %}
+
+```typescript
+import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Diagram, NodeModel, HtmlModel, TextStyleModel } from '@syncfusion/ej2-diagrams';
+import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
+
+
+@Component({
+    selector: "app-container",
+    template: `<ejs-diagram #diagram id="diagram" width="100%" height="580px" >
+    <ng-template #nodeTemplate let-data >
+        <ng-container *ngIf="data.id == 'Node'">
+            <input type = "button" value= {{data.id}} >
+        </ng-container>
+        </ng-template>
+        <e-nodes>
+            <e-node id='Node' [offsetX]=150 [offsetY]=150 [shape]='shape'></e-node>
+        </e-nodes>
+    </ejs-diagram>`,
+    encapsulation: ViewEncapsulation.None
+})
+
+export class AppComponent {
+
+    @ViewChild('diagram')
+    public diagram: DiagramComponent;
+
+    public shape: HtmlModel = {
+        type:'HTML'
+    };
+}
+```
+
+{% endtab %}
+
 ## Native
 
 Diagram provides support to embed SVG element into a node. The shape property of node allows you to set the type of node. To create a [`native`](../api/diagram/node#shape-shapemodel) node, it should be set as **native**. The following code illustrates how a native node is created.

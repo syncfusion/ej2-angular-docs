@@ -1264,6 +1264,26 @@ export class AppComponent {
 
 ```
 
+### Prevent connectors overlay
+
+The below constraints prevents the connector segments overlapping nodes with a complex hierarchical layout.
+
+```typescript
+
+@Component({
+    selector: "app-container",
+    template: `<ejs-diagram id="diagram" width="100%" height="580px" [layout]='layout'></ejs-diagram>`,
+    encapsulation: ViewEncapsulation.None
+})
+export class AppComponent {
+    public layout: LayoutModel = {
+        //this prevents connector segments overlapping
+        enableRouting: true,
+    };  
+}
+
+```
+
 ## Customize layout
 
 Orientation, spacings, and position of the layout can be customized with a set of properties.

@@ -81,7 +81,7 @@ export class AppComponent {
     public diagram: DiagramComponent;
     public sourcePoint: PointModel;
     public targetPoint: PointModel;
-    public layers: LayerModel;
+    public layers: LayerModel[];
     ngOnInit(): void {
         this.sourcePoint = { x: 100, y: 100 };
         this.targetPoint = { x: 200, y: 200 };
@@ -128,7 +128,7 @@ export class AppComponent {
     public diagram: DiagramComponent;
     public sourcePoint: PointModel;
     public targetPoint: PointModel;
-    public layers: LayerModel;
+    public layers: LayerModel[];
     ngOnInit(): void {
         this.sourcePoint = { x: 100, y: 100 };
         this.targetPoint = { x: 200, y: 200 };
@@ -177,7 +177,7 @@ export class AppComponent {
     public diagram: DiagramComponent;
     public sourcePoint: PointModel;
     public targetPoint: PointModel;
-    public layers: LayerModel;
+    public layers: LayerModel[];
     public addInfo: Object = { Description: 'Layer1' };
     ngOnInit(): void {
         this.sourcePoint = { x: 100, y: 100 };
