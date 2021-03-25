@@ -239,7 +239,7 @@ import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
         </ng-container>
         </ng-template>
         <e-nodes>
-            <e-node id='Node' [offsetX]=150 [offsetY]=150 [shape]='shape'></e-node>
+            <e-node id='Node' [offsetX]=150 [offsetY]=150 [height]=100 [width]=100 [shape]='shape'></e-node>
         </e-nodes>
     </ejs-diagram>`,
     encapsulation: ViewEncapsulation.None
