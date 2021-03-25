@@ -65,7 +65,11 @@ In default [`showCloseButton`](../../api/toast#showclosebutton) is not enabled. 
 
 ## Progress bar
 
-In default [`showProgressBar`](../../api/toast#showprogressbar) is not enabled. If we enabled it can visually indicate how long time to get toast expires. Based on the `timeOut` property Progress bar will appear.
+In default [`showProgressBar`](../../api/toast#showprogressbar) is not enabled. If we enabled it can visually indicate when will the toast gets expired. Based on the `timeOut` property Progress bar will appear.
+
+### Progress bar direction
+
+By default, the [progressDirection](../../api/toast/#progressDirection) is set to "Rtl" and it will appear from right to left direction. You can change the progressDirection to "Ltr" to make it appear from left to right direction.
 
 ## Newest on top
 
@@ -84,7 +88,7 @@ import { Component, ViewChild } from '@angular/core';
     template: `
         <div id="toast_target"></div>
         <button ejs-button [isPrimary]="true" (click)="btnClick($event)">Show Toast</button>
-        <ejs-toast #element (created)="onCreate($event)" showCloseButton=true newestOnTop=true showProgressBar=true target='#toast_target' [position] = 'position' >
+        <ejs-toast #element (created)="onCreate($event)" showCloseButton=true newestOnTop=true showProgressBar=true progressDirection="Ltr" target='#toast_target' [position] = 'position' >
             <ng-template #title>
                 <div>File Downloading</div>
             </ng-template>

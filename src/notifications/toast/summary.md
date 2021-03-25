@@ -16,3 +16,4 @@
 * [Close the toast with click/tap](toast/how-to/close-the-toast-with-click-tap.md)
 * [Add dynamic template](toast/how-to/add-dynamic-template.md)
 * [Render template in Toast using ng-template](toast/how-to/render-template-in-toast-using-angular-template.md)
+* [Prevent toast close with mobile swipe](toast/how-to/prevent-toast-close-with-mobile-swipe.md)
