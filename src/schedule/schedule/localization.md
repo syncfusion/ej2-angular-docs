@@ -337,43 +337,30 @@ export class AppComponent {
 
 {% endtab %}
 
-## Time mode
+## Setting the time format
 
-The time mode of the Scheduler can be either 12 or 24 hours format which is completely based on the `locale` set to the Scheduler. Since the default `locale` value of the Scheduler is en-US, the time mode will be set to 12 hours format automatically.
+Time formats is a way of representing the time value in different string formats in the Scheduler. By default, the time mode of the Scheduler can be either 12 or 24 hours format which is completely based on the system’s local culture. You can also customize the format by using the `timeFormat` property. To know more about the time format standards, refer to the [Date and Time Format](https://ej2.syncfusion.com/angular/documentation/common/internationalization/#custom-formats) section.
 
-{% tab template="schedule/localization", sourceFiles="app/**/*.ts", iframeHeight="588px" %}
+> Note: `timeFormat` property only accepts the valid time format's.
+
+The following example demonstrates the Scheduler component in 24 hours format.
+
+{% tab template="schedule/default", sourceFiles="app/**/*.ts", iframeHeight="588px" %}
 
 ```typescript
 import { Component } from '@angular/core';
 import { EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService } from '@syncfusion/ej2-angular-schedule';
 import { scheduleData } from './datasource.ts';
-import { L10n, loadCldr } from '@syncfusion/ej2-base';
-import * as numberingSystems from './numberingSystems.json';
-import * as gregorian from './ca-gregorian.json';
-import * as numbers from './numbers.json';
-import * as timeZoneNames from './timeZoneNames.json';
-
-loadCldr(numberingSystems, gregorian, numbers, timeZoneNames);
-L10n.load({
-    'fr-CH': {
-        'schedule': {
-            'day': 'journée',
-            'week': 'La semaine',
-            'workWeek': 'Semaine de travail',
-            'month': 'Mois',
-            'today': 'Aujourd`hui'
-        }
-    }
-});
 
 @Component({
   selector: 'app-root',
   providers: [DayService, WeekService, WorkWeekService, MonthService],
   // specifies the template string for the Schedule component
-  template: `<ejs-schedule width='100%' height='550px' locale='fr-CH' [selectedDate]="selectedDate" [eventSettings]="eventSettings" [views]='views'></ejs-schedule>`
+  template: `<ejs-schedule width='100%' height='550px' [timeFormat]="timeFormat" [selectedDate]="selectedDate" [eventSettings]="eventSettings"></ejs-schedule>`
 })
 export class AppComponent {
     public selectedDate: Date = new Date(2018, 1, 15);
+    public timeFormat: string = "HH:mm";
     public views: Array<string> = ['Day', 'Week', 'WorkWeek', 'Month'];
     public eventSettings: EventSettingsModel = { dataSource: scheduleData };
  }

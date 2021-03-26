@@ -547,6 +547,37 @@ export class AppComponent {
 
 {% endtab %}
 
+### Drag and drop multiple appointments
+
+We can drag and drop multiple appointments by enabling the `allowMultiDrag` property. We can select multiple appointments by holding the CTRL key. Once the events are selected, we can leave the CTRL key and start dragging the event.
+
+We can also drag multiple events from one resource to another resource. In this case, if all the selected events are in the different resources, then all the events should be moved to the single resource that is related to the target event.
+
+{% tab template="schedule/default", sourceFiles="app/**/*.ts", iframeHeight="588px" %}
+
+```typescript
+import { Component } from '@angular/core';
+import { EventSettingsModel, DayService, TimelineViewsService, TimelineMonthService, MonthService, AgendaService, DragAndDropService } from
+    '@syncfusion/ej2-angular-schedule';
+import { scheduleData } from './datasource.ts';
+
+@Component({
+    selector: 'app-root',
+    providers: [DayService, TimelineViewsService, TimelineMonthService, MonthService, AgendaService, DragAndDropService],
+    // specifies the template string for the Schedule component
+    template: `<ejs-schedule width='100%' height='550px' [selectedDate]="selectedDate" [allowMultiDrag] = 'true'
+  [eventSettings]="eventSettings" ></ejs-schedule>`
+})
+export class AppComponent {
+    public selectedDate: Date = new Date(2018, 1, 15);
+    public eventSettings: EventSettingsModel = {
+        dataSource: scheduleData,
+    };
+}
+```
+
+{% endtab %}
+
 ### Disable the drag action
 
 By default, you can drag and drop the events within any of the applicable scheduler views, and to disable it, set `false` to the `allowDragAndDrop` property.
