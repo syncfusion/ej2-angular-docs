@@ -105,6 +105,10 @@ export class AppComponent {
 
 {% endtab %}
 
+### Limitation of Number Formatting
+
+* Custom number formatting is not supported.
+
 ## Text and cell formatting
 
 Text and cell formatting enhances the look and feel of your cell. It helps to highlight a particular cell or range of cells from a whole workbook. You can apply formats like font size, font family, font color, text alignment, border etc. to a cell or range of cells. Use the [`allowCellFormatting`](../api/spreadsheet/#allowcellformatting) property to enable or disable the text and cell formatting option in Spreadsheet. You can set the formats in following ways,
@@ -254,6 +258,13 @@ export class AppComponent {
 
 {% endtab %}
 
+### Limitation of Formatting
+
+The following features are not supported in Formatting:
+
+* Insert row/column between the formatting applied cells.
+* Formatting support for row/column.
+
 ## Conditional Formatting
 
 Conditional formatting helps you to format a cell or range of cells based on the conditions applied. You can enable or disable conditional formats by using the [`allowConditionalFormat`](../api/spreadsheet/#allowConditionalFormat) property.
@@ -380,6 +391,15 @@ export class AppComponent {
 ```
 
 {% endtab %}
+
+### Limitation of Conditional formatting
+
+The following features have some limitations in Conditional Formatting:
+
+* Insert row/column between the conditional formatting.
+* Conditional formatting with formula support.
+* Copy and paste the conditional formatting applied cells.
+* Custom rule support.
 
 ## See Also
 

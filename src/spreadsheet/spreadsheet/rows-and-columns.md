@@ -221,6 +221,15 @@ export class AppComponent {
 
 {% endtab %}
 
+## Limitation
+
+The following features have some limitations in Insert/Delete:
+
+* Insert row/column between the formatting applied cells.
+* Insert row/column between the data validation.
+* Insert row/column between the conditional formatting applied cells.
+* Insert/delete row/column between the filter applied cells.
+
 ## Hide and show
 
 You can show or hide the rows and columns in the spreadsheet through property binding, method, and context menu.

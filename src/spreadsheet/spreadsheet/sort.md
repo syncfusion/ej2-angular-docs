@@ -194,6 +194,10 @@ The following errors have been handled for sorting,
 
 * *Duplicate field validation:* When the column names of added sort criteria are repeated more than once in the custom sort dialog, it will become invalid and an error message `<Column name> is mentioned more than once. Duplicate columns must be removed` will be displayed on `OK` button click.
 
+## Limitation
+
+* Sorting is not supported with formula contained cells.
+
 ## See Also
 
 * [Sort a range by custom list](./how-to/sort-a-range-by-custom-list.md)

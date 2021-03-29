@@ -93,6 +93,13 @@ export class AppComponent {
 
 {% endtab %}
 
+### Limitation of Wrap text
+
+The following features have some limitations in wrap text:
+
+* Sorting with wrap text applied data.
+* Merge with wrap text.
+
 ## Merge cells
 
 Merge cells allows users to span two or more cells in the same row or column into a single cell. When cells with multiple values are merged, top-left most cell data will be the data for the merged cell. By default, the merge cells option is enabled. Use [`allowMerge`](../api/spreadsheet/#allowmerge) property to enable or disable the merge cells option in spreadsheet.
@@ -225,6 +232,180 @@ export class AppComponent {
 ```
 
 {% endtab %}
+
+### Limitation of Merge
+
+The following features have some limitations in Merge:
+
+* Merge with filter.
+* Merge with wrap text.
+
+## Data Validation
+
+Data Validation is used to restrict the user from entering the invalid data. You can use the [`allowDataValidation`](../api/spreadsheet/#allowDataValidation) property to enable or disable data validation.
+
+> * The default value for `allowDataValidation` property is `true`.
+
+### Apply Validation
+
+You can apply data validation to restrict the type of data or the values that users enter into a cell.
+
+You can apply data validation by using one of the following ways,
+
+* Select the Data tab in the Ribbon toolbar, and then choose the Data Validation item.
+* Use the [`addDataValidation()`](../api/spreadsheet/#addDataValidation) method programmatically.
+
+### Clear Validation
+
+Clear validation feature is used to remove data validations from the specified ranges or the whole worksheet.
+
+You can clear data validation rule by one of the following ways,
+
+* Select the Data tab in the Ribbon toolbar, and then choose the Clear Validation item.
+* Use the [`removeDataValidation()`](../api/spreadsheet/#removeDataValidation) method programmatically.
+
+### Highlight Invalid Data
+
+Highlight invalid data feature is used to highlight the previously entered invalid values.
+
+You can highlight an invalid data by using one of the following ways,
+
+* Select the Data tab in the Ribbon toolbar, and then choose the Highlight Invalid Data item.
+* Use the [`addInvalidHighlight()`](../api/spreadsheet/#addInvalidHighlight) method programmatically.
+
+### Clear Highlighted Invalid Data
+
+Clear highlight feature is used to remove the highlight from invalid cells.
+
+You can clear the highlighted invalid data by using the following ways,
+
+* Select the Data tab in the Ribbon toolbar, and then choose the Clear Highlight item.
+* Use the [`removeInvalidHighlight()`](../api/spreadsheet/#removeInvalidHighlight) method programmatically.
+
+{% tab template="spreadsheet/data-validation", sourceFiles="app/**/*.ts", iframeHeight="450px" %}
+
+```javascript
+import { Component, ViewChild } from '@angular/core';
+import { SpreadsheetComponent } from '@syncfusion/ej2-angular-spreadsheet';
+import { conditionalFormatData } from './datasource';
+
+@Component({
+    selector: 'app-container',
+    template: `<ejs-spreadsheet #default [openUrl]="openUrl" [saveUrl]="saveUrl" (created)="created()">
+        <e-sheets>
+            <e-sheet name="PriceDetails" >
+                <e-rows>
+                    <e-row>
+                        <e-cells>
+                            <e-cell value="Seller Name" [style]="styles"></e-cell>
+                            <e-cell value="Customer Id" [style]="styles"></e-cell>
+                            <e-cell value="Customer Name" [style]="styles"></e-cell>
+                            <e-cell value="Product Name" [style]="styles"></e-cell>
+                             <e-cell value="Product Price" [style]="styles"></e-cell>
+                            <e-cell value="Sales Date" [style]="styles"></e-cell>
+                            <e-cell value="Billing Time" [style]="styles"></e-cell>
+                            <e-cell value="Total Price" [style]="styles"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell value="John"></e-cell>
+                            <e-cell value="1" [validation]="validation"></e-cell>
+                            <e-cell value="Nash"></e-cell>
+                            <e-cell value="Digger" [validation]="listValidation"></e-cell>
+                            <e-cell value="50000" [validation]="listValidation1"></e-cell>
+                            <e-cell value="04/11/2019"></e-cell>
+                            <e-cell value="11:34:32 AM"></e-cell>
+                            <e-cell value="1,45,000.00"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell value="Mike"></e-cell>
+                            <e-cell value="2" [validation]="validation"></e-cell>
+                            <e-cell value="Jim" ></e-cell>
+                            <e-cell value="Cherrypicker" [validation]="listValidation2"></e-cell>
+                            <e-cell value="45000" [validation]="validation"></e-cell>
+                            <e-cell value="04/11/2019"></e-cell>
+                            <e-cell value="10:15:00 AM"></e-cell>
+                            <e-cell value="1,40,040.00"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell value="shane"></e-cell>
+                            <e-cell value="3" [validation]="validation"></e-cell>
+                            <e-cell value="Sean"></e-cell>
+                            <e-cell value="Kango" [validation]="validation3"></e-cell>
+                            <e-cell value="450" [validation]="validation4"></e-cell>
+                            <e-cell value="06/25/2019"></e-cell>
+                            <e-cell value="01:30:11 PM"></e-cell>
+                            <e-cell value="545.00"></e-cell>
+                        </e-cells>
+                    </e-row>
+                    <e-row>
+                        <e-cells>
+                            <e-cell value="John"></e-cell>
+                            <e-cell value="1" [validation]="validation"></e-cell>
+                            <e-cell value="Nash"></e-cell>
+                            <e-cell value="JCB" [validation]="validation5"></e-cell>
+                            <e-cell value="90000" [validation]="validation6"></e-cell>
+                            <e-cell value="09/22/2019"></e-cell>
+                            <e-cell value="12:30:02 PM"></e-cell>
+                            <e-cell value="1,00,095.00"></e-cell>
+                        </e-cells>
+                    </e-row>
+                </e-rows>
+                <e-columns>
+                    <e-column [width]=88></e-column>
+                    <e-column [width]=88></e-column>
+                    <e-column [width]=106></e-column>
+                    <e-column [width]=98></e-column>
+                    <e-column [width]=88></e-column>
+                    <e-column [width]=86></e-column>
+                    <e-column [width]=81></e-column>
+                </e-columns>
+            </e-sheet>
+        </e-sheets>
+    </ejs-spreadsheet>`
+})
+export class AppComponent {
+    @ViewChild('spreadsheet')
+    spreadsheetObj: SpreadsheetComponent;
+
+    public style: CellStyleModel = { fontWeight: "bold", textAlign: "center" };
+    public validation = { type: 'WholeNumber', operator: 'NotEqualTo', value1: '1' };
+    public listValidation = { type: 'List', value1: 'Digger, Digger, Cherrypicker' };
+    public listValidation1 = { type: 'List', value1: '50000,50000,45000' };
+    public listValidation2 = { type: 'List', value1: 'Cherrypicker, JCB, Wheelbarrow' };
+    public validation2 = { type: 'List', value1: '45000,90000,40' };
+    public validation3 = { type: 'List', value1: 'Kango, Ropes' };
+    public validation4 = { type: 'List', value1: '450, 95' };
+    public validation5 = { type: 'List', value1: 'JCB, Ropes, scaffolding' };
+    public validation6 = { type: 'List', value1: '90000, 95, 10000' };
+    created() {
+      //Add Data validation to range.
+      this.spreadsheetObj.addDataValidation({ type: 'TextLength', operator: 'LessThanOrEqualTo', value1: '4' }, 'A2:A5');
+      this.spreadsheetObj.addDataValidation({ type: 'WholeNumber', operator: 'NotEqualTo', value1: '1' }, 'B2:B5');
+      this.spreadsheetObj.addDataValidation({ type: 'Date', operator: 'NotEqualTo', value1: '04/11/2019' }, 'F2:F5');
+      this.spreadsheetObj.addDataValidation({ type: 'Time', operator: 'Between', value1: '10:00:00 AM', value2: '11:00:00 AM' }, 'G2:G5');
+      this.spreadsheetObj.addDataValidation({ type: 'Decimal', operator: 'LessThan', value1: '100000.00' }, 'H2:H5');
+      //Highlight Invalid Data.
+      this.spreadsheetObj.addInvalidHighlight('A1:H5');
+    }
+}
+```
+
+{% endtab %}
+
+### Limitation of Data validation
+
+The following features have some limitations in Data Validation:
+
+* Entire row data validation.
+* Insert row between the data validation.
+* Copy/paste with data validation.
+* Delete cells between data validation applied range.
 
 ## See Also
 

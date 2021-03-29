@@ -202,6 +202,10 @@ export class AppComponent {
 
 {% endtab %}
 
+## Limitation
+
+* Password protection is not supported in Protect sheet feature.
+
 ## See Also
 
 * [Hyperlink](./link)
