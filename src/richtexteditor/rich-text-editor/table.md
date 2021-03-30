@@ -137,3 +137,25 @@ Using the quick toolbar, users can change the width, cell padding, and cell spac
 table using the properties option.
 
 ![RTE table settings](images/table_properties.png)
+
+## Table cell merge and split
+
+The Rich Text Editor allows users to change the appearance of the tables by splitting or merging the table cells.
+
+`TableCell` item should be configured in the Table [quickToolbarSettings](../api/rich-text-editor/quickToolbarSettings/#table) Property to show the merge/split icons while selecting the table cells
+
+### Table cell merge
+
+The table cell merge feature allows you to merge two or more row and column cells into a single cell with its contents.
+
+The following image explains the table merge action.
+
+![RTE table cell merge](./images/table_merge.png)
+
+### Table cell split
+
+The table cell split feature allows you to a selected cell can be split both horizontally and vertically.
+
+The following image explains the table split action.
+
+![RTE table cell split](./images/table_split.png)
