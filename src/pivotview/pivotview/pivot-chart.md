@@ -706,9 +706,9 @@ export class AppComponent implements OnInit {
 
 ## Multiple Axis
 
-User can draw the pivot chart with multiple value fields by setting the property [`enableMultipleAxis`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/chartSettings/#enablemultiaxis) in [`chartSettings`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/chartSettings/) as **true**. In the below code sample, the pivot chart will be drawn with both value fields "Sold" and "Amount" available in the [`dataSourceSettings`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/dataSourceSettings/).
+User can draw the pivot chart with multiple value fields by setting the property [`enableMultipleAxis`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/chartSettings/#enablemultipleaxis) in [`chartSettings`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/chartSettings/) as **true**. In the below code sample, the pivot chart will be drawn with both value fields "Sold" and "Amount" available in the [`dataSourceSettings`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/dataSourceSettings/).
 
-> The multi axis support is not applicable for the accumulation chart types like pie, doughnut, pyramid, and funnel.
+> The multiple axis support is not applicable for the accumulation chart types like pie, doughnut, pyramid, and funnel.
 
 {% tab template="pivot-grid/getting-started", sourceFiles="app/app.component.ts,app/app.module.ts" %}
 
@@ -794,7 +794,7 @@ export class AppComponent implements OnInit {
 
 {% endtab %}
 
-Meanwhile, there is another way to display multiple values in a chart. In this approach, the series drawn from multiple values are grouped and displayed in a single chart. And, based on the values, multiple Y axis scales will be framed with different ranges. This can be achieved by setting the properties [`enableMultipleAxis`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/chartSettings/#enablemultiaxis) as **true** and `multipleAxisMode` as `Single` in [`chartSettings`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/chartSettings/).
+Meanwhile, there is another way to display multiple values in a chart. In this approach, the series drawn from multiple values are grouped and displayed in a single chart. And, based on the values, multiple Y axis scales will be framed with different ranges. This can be achieved by setting the properties [`enableMultipleAxis`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/chartSettings/#enablemultipleaxis) as **true** and [`multipleAxisMode`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/chartSettings/#multipleaxismode) as `Single` in [`chartSettings`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/chartSettings/).
 
 In the following code sample, the pivot chart can be seen as a single chart with multiple value fields such as **Sold** and **Amount** that are drawn as multiple Y axis.
 
