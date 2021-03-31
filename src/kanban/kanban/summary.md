@@ -3,6 +3,7 @@
 * [Cards](kanban/cards.md)
 * [Data Binding](kanban/data-binding.md)
 * [Swimlane](kanban/swimlane.md)
+* [Drag and drop](kanban/drag-and-drop.md)
 * [Sorting](kanban/sort.md)
 * [Card Editing](kanban/dialog.md)
 * [Tooltip](kanban/tooltip.md)
