@@ -201,6 +201,7 @@ To display the custom context menu items alone, set  the [`showCustomMenuOnly`](
 
 ```typescript
 import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
+import { createElement } from "@syncfusion/ej2-base";
 import { DiagramComponent, Diagram, NodeModel, ConnectorModel, ContextMenuSettingsModel } from '@syncfusion/ej2-angular-diagrams';
 
 @Component({
@@ -237,25 +238,15 @@ export class AppComponent {
           //Enables the context menu
           show: true,
           items: [{
-            text: 'Cut', id: 'Cut', target: '.e-diagramcontent',
+            text: 'Cut  ', id: 'cut', target: '.e-diagramcontent',
             iconCss: 'e-Cut'
           },
           {
-            text: 'Copy', id: 'Copy', target: '.e-diagramcontent',
+            text: 'Copy  ', id: 'copy', target: '.e-diagramcontent',
             iconCss: 'e-Copy'
           }],
           // Hides the default context menu items
           showCustomMenuOnly: true,
-          contextMenuBeforeItemRender: (args: MenuEventArgs) => {
-             // To render template in li.
-             let shortCutSpan: HTMLElement = createElement('span');
-             let text: string = args.item.text;
-             let shortCutText: string = text === 'Cut' ? 'Ctrl + S' : (text === 'Copy' ?
-             'Ctrl + U' : 'Ctrl + Shift + I');
-             shortCutSpan.textContent = shortCutText;
-             args.element.appendChild(shortCutSpan);
-             shortCutSpan.setAttribute('class', 'shortcut');
-           }
         }
     }
     public getNodeDefaults(node: NodeModel): NodeModel {
@@ -277,7 +268,18 @@ export class AppComponent {
                 strokeColor: '#6BA5D7'
             }
         }
+        return obj;
     }
+    public contextMenuBeforeItemRender(args: MenuEventArgs) {
+    // To render template in li.
+         let shortCutSpan: HTMLElement = createElement('span');
+         let text: string = args.item.text;
+         let shortCutText: string = text === 'Cut  ' ? 'Ctrl + S' : (text === 'Copy  ' ?
+         'Ctrl + U' : 'Ctrl + Shift + I');
+         shortCutSpan.textContent = shortCutText;
+         args.element.appendChild(shortCutSpan);
+         shortCutSpan.setAttribute('class', 'shortcut');
+  }
 }
 
 ```
