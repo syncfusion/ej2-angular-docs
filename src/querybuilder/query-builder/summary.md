@@ -2,6 +2,8 @@
 * [Column Binding](query-builder/columns.md)
 * [Data Binding](query-builder/data-binding.md)
 * [Filtering](query-builder/filtering.md)
+* [Templates](query-builder/template.md)
+* [Model Binding](query-builder/model-binding.md)
 * [Importing and Exporting](query-builder/import-export.md)
 * [Localization](query-builder/global-local.md)
 * [Change display mode](query-builder/how-to/display-mode.md)
