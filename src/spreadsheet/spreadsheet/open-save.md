@@ -62,6 +62,49 @@ export class AppComponent { }
 > * Use `Ctrl + S` keyboard shortcut to save the Spreadsheet data as Excel file.
 > * The default value of [allowSave](../api/spreadsheet/#allowsave) property is `true`. For demonstration purpose, we have showcased the [allowSave](../api/spreadsheet/#allowsave) property in previous code snippet.
 
+### Methods
+
+To save the Spreadsheet document as an `xlsx, xls, csv, or pdf` file, by using [save](../api/spreadsheet/#save) method should be called with the `url`, `fileName` and `saveType` as parameters. The following code example shows to save the spreadsheet file as an `xlsx, xls, csv, or pdf` in the button click event.
+
+{% tab template="spreadsheet/local-data-binding", sourceFiles="app/**/*.ts", iframeHeight="450px" %}
+
+```javascript
+import { Component, OnInit,ViewChild } from '@angular/core';
+import { SpreadsheetComponent } from '@syncfusion/ej2-angular-spreadsheet';
+import { data } from './datasource';
+
+@Component({
+    selector: 'app-container',
+    template: `<button class="e-btn e-primary" (click)="xlsx()" >Save As xlsx</button>
+    <button class="e-btn e-primary" (click)="xls()" >Save As xls</button>
+    <button class="e-btn e-primary" (click)="csv()" >Save As csv</button>
+    <button class="e-btn e-primary" (click)="pdf()" >Save As pdf</button>
+    <ejs-spreadsheet #spreadsheet> <e-sheets> <e-sheet> <e-ranges> <e-range [dataSource]='data'></e-range></e-ranges><e-columns><e-column [width]=90></e-column><e-column [width]=100></e-column><e-column [width]=96></e-column><e-column [width]=120></e-column><e-column [width]=130></e-column><e-column [width]=120></e-column></e-columns></e-sheet></e-sheets></ejs-spreadsheet>`
+})
+export class AppComponent implements OnInit {
+    public data: object[];
+    @ViewChild('spreadsheet') public spreadsheetObj: SpreadsheetComponent;
+    xlsx(): void {
+        this.spreadsheetObj.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Xlsx"});
+    }
+    xls(): void {
+        this.spreadsheetObj.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Xls"});
+    }
+    csv(): void {
+        this.spreadsheetObj.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Csv"});
+    }
+    pdf(): void {
+        this.spreadsheetObj.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Pdf"});
+    }
+    ngOnInit(): void {
+        this.data = data;
+    }
+  };
+}
+```
+
+{% endtab %}
+
 ## Server Configuration
 
 In Spreadsheet control, Excel import and export support processed in `server-side`, to use importing and exporting in your projects, it is required to create a server with any of the following web services.

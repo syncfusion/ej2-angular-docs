@@ -202,9 +202,85 @@ export class AppComponent {
 
 {% endtab %}
 
-## Limitation
+## Limitations of Protect Sheet
 
 * Password protection is not supported in Protect sheet feature.
+
+## Protect Workbook
+
+Protect workbook feature helps you to protect the workbook so that users cannot insert, delete, rename, hide the sheets in the spreadsheet.
+You can use the [`password`](../api/spreadsheet/#password) property to protect workbook with password.
+You can use the [`isProtected`](../api/spreadsheet/#isProtected) property to protect or unprotect the workbook without the password.
+
+> The default value for `isProtected` property is `false`.
+
+### User Interface
+
+In the active Spreadsheet, you can protect the worksheet by selecting the Data tab in the Ribbon toolbar and choosing the `Protect Workbook` item. Then, enter the password and confirm it and click on OK.
+
+The following code example shows `Protect Workbook` by using the [`isProtected`](../api/spreadsheet/#isProtected) property in the Spreadsheet control.
+
+{% tab template="spreadsheet/local-data-binding", sourceFiles="app/**/*.ts", iframeHeight="450px" %}
+
+```javascript
+import { Component, OnInit,ViewChild } from '@angular/core';
+import { SpreadsheetComponent } from '@syncfusion/ej2-angular-spreadsheet';
+import { data } from './datasource';
+
+@Component({
+    selector: 'app-container',
+    template: "<ejs-spreadsheet #spreadsheet [isProtected]='true'> <e-sheets> <e-sheet> <e-ranges> <e-range [dataSource]='data'></e-range></e-ranges><e-columns><e-column [width]=90></e-column><e-column [width]=100></e-column><e-column [width]=96></e-column><e-column [width]=120></e-column><e-column [width]=130></e-column><e-column [width]=120></e-column></e-columns></e-sheet></e-sheets></ejs-spreadsheet>"
+})
+export class AppComponent implements OnInit {
+    public data: object[];
+    @ViewChild('spreadsheet') public spreadsheetObj: SpreadsheetComponent;
+    ngOnInit(): void {
+        this.data = data;
+    }
+  };
+}
+```
+
+{% endtab %}
+
+The following code example shows `Protect Workbook` by using the [`password`](../api/spreadsheet/#password) property in the Spreadsheet control. To unprotect the workbook, click the unprotect workbook button in the data tab and provide the password as syncfusion in the dialog box.
+
+{% tab template="spreadsheet/local-data-binding", sourceFiles="app/**/*.ts", iframeHeight="450px" %}
+
+```javascript
+import { Component, OnInit,ViewChild } from '@angular/core';
+import { SpreadsheetComponent } from '@syncfusion/ej2-angular-spreadsheet';
+import { data } from './datasource';
+
+@Component({
+    selector: 'app-container',
+    template: "<ejs-spreadsheet #spreadsheet [password]='syncfusion'> <e-sheets> <e-sheet> <e-ranges> <e-range [dataSource]='data'></e-range></e-ranges><e-columns><e-column [width]=90></e-column><e-column [width]=100></e-column><e-column [width]=96></e-column><e-column [width]=120></e-column><e-column [width]=130></e-column><e-column [width]=120></e-column></e-columns></e-sheet></e-sheets></ejs-spreadsheet>"
+})
+export class AppComponent implements OnInit {
+    public data: object[];
+    @ViewChild('spreadsheet') public spreadsheetObj: SpreadsheetComponent;
+    ngOnInit(): void {
+        this.data = data;
+    }
+  };
+}
+```
+
+{% endtab %}
+
+## Unprotect Workbook
+
+Unprotect Workbook is used to enable the insert, delete, rename, move, copy, hide or unhide sheets feature  in the spreadsheet.
+
+### User Interface
+
+In the active Spreadsheet, the workbook Unprotection can be done in any of the following ways:
+
+* Select the `Unprotect Workbook` item in the Ribbon toolbar under the Data Tab and provide the valid password in the dialog box.
+
+## Limitations of Protect Workbook
+
+* Encryption with password is not supported in the Protect workbook feature.
 
 ## See Also
 

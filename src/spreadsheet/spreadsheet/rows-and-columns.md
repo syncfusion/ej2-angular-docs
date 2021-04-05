@@ -221,7 +221,7 @@ export class AppComponent {
 
 {% endtab %}
 
-## Limitation
+## Limitations
 
 The following features have some limitations in Insert/Delete:
 

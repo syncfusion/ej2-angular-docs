@@ -96,7 +96,7 @@ When you want to reapply the filter after some changes happened in the rows. It 
 The following errors have been handled for filtering,
 * *Out of range validation:* When the selected range is not a used range of the active sheet, it is considered as invalid and the out of range alert with the message `Select a cell or range inside the used range and try again` will be displayed. No filter will be performed if the range is invalid.
 
-## Limitation
+## Limitations
 
 The following features have some limitations in Filter:
 
