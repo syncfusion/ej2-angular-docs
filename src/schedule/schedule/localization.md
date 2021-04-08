@@ -270,7 +270,9 @@ L10n.load({
             "timelineDay": "Timeline Day",
             "timelineWeek": "Timeline Week",
             "timelineWorkWeek": "Timeline Work Week",
-            "timelineMonth": "Timeline Month"
+            "timelineMonth": "Timeline Month",
+            "expandAllDaySection": "Expand",
+            "collapseAllDaySection": "Collapse"
         },
         "recurrenceeditor": {
             "none": "None",
