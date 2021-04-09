@@ -8,7 +8,7 @@ description: "Essential JS 2 StockChart  StockChart supports 6 major types of se
 
 # StockChart Series Types
 
-Essential JS 2 StockChart supports 6 major types of series namely `Line`, `Spline`, `Hilo`, `HiloOpenClose`, `Hollow Candle` and `Candle` . By using the series dropdown button you can navigate between the above listed series types.
+Essential JS 2 StockChart supports 7 major types of series namely `Line`, `Spline`, `Area`, `Hilo`, `HiloOpenClose`, `Hollow Candle` and `Candle` . By using the series dropdown button you can navigate between the above listed series types.
 
 <!-- markdownlint-disable MD036 -->
 
@@ -20,6 +20,10 @@ inject `LineSeriesService` into the `@NgModule.providers`.
 ## Spline
 
 To render a spline series, use series [`type`](../api/stock-chart/stockSeriesModel/#type) as `Spline` and inject `SplineSeriesService` into the `@NgModule.providers`.
+
+## Area
+
+To render a area series, use series [`type`](../api/stock-chart/stockSeriesModel/#type) as `Area` and inject `AreaSeriesService` into the `@NgModule.providers`.
 
 ## Hilo
 
