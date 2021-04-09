@@ -14,7 +14,7 @@ Hyperlink is used to navigate to web links or cell reference within the sheet or
 
 You can insert a hyperlink in a worksheet cell for quick access to related information.
 
-### User Interface
+**User Interface**:
 
 In the active spreadsheet, click the cell where you want to create a hyperlink. Insert hyperlink can be done by any of the following ways:
 * Select the INSERT tab in the Ribbon toolbar and choose the `Link` item.
@@ -25,7 +25,7 @@ In the active spreadsheet, click the cell where you want to create a hyperlink. 
 
 You can change an existing hyperlink in your workbook by changing its destination or the text that is used to represent it.
 
-### User Interface
+**User Interface**:
 
 In the active spreadsheet, Select the cell that contains the hyperlink that you want to change. Editing the hyperlink while opening the dialog can be done by any one of the following ways:
 
@@ -38,7 +38,7 @@ In the Edit Link dialog box, make the changes that you want, and click UPDATE.
 
 Performing this operation remove a single hyperlink without losing the display text.
 
-### User Interface
+**User Interface**:
 
 In the active spreadsheet, click the cell where you want to remove a hyperlink. remove hyperlink can be done by any of the following ways:
 * Right-click the cell and then click Remove Hyperlink item in the context menu.

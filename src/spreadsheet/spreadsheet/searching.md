@@ -14,7 +14,7 @@ Find and Replace helps you to search for the target text and replace the found t
 
 Find feature is used to select the matched contents of a cell within the sheet or workbook. It is extremely useful when working with large set of data source.
 
-### User Interface
+**User Interface**:
 
 Find can be done by any of the following ways:
 
@@ -33,7 +33,7 @@ Find can be done by any of the following ways:
 
 Replace feature is used to change the find contents of a cell within sheet or workbook. Replace All is used to change all the matched contents of a cell within sheet or workbook.
 
-### User Interface
+**User Interface**:
 
 Replace can be done by any of the following ways:
 
@@ -47,7 +47,7 @@ Replace can be done by any of the following ways:
 
 Go to feature is used to navigate to a specific cell address in the sheet or workbook.
 
-### User Interface
+**User Interface**:
 
 * Use `Ctrl + G` key to open the Go To dialog.
 * Use [`goTo()`](../api/spreadsheet/#goto) method to perform Go To operation.

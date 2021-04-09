@@ -10,7 +10,7 @@ Freeze Panes helps you to keep particular rows or columns visible when scrolling
 
 ## Apply freezepanes on UI
 
-### User Interface
+**User Interface**:
 
 In the active spreadsheet, click the cell where you want to create freeze panes. Freeze panes can be done in any of the following ways:
 
@@ -21,7 +21,7 @@ In the active spreadsheet, click the cell where you want to create freeze panes.
 
 It allows you to keep a certain number of rows visible while scrolling vertically through the rest of the worksheet.
 
-### User Interface
+**User Interface**:
 
 In the active spreadsheet, select the cell where you want to create frozen rows. Frozen rows can be done in any one of the following ways:
 
@@ -32,7 +32,7 @@ In the active spreadsheet, select the cell where you want to create frozen rows.
 
 It allows you to keep a certain number of columns visible while scrolling horizontally through the rest of the worksheet.
 
-### User Interface
+**User Interface**:
 
 In the active spreadsheet, select the cell where you want to create frozen columns. Frozen columns can be done in any one of the following ways:
 
