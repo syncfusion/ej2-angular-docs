@@ -407,6 +407,77 @@ The following features have some limitations in Data Validation:
 * Copy/paste with data validation.
 * Delete cells between data validation applied range.
 
+## Clear
+
+Clear feature helps you to clear the cell contents (formulas and data), formats (including number formats, conditional formats, and borders) in a spreadsheet. The cleared cells will remain blank or unformatted or content on the worksheet.
+
+### Apply Clear Feature
+
+You can apply clear feature by using one of the following ways,
+
+* Select the clear icon in the Ribbon toolbar under the Home Tab.
+* Using the [`clear()`](../api/spreadsheet/#clear) method to clear the values.
+
+Clear has the following types in the spreadsheet,
+
+| Options | Uses |
+|-----|------|
+| `Clear All` | Used to clear all contents, formats, and hyperlinks.  |
+| `Clear Formats` | Used to clear the formats (including number formats, conditional formats, and borders) in a cell. |
+| `Clear Contents` | Used to clear the contents (formulas and data) in a cell. |
+| `Clear Hyperlinks` | Used to clear the hyperlink in a cell. |
+
+### Methods
+
+Clear the cell contents and formats in the Spreadsheet document by using the [clear](../api/spreadsheet/#clear) method. The [clear](../api/spreadsheet/#clear) method has `type` and `range` as parameters. The following code example shows how to clear the cell contents and formats in the button click event.
+
+{% tab template="spreadsheet/clear", sourceFiles="app/**/*.ts", iframeHeight="450px" %}
+
+```javascript
+import { Component, OnInit,ViewChild } from '@angular/core';
+import { SpreadsheetComponent } from '@syncfusion/ej2-angular-spreadsheet';
+import { ItemModel, MenuEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
+import { data } from './datasource';
+
+@Component({
+    selector: 'app-container',
+    template: "<button ejs-dropdownbutton [items]='items' content='Clear' (select)='itemSelect($event)'></button> <ejs-spreadsheet #spreadsheet (created)='created()'> <e-sheets> <e-sheet> <e-ranges> <e-range [dataSource]='data'></e-range></e-ranges><e-columns><e-column [width]=90></e-column><e-column [width]=100></e-column><e-column [width]=96></e-column><e-column [width]=120></e-column><e-column [width]=130></e-column><e-column [width]=120></e-column></e-columns></e-sheet></e-sheets></ejs-spreadsheet>"
+})
+export class AppComponent implements OnInit {
+    public data: object[];
+    @ViewChild('spreadsheet') public spreadsheetObj: SpreadsheetComponent;
+    ngOnInit(): void {
+        this.data = data;
+    }
+    public items: ItemModel[] = [
+    {
+      text: "Clear All"
+    },
+    {
+      text: "Clear Formats"
+    },
+    {
+      text: "Clear Contents"
+    },
+    {
+      text: "Clear Hyperlinks"
+    }];
+    created() {
+      this.spreadsheetObj.cellFormat({ fontWeight: 'bold', fontSize: '12pt'}, 'A1:E1');
+      this.spreadsheetObj.cellFormat({ color: '#10c469' }, 'B1:B10');
+    }
+    public itemSelect(args: MenuEventArgs) {
+      this.spreadsheetObj.clear({type: 'Clear Contents', range: 'A1:A10'}); // Clear the content in the provided range
+      this.spreadsheetObj.clear({type: 'Clear Formats', range: 'B1:B10'}); // Clear the formats applied in the provided range
+      this.spreadsheetObj.clear({type: 'Clear Hyperlinks', range: 'F2:F6'}); // Clear the hyperlinks applied in the provided range
+      this.spreadsheetObj.clear({type: 'Clear All', range: 'D1:D10'}); // Clear the content, formats and hyperlinks applied in the provided range.
+    }
+  };
+}
+```
+
+{% endtab %}
+
 ## See Also
 
 * [Rows and columns](./rows-and-columns)
