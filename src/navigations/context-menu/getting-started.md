@@ -76,7 +76,7 @@ export class AppModule { }
 
 ## Adding Syncfusion ContextMenu component
 
-Modify the template in `app.component.ts` file with `ej-contextmenu` to render the ContextMenu
+Modify the template in `app.component.ts` file with `ejs-contextmenu` to render the ContextMenu
 component and the option contains `menuItems` and `target` in which ContextMenu will be opened.
 
 ```javascript
