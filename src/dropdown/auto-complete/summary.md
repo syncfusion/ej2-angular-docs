@@ -4,6 +4,7 @@
 * [Grouping](auto-complete/grouping.md)
 * [Filtering](auto-complete/filtering.md)
 * [Localization](auto-complete/localization.md)
+* [Style and appearance](auto-complete/style.md)
 * [Accessibility](auto-complete/accessibility.md)
 * [Form Support](auto-complete/form-support.md)
 * [Autofill supported with AutoComplete](auto-complete/how-to/autofill.md)
