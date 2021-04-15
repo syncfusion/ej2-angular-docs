@@ -56,7 +56,7 @@ export class AppComponent implements OnInit {
 
 {% endtab %}
 
-## Visibility of period selector
+## Visibility of range selector
 
 The [`enableSelector`](../api/stock-chart/stockChartModel/#enableselector) property allows users to toggle the visibility of range selector.
 
