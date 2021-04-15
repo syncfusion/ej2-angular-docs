@@ -409,7 +409,7 @@ The following features have some limitations in Data Validation:
 
 ## Clear
 
-Clear feature helps you to clear the cell contents (formulas and data), formats (including number formats, conditional formats, and borders) in a spreadsheet. The cleared cells will remain blank or unformatted or content on the worksheet.
+Clear feature helps you to clear the cell contents (formulas and data), formats (including number formats, conditional formats, and borders) in a spreadsheet. When you apply clear all, both the contents and the formats will be cleared simultaneously.
 
 ### Apply Clear Feature
 

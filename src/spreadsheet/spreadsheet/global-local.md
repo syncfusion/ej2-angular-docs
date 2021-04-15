@@ -376,7 +376,7 @@ IsProtected | is protected
 
 To load translation object in an application, use [`load`](../common/internationalization/#load) function of the [`L10n`](../common/internationalization) class.
 
-The following example demonstrates the Spreadsheet in `French` culture.
+The following example demonstrates the Spreadsheet in `French` culture. In the below sample we have translated the ribbon tab names and Home tab content (clipboard, cell style).
 
 {% tab template="spreadsheet/local-data-binding", sourceFiles="app/**/*.ts", iframeHeight="450px" %}
 
@@ -389,6 +389,12 @@ import { data } from './datasource';
 L10n.load({
     'fr-CH': {
         'spreadsheet': {
+            'File': 'Fichier',
+            'Home': 'Accueil',
+            'Insert': 'Insérer',
+            'Formulas': 'Formules',
+            'Data': 'Les données',
+            'View': 'Vue',
             'Cut': 'Coupe',
             'Copy': 'Copie',
             'Paste': 'Pâte',
@@ -413,11 +419,11 @@ L10n.load({
             'AlignMiddle': 'Aligner le milieu',
             'AlignBottom': 'Aligner le bas',
             'InsertFunction': 'Insérer une fonction',
-            'Insert': 'Insérer',
             'Delete': 'Effacer',
             'Rename': 'Rebaptiser',
             'Hide': 'Cacher',
-            'Unhide': 'Démasquer'
+            'Unhide': 'Démasquer',
+            'NumberFormat': 'Nombre Format',
         }
     }
 });
@@ -453,6 +459,12 @@ import { data } from './datasource';
 L10n.load({
       'ar-AE': {
         'spreadsheet': {
+            "File": "ملف",
+            "Home": "هم",
+            "Insert": "إدراج",
+            "Formulas": "الصيغ",
+            "View": "معاينة",
+            "Data": "البيانات",
             "Cut": "قطع",
             "Copy": "نسخ",
             "Paste": "معجون",
@@ -477,7 +489,6 @@ L10n.load({
             "AlignMiddle": "محاذاة الأوسط",
             "AlignBottom": "أسفل محاذاة",
             "InsertFunction": "إدراج وظيفة",
-            "Insert": "إدراج",
             "Delete": "حذف",
             "Rename": "إعادة تسمية",
             "Hide": "إخفاء",
