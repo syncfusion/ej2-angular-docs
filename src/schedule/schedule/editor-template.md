@@ -1048,6 +1048,31 @@ export class AppComponent {
 
 {% endtab %}
 
+### How to open QuickInfo popup on multiple cell selection
+
+By default the `QuickInfo` popup will open on single click of the cell. To open the quick info popup on multiple cell selection, you need to select the cells and press `enter` key. You can open this popup immediately after multiple cell selection by setting up `true` to `quickInfoOnSelectionEnd` property where as its default value is `false`.
+
+{% tab template="schedule/editor-window", iframeHeight="588px", sourceFiles="app/**/*.ts" %}
+
+```typescript
+import { Component } from '@angular/core';
+import { DayService, WeekService, WorkWeekService, MonthService } from '@syncfusion/ej2-angular-schedule';
+@Component({
+    selector: 'app-root',
+    providers: [DayService, WeekService, WorkWeekService, MonthService],
+    // specifies the template string for the Schedule component
+    template: `<ejs-schedule width='100%' height='550px' [views]='views' [quickInfoOnSelectionEnd]='showQuickInfoOnSelectionEnd'></ejs-schedule>`
+})
+
+
+export class AppComponent {
+    public views: Array<string> = ['Day', 'Week', 'WorkWeek', 'Month'];
+    public showQuickInfoOnSelectionEnd: Boolean = true;
+}
+```
+
+{% endtab %}
+
 ### How to change the watermark text of quick popup subject
 
 By default, `Add Title` text is displayed on the subject field of quick popup. To change the default watermark text, change the value of the appropriate localized word collection used in the Scheduler.
