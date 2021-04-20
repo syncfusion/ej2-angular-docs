@@ -45,7 +45,7 @@ import { kanbanData } from './datasource';
 
 @Component({
   selector: 'app-root',
-  template: `<ejs-kanban keyField='Status' [dataSource]='data' [cardSettings]='cardSettings' allowDragAndDrop='false'>
+  template: `<ejs-kanban keyField='Status' [dataSource]='data' [cardSettings]='cardSettings' [allowDragAndDrop]='allowDragAndDrop'>
                 <e-columns>
                   <e-column headerText='To do' keyField='Open'></e-column>
                   <e-column headerText='In Progress' keyField='InProgress'></e-column>
@@ -56,6 +56,7 @@ import { kanbanData } from './datasource';
 })
 export class AppComponent {
     public data: Object[] = kanbanData;
+    public allowDragAndDrop: Boolean = false;
     public cardSettings: CardSettingsModel = {
         contentField: 'Summary',
         headerField: 'Id'
@@ -95,10 +96,9 @@ export class AppComponent {
     public data: Object[] = kanbanData;
     public cardSettings: CardSettingsModel = {
         contentField: 'Summary',
-        headerField: 'Id',
-        allowDragAndDrop: true
+        headerField: 'Id'
     };
-    public swimlaneSettings: SwimlaneSettingsModel = { keyField: 'Assignee' };
+    public swimlaneSettings: SwimlaneSettingsModel = { keyField: 'Assignee', allowDragAndDrop: true };
 }
 
 ```
@@ -123,78 +123,60 @@ In the following example, Drag the card from one Kanban and drop it into another
 import { Component, ViewChild } from '@angular/core';
 import { closest } from '@syncfusion/ej2-base';
 import { CardSettingsModel, DragEventArgs, KanbanComponent } from '@syncfusion/ej2-angular-kanban';
-import { kanbanData } from './datasource';
+import { kanbanAData, kanbanBData } from './datasource';
 @Component({
   selector: 'app-root',
-  template: `<table>
-  <tbody>
-    <tr>
-      <td>
+  template: `<div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6">
         <h4>Kanban A</h4>
-        <ejs-kanban id='KanbanA' #KanbanA keyField='Status' [dataSource]='data' [externalDropId]='externalKanbanADropId'
+        <ejs-kanban id='KanbanA' #KanbanA keyField='Status' [dataSource]='dataA' [externalDropId]='externalKanbanADropId'
           [cardSettings]='cardSettings' (dragStop)='onKanbanADragStop($event)'>
           <e-columns>
             <e-column headerText='To do' keyField='Open'></e-column>
             <e-column headerText='Done' keyField='Close'></e-column>
           </e-columns>
         </ejs-kanban>
-      </td>
-      <td>
+      </div>
+        <div class="col-sm-6">
         <h4>Kanban B</h4>
-        <ejs-kanban id='KanbanB' #KanbanB keyField='Status' [dataSource]='data' [externalDropId]='externalKanbanBDropId'
+        <ejs-kanban id='KanbanB' #KanbanB keyField='Status' [dataSource]='dataB' [externalDropId]='externalKanbanBDropId'
           [cardSettings]='cardSettings' (dragStop)='onKanbanBDragStop($event)'>
           <e-columns>
             <e-column headerText='To do' keyField='Open'></e-column>
             <e-column headerText='Done' keyField='Close'></e-column>
           </e-columns>
         </ejs-kanban>
-      </td>
-    </tr>
-  </tbody>
-</table>`,
-  styleUrls: ['./app.component.css']
+      </div>
+      </div>
+    </div>`
 })
 export class AppComponent {
   @ViewChild('KanbanA')
     public kanbanObjA: KanbanComponent;
     @ViewChild('KanbanB')
     public kanbanObjB: KanbanComponent;
-    public data: Object[] = kanbanData;
+    public dataA: Object[] = kanbanAData;
+    public dataB: Object[] = kanbanBData;
     public cardSettings: CardSettingsModel = {
         contentField: 'Summary',
         headerField: 'Id'
     };
-    public externalKanbanADropId: string[] = ['#KanbanA'];
-    public externalKanbanBDropId: string[] = ['#KanbanB'];
+    public externalKanbanADropId: string[] = ["#KanbanB"];
+    public externalKanbanBDropId: string[] = ["#KanbanA"];
     onKanbanADragStop(args: DragEventArgs) {
       let kanbanBElement: Element = <Element>closest(args.event.target as Element, '#KanbanB');
       if (kanbanBElement) {
-        kanbanObjA.deleteCard(args.data);
-        args.data.forEach((card: Record<string, any>, i: number) => {
-            const index: number = kanbanObjB.kanbanData.findIndex((colData: Record<string, any>) =>
-                colData[kanbanObjB.cardSettings.headerField] === card[kanbanObjB.cardSettings.headerField]);
-            if (index !== -1) {
-                card[kanbanObjB.cardSettings.headerField] = Math.max(...kanbanObjB.kanbanData.map(
-                    (obj: Record<string, string>) => parseInt(obj[kanbanObjB.cardSettings.headerField], 10))) + ++i;
-            }
-        });
-        kanbanObjB.addCard(args.data, args.dropIndex);
+        this.kanbanObjA.deleteCard(args.data);
+        this.kanbanObjB.addCard(args.data, args.dropIndex);
         args.cancel = true;
     }
     };
     onKanbanBDragStop(args: DragEventArgs) {
       let kanbanAElement: Element = <Element>closest(args.event.target as Element, '#KanbanA');
       if (kanbanAElement) {
-        kanbanObjB.deleteCard(args.data);
-        args.data.forEach((card: Record<string, any>, i: number) => {
-            const index: number = kanbanObjA.kanbanData.findIndex((colData: Record<string, any>) =>
-                colData[kanbanObjA.cardSettings.headerField] === card[kanbanObjA.cardSettings.headerField]);
-            if (index !== -1) {
-                card[kanbanObjA.cardSettings.headerField] = Math.max(...kanbanObjA.kanbanData.map(
-                    (obj: Record<string, string>) => parseInt(obj[kanbanObjA.cardSettings.headerField], 10))) + ++i;
-            }
-        });
-        kanbanObjA.addCard(args.data, args.dropIndex);
+        this.kanbanObjB.deleteCard(args.data);
+        this.kanbanObjA.addCard(args.data, args.dropIndex);
         args.cancel = true;
     }
     };
@@ -222,33 +204,30 @@ import { TreeViewComponent } from '@syncfusion/ej2-angular-navigations';
 import { DragAndDropEventArgs } from '@syncfusion/ej2-navigations';
 @Component({
   selector: 'app-root',
-  template: `<table>
-  <tbody>
-    <tr>
-      <td>
+  template: `<div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
         <h4>Kanban</h4>
-        <ejs-kanban id='Kanban' #Kanban keyField='Status' [dataSource]='data' [externalDropId]='externalKanbanADropId'
-          [cardSettings]='cardSettings' (dragStop)='onKanbanADragStop($event)'>
+        <ejs-kanban id='Kanban' #Kanban keyField='Status' [dataSource]='data' [externalDropId]='externalKanbanDropId'
+          [cardSettings]='cardSettings' (dragStop)='onKanbanDragStop($event)'>
           <e-columns>
             <e-column headerText='To do' keyField='Open'></e-column>
               <e-column headerText='Done' keyField='Close'></e-column>
           </e-columns>
         </ejs-kanban>
-      </td>
-      <td>
+      </div>
+      <div class="col-md-6">
         <h4>TreeView</h4>
         <ejs-treeview id='TreeView' #TreeView [fields]='field' [allowDragAndDrop]='allowDragAndDrop' (nodeDragStop)="onTreeDragStop($event)">
             <ng-template #nodeTemplate="" let-data="">
                 <div id="treelist">
-                  <div id="treeviewlist">{{Id}} - {{Status}}</div>
+                  <div id="treeviewlist">{{data.Id}} - {{data.Status}}</div>
                 </div>
             </ng-template>
         </ejs-treeview>
-      </td>
-    </tr>
-  </tbody>
-</table>`,
-  styleUrls: ['./app.component.css']
+      </div>
+     </div>
+   </div>`
 })
 export class AppComponent {
   @ViewChild('Kanban')
@@ -261,13 +240,13 @@ export class AppComponent {
     headerField: 'Id'
   };
   public externalKanbanDropId: string[] = ['#TreeView'];
-  public field: Object = { dataSource: treeViewData, id: 'Id', text: 'Name' };
+  public field: Object = { dataSource: treeViewData, id: 'Id', text: 'Status' };
   public allowDragAndDrop: boolean = true;
   onKanbanDragStop(args: DragEventArgs) {
     let treeViewElement: Element = <Element>closest(args.event.target as Element, '#TreeView');
     if (treeViewElement) {
-      kanbanObj.deleteCard(args.data);
-      treeObj.addNodes(args.data);
+      this.kanbanObj.deleteCard(args.data);
+      this.treeObj.addNodes(args.data);
       args.cancel = true;
     }
   };
@@ -275,11 +254,11 @@ export class AppComponent {
     let kanbanElement: Element = <Element>closest(args.event.target as Element, '#Kanban');
     if (kanbanElement) {
       let treeData: { [key: string]: Object }[] =
-        treeObj.fields.dataSource as { [key: string]: Object }[];
+        this.treeObj.fields.dataSource as { [key: string]: Object }[];
       const filteredData: { [key: string]: Object }[] =
         treeData.filter((item: any) => item.Id === parseInt(args.draggedNodeData.id as string, 10));
-      treeObj.removeNodes([args.draggedNodeData.id] as string[]);
-      kanbanObj.openDialog('Add', filteredData[0]);
+      this.treeObj.removeNodes([args.draggedNodeData.id] as string[]);
+      this.kanbanObj.openDialog('Add', filteredData[0]);
       args.cancel = true;
     }
   };
@@ -300,7 +279,7 @@ In the following sample, remove the data from the Kanban board using the `delete
 ```typescript
 
 import { Component, ViewChild } from '@angular/core';
-import { closest, removeClass } from '@syncfusion/ej2-base';
+import { closest, removeClass, extend } from '@syncfusion/ej2-base';
 import { CardSettingsModel, DragEventArgs, KanbanComponent } from '@syncfusion/ej2-angular-kanban';
 import { kanbanData, scheduleData } from './datasource';
 import {
@@ -309,20 +288,18 @@ import {
 } from '@syncfusion/ej2-angular-schedule';
 @Component({
   selector: 'app-root',
-  template: `<table>
-  <tbody>
-    <tr>
-      <td>
+  template: `<div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4" style="width: 30%">
         <h4>Kanban</h4>
-        <ejs-kanban id='Kanban' #Kanban keyField='Status' [dataSource]='data' [externalDropId]='externalKanbanADropId'
-          [cardSettings]='cardSettings' (dragStop)='onKanbanADragStop($event)'>
+        <ejs-kanban id='Kanban' #Kanban keyField='DepartmentName' [dataSource]='data' [externalDropId]='externalKanbanDropId'
+          [cardSettings]='cardSettings' (dragStop)='onKanbanDragStop($event)'>
           <e-columns>
-            <e-column headerText='To do' keyField='Open'></e-column>
-              <e-column headerText='Done' keyField='Close'></e-column>
+            <e-column headerText='GENERAL' keyField='GENERAL'></e-column>
           </e-columns>
         </ejs-kanban>
-      </td>
-      <td>
+      </div>
+      <div class="col-md-8" style="width: 70%">
         <h4>Schedule</h4>
         <ejs-schedule id='Schedule' #Schedule width='100%' height='650px' [group]="group" [currentView]="currentView" [selectedDate]="selectedDate" [workHours]="workHours" [eventSettings]="eventSettings" (dragStop)="scheduleDragStop($event)">
                 <e-resources>
@@ -334,9 +311,6 @@ import {
                 <ng-template #resourceHeaderTemplate let-data>
                     <div class="template-wrap">
                         <div class="specialist-category">
-                            <div *ngIf="getConsultantStatus(data)">
-                                <img src="./assets/schedule/images/{{getConsultantImageName(data)}}.png" class="specialist-image"/>
-                            </div>
                             <div class="specialist-name">{{getConsultantName(data)}}</div>
                             <div class="specialist-designation">{{getConsultantDesignation(data)}}</div>
                         </div>
@@ -347,11 +321,9 @@ import {
                     <e-view option='TimelineMonth'></e-view>
                 </e-views>
             </ejs-schedule>
-      </td>
-    </tr>
-  </tbody>
-</table>`,
-  styleUrls: ['./app.component.css'],
+       </div>
+     </div>
+   </div>`,
   providers: [TimelineViewsService, TimelineMonthService, ResizeService, DragAndDropService]
 })
 export class AppComponent {
@@ -362,7 +334,7 @@ export class AppComponent {
   public data: Object[] = kanbanData;
   public scheduleDataSource: Object[] = <Object[]>extend([], scheduleData, null, true);
   public cardSettings: CardSettingsModel = {
-    contentField: 'Summary',
+    contentField: 'Name',
     headerField: 'Id'
   };
   public externalKanbanDropId: string[] = ['#Schedule'];
@@ -424,17 +396,17 @@ export class AppComponent {
     onKanbanDragStop(args: DragEventArgs) {
     let scheduleElement: Element = <Element>closest(args.event.target as Element, '#Schedule');
         if (scheduleElement) {
-            kanbanObj.deleteCard(args.data);
-            scheduleObj.openEditor(args.data[0], 'Add', true);
+            this.kanbanObj.deleteCard(args.data);
+            this.scheduleObj.openEditor(args.data[0], 'Add', true);
             args.cancel = true;
         }
     };
     scheduleDragStop(args: ScheduleDragEventArgs) {
     let kanbanElement: Element = <Element>closest(args.event.target as Element, '#Kanban');
         if (kanbanElement) {
-            scheduleObj.deleteEvent(args.data.Id);
-             removeClass([scheduleObj.element.querySelector('.e-selected-cell')], 'e-selected-cell');
-             kanbanObj.openDialog('Add', args.data);
+            this.scheduleObj.deleteEvent(args.data.Id);
+             removeClass([this.scheduleObj.element.querySelector('.e-selected-cell')], 'e-selected-cell');
+             this.kanbanObj.openDialog('Add', args.data);
              args.cancel = true;
         }
     };
