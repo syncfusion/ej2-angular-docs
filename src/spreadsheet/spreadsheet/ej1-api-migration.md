@@ -244,6 +244,63 @@ This article describes the API migration process of the Spreadsheet component fr
 | Perform goto operation | **Method:** *XLScroll.goTo* <br><br>`<ej-spreadsheet id="spreadsheet">`<br>`</ej-spreadsheet>`<br>**TS**<br>`ngAfterViewInit(){ let xlObj = $("#spreadsheet").data("ejSpreadsheet");  xlObj.XLScroll.goTo("A30"); }`| **Method:** *goTo* <br><br>`<ejs-spreadsheet #default>`<br>`</ejs-spreadsheet>`<br>**TS**<br>`@ViewChild('default') public spreadsheetObj: SpreadsheetComponent;`<br>`this.spreadsheetObj.goTo('A30');`|
 | Scroll the sheet content to the specified cell address | **Method:** *XLScroll.scrollToCell* <br><br>`<ej-spreadsheet id="spreadsheet">`<br>`</ej-spreadsheet>`<br>**TS**<br>`ngAfterViewInit(){ let xlObj = $("#spreadsheet").data("ejSpreadsheet");  xlObj.XLScroll.scrollToCell("A30"); }`| **Method:** *goTo* <br><br>`<ejs-spreadsheet #default>`<br>`</ejs-spreadsheet>`<br>**TS**<br>`@ViewChild('default') public spreadsheetObj: SpreadsheetComponent;`<br>`this.spreadsheetObj.goTo('A30');`|
 
+## Comparision between EJ1 and EJ2 Spreadsheet features
+
+The following table compares Excel functionality with the availability of EJ1 and EJ2 Spreadsheet features.
+
+| **Features** | **Available in EJ1 Spreadsheet** | **Available in EJ2 Spreadsheet** | **Comments** |
+| --- | --- | --- | --- |
+| Ribbon | Yes | Yes | - |
+| Formula bar | Yes | Yes | - |
+| Sheet tab | Yes | Yes | - |
+| Show / Hide gridlines and header | Yes | Yes | - |
+| Scrolling | Partially | Yes | - |
+| Selection | Yes | Yes | - |
+| Editing | Yes | Yes | - |
+| Formulae | Yes | Partially | EJ2 supports limited number of [`most used formulas`](https://ej2.syncfusion.com/documentation/spreadsheet/formulas/#supported-formulas)  |
+| Named range | Yes | Partially | EJ2 Spreadsheet Named range supports only in workbook scope |
+| Data Binding | Yes | Yes | - |
+| Formatting | Yes | Yes | - |
+| Context menu | Yes | Yes | - |
+| Keyboard navigation | Yes | Yes | - |
+| Keyboard shortcuts | Yes | Yes | - |
+| Sorting | Yes | Yes | - |
+| Filtering | Yes | Yes | - |
+| Hyperlink | Yes | Yes | - |
+| Undo & redo | Yes | Yes | - |
+| Open and Save | Yes | Yes | - |
+| Resize / Autofit | Yes | Yes | - |
+| Clipboard | Yes | Yes | - |
+| Collaborative editing | No | Yes | - |
+| Wrap text | Yes | Yes | - |
+| Template | No | Yes | - |
+| Merge cells | Yes | Yes | - |
+| Show / Hide rows and columns | Yes | Yes | - |
+| Sheet customizations | Yes | Partially | Move or copy sheet is not supported in EJ2 spreadsheet. |
+| Data Validation | Yes | Yes | - |
+| Table | Yes | No | - |
+| Chart | Yes | Yes | - |
+| Image | Yes | Yes | - |
+| Conditional formatting | Yes | Yes | - |
+| Freeze Pane | Yes | Yes | - |
+| Scaling | No | No | - |
+| Print | Yes | No | - |
+| Grouping | No | No | - |
+| Autofill | Yes | No | - |
+| Auto Sum | Yes | Yes | - |
+| Format painter | Yes | No | - |
+| Cell Style | Yes | Partially | We can only customize the cell style in EJ2 Spreadsheet through API. |
+| Protection | Yes | Partially | Custom encryption is not supported in EJ2 Spreadsheet's protect workbook. |
+| Find and replace | Yes | Yes | - |
+| Drag and Drop | Yes | No | - |
+| Notes | Yes | No | - |
+| Comments | No | No | - |
+| Pivot table | Yes | No | - |
+| Sparklines | Yes | No | - |
+| Form controls | Yes | No | - |
+| Shapes | No | No | - |
+| Clear | Yes | Yes | - |
+
 ## Common Properties
 
 |Behavior | API in Essential JS 1 | API in Essential JS 2 |

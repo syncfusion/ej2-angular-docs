@@ -26,4 +26,3 @@
 * [Migration from Essential JS 1](spreadsheet/ej1-api-migration.md)
 * [Sort a range by custom list](spreadsheet/how-to/sort-a-range-by-custom-list.md)
 * [Mobile Responsiveness](spreadsheet/mobile-responsiveness.md)
-* [Features Availability](spreadsheet/feature-list.md)

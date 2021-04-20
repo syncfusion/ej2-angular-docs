@@ -14,7 +14,7 @@ The following table compares Excel functionality with the availability of EJ1 an
 | Formula bar | Yes | Yes | - |
 | Sheet tab | Yes | Yes | - |
 | Show / Hide gridlines and header | Yes | Yes | - |
-| Scrolling | Partially | Yes | EJ1 supports row virtualization alone, EJ2 supports both row and column virtualization. |
+| Scrolling | Partially | Yes | - |
 | Selection | Yes | Yes | - |
 | Editing | Yes | Yes | - |
 | Formulae | Yes | Partially | EJ2 supports limited number of [`most used formulas`](https://ej2.syncfusion.com/documentation/spreadsheet/formulas/#supported-formulas)  |
@@ -24,7 +24,7 @@ The following table compares Excel functionality with the availability of EJ1 an
 | Context menu | Yes | Yes | - |
 | Keyboard navigation | Yes | Yes | - |
 | Keyboard shortcuts | Yes | Yes | - |
-| Sorting | Yes | Yes | EJ2 supports custom sort |
+| Sorting | Yes | Yes | - |
 | Filtering | Yes | Yes | - |
 | Hyperlink | Yes | Yes | - |
 | Undo & redo | Yes | Yes | - |
@@ -49,8 +49,8 @@ The following table compares Excel functionality with the availability of EJ1 an
 | Autofill | Yes | No | - |
 | Auto Sum | Yes | Yes | - |
 | Format painter | Yes | No | - |
-| Cell Style | Yes | No | In EJ2 Spreadsheet, we can customize the cell style through api only. |
-| Protection | Yes | Yes | Custom encryption support not provided in EJ2 |
+| Cell Style | Yes | Partially | In EJ2 Spreadsheet, we can customize the cell style through api only. |
+| Protection | Yes | Partially | In EJ2 Spreadsheet, Custom encryption is not supported in protect workbook. |
 | Find and replace | Yes | Yes | - |
 | Drag and Drop | Yes | No | - |
 | Notes | Yes | No | - |
@@ -68,3 +68,5 @@ The following table compares Excel functionality with the availability of EJ1 an
 * [Hyperlink](./link)
 * [Undo and Redo](./undo-redo)
 * [Unlock the particular cells in the protected sheet](./protect-sheet#unlock-the-particular-cells-in-the-protected-sheet)
+
+This file can contain any content.
