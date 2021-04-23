@@ -2,6 +2,7 @@
 * [Icons and Navigation](context-menu/icons-and-navigation.md)
 * [Template and Multilevel nesting](context-menu/templates.md)
 * [Accessibility](context-menu/accessibility.md)
+* [Styles and Appearances](context-menu/style-and-appearance.md)
 * [Populate menu items with data source](context-menu/how-to/populate-menu-items-with-data-source.md)
 * [Open and close ContextMenu](context-menu/how-to/open-and-close-contextmenu.md)
 * [Change menu items dynamically](context-menu/how-to/change-menu-items-dynamically.md)
