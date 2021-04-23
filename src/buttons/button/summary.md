@@ -1,5 +1,6 @@
 * [Getting Started](button/getting-started.md)
 * [Types and Styles](button/types-and-styles.md)
+* [Styles and Appearances](button/style-and-appearance.md)
 * [Add link to a Button](button/how-to/add-link-to-a-button.md)
 * [Create a Block Button](button/how-to/create-a-block-button.md)
 * [Customize Button Appearance](button/how-to/customize-button-appearance.md)

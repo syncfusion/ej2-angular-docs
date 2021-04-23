@@ -2,6 +2,7 @@
 * [Types and Styles](button-group/types-and-styles.md)
 * [Selection and Nesting](button-group/selection.md)
 * [Accessibility](button-group/accessibility.md)
+* [Styles and Appearances](button-group/style-and-appearance.md)
 * [Create ButtonGroup with icons](button-group/how-to/create-buttongroup-with-icons.md)
 * [Create ButtonGroup with rounded corner](button-group/how-to/create-buttongroup-with-rounded-corner.md)
 * [Disable](button-group/how-to/disable.md)

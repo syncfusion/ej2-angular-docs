@@ -1,6 +1,7 @@
 * [Getting Started](check-box/getting-started.md)
 * [Label and Size](check-box/label-and-size.md)
 * [Accessibility](check-box/accessibility.md)
+* [Styles and Appearances](check-box/style-and-appearance.md)
 * [Bind data using two way binding](check-box/how-to/bind-data-using-two-way-binding.md)
 * [Customized CheckBox](check-box/how-to/customized-checkbox.md)
 * [Name and Value in form submit](check-box/how-to/name-and-value-in-form-submit.md)

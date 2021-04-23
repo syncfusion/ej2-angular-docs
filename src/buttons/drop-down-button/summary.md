@@ -2,6 +2,7 @@
 * [Icons](drop-down-button/icons.md)
 * [Popup Items](drop-down-button/popup-items.md)
 * [Accessibility](drop-down-button/accessibility.md)
+* [Styles and Appearances](drop-down-button/style-and-appearance.md)
 * [Change caret icon](drop-down-button/how-to/change-caret-icon.md)
 * [Create DropDownButton with rounded corner](drop-down-button/how-to/create-dropdownbutton-with-rounded-corner.md)
 * [Create right-to-left DropDownButton](drop-down-button/how-to/create-right-to-left-dropdownbutton.md)
