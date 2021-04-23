@@ -6,6 +6,7 @@
 * [Icons and templates](list-box/icons-and-templates.md)
 * [Selection](list-box/selection.md)
 * [Sorting and Grouping](list-box/sorting-and-grouping.md)
+* [Styles and Appearances](list-box/style-and-appearance.md)
 * [Add Items](list-box/how-to/add-items.md)
 * [Enable or Disable Items](list-box/how-to/enable-or-disable-items.md)
 * [Enable Scroller](list-box/how-to/enable-scroller.md)
