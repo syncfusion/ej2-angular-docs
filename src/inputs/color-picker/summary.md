@@ -2,6 +2,7 @@
 * [Mode And Value](color-picker/mode-and-value.md)
 * [Localization](color-picker/localization.md)
 * [Accessibility](color-picker/accessibility.md)
+* [Styles and Appearances](color-picker/style-and-appearance.md)
 * [Hide Control Buttons](color-picker/how-to/hide-control-buttons.md)
 * [Render Palette alone](color-picker/how-to/render-palette-alone.md)
 * [Two way binding](color-picker/how-to/two-way-binding.md)
