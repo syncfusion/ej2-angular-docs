@@ -640,6 +640,71 @@ The following image illustrates how resize the lane.
  The following image illustrates how swapping the lane.
 ![Lane Swapping](images/swapping.gif)
 
+### Disable Swimlane Lane swapping
+
+You can disable swimlane lane swapping by using the property called `canMove`.
+
+The following code illustrates how to disable swimlane lane swapping.
+
+{% tab template="diagram/swimlane/addlanes", sourceFiles="app/**/*.ts", isDefaultActive=true %}
+
+```typescript
+import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { DiagramComponent, SwimLaneModel,Diagram, NodeModel,Node, LaneModel,HeaderModel } from '@syncfusion/ej2-angular-diagrams';
+
+@Component({
+    selector: "app-container",
+    template: `<ejs-diagram #diagram id="diagram" width="100%" height="580px" [nodes]="nodes" (created)='created($event)'>
+    </ejs-diagram>`,
+    encapsulation: ViewEncapsulation.None
+})
+export class AppComponent {
+      public nodes: NodeModel[] = [
+        {
+            shape: {
+                type: 'SwimLane',
+                orientation: 'Horizontal',
+                //Intialize header to swimlane
+                header: {
+                    annotation: { content: 'ONLINE PURCHASE STATUS', style: { fill: 'pink' } },
+                    height: 50, style: { fontSize: 11 },
+                },
+                lanes: [
+                  {
+                       id: 'stackCanvas1',
+                        height: 100,
+                        // customization of lane header
+                         header: {
+                        annotation: { content: 'Online Consumer' }, width: 30,
+                        style: { fontSize: 11 },style: { fill: 'red' }
+                    },
+                    canMove: false ,
+                    },
+                ],
+                phases: [{
+                    id: 'phase1', offset: 170,
+                        header: { annotation: { content: 'Phase' } }
+                }
+                ],
+                phaseSize: 20,
+            },
+           offsetX: 300, offsetY: 200,
+            height: 200,
+            width: 350
+        },
+      ]
+    @ViewChild("diagram")
+    public diagram: DiagramComponent;
+     public created(args: Object): void {
+         let lane = [{id:"lane1",height:100,canMove: false}];
+        this.diagram.addLanes(this.diagram.nodes[0],lane,1);
+        this.diagram.dataBind();
+    }
+}
+```
+
+{% endtab %}
+
 ### Resize helper
 
 * The special resize helper will be used to resize the lanes.
