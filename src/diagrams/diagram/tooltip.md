@@ -181,7 +181,7 @@ export class AppComponent {
             //Sets the tooltip position relative to the node
             relativeMode: 'Object'
         }
-        this.constraints = NodeConstraints.Default | NodeConstraints.Tooltip
+        this.constraints = (NodeConstraints.Default & ~NodeConstraints.InheritTooltip) | NodeConstraints.Tooltip
     }
 }
 ```
@@ -234,7 +234,7 @@ export class AppComponent {
             //Sets the tooltip position relative to the node
             relativeMode: 'Object'
         }
-        this.constraints = NodeConstraints.Default | NodeConstraints.Tooltip
+        this.constraints = (NodeConstraints.Default & ~NodeConstraints.InheritTooltip) | NodeConstraints.Tooltip
     }
 }
 ```
