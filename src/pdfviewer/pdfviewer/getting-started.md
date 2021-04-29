@@ -1,7 +1,7 @@
 ---
 title: "Getting Started"
 component: "PDF Viewer"
-description: "Learn how to get started PDF Viewer component through simple steps."
+description: "This page helps you to learn how to get started with the PDF Viewer component through simple steps."
 ---
 
 # Getting started
@@ -46,14 +46,17 @@ Import PDF Viewer module into Angular application(app.module.ts) from the packag
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 // import the PdfViewer Module for the PDF Viewer component
-import { PdfViewerComponent } from '@syncfusion/ej2-angular-pdfviewer';
-import { AppComponent }  from './app.component';
+import { PdfViewerModule, LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService,
+  ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService } from '@syncfusion/ej2-angular-pdfviewer';
+import { AppComponent } from './app.component';
 
 @NgModule({
   //declaration of ej2-angular-pdfviewer module into NgModule
-  imports:      [ BrowserModule, PdfViewerComponent ],
+  imports: [ BrowserModule, PdfViewerModule ],
   declarations: [ AppComponent ],
-  bootstrap:    [ AppComponent ]
+  bootstrap: [AppComponent],
+  providers: [LinkAnnotationService, BookmarkViewService, MagnificationService,
+    ThumbnailViewService, ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService]
 })
 export class AppModule { }
 ```
@@ -88,13 +91,13 @@ import {
 } from '@syncfusion/ej2-angular-pdfviewer';
 
 @Component({
-  selector: 'app-container',
+  selector: 'app-root',
   // specifies the template string for the PDF Viewer component
   template: `<div class="content-wrapper">
   <ejs-pdfviewer id="pdfViewer" [serviceUrl]='service' [documentPath]='document' style="height:640px;display:block"></ejs-pdfviewer>
 </div>`,
   providers: [LinkAnnotationService, BookmarkViewService, MagnificationService,
-    ThumbnailViewService, ToolbarService, NavigationService, AnnotationService, TextSearchService, TextSelectionService,PrintService]
+    ThumbnailViewService, ToolbarService, NavigationService, AnnotationService, TextSearchService, TextSelectionService, PrintService]
 })
 export class AppComponent implements OnInit {
     public service = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
@@ -126,7 +129,7 @@ import {
 } from '@syncfusion/ej2-angular-pdfviewer';
 
 @Component({
-  selector: 'app-container',
+  selector: 'app-root',
   // specifies the template string for the PDF Viewer component
   template: `<div class="content-wrapper">
   <ejs-pdfviewer id="pdfViewer" [serviceUrl]='service' [documentPath]='document' style="height:640px;display:block"></ejs-pdfviewer>
@@ -140,7 +143,6 @@ export class AppComponent implements OnInit {
     ngOnInit(): void {
     }
 }
-
 ```
 
 {% endtab %}
