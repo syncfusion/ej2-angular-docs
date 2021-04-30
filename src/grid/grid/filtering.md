@@ -591,6 +591,17 @@ export class AppComponent implements OnInit {
 
 {% endtab %}
 
+> * By default, while opening the excel/checkbox filter in the Grid, the filter dialog will get and display the distinct data from the first 1000 records bound to the Grid to optimize performance. The remaining records will be returned as a result of the search option of the filter dialog.
+> * However, we can increase the excel/checkbox filter count by modifying the `filterChoiceCount` argument value(as per our need) in the [`actionBegin`](../api/grid/#actionBegin) event when the [`requestType`](../api/grid/filterEventArgs/#requesttype) is `filterchoicerequest` or `filtersearchbegin`. This is demonstrated in the below code snippet,
+
+```typescript
+actionBegin(args: FilterEventArgs) {
+    if (args.requestType === "filterchoicerequest" || args.requestType === "filtersearchbegin") {
+        args.filterChoiceCount = 3000;
+    }
+}
+```
+
 ### Template context
 
 When using the filter template, you can access the column information inside the NgTemplate and bind the attributes, values, or elements based on this column information.
