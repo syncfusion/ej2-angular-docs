@@ -53,3 +53,6 @@
 * [Show Series On Legend click](chart/how-to/series-visible.md)
 * [Dynamic Chart](chart/how-to/dynamic-chart.md)
 * [Chart data using sql server connection](chart/how-to/database-data.md)
+* [Customize column width](chart/how-to/column-width.md)
+* [Customize scatter chart](chart/how-to/customize-scatter-chart.md)
+* [Show different color in overlapped area](chart/how-to/overlap-area.md)

@@ -40,7 +40,7 @@ export class AppComponent implements OnInit {
     public title: String;
     public tooltipRender(args: IAccTooltipRenderEventArgs): void {
            let value  = args.point.y / args.series.sumOfPoints * 100;
-           args.text = args.point.x + ' : ' + Math.ceil(value) + '' + '%';
+           args["text"] = args.point.x + ' : ' + Math.ceil(value) + '' + '%';
         };
     ngOnInit(): void {
         this.datalabel = { visible: true };
