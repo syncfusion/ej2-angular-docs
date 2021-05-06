@@ -34,7 +34,7 @@ method
 to load the culture specific CLDR JSON data
 from the installed location to `app.component.ts` file.
 
-* DateTimePicker displayed `Sunday` as the first day of week based on default culture ("en-US"). If you want to display the DateTimePicker with loaded culture’s first day of week, you need to import `weekdata.json` file from the `cldr-data/suppemental` as given in the code example.
+* DateTimePicker displayed `Sunday` as the first day of week based on default culture ("en-US"). If you want to display the DateTimePicker with loaded culture’s first day of week, you need to import `weekData.json` file from the `cldr-data/suppemental` as given in the code example.
 
 ```typescript
 
@@ -47,7 +47,7 @@ loadCldr(
   require("cldr-data/main/de/ca-gregorian.json"),
   require("cldr-data/supplemental/numberingSystems.json"),
   require("cldr-data/main/de/timeZoneNames.json"),
-  require('cldr-data/supplemental/weekdata.json') // To load the culture based first day of week
+  require('cldr-data/supplemental/weekData.json') // To load the culture based first day of week
 );
 ```
 
