@@ -17,7 +17,29 @@ To create footer and watermark for chart, follow the given steps:
 Initialize the custom elements by using the `annotation` property.
 
 By using the `content` option of the annotation object, you can specify the id of the element that needs
-to be displayed in the chart area as follow,
+to be displayed in the chart.
+
+Use the `content` option of the annotation object to create watermark text for chart. The specified content **syncfusion** needs to be displayed in chart in the specified coordinate unit.
+
+```bash
+    #  watermark for chart
+       <e-annotations>
+            <e-annotation  content='<div id="chart_cloud" style="font-size:450%; opacity: 0.3;" >syncfusion</div>'
+            x='Wed' y= 20 coordinateUnits= 'Point' horizontalAlignment='Center'>
+            </e-annotation>
+        </e-annotations>
+```
+
+Use the `x` and `y` option of the annotation object to create footer for chart.
+
+```bash
+<e-annotations>
+   #  footer for chart
+        <e-annotation  content='<div id="chart" > <a href="https://www.syncfusion.com" target="_blank">www.syncfusion.com</a></div>'
+            x=400 y=440 coordinateUnits='Pixel' horizontalAlignment='Center'>
+            </e-annotation>
+        </e-annotations>
+```
 
 {% tab template= "chart/how-to" , sourceFiles="app/**/*.ts" %}
 
