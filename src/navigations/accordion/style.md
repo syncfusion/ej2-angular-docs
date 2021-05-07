@@ -77,14 +77,20 @@ Use the following CSS to customize the selected accordion item.
 
 ```CSS
 
-.e-accordion .e-acrdn-item .e-acrdn-header:active {
-    color: rgb(83, 5, 79);
-    background-color: rgb(0, 15, 100);
+.e-accordion .e-acrdn-item.e-select.e-active>.e-acrdn-header,
+.e-accordion .e-acrdn-item.e-select.e-item-focus>.e-acrdn-header {
+    background-color: rgb(0, 15, 100) !important;
 }
 
-.e-accordion .e-acrdn-item .e-acrdn-header:focus {
-    color: #2fa1ff;
-    background-color: rgb(0, 15, 100) !important;
+```
+
+Use the following CSS to customize the selected accordion item text.
+
+```CSS
+
+.e-accordion .e-acrdn-item.e-select.e-active>.e-acrdn-header .e-acrdn-header-content,
+.e-accordion .e-acrdn-item.e-select.e-item-focus>.e-acrdn-header .e-acrdn-header-content {
+    color: #2fa1ff !important;
 }
 
 ```
