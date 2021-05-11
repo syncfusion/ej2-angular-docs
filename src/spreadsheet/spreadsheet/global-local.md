@@ -444,6 +444,102 @@ export class AppComponent implements OnInit {
 
 {% endtab %}
 
+## Internationalization
+
+The Internationalization library is used to globalize number, date, and time values in the spreadsheet component.
+
+For importing json files in your application, you need to include the json-typings.d.ts file.
+
+```typescript
+declare module "*.json" {
+        const value: any;
+        export default value;
+    }
+```
+
+You need to load culture format files in **ngOnInit** function.
+
+The following example demonstrates the Spreadsheet in French [ `fr-CH`] culture. In the below sample we have globalized the Date(Date column), Time(Time column), and Currency(Amount column) formats.
+
+{% tab template="spreadsheet/internationalization", sourceFiles="app/**/*.ts", iframeHeight="450px" %}
+
+```javascript
+import { Component, OnInit,ViewChild } from '@angular/core';
+import { L10n, loadCldr, setCulture, setCurrencyCode } from '@syncfusion/ej2-base';
+import { SpreadsheetComponent } from '@syncfusion/ej2-angular-spreadsheet';
+import { defaultData } from './datasource';
+
+L10n.load({
+    'fr-CH': {
+        'spreadsheet': {
+            'File': 'Fichier',
+            'Home': 'Accueil',
+            'Insert': 'Insérer',
+            'Formulas': 'Formules',
+            'Data': 'Les données',
+            'View': 'Vue',
+            'Cut': 'Coupe',
+            'Copy': 'Copie',
+            'Paste': 'Pâte',
+            'PasteSpecial': 'Pâte spéciale',
+            'All': 'Tous les',
+            'Values': 'Valeurs',
+            'Formats': 'Les formats',
+            'Font': 'fonte',
+            'FontSize': 'Taille de police',
+            'Bold': 'Audacieux',
+            'Italic': 'Italique',
+            'Underline': 'Souligner',
+            'Strikethrough': 'Barré',
+            'TextColor': 'Couleur du texte',
+            'FillColor': 'La couleur de remplissage',
+            'HorizontalAlignment': 'Alignement horizontal',
+            'AlignLeft': 'Alignez à gauche',
+            'AlignCenter': 'centre',
+            'AlignRight': 'Aligner à droite',
+            'VerticalAlignment': 'Alignement vertical',
+            'AlignTop': 'Aligner en haut',
+            'AlignMiddle': 'Aligner le milieu',
+            'AlignBottom': 'Aligner le bas',
+            'InsertFunction': 'Insérer une fonction',
+            'Delete': 'Effacer',
+            'Rename': 'Rebaptiser',
+            'Hide': 'Cacher',
+            'Unhide': 'Démasquer',
+            'NumberFormat': 'Nombre Format',
+        }
+    }
+});
+
+@Component({
+    selector: 'app-container',
+    template: "<ejs-spreadsheet #spreadsheet locale='fr-CH' (created)='created()'> <e-sheets> <e-sheet> <e-ranges> <e-range [dataSource]='defaultData'></e-range></e-ranges><e-columns><e-column [width]=90></e-column><e-column [width]=100></e-column><e-column [width]=96></e-column><e-column [width]=120></e-column><e-column [width]=130></e-column><e-column [width]=120></e-column></e-columns></e-sheet></e-sheets></ejs-spreadsheet>"
+})
+export class AppComponent implements OnInit {
+    public data: object[];
+    @ViewChild('spreadsheet') public spreadsheetObj: SpreadsheetComponent;
+    ngOnInit(): void {
+        this.defaultData = defaultData;
+        setCulture('fr-CH');
+        setCurrencyCode('EUR');
+
+        loadCldr('./currencies.json',
+            './numbers.json',
+            './ca-gregorian.json',
+            './timeZoneNames.json',
+            './numberingSystems.json');
+    }
+    created(){
+         //Applies cell and number formatting to specified range of the active sheet
+            this.spreadsheetObj.cellFormat({ fontWeight: 'bold', textAlign: 'center', verticalAlign: 'middle' }, 'A1:F1');
+            this.spreadsheetObj.numberFormat('$#,##0.00', 'F2:F11');
+    };
+  };
+}
+```
+
+{% endtab %}
+
 ## Right to left (RTL)
 
 RTL provides an option to switch the text direction and layout of the Spreadsheet component from right to left. It improves the user experiences and accessibility for users who use right-to-left languages (Arabic, Farsi, Urdu, etc.). To enable RTL Spreadsheet, set the [`enableRtl`](../api/spreadsheet/#enablertl) to true.

@@ -370,7 +370,7 @@ import { conditionalFormatData } from './datasource';
     </ejs-spreadsheet>`
 })
 export class AppComponent {
-    @ViewChild('spreadsheet')
+    @ViewChild('default')
     spreadsheetObj: SpreadsheetComponent;
 
     public style: CellStyleModel = { fontWeight: "bold", textAlign: "center" };
@@ -467,10 +467,14 @@ export class AppComponent implements OnInit {
       this.spreadsheetObj.cellFormat({ color: '#10c469' }, 'B1:B10');
     }
     public itemSelect(args: MenuEventArgs) {
-      this.spreadsheetObj.clear({type: 'Clear Contents', range: 'A1:A10'}); // Clear the content in the provided range
-      this.spreadsheetObj.clear({type: 'Clear Formats', range: 'B1:B10'}); // Clear the formats applied in the provided range
-      this.spreadsheetObj.clear({type: 'Clear Hyperlinks', range: 'F2:F6'}); // Clear the hyperlinks applied in the provided range
-      this.spreadsheetObj.clear({type: 'Clear All', range: 'D1:D10'}); // Clear the content, formats and hyperlinks applied in the provided range.
+     if (args.item.text === 'Clear All')
+      this.spreadsheetObj.clear({ type: 'Clear All', range: 'D1:D10' }); // Clear the content, formats and hyperlinks applied in the provided range.
+    if (args.item.text === 'Clear Formats')
+      this.spreadsheetObj.clear({ type: 'Clear Formats', range: 'B1:B10' }); // Clear the formats applied in the provided range
+    if (args.item.text === 'Clear Contents')
+      this.spreadsheetObj.clear({ type: 'Clear Contents', range: 'A1:A10' }); // Clear the content in the provided range
+    if (args.item.text === 'Clear Hyperlinks')
+      this.spreadsheetObj.clear({ type: 'Clear Hyperlinks', range: 'F2:F6' }); // Clear the hyperlinks applied in the provided range
     }
   };
 }
