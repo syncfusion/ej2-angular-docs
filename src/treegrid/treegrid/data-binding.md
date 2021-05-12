@@ -66,6 +66,8 @@ export class AppComponent implements OnInit {
 
 ```
 
+> * Remote data binding is not supported for Hierarchy Data.
+
 {% endtab %}
 
 ### Self-Referential Data binding (Flat Data)
@@ -143,6 +145,8 @@ When load on demand support is enabled in TreeGrid with paging, the current or a
 When a root node is expanded, its child nodes are rendered and are cached locally, such that on consecutive expand/collapse actions on root node, the child nodes are loaded from the cache instead from the remote server.
 
 Similarly, if the user navigates to a new page, the root nodes of that specific page, will be rendered with request to the remote server.
+
+>Remote Data Binding supports only Self-Referential Data and by default the `pageSizeMode` for Remote Data is `Root` mode. i.e only root node’s count will be shown in pager while using Remote Data
 
 {% tab template="treegrid/data-binding", sourceFiles="app/**/*.ts" %}
 
