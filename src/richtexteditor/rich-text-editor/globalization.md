@@ -138,7 +138,21 @@ The Rich Text Editor provides an option to localize its strings. It is used to a
             pasteFormatContent: "Choose the formatting action",
             plainText: "Plain Text",
             cleanFormat: "Clean",
-            keepFormat: "Keep"
+            keepFormat: "Keep",
+            formatsDropDownParagraph: "Paragraph",
+            formatsDropDownCode: "Code",
+            formatsDropDownQuotation: "Quotation",
+            formatsDropDownHeading1: "Heading 1",
+            formatsDropDownHeading2: "Heading 2",
+            formatsDropDownHeading3: "Heading 3",
+            formatsDropDownHeading4: "Heading 4",
+            fontNameSegoeUI: "Segoe UI",
+            fontNameArial: "Arial",
+            fontNameGeorgia: "Georgia",
+            fontNameImpact: "Impact",
+            fontNameTahoma: "Tahoma",
+            fontNameTimesNewRoman: "Times New Roman",
+            fontNameVerdana: "Verdana"
         }
     }
 
@@ -273,7 +287,22 @@ To localize the editor’s strings with your own localization, copy the default 
             pasteFormatContent: "Wählen Sie die Formatierungsaktion aus",
             plainText: "Einfacher Text",
             cleanFormat: "sauber",
-            keepFormat: "Behalten"
+            keepFormat: "Behalten",
+            formatsDropDownParagraph: "Absatz",
+            formatsDropDownCode: "Kodex",
+            formatsDropDownQuotation: "Zitat",
+            formatsDropDownHeading1: "Überschrift 1",
+            formatsDropDownHeading2: "Überschrift 2",
+            formatsDropDownHeading3: "Überschrift 3",
+            formatsDropDownHeading4: "Überschrift 4",
+            fontNameSegoeUI: "Segoe UI",
+            fontNameArial: "Arial",
+            fontNameGeorgia: "Georgia",
+            fontNameImpact: "Einschlag",
+            fontNameTahoma: "Tahoma",
+            fontNameTimesNewRoman: "Mal Neu römisch",
+            fontNameVerdana: "Verdana"
+
             }
         },
 
@@ -414,7 +443,21 @@ L10n.load({
             tableVerticalAlignDropDownMiddle: "Mitte ausrichten",
             tableVerticalAlignDropDownBottom: "Unten ausrichten",
             tableStylesDropDownDashedBorder: "Gestrichelte Grenzen",
-            tableStylesDropDownAlternateRows: "Alternative Zeilen"
+            tableStylesDropDownAlternateRows: "Alternative Zeilen",
+            formatsDropDownParagraph: "Absatz",
+            formatsDropDownCode: "Kodex",
+            formatsDropDownQuotation: "Zitat",
+            formatsDropDownHeading1: "Überschrift 1",
+            formatsDropDownHeading2: "Überschrift 2",
+            formatsDropDownHeading3: "Überschrift 3",
+            formatsDropDownHeading4: "Überschrift 4",
+            fontNameSegoeUI: "Segoe UI",
+            fontNameArial: "Arial",
+            fontNameGeorgia: "Georgia",
+            fontNameImpact: "Einschlag",
+            fontNameTahoma: "Tahoma",
+            fontNameTimesNewRoman: "Mal Neu römisch",
+            fontNameVerdana: "Verdana"
            }
        }
 });
