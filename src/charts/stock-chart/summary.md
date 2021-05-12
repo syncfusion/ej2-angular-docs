@@ -13,4 +13,6 @@
 * [Export and Print](stock-chart/export-print.md)
 * [Appearance](stock-chart/appearance.md)
 * [Stock Events](stock-chart/stock-events.md)
+* [Internationalization](stock-chart/internationalization.md)
+* [Localization](stock-chart/localization.md)
 * [Live Chart](stock-chart/how-to/live-data.md)
