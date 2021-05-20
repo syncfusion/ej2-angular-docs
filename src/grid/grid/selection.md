@@ -402,58 +402,6 @@ export class AppComponent implements OnInit {
 
 {% endtab %}
 
-## Multiple Selection based on condition
-
-You can select multiple grid rows based on condition by using the [`selectRows`](../api/grid/#selectRows) method.
-
-In the following code, the rows which contains **ShipCountry** value as **Brazil** are selected at initial rendering.
-
-{% tab template="grid/selection", sourceFiles="app/app.component.ts,app/app.module.ts,app/main.ts" %}
-
-```typescript
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { data } from './datasource';
-import { GridComponent, SelectionSettingsModel } from '@syncfusion/ej2-angular-grids';
-
-@Component({
-    selector: 'app-root',
-    template: `<ejs-grid #grid [dataSource]='data' [selectionSettings]='selectionOptions' (dataBound)='dataBound()'>
-                <e-columns>
-                    <e-column field='OrderID' headerText='Order ID' textAlign='Right' width=120></e-column>
-                    <e-column field='CustomerID' headerText='Customer ID' width=150></e-column>
-                    <e-column field='ShipCountry' headerText='Ship Country' width=150></e-column>
-                    <e-column field='ShipName' headerText='Ship Name' width=150></e-column>
-                </e-columns>
-                </ejs-grid>`
-})
-export class AppComponent implements OnInit {
-
-    public data: object[];
-    public selectionOptions: SelectionSettingsModel;
-
-    @ViewChild('grid') public grid: GridComponent;
-
-    ngOnInit(): void {
-        this.data = data;
-        this.selectionOptions = { type: 'Multiple' };
-    }
-
-    dataBound() {
-        const ShipCountry = 'ShipCountry';
-        const rowIndexes: number[] = [];
-        (this.grid.dataSource as object[]).forEach((sdata, index) => {
-            if (sdata[ShipCountry] === 'Brazil') {
-                rowIndexes.push(index);
-            }
-        });
-        this.grid.selectionModule.selectRows(rowIndexes);
-    }
-}
-
-```
-
-{% endtab %}
-
 ## Simple Multiple Row selection
 
 You can select multiple rows by clicking on rows one by one. This will not deselect the previously selected rows. To deselect the previously selected row, you can click on the  selected row. You can enable this behavior by using [`selectionSettings.enableSimpleMultiRowSelection`](../api/grid/selectionSettings/#enablesimplemultirowselection) property.
