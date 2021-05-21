@@ -353,7 +353,7 @@ export class AppComponent implements OnInit {
 
         this.button.element.onclick = (): void => {
             this.pdfExportProperties = {
-                filename:'sample.pdf'
+                fileName:'sample.pdf'
             };
             this.pivotGridObj.pdfExport(this.pdfExportProperties);
         };
