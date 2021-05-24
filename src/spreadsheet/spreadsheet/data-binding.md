@@ -16,7 +16,7 @@ To bind local data to the Spreadsheet, you can assign a JavaScript object array 
 
 Refer to the following code example for local data binding.
 
-{% tab template="spreadsheet/local-data-binding", sourceFiles="app/**/*.ts", iframeHeight="450px" %}
+{% tab template="spreadsheet/local-data-binding", sourceFiles="app/**/*.ts", isDefaultActive=true , iframeHeight="450px" %}
 
 ```javascript
 import { Component, OnInit,ViewChild } from '@angular/core';
@@ -34,7 +34,6 @@ export class AppComponent implements OnInit {
         this.data = data;
     }
   };
-}
 ```
 
 {% endtab %}
@@ -77,6 +76,82 @@ export class AppComponent implements OnInit {
 {% endtab %}
 
 > By default, `DataManager` uses **ODataAdaptor** for remote data-binding.
+
+### Binding with OData services
+
+`OData` is a standardized protocol for creating and consuming data. You can retrieve data from OData service using the DataManager. Refer to the following code example for remote Data binding using OData service.
+
+{% tab template="spreadsheet/remote-data-binding", sourceFiles="app/**/*.ts", iframeHeight="450px" %}
+
+```javascript
+
+import { Component, OnInit } from '@angular/core';
+import { DataManager, ODataAdaptor } from '@syncfusion/ej2-data';
+
+@Component({
+    selector: 'app-container',
+    template: "<ejs-spreadsheet #spreadsheet (created)='created()'> <e-sheets> <e-sheet> <e-ranges> <e-range [dataSource]='data'></e-range></e-ranges><e-columns><e-column [width]=80></e-column><e-column [width]=80></e-column><e-column [width]=80></e-column><e-column [width]=80></e-column><e-column [width]=80></e-column><e-column [width]=80></e-column><e-column [width]=280></e-column><e-column [width]=180></e-column><e-column [width]=80></e-column><e-column [width]=180></e-column><e-column [width]=180></e-column></e-columns> </e-sheet></e-sheets></ejs-spreadsheet>"
+})
+export class AppComponent implements OnInit {
+  
+    public data: DataManager;
+
+    ngOnInit(): void {
+        this.data = new DataManager({
+            url: 'https://ej2services.syncfusion.com/production/web-services/api/Orders',
+            adaptor: new ODataAdaptor(),
+            crossDomain: true
+        });
+    }
+
+    created(){
+         //Applies cell and number formatting to specified range of the active sheet
+          spreadsheet.cellFormat({ fontWeight: 'bold', textAlign: 'center', verticalAlign: 'middle' },
+            'A1:K1');
+    };
+}
+
+```
+
+{% endtab %}
+
+### Web API
+
+You can use WebApiAdaptor to bind spreadsheet with Web API created using OData endpoint.
+
+{% tab template="spreadsheet/remote-data-binding", sourceFiles="app/**/*.ts", iframeHeight="450px" %}
+
+```javascript
+
+import { Component, OnInit } from '@angular/core';
+import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
+
+@Component({
+    selector: 'app-container',
+    template: "<ejs-spreadsheet #spreadsheet (created)='created()'> <e-sheets> <e-sheet> <e-ranges> <e-range [dataSource]='data'></e-range></e-ranges><e-columns><e-column [width]=80></e-column><e-column [width]=80></e-column><e-column [width]=80></e-column><e-column [width]=80></e-column><e-column [width]=80></e-column><e-column [width]=80></e-column><e-column [width]=280></e-column><e-column [width]=180></e-column><e-column [width]=80></e-column><e-column [width]=180></e-column><e-column [width]=180></e-column></e-columns> </e-sheet></e-sheets></ejs-spreadsheet>"
+})
+export class AppComponent implements OnInit {
+  
+    public data: DataManager;
+
+    ngOnInit(): void {
+        this.data = new DataManager({
+            url: 'https://ej2services.syncfusion.com/production/web-services/api/Orders',
+            adaptor: new WebApiAdaptor(),
+            crossDomain: true
+        });
+    }
+
+    created(){
+         //Applies cell and number formatting to specified range of the active sheet
+          spreadsheet.cellFormat({ fontWeight: 'bold', textAlign: 'center', verticalAlign: 'middle' },
+            'A1:K1');
+    };
+}
+
+```
+
+{% endtab %}
 
 ## Cell data binding
 
@@ -134,7 +209,7 @@ import { data, itemData } from './datasource';
     selector: 'app-container',
     template: `<div>
     <div>
-    <button class='e-btn' (click)='changeDataSource()'>Change Datasource</button>
+    <button class='e-btn' style="margin-bottom: 10px;" (click)='changeDataSource()'>Change Datasource</button>
     <ejs-spreadsheet #spreadsheet (dataSourceChanged)='dataSourceChanged($event)' [showRibbon]='false'>
     <e-sheets>
      <e-sheet>

@@ -48,6 +48,36 @@ Please find the below table for the beforeOpen event arguments.
 > * Use `Ctrl + O` keyboard shortcut to open Excel documents.
 > * The default value of the [allowOpen](../api/spreadsheet/#allowopen) property is `true`. For demonstration purpose, we have showcased the [allowOpen](../api/spreadsheet/#allowopen) property in previous code snippet.
 
+### Open an external URL excel file while initial load
+
+You can achieve to access the remote excel file by using the [`created`](../api/spreadsheet/#created) event. In this event you can fetch the excel file and convert it to a blob. Convert this blob to a file and [`open`](../api/spreadsheet/#open) this file by using Spreadsheet component open method.
+
+{% tab template="spreadsheet/open-save", sourceFiles="app/**/*.ts", iframeHeight="450px" %}
+
+```javascript
+import { Component, ViewChild } from '@angular/core';
+import { SpreadsheetComponent } from '@syncfusion/ej2-angular-spreadsheet';
+
+@Component({
+    selector: 'app-container',
+    template: "<ejs-spreadsheet #spreadsheet (created)='created()' openUrl='https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/open' allowOpen='true'> </ejs-spreadsheet>"
+})
+export class AppComponent {
+    @ViewChild('spreadsheet') public spreadsheetObj: SpreadsheetComponent;
+     created () {
+        fetch("https://js.syncfusion.com/demos/ejservices/data/Spreadsheet/LargeData.xlsx") // fetch the remote url
+          .then((response) => {
+            response.blob().then((fileBlob) => { // convert the excel file to blob
+            let file = new File([fileBlob], "Sample.xlsx"); //convert the blob into file
+            this.spreadsheetObj.open({ file: file }); // open the file into Spreadsheet
+            })
+          })
+    }
+}
+```
+
+{% endtab %}
+
 ## Save
 
 The Spreadsheet control saves its data, style, format, and more as Excel file document. To enable this feature, set [`allowSave`](../api/spreadsheet/#allowsave) as `true` and assign service url to the [`saveUrl`](../api/spreadsheet/#saveurl) property.
@@ -58,7 +88,7 @@ In user interface, you can save Spreadsheet data as Excel document by clicking `
 
 The following sample shows the `Save` option by using the [`saveUrl`](../api/spreadsheet/#saveUrl) property in the Spreadsheet control. You can also use the [`beforeSave`](../api/spreadsheet/#beforeSave) event to trigger before saving the Spreadsheet as an Excel file.
 
-{% tab template="spreadsheet/open-save", sourceFiles="app/**/*.ts", isDefaultActive=true , iframeHeight="450px" %}
+{% tab template="spreadsheet/open-save", sourceFiles="app/**/*.ts", iframeHeight="450px" %}
 
 ```javascript
 import { Component } from '@angular/core';
@@ -93,6 +123,45 @@ Please find the below table for the beforeSave event arguments.
 > * The default value of [allowSave](../api/spreadsheet/#allowsave) property is `true`. For demonstration purpose, we have showcased the [allowSave](../api/spreadsheet/#allowsave) property in previous code snippet.
 > * Demo purpose only, we have used the online web service url link.
 
+### To send and receive custom params from client to server
+
+Passing the custom parameters from client to server by using [`beforeSave`](../api/spreadsheet/#beforeSave) event.
+
+{% tab template="spreadsheet/open-save", sourceFiles="app/**/*.ts", iframeHeight="450px" %}
+
+```javascript
+import { Component } from '@angular/core';
+import { SpreadsheetComponent, BeforeSaveEventArgs } from '@syncfusion/ej2-angular-spreadsheet';
+import { data } from './datasource';
+
+@Component({
+    selector: 'app-container',
+    template: "<ejs-spreadsheet #spreadsheet (beforeSave)='beforeSave($event)' saveUrl='https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save' allowSave='true'> <e-sheets> <e-sheet> <e-ranges> <e-range [dataSource]='data'></e-range></e-ranges><e-columns><e-column [width]=90></e-column><e-column [width]=100></e-column><e-column [width]=96></e-column><e-column [width]=120></e-column><e-column [width]=130></e-column><e-column [width]=120></e-column></e-columns></e-sheet></e-sheets></ejs-spreadsheet>"
+})
+export class AppComponent implements OnInit {
+    public data: object[];
+    ngOnInit(): void {
+        this.data = data;
+    }
+    beforeSave (args: BeforeSaveEventArgs) {
+        args.customParams = { customParams: 'you can pass custom params in server side'}; // you can pass the custom params
+    }
+ }
+```
+
+{% endtab %}
+
+Server side code snippets:
+
+```csharp
+
+    public IActionResult Save(SaveSettings saveSettings, string customParams)
+        {
+            Console.WriteLine(customParams); // you can get the custom params in controller side
+            return Workbook.Save(saveSettings);
+        }
+```
+
 ### Methods
 
 To save the Spreadsheet document as an `xlsx, xls, csv, or pdf` file, by using [save](../api/spreadsheet/#save) method should be called with the `url`, `fileName` and `saveType` as parameters. The following code example shows to save the spreadsheet file as an `xlsx, xls, csv, or pdf` in the button click event.
@@ -100,7 +169,7 @@ To save the Spreadsheet document as an `xlsx, xls, csv, or pdf` file, by using [
 {% tab template="spreadsheet/local-data-binding", sourceFiles="app/**/*.ts", iframeHeight="450px" %}
 
 ```javascript
-import { Component, OnInit,ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { SpreadsheetComponent } from '@syncfusion/ej2-angular-spreadsheet';
 import { data } from './datasource';
 
