@@ -32,11 +32,11 @@ The following code example shows `Collaborative Editing` support in the Spreadsh
 
 ```javascript
 import { Component, ViewChild } from '@angular/core';
-import { SpreadsheetComponent, CollaborativeEditing } from '@syncfusion/ej2-angular-spreadsheet';
+import { SpreadsheetComponent } from '@syncfusion/ej2-angular-spreadsheet';
+import { Spreadsheet } from '@syncfusion/ej2-spreadsheet';
 import { defaultData } from './datasource';
 import * as signalR from '@aspnet/signalr';
 import { HubConnection, HubConnectionBuilder } from '@aspnet/signalr';
-Spreadsheet.Inject(CollaborativeEditing);
 
 @Component({
     selector: 'app-container',
@@ -61,13 +61,17 @@ export class AppComponent {
     connection: HubConnection;
     data: object[] = defaultData;
     ngOnInit(): void {
-    // For signalR Hub connection
+      // For signalR Hub connection
       this.connection  = new HubConnectionBuilder()  
-      .withUrl('https://localhost:44385/hubs/spreadsheethub'// localhost from AspNetCore service  
+      .withUrl('https://localhost:44385/hubs/spreadsheethub', {  // localhost from AspNetCore service
+        skipNegotiation: true,
+        transport: signalR.HttpTransportType.WebSockets
+      })  
       .build();
+
         this.connection.on('dataReceived', (data: string) => {
           var model = JSON.parse(data);
-          this.spreadsheet.updateAction({ action: model.action, eventArgs: model.eventArgs }); // update the action to the connected clients
+          this.spreadsheetObj.updateAction({ action: model.action, eventArgs: model.eventArgs }); // update the action to the connected clients
       });
   
       this.connection.start().then(() => { // to start the server
@@ -145,11 +149,10 @@ The following code example shows how to prevent collaborative client from updati
 
 ```javascript
 import { Component, ViewChild } from '@angular/core';
-import { SpreadsheetComponent, CollaborativeEditing } from '@syncfusion/ej2-angular-spreadsheet';
+import { SpreadsheetComponent } from '@syncfusion/ej2-angular-spreadsheet';
 import { defaultData } from './datasource';
 import * as signalR from '@aspnet/signalr';
 import { HubConnection, HubConnectionBuilder } from '@aspnet/signalr';
-Spreadsheet.Inject(CollaborativeEditing);
 
 @Component({
     selector: 'app-container',
@@ -181,7 +184,7 @@ export class AppComponent {
     ngOnInit(): void {
         this.connection.on('dataReceived', (data: string) => {
             var model = JSON.parse(data);
-            this.spreadsheet.updateAction({ action: model.action, eventArgs: model.eventArgs }); // update the action to the connected clients
+            this.spreadsheetObj.updateAction({ action: model.action, eventArgs: model.eventArgs }); // update the action to the connected clients
         });
         this.connection.start().then(() => { // to start the server
             console.log('server connected!!!');
@@ -189,7 +192,7 @@ export class AppComponent {
     }
     onActionComplete(args) {
         if (args.action != 'format'){
-        this.connection.send('BroadcastData', JSON.stringify(args)); // send the action data to the server
+          this.connection.send('BroadcastData', JSON.stringify(args)); // send the action data to the server
         }
     }
 }
