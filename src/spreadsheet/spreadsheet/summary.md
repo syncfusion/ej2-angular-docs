@@ -25,4 +25,5 @@
 * [Undo and Redo](spreadsheet/undo-redo.md)
 * [Migration from Essential JS 1](spreadsheet/ej1-api-migration.md)
 * [Sort a range by custom list](spreadsheet/how-to/sort-a-range-by-custom-list.md)
+* [Collaborative Editing](spreadsheet/use-cases/collaborative-editing.md)
 * [Mobile Responsiveness](spreadsheet/mobile-responsiveness.md)
