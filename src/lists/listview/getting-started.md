@@ -39,20 +39,20 @@ npm install @syncfusion/ej2-angular-lists --save
 
 > The **--save** will instruct NPM to include the listview package inside of the `dependencies` section of the `package.json`.
 
-## Registering Listview Module
+## Registering ListView Module
 
-Import Listview module into Angular application(app.module.ts) from the package `@syncfusion/ej2-angular-lists` [src/app/app.module.ts].
+Import ListView module into Angular application(app.module.ts) from the package `@syncfusion/ej2-angular-lists` [src/app/app.module.ts].
 
 ```typescript
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 // import Listview component Module
-import { ListviewModule } from '@syncfusion/ej2-angular-lists';
+import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 import { AppComponent }  from './app.component';
 
 @NgModule({
   //declaration of listview module into NgModule
-  imports:      [ BrowserModule, ListviewModule ],
+  imports:      [ BrowserModule, ListViewModule ],
   declarations: [ AppComponent ],
   bootstrap:    [ AppComponent ]
 })

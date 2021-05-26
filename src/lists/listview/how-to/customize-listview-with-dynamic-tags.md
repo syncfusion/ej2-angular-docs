@@ -130,7 +130,7 @@ public graceTag : Object = [{ "id": "list41", "Name": "Rock" },
 { "id": "list44", "Name": "Jazz" },
 ];
 
-public jacobTag: Object = [{ "id": "list51", "Name": "100 Albums - $5 Each" },
+public jacobTag: Object = [{ "id": "list51", "Name": "100 Albums" },
 { "id": "list52", "Name": "Hip-Hop and R&B Sale" },
 { "id": "list53", "Name": "CD Deals" }
 ];
