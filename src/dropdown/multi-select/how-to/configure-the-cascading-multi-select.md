@@ -68,13 +68,13 @@ export class AppComponent {
     public stateObj: MultiSelectComponent;
     @ViewChild('city')
     public cityObj: MultiSelectComponent;
-    public countrySelect(): void {
+    public countryChange(): void {
       //Query the data source based on country MultiSelect selected value
         let pred:Predicate;
         if(this.countryObj.value)
             for(var d=0;d<this.countryObj.value.length;d++){
                 if(pred)
-                    pred.or("countryId",'equal',this.countryObj.value[d]);
+                    pred = pred.or("countryId",'equal',this.countryObj.value[d]);
                 else{
                     pred=new Predicate("countryId",'equal',this.countryObj.value[d]);
                 }
@@ -89,13 +89,13 @@ export class AppComponent {
         //clear the existing selection in city MultiSelect
         this.cityObj.setProperties({enabled:false,values:[]});
     }
-    public stateSelect(): void {
+    public stateChange(): void {
          //Query the data source based on country MultiSelect selected value
         let pred:Predicate,temp:any;
         if(this.stateObj.value)
             for(var d=0;d<this.stateObj.value.length;d++){
                 if(pred)
-                    pred.or("stateId",'equal',this.stateObj.value[d]);
+                    pred = pred.or("stateId",'equal',this.stateObj.value[d]);
                 else{
                     pred=new Predicate("stateId",'equal',this.stateObj.value[d]);
                 }
