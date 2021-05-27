@@ -1576,6 +1576,46 @@ export class AppComponent {
 
 {% endtab %}
 
+## Appointments occupying entire cell
+
+The Scheduler allows the event to occupies the full height of the cell without its header part by setting `true` for `enableMaxHeight` Property.
+
+We can show more indicator if more than one appointment is available in a same cell by setting `true` to `enableIndicator` property whereas its default value is false.
+
+{% tab template="schedule/event", sourceFiles="app/**/*.ts, index.css", iframeHeight="588px" %}
+
+```typescript
+import { Component, ViewChild } from '@angular/core';
+import { scheduleData } from './datasource';
+import {
+    TimelineViewsService, TimelineMonthService, EventSettingsModel, ScheduleComponent
+} from '@syncfusion/ej2-angular-schedule';
+
+@Component({
+    selector: 'app-root',
+    providers: [TimelineViewsService, TimelineMonthService],
+    // specifies the template string for the Schedule component
+    template: `<ejs-schedule width='100%' #scheduleObj height='550px' currentView="TimelineMonth" [selectedDate]="selectedDate" [eventSettings]="eventSettings">
+    <e-views>
+        <e-view option='TimelineWeek'></e-view>
+        <e-view option='TimelineMonth'></e-view>
+      </e-views>
+  </ejs-schedule>`,
+})
+export class AppComponent {
+    @ViewChild('scheduleObj')
+    public scheduleObj: ScheduleComponent;
+    public selectedDate: Date = new Date(2018, 1, 15);
+    public eventSettings: EventSettingsModel = {
+        dataSource: scheduleData,
+        enableMaxHeight: true,
+        enableIndicator: false
+    };
+}
+```
+
+{% endtab %}
+
 ## Display tooltip for appointments
 
 The tooltip shows the Scheduler appointment's information in a formatted style by making use of the tooltip related options.
