@@ -33,7 +33,7 @@ To cancel the editing without saving the changes, you can use one of the followi
 * Press `ESCAPE` key, this will remove the editable state and update the unchanged cell content.
 * Using the [`closeEdit`](../api/spreadsheet/#closeedit) method.
 
-The following code example shows the editing operation in spreadsheet.
+The following sample shows how to prevent the editing and cell save. Here `E` column prevent the editing by using cancel argument as true in [`cellEdit`](../api/spreadsheet/#celledit) event. In `D` column, prevent saving the edited changes by using cancel argument as true in [`beforeCellSave`](../api/spreadsheet/#beforecellsave) and use [`closeEdit`](../api/spreadsheet/#closeedit) method in spreadsheet.
 
 {% tab template="spreadsheet/editing", sourceFiles="app/**/*.ts", iframeHeight="450px", isDefaultActive=true %}
 
