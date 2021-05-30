@@ -6,7 +6,7 @@ description: "Miscellaneous aspects of customizing the sidebar"
 
 # Sidebar with fixed position
 
-The following example demonstrates how to render sidebar with fixed position. When scroll the main content area, the position of the sidebar will not change.
+The Sidebar does not require any specific style to make it as a fixed one. By default, the Sidebar position will be in fixed state. The following example demonstrates that the Sidebar is rendered with a fixed position. The position of the Sidebar will not change when scrolling the main content area.
 
 {% tab template="sidebar/fixed-position", sourceFiles="app/**/*.ts,app/app.component.html,app/app.component.css" %}
 
