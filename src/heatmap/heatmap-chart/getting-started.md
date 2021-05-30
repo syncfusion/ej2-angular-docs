@@ -397,7 +397,6 @@ export class AppComponent{
     };
     public cellSettings: Object = {
         showLabel: true,
-        format: '{value} $'
     };
 }
 
@@ -463,7 +462,6 @@ export class AppComponent{
     };
     public cellSettings: Object = {
         showLabel: true,
-        format: '{value} $'
     };
      public paletteSettings: Object = {
         palette: [{ value: 0, color: '#C06C84' },
@@ -535,7 +533,6 @@ export class AppComponent{
     };
     public cellSettings: Object = {
         showLabel: true,
-        format: '{value} $'
     };
      public paletteSettings: Object = {
         palette: [{ value: 0, color: '#C06C84' },
