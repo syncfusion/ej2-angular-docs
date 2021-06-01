@@ -68,7 +68,7 @@ enableRipple(true);
 
 @Component({
     selector: 'app-container',
-    template: `<button class='e-btn' (click)='cut()'>Cut</button> <button class='e-btn' (click)='copy()'>Copy</button> <button class='e-btn' (click)='paste()'>Paste</button>
+    template: `<button ejs-dropdownbutton [items]='items' content='Clipboard' (select)='itemSelect($event)'></button>
     <ejs-spreadsheet #spreadsheet (created)="created()" [enableClipboard]="true">
                 <e-sheets>
                   <e-sheet name="Price Details">
@@ -89,19 +89,99 @@ export class AppComponent {
     spreadsheetObj: SpreadsheetComponent;
 
     priceData: object[] = dataSource1;
+    public items: ItemModel[] = [
+        {
+          text: "Copy"
+        },
+        {
+          text: "Cut"
+        },
+        {
+          text: "Paste"
+        }];
 
     created() {
         this.spreadsheetObj.cellFormat({ fontWeight: 'bold', textAlign: 'center' }, 'A1:H1');
     }
-    cut() {
-        this.spreadsheetObj.cut();
+    public itemSelect(args: MenuEventArgs) {
+    if (args.item.text === 'Copy')
+      spreadsheet.copy();
+    if (args.item.text === 'Cut')
+      spreadsheet.cut();
+    if (args.item.text === 'Paste')
+      spreadsheet.paste();
+  }
+}
+```
+
+{% endtab %}
+
+## Prevent the paste functionality
+
+The following example shows, how to prevent the paste action in spreadsheet. In [`actionBegin`](../api/spreadsheet/#actionbegin) event, you can set `cancel` argument as false in paste request type.
+
+{% tab template="spreadsheet/clipboard", sourceFiles="app/**/*.ts", isDefaultActive=true, iframeHeight="450px" %}
+
+```javascript
+import { Component, ViewChild } from '@angular/core';
+import { SpreadsheetComponent } from '@syncfusion/ej2-angular-spreadsheet';
+import { enableRipple } from '@syncfusion/ej2-base';
+import { dataSource1 } from './datasource';
+
+enableRipple(true);
+
+@Component({
+    selector: 'app-container',
+    template: `<button ejs-dropdownbutton [items]='items' content='Clipboard' (select)='itemSelect($event)'></button>
+    <ejs-spreadsheet #spreadsheet (created)="created()" (actionBegin)="actionBeginHandler()" [enableClipboard]="true">
+                <e-sheets>
+                  <e-sheet name="Price Details">
+                    <e-ranges>
+                      <e-range [dataSource]="priceData"></e-range>
+                    </e-ranges>
+                    <e-columns>
+                      <e-column [width]=130></e-column>
+                      <e-column [width]=92></e-column>
+                      <e-column [width]=96></e-column>
+                    </e-columns>
+                  </e-sheet>
+                </e-sheets>
+              </ejs-spreadsheet>`
+})
+export class AppComponent {
+    @ViewChild('spreadsheet')
+    spreadsheetObj: SpreadsheetComponent;
+
+    priceData: object[] = dataSource1;
+    public items: ItemModel[] = [
+        {
+          text: "Copy"
+        },
+        {
+          text: "Cut"
+        },
+        {
+          text: "Paste"
+        }];
+
+    created() {
+        this.spreadsheetObj.cellFormat({ fontWeight: 'bold', textAlign: 'center' }, 'A1:H1');
     }
-    copy() {
-        this.spreadsheetObj.copy();
+    // Triggers before the action begins.
+    actionBeginHandler(pasteArgs) {
+      // To cancel the paste action.
+        if (pasteArgs.args.eventArgs.requestType === 'paste') {
+            pasteArgs.args.eventArgs.cancel = true;
+        }
     }
-    paste() {
-        this.spreadsheetObj.paste();
-    }
+    public itemSelect(args: MenuEventArgs) {
+    if (args.item.text === 'Copy')
+      spreadsheet.copy();
+    if (args.item.text === 'Cut')
+      spreadsheet.cut();
+    if (args.item.text === 'Paste')
+      spreadsheet.paste();
+  }
 }
 ```
 

@@ -163,7 +163,7 @@ enableRipple(true);
 
 @Component({
     selector: 'app-container',
-    template: `<ejs-spreadsheet #spreadsheet (created)="created()" [selectionSettings]="{ mode: 'None' }" [allowEditing]="false">
+    template: `<ejs-spreadsheet #spreadsheet (created)="created()" [selectionSettings]="{ mode: 'None' }">
                 <e-sheets>
                   <e-sheet name="Price Details">
                     <e-ranges>

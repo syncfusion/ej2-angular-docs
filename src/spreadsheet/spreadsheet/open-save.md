@@ -175,27 +175,36 @@ import { data } from './datasource';
 
 @Component({
     selector: 'app-container',
-    template: `<button class="e-btn e-primary" (click)="xlsx()" >Save As xlsx</button>
-    <button class="e-btn e-primary" (click)="xls()" >Save As xls</button>
-    <button class="e-btn e-primary" (click)="csv()" >Save As csv</button>
-    <button class="e-btn e-primary" (click)="pdf()" >Save As pdf</button>
+    template: `<button ejs-dropdownbutton [items]='items' content='Save' (select)='itemSelect($event)'></button>
     <ejs-spreadsheet #spreadsheet> <e-sheets> <e-sheet> <e-ranges> <e-range [dataSource]='data'></e-range></e-ranges><e-columns><e-column [width]=90></e-column><e-column [width]=100></e-column><e-column [width]=96></e-column><e-column [width]=120></e-column><e-column [width]=130></e-column><e-column [width]=120></e-column></e-columns></e-sheet></e-sheets></ejs-spreadsheet>`
 })
 export class AppComponent implements OnInit {
     public data: object[];
     @ViewChild('spreadsheet') public spreadsheetObj: SpreadsheetComponent;
-    xlsx(): void {
-        this.spreadsheetObj.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Xlsx"});
-    }
-    xls(): void {
-        this.spreadsheetObj.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Xls"});
-    }
-    csv(): void {
-        this.spreadsheetObj.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Csv"});
-    }
-    pdf(): void {
-        this.spreadsheetObj.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Pdf"});
-    }
+    public items: ItemModel[] = [
+        {
+            text: "Save As xlsx"
+        },
+        {
+            text: "Save As xls"
+        },
+        {
+            text: "Save As csv"
+        },
+        {
+            text: "Save As pdf"
+        }];
+
+    public itemSelect(args: MenuEventArgs) {
+    if (args.item.text === 'Save As xlsx')
+      spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Xlsx"});
+    if (args.item.text === 'Save As xls')
+      spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Xls"});
+    if (args.item.text === 'Save As csv')
+      spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save',fileName: "Sample", saveType: "Csv"});
+    if (args.item.text === 'Save As pdf')
+      spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save',fileName: "Sample", saveType: "Pdf"});
+  }
     ngOnInit(): void {
         this.data = data;
     }

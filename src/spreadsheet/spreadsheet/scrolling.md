@@ -61,13 +61,17 @@ enableRipple(true);
     selector: 'app-container',
     template: `<ejs-spreadsheet #spreadsheet (created)="created()" [allowScrolling]="true" [scrollSettings]="{ isFinite: true }">
                 <e-sheets>
-                  <e-sheet name="Price Details" rowCount="20" colCount="20">
+                  <e-sheet name="Price Details" rowCount="9" colCount="7">
                     <e-ranges>
                       <e-range [dataSource]="priceData"></e-range>
                     </e-ranges>
                     <e-columns>
                       <e-column [width]=130></e-column>
                       <e-column [width]=92></e-column>
+                      <e-column [width]=96></e-column>
+                      <e-column [width]=130></e-column>
+                      <e-column [width]=92></e-column>
+                      <e-column [width]=96></e-column>
                       <e-column [width]=96></e-column>
                     </e-columns>
                   </e-sheet>

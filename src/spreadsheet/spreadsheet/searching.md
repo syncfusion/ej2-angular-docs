@@ -52,6 +52,13 @@ Go to feature is used to navigate to a specific cell address in the sheet or wor
 * Use `Ctrl + G` key to open the Go To dialog.
 * Use [`goTo()`](../api/spreadsheet/#goto) method to perform Go To operation.
 
+In the following sample, searching can be done by following ways:
+
+* Select the Home tab in the Ribbon toolbar, and then select the Search icon.
+* Enter any value in the search textbox.
+* Select the next (or) previous button to find the entered value in the spreadsheet.
+* You can have more options to find values by selecting the more options in the search toolbar.
+
 {% tab template="spreadsheet/searching", sourceFiles="app/**/*.ts", isDefaultActive=true, iframeHeight="450px" %}
 
 ```javascript
