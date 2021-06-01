@@ -87,7 +87,7 @@ CheckBox check icon can be customized as per the requirement by adding CSS rules
 In the following example, the check icon can be customized by changing check icon content, background and
 border color in focus and hovered states by adding `e-checkicon` class.
 
-{% tab template= "check-box/custom-icon", sourceFiles="app/**/*.ts, styles.css", isDefaultActive=true %}
+{% tab template= "check-box/custom-icon", sourceFiles="app/**/*.ts,styles.css", isDefaultActive=true %}
 
 ```typescript
 
@@ -119,7 +119,7 @@ CheckBox output can be customized as per the requirement of the user.
 
 In the following example, the checkbox output can be customized by providing the given value as the output instead of boolean value in  the default checkbox.
 
-{% tab template= "check-box/custom-output", sourceFiles="app/**/*.ts, styles.css", isDefaultActive=true %}
+{% tab template= "check-box/custom-output", sourceFiles="app/**/*.ts,styles.css", isDefaultActive=true %}
 
 ```typescript
 

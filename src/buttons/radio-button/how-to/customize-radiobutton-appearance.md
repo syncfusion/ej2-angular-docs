@@ -13,7 +13,7 @@ Define own CSS rules according to your requirement and assign the class name to 
 The background and border color of the RadioButton is customized through the custom classes
 to create primary, success, warning, danger, and info type of radio button.
 
-{% tab template= "radio-button/howto", sourceFiles="app/**/*.ts, styles.css" , isDefaultActive=true %}
+{% tab template= "radio-button/howto", sourceFiles="app/**/*.ts,styles.css" , isDefaultActive=true %}
 
 ```typescript
 

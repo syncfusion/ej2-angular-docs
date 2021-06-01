@@ -10,7 +10,7 @@ To create ButtonGroup with icons, `iconCss` property of the button component can
 
 The following example illustrates how to create ButtonGroup with icons.
 
-{% tab template="button-group/icon", sourceFiles="app/**/*.ts, styles.css", isDefaultActive=true %}
+{% tab template="button-group/icon", sourceFiles="app/**/*.ts,styles.css", isDefaultActive=true %}
 
 ```typescript
 import { Component } from '@angular/core';
