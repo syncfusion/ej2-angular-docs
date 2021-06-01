@@ -77,7 +77,7 @@ The steps below show how to install Essential Studio JavaScript – EJ2 Web Inst
 
 11. When the installation is finished, the **Summary** wizard will appear. Here you can see the list of products that have been installed successfully and those that have failed. To close the Summary wizard, click Finish.
 
-    ![license download](12.png)
+    ![license download](images/12.png)
 
     * To open the Syncfusion Control Panel, click **Launch Control** Panel.
 

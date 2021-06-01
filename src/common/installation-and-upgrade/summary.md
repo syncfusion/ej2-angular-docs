@@ -1,0 +1,6 @@
+* [Installation with NPM cli](installation-and-upgrade/installation.md)
+* [Download](installation-and-upgrade/download.md)
+* [Install using the Web Installer](installation-and-upgrade/installation-using-web-installer.md)
+* [Install using the Offline Installer](installation-and-upgrade/installation-using-offline-installer.md)
+* [Installation Errors](installation-and-upgrade/common-installation-errors.md)
+* [Upgrade](installation-and-upgrade/upgrading-syncfusion.md)
