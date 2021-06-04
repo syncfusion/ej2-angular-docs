@@ -223,6 +223,13 @@ Below server-side controller code to get the Kanban data.
 
 The CRUD (Create, Read, Update and Delete) actions can be performed easily on Kanban cards using the various adaptors available within the `DataManager`. Most preferably, we will be using `UrlAdaptor` for performing CRUD actions on Kanban.
 
+The CRUD operation in Kanban can be mapped to server-side controller actions using the properties `insertUrl`, `removeUrl`, `updateUrl`, and `crudUrl`.
+
+* `insertUrl` – You can perform a single insertion operation on the server-side.
+* `updateUrl` – You can update single data on the server-side.
+* `removeUrl` – You can remove single data on the server-side.
+* `crudUrl` – You can perform bulk data operation on the server-side.
+
 ```typescript
 import { Component } from '@angular/core';
 import { CardSettingsModel } from '@syncfusion/ej2-angular-kanban';
@@ -245,9 +252,12 @@ export class AppComponent {
         headerField: 'Id'
     };
     private dataManager: DataManager = new DataManager({
-        url: "DataSource",
-        crudUrl: "UpdateData",
-        adaptor: new UrlAdaptor
+        url: 'Home/DataSource',
+        updateUrl: 'Home/Update',
+        insertUrl: 'Home/Insert',
+        removeUrl: 'Home/Delete',
+        adaptor: new UrlAdaptor(),
+        crossDomain: true
     });
 }
 
@@ -262,28 +272,23 @@ public ActionResult DataSource() {
     var DataSource = db.Tasks.ToList();
     return Json(DataSource, JsonRequestBehavior.AllowGet);
 }
-public ActionResult UpdateData(EditParams param) {
-    if (param.action == "insert" || (param.action == "batch" && param.added != null)) {
-        //Insert record in database
-    }
-    if (param.action == "update" || (param.action == "batch" && param.changed != null)) {
-        //Update record in database
-    }
-    if (param.action == "remove" || (param.action == "batch" && param.deleted != null)) {
-        //Delete record in database
-    }
-    db.SaveChanges();
-    var data = db.Tasks.ToList();
-    return Json(data, JsonRequestBehavior.AllowGet);
+public ActionResult Insert(Params value) {
+    //Insert card data into the database
+    return Json(value, JsonRequestBehavior.AllowGet);
+}
+public ActionResult Update(Params value) {
+    //Update card data into the database
+    return Json(value, JsonRequestBehavior.AllowGet);
+}
+public void Delete(Params value) {
+    //Delete card data from the database
 }
 
-public class EditParams {
-    public string key { get; set; }
-    public string action { get; set; }
-    public List<Tasks> added { get; set; }
-    public List<Tasks> changed { get; set; }
-    public List<Tasks> deleted { get; set; }
-    public Tasks value { get; set; }
+public class Params {
+    public int Id { get; set; }
+    public string Status { get; set; }
+    public string Summary { get; set; }
+    public string Assignee { get; set; }
 }
 
 ```
