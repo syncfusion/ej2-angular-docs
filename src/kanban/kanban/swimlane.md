@@ -286,3 +286,45 @@ export class AppComponent {
 ```
 
 {% endtab %}
+
+## Enable frozen rows
+
+Frozen rows provide an option to make the current swimlane row header text always visible on top of the content while scrolling the Kanban content. The swimlane header text will be changed dynamically, when you scroll to another swimlane row.
+
+By default, the `enableFrozenRows` property is set as `false`. If you wish to show the swimlane frozen rows, you can enable the `enableFrozenRows` property.
+
+> This feature support only when using Kanban content scrolling.
+
+{% tab template="kanban/swimlane-enable-frozen" sourceFiles="app/**/*.ts" %}
+
+```typescript
+import { Component } from '@angular/core';
+import { CardSettingsModel, SwimlaneSettingsModel } from '@syncfusion/ej2-angular-kanban';
+import { kanbanData } from './datasource';
+
+@Component({
+  selector: 'app-root',
+  template: `<ejs-kanban keyField='Status' [dataSource]='data' [cardSettings]='cardSettings' [swimlaneSettings]='swimlaneSettings' height='500px'>
+                <e-columns>
+                  <e-column headerText='To do' keyField='Open'></e-column>
+                  <e-column headerText='In Progress' keyField='InProgress'></e-column>
+                  <e-column headerText='Testing' keyField='Testing'></e-column>
+                  <e-column headerText='Done' keyField='Close'></e-column>
+                </e-columns>
+            </ejs-kanban>`
+})
+export class AppComponent {
+    public data: Object[] = kanbanData;
+    public cardSettings: CardSettingsModel = {
+        contentField: 'Summary',
+        headerField: 'Id'
+    };
+    public swimlaneSettings: SwimlaneSettingsModel = {
+        keyField: 'Assignee',
+        enableFrozenRows: true
+    };
+}
+
+```
+
+{% endtab %}
