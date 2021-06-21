@@ -74,6 +74,10 @@ Freeze Panes feature is not compatible with all the features which are available
 * Filtering support with freeze panes.
 * Merging the cells between freeze and unfreeze area.
 
+## Note
+
+You can refer to our [Angular Spreadsheet](https://www.syncfusion.com/angular-ui-components/angular-spreadsheet) feature tour page for its groundbreaking feature representations. You can also explore our [Angular Spreadsheet example](https://ej2.syncfusion.com/angular/demos/#/material/spreadsheet/default) to knows how to present and manipulate data.
+
 ## See Also
 
 * [Sorting](./sort)

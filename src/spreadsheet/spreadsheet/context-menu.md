@@ -74,16 +74,18 @@ import { dataSource } from './datasource';
 
 @Component({
     selector: 'app-container',
-    template: `<ejs-spreadsheet #spreadsheet (contextMenuBeforeOpen)="contextMenuBeforeOpen()">
+    template: `<ejs-spreadsheet #spreadsheet (contextMenuBeforeOpen)="contextMenuBeforeOpen($args)">
               </ejs-spreadsheet>`
 })
 export class AppComponent {
     @ViewChild('spreadsheet')
     spreadsheetObj: SpreadsheetComponent;
 
-     contextMenuBeforeOpen() {
+     contextMenuBeforeOpen(args) {
+       if (args.element.id === this.spreadsheetObj.element.id + '_contextmenu') {
         // To add context menu items.
       this.spreadsheetObj.addContextMenuItems([{ text: 'Custom Item' }], 'Paste Special', false); //To pass the items, Item before / after that the element to be inserted, Set false if the items need to be inserted before the text.
+     }
     }
 }
 ```
@@ -151,6 +153,10 @@ export class AppComponent {
 ```
 
 {% endtab %}
+
+## Note
+
+You can refer to our [Angular Spreadsheet](https://www.syncfusion.com/angular-ui-components/angular-spreadsheet) feature tour page for its groundbreaking feature representations. You can also explore our [Angular Spreadsheet example](https://ej2.syncfusion.com/angular/demos/#/material/spreadsheet/default) to knows how to present and manipulate data.
 
 ## See Also
 

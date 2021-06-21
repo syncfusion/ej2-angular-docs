@@ -10,7 +10,7 @@ Cell Template is used for adding HTML elements into Spreadsheet. You can add the
 
 The following sample describes the above behavior.
 
-Sample link: [`Cell template`]("https://ej2.syncfusion.com/angular/demos/#/material/spreadsheet/cell-template")
+Sample link: [`Cell template`](https://ej2.syncfusion.com/angular/demos/#/material/spreadsheet/cell-template)
 
 <!-- {% tab template="spreadsheet/template", sourceFiles="app/**/*.ts", isDefaultActive=true, iframeHeight="450px" %}
 
@@ -148,6 +148,10 @@ export class AppComponent {
 ```
 
 {% endtab %} -->
+
+## Note
+
+You can refer to our [Angular Spreadsheet](https://www.syncfusion.com/angular-ui-components/angular-spreadsheet) feature tour page for its groundbreaking feature representations. You can also explore our [Angular Spreadsheet example](https://ej2.syncfusion.com/angular/demos/#/material/spreadsheet/default) to knows how to present and manipulate data.
 
 ## See Also
 

@@ -172,6 +172,7 @@ To save the Spreadsheet document as an `xlsx, xls, csv, or pdf` file, by using [
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { SpreadsheetComponent } from '@syncfusion/ej2-angular-spreadsheet';
 import { data } from './datasource';
+import { ItemModel, MenuEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
 
 @Component({
     selector: 'app-container',
@@ -197,13 +198,13 @@ export class AppComponent implements OnInit {
 
     public itemSelect(args: MenuEventArgs) {
     if (args.item.text === 'Save As xlsx')
-      spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Xlsx"});
+      this.spreadsheetObj.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Xlsx"});
     if (args.item.text === 'Save As xls')
-      spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Xls"});
+      this.spreadsheetObj.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save', fileName: "Sample", saveType: "Xls"});
     if (args.item.text === 'Save As csv')
-      spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save',fileName: "Sample", saveType: "Csv"});
+      this.spreadsheetObj.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save',fileName: "Sample", saveType: "Csv"});
     if (args.item.text === 'Save As pdf')
-      spreadsheet.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save',fileName: "Sample", saveType: "Pdf"});
+      this.spreadsheetObj.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save',fileName: "Sample", saveType: "Pdf"});
   }
     ngOnInit(): void {
         this.data = data;
@@ -231,6 +232,10 @@ The following list of Excel file formats are supported in Spreadsheet:
 * MS Excel (.xlsx)
 * MS Excel 97-2003 (.xls)
 * Comma Separated Values (.csv)
+
+## Note
+
+You can refer to our [Angular Spreadsheet](https://www.syncfusion.com/angular-ui-components/angular-spreadsheet) feature tour page for its groundbreaking feature representations. You can also explore our [Angular Spreadsheet example](https://ej2.syncfusion.com/angular/demos/#/material/spreadsheet/default) to knows how to present and manipulate data.
 
 ## See Also
 

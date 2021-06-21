@@ -127,6 +127,7 @@ import { Component, ViewChild } from '@angular/core';
 import { SpreadsheetComponent } from '@syncfusion/ej2-angular-spreadsheet';
 import { enableRipple } from '@syncfusion/ej2-base';
 import { dataSource1 } from './datasource';
+import { ItemModel, MenuEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
 
 enableRipple(true);
 
@@ -176,11 +177,11 @@ export class AppComponent {
     }
     public itemSelect(args: MenuEventArgs) {
     if (args.item.text === 'Copy')
-      spreadsheet.copy();
+      this.spreadsheetObj.copy();
     if (args.item.text === 'Cut')
-      spreadsheet.cut();
+      this.spreadsheetObj.cut();
     if (args.item.text === 'Paste')
-      spreadsheet.paste();
+      this.spreadsheetObj.paste();
   }
 }
 ```
@@ -193,3 +194,7 @@ export class AppComponent {
 * If you copy =SUM(A2,B2) and paste, the formula reference will change depending on the pasted cell address but we don't have support for nested formula(formula reference will be same).
 * Clipboard is not supported with conditional formatting (values only pasting).
 * We have limitation while copying the whole sheet data and pasting it into another sheet.
+
+## Note
+
+You can refer to our [Angular Spreadsheet](https://www.syncfusion.com/angular-ui-components/angular-spreadsheet) feature tour page for its groundbreaking feature representations. You can also explore our [Angular Spreadsheet example](https://ej2.syncfusion.com/angular/demos/#/material/spreadsheet/default) to knows how to present and manipulate data.

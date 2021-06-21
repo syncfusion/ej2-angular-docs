@@ -93,7 +93,7 @@ export class AppComponent {
         this.spreadsheetObj.cellFormat({ fontWeight: 'bold', textAlign: 'center' }, 'A1:D1');
         this.spreadsheetObj.cellFormat({ fontWeight: 'bold'}, 'A11:D11');
         this.spreadsheetObj.cellFormat({ fontWeight: 'bold', textAlign: 'center' }, 'Salary!A1:D1');
-        spreadsheet.protectSheet(1, { selectCells: false});
+        this.spreadsheetObj.protectSheet(1, { selectCells: false});
     }
 }
 ```
@@ -282,6 +282,10 @@ In the active Spreadsheet, the workbook Unprotection can be done in any of the f
 ## Limitations of Protect Workbook
 
 * Encryption with password is not supported in the Protect workbook feature.
+
+## Note
+
+You can refer to our [Angular Spreadsheet](https://www.syncfusion.com/angular-ui-components/angular-spreadsheet) feature tour page for its groundbreaking feature representations. You can also explore our [Angular Spreadsheet example](https://ej2.syncfusion.com/angular/demos/#/material/spreadsheet/default) to knows how to present and manipulate data.
 
 ## See Also
 

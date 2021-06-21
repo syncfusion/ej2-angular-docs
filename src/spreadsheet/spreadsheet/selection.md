@@ -195,3 +195,7 @@ export class AppComponent {
 ## Limitations
 
 * We have a limitation while performing the Select All(`ctrl + A`). You can do this only by clicking the Select All button at the top left corner.
+
+## Note
+
+You can refer to our [Angular Spreadsheet](https://www.syncfusion.com/angular-ui-components/angular-spreadsheet) feature tour page for its groundbreaking feature representations. You can also explore our [Angular Spreadsheet example](https://ej2.syncfusion.com/angular/demos/#/material/spreadsheet/default) to knows how to present and manipulate data.
