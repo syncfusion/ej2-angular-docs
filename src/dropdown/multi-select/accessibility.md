@@ -36,7 +36,7 @@ You can use the following key shortcuts to access the MultiSelect without interr
 | <kbd>Arrow Up</kbd> | Moves focus previous to the currently selected one. |
 | <kbd>Page Down</kbd> | Scrolls down to the next page and set focus to the first item when popup list opens. |
 | <kbd>Page Up</kbd> | Scrolls up to the previous page and set focus to the first item when popup list opens. |
-| <kbd>Enter</kbd> | Selects the focused item, and when it is in an close state the popup list opens. |
+| <kbd>Enter</kbd> | Selects the focused item, and popup list closes when it is in open state. |
 | <kbd>Tab</kbd> | Focuses on the next TabIndex element on the page when the popup is closed. Otherwise, closes the popup list and remains the focus of the component. |
 | <kbd>Shift + tab </kbd> | Focuses on the previous TabIndex element on the page when the popup is closed. Otherwise, closes the popup list and remains the focus of the component. |
 | <kbd>Alt + Down</kbd> | Opens the popup list. |
