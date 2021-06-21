@@ -136,7 +136,7 @@ import { createSpinner, showSpinner, hideSpinner  } from '@syncfusion/ej2-popups
     selector: 'app-root',
     template: `<div id='dropArea'>
                     <span id='drop' class="droparea"> Drop files here or <a href="" id='browse'><u>Browse</u></a> </span>
-                    <ejs-uploader #templateupload id='templatefileupload' [asyncSettings]='path'(progress)='onFileUpload($event)' (selected)='onFileSelect($event)' (removing)='onFileRemove($event)' (failure)='onUploadFailed($event)' (success)='onUploadSuccess($event)'></ejs-uploader>
+                    <ejs-uploader #templateupload id='templatefileupload' [dropArea]="dropArea" [asyncSettings]='path'(progress)='onFileUpload($event)' (selected)='onFileSelect($event)' (removing)='onFileRemove($event)' (failure)='onUploadFailed($event)' (success)='onUploadSuccess($event)'></ejs-uploader>
                 </div>`,
     styleUrls: ['index.css']
 })
@@ -150,6 +150,7 @@ export class AppComponent {
     };
 
     ngAfterViewInit() {
+    this.dropArea = document.querySelector('#dropArea') as HTMLElement;
     document.getElementById('browse').onclick = function() {
     document.getElementsByClassName('e-file-select-wrap')[0].querySelector('button').click();
       return false;
@@ -157,6 +158,7 @@ export class AppComponent {
     }
     constructor() {
     }
+    public dropArea: HTMLElement;
     public uploadWrapper: HTMLElement = document.getElementsByClassName('e-upload')[0] as HTMLElement;
     public parentElement : HTMLElement;
     public progressbarContainer : HTMLElement;
