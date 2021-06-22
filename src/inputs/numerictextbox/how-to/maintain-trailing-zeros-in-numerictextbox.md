@@ -21,7 +21,7 @@ export class AppComponent {
         numericObj.element.value = numericObj.formattedValue(numericObj.decimals, +numericObj.element.value);
     }
     public onCreate(): void {
-        document.getElementById("numeric").addEventListener('focus',function(){
+         document.getElementsByClassName('e-numerictextbox')[0].addEventListener('focus',function(){
             var numericObj = this.ej2_instances[0];
             numericObj.element.value = numericObj.formattedValue(numericObj.decimals, +numericObj.element.value);
         });
