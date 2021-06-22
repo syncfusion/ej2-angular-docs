@@ -12,7 +12,15 @@ The [`animation`](../../api/tab#animation) property also allows you to set [`eas
 
 Default animation is given as `SlideLeftIn` for [`previous`](../../api/tab/tabAnimationSettingsModel#previous)
 tab animation and `SlideRightIn` for [`next`](../../api/tab/tabAnimationSettingsModel#next) tab animation.
-You can also disable the animation by setting the animation effect as none.
+You can also disable the animation by setting the animation effect as `None`. Also, please use the following CSS to disable indicator animation for animation effect as `None`.
+
+```CSS
+
+.e-tab .e-tab-header:not(.e-vertical) .e-indicator, .e-tab .e-tab-header.e-vertical .e-indicator {
+    transition: none;
+}
+
+```
 
 The sample demonstrates some types of animation that suits Tab. You can check all the animation effects here.
 
