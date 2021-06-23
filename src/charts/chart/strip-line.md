@@ -94,8 +94,8 @@ export class AppComponent implements OnInit {
         this.primaryXAxis = {
            title: 'Overs',
             stripLines:[
-            {start: 0, end: 5, text: 'powerplay 1', color: 'red', visible: true, opacity: 0.5, rotation: 45, testStyle: { size: 20, color: 'black'}},
-            {start: 5, end: 10, text: 'powerplay 2', color: 'blue', visible: true, opacity: 0.5, rotation: 45, testStyle: { size: 20, color: 'black'}},
+            {start: 0, end: 5, text: 'powerplay 1', color: 'red', visible: true, opacity: 0.5, rotation: 45, textStyle: { size: 20, color: 'black'}},
+            {start: 5, end: 10, text: 'powerplay 2', color: 'blue', visible: true, opacity: 0.5, rotation: 45, textStyle: { size: 20, color: 'black'}},
         ]
         };
         this.title = 'India Vs Australia 1st match';
