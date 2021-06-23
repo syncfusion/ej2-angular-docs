@@ -23,7 +23,7 @@
 * [Serialization](diagram/serialization.md)
 * [Printing and Exporting](diagram/export.md)
 * [Tooltip](diagram/tooltip.md)
-* [Userhandle](diagram/user-handle.md)
+* [User handle](diagram/user-handle.md)
 * [CSS Structure](diagram/style.md)
 * [Ruler](diagram/ruler.md)
 * [Layers](diagram/layers.md)
