@@ -119,25 +119,33 @@ CheckBox output can be customized as per the requirement of the user.
 
 In the following example, the checkbox output can be customized by providing the given value as the output instead of boolean value in  the default checkbox.
 
-{% tab template= "check-box/custom-output", sourceFiles="app/**/*.ts,styles.css", isDefaultActive=true %}
-
 ```typescript
 
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { FormGroup, FormControl, FormArray, FormBuilder } from '@angular/forms';
 
 @Component({
     selector: 'app-root',
-    templateUrl: 'app.component.html',
+    template: `
+      <div class="row">
+        <form [formGroup]="form" (ngSubmit)="submit()">
+          <span formArrayName="tests" *ngFor="let test of testData; let i = index">
+            <ejs-checkbox [formControlName]="i" [label]="test.name" [value]="test.value"></ejs-checkbox>
+          </span>
+          <button class= "e-btn">submit</button>
+        </form>
+      </div>`,
     styleUrls: ['app.component.css'],
     encapsulation: ViewEncapsulation.None
 })
+
 export class AppComponent {
   form: FormGroup;
   testData = [
-    { value: '1', name: 'test1' },
-    { value: '2', name: 'test2' },
-    { value: '3', name: 'test3' },
-    { value: '4', name: 'test4' }
+    { value: '1', name: 'Test1' },
+    { value: '2', name: 'Test2' },
+    { value: '3', name: 'Test3' },
+    { value: '4', name: 'Test4' }
   ];
 
   constructor(private formBuilder: FormBuilder) {
@@ -165,4 +173,22 @@ export class AppComponent {
 
 ```
 
-{% endtab %}
+Please find the below sample code for app.component.module file.
+
+```typescript
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { AppComponent } from '../app.component';
+
+@NgModule({
+  declarations: [ AppComponent ],
+  imports: [ FormsModule, ReactiveFormsModule,BrowserModule,CheckBoxModule],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+```
