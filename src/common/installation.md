@@ -23,7 +23,7 @@ npm install @syncfusion/ej2-angular-grids --save
         }
     }
     ```
-    > The `*` indicates the latest version of npm package. Refer the [documentation](https://docs.npmjs.com/misc/semver#versions) for more details about npm versioning.
+    > The `*` indicates the latest version of npm package. Refer the [documentation](https://docs.npmjs.com/cli/v7/using-npm/semver#versions) for more details about npm versioning.
 
 2. Now, open the command prompt and run the `npm install` command line. This will install all npm dependencies in a single command line.
 
