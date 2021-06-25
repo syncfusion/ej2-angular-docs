@@ -63,6 +63,7 @@ import { Component, ViewChild } from '@angular/core';
 import { SpreadsheetComponent } from '@syncfusion/ej2-angular-spreadsheet';
 import { enableRipple } from '@syncfusion/ej2-base';
 import { dataSource1 } from './datasource';
+import { ItemModel, MenuEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
 
 enableRipple(true);
 
@@ -105,11 +106,11 @@ export class AppComponent {
     }
     public itemSelect(args: MenuEventArgs) {
     if (args.item.text === 'Copy')
-      spreadsheet.copy();
+      this.spreadsheetObj.copy();
     if (args.item.text === 'Cut')
-      spreadsheet.cut();
+      this.spreadsheetObj.cut();
     if (args.item.text === 'Paste')
-      spreadsheet.paste();
+      this.spreadsheetObj.paste();
   }
 }
 ```
@@ -134,7 +135,7 @@ enableRipple(true);
 @Component({
     selector: 'app-container',
     template: `<button ejs-dropdownbutton [items]='items' content='Clipboard' (select)='itemSelect($event)'></button>
-    <ejs-spreadsheet #spreadsheet (created)="created()" (actionBegin)="actionBeginHandler()" [enableClipboard]="true">
+    <ejs-spreadsheet #spreadsheet (created)="created()" (actionBegin)="actionBeginHandler($event)" [enableClipboard]="true">
                 <e-sheets>
                   <e-sheet name="Price Details">
                     <e-ranges>

@@ -15,12 +15,12 @@ import { Component, OnInit,ViewChild } from '@angular/core';
 import { dataSource1, dataSource2, printElement, isPrint } from './datasource';
 import { SpreadsheetComponent, CellModel } from '@syncfusion/ej2-angular-spreadsheet';
 import { ItemModel, MenuEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
-import { print } from '@syncfusion/ej2-base';
+import { getComponent, print } from '@syncfusion/ej2-base';
 
 @Component({
     selector: 'app-container',
     template: `<button ejs-dropdownbutton [items]='items' content='Print' (select)='itemSelect($event)'></button>
-    <ejs-spreadsheet #spreadsheet id="spreadsheet" (created)="created() (dataBound)="dataBound()">
+    <ejs-spreadsheet #spreadsheet id="spreadsheet" (created)="created()" (dataBound)="dataBound()">
                 <e-sheets>
                   <e-sheet name="Budget">
                     <e-ranges>
@@ -67,7 +67,6 @@ export class AppComponent implements OnInit {
       printElement.querySelector(".e-sheet-content").innerHTML = document.querySelector(
         ".e-sheet-content"
       ).outerHTML; //  To add the spreadsheet table
-      debugger
       let usedRange: UsedRangeModel = spreadsheet.getActiveSheet().usedRange;
       let tbody: Element = printElement.querySelector('tbody');
       for (let i: number = tbody.getElementsByClassName('e-row').length; i >= 0; i--) {

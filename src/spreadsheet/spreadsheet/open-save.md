@@ -166,22 +166,24 @@ Server side code snippets:
 
 To save the Spreadsheet document as an `xlsx, xls, csv, or pdf` file, by using [save](../api/spreadsheet/#save) method should be called with the `url`, `fileName` and `saveType` as parameters. The following code example shows to save the spreadsheet file as an `xlsx, xls, csv, or pdf` in the button click event.
 
-{% tab template="spreadsheet/local-data-binding", sourceFiles="app/**/*.ts", iframeHeight="450px" %}
+{% tab template="spreadsheet/open-save", sourceFiles="app/**/*.ts", iframeHeight="450px" %}
 
 ```javascript
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { SpreadsheetComponent } from '@syncfusion/ej2-angular-spreadsheet';
-import { data } from './datasource';
 import { ItemModel, MenuEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
+import { data } from './datasource';
 
 @Component({
     selector: 'app-container',
-    template: `<button ejs-dropdownbutton [items]='items' content='Save' (select)='itemSelect($event)'></button>
-    <ejs-spreadsheet #spreadsheet> <e-sheets> <e-sheet> <e-ranges> <e-range [dataSource]='data'></e-range></e-ranges><e-columns><e-column [width]=90></e-column><e-column [width]=100></e-column><e-column [width]=96></e-column><e-column [width]=120></e-column><e-column [width]=130></e-column><e-column [width]=120></e-column></e-columns></e-sheet></e-sheets></ejs-spreadsheet>`
+    template: "<button ejs-dropdownbutton [items]='items' content='Save' (select)='itemSelect($event)'></button> <ejs-spreadsheet #spreadsheet > <e-sheets> <e-sheet> <e-ranges> <e-range [dataSource]='data'></e-range></e-ranges><e-columns><e-column [width]=90></e-column><e-column [width]=100></e-column><e-column [width]=96></e-column><e-column [width]=120></e-column><e-column [width]=130></e-column><e-column [width]=120></e-column></e-columns></e-sheet></e-sheets></ejs-spreadsheet>"
 })
 export class AppComponent implements OnInit {
     public data: object[];
     @ViewChild('spreadsheet') public spreadsheetObj: SpreadsheetComponent;
+    ngOnInit(): void {
+        this.data = data;
+    }
     public items: ItemModel[] = [
         {
             text: "Save As xlsx"
@@ -205,9 +207,6 @@ export class AppComponent implements OnInit {
       this.spreadsheetObj.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save',fileName: "Sample", saveType: "Csv"});
     if (args.item.text === 'Save As pdf')
       this.spreadsheetObj.save({url: 'https://ej2services.syncfusion.com/production/web-services/api/spreadsheet/save',fileName: "Sample", saveType: "Pdf"});
-  }
-    ngOnInit(): void {
-        this.data = data;
     }
   };
 }
