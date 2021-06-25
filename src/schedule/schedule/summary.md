@@ -32,3 +32,4 @@
 * [Set Different Working Hours on Different Days](schedule/how-to/set-different-work-hours.md)
 * [Show tooltip with delay](schedule/how-to/show-tool-tip-with-delay.md)
 * [Show quick info template](schedule/how-to/quick-info-template.md)
+* [Enable scroll option on all-day section](schedule/how-to/enable-scroll-option-on-all-day-section.md)

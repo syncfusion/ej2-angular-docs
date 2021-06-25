@@ -125,6 +125,37 @@ export class AppComponent {
 
 {% endtab %}
 
+## How to display the view options within the header bar popup
+
+By default, the header bar holds the view navigation options, through which the user can switch between various views. You can move this view options to the header bar popup by setting `true` to the `enableAdaptiveUI` property.
+
+{% tab template="schedule/default", sourceFiles="app/**/*.ts", iframeHeight="588px" %}
+
+```typescript
+import { Component } from '@angular/core';
+import { EventSettingsModel, DayService, WeekService, WorkWeekService, MonthService, AgendaService } from '@syncfusion/ej2-angular-schedule';
+import { scheduleData } from './datasource.ts';
+
+@Component({
+    selector: 'app-root',
+    providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService],
+    // specifies the template string for the Schedule component
+    template: `<ejs-schedule width='100%' height='550px' [selectedDate]="selectedDate"
+  [eventSettings]="eventSettings" [enableAdaptiveUI]="enableAdaptiveUI"></ejs-schedule>`
+})
+export class AppComponent {
+    public selectedDate: Date = new Date(2018, 1, 15);
+    public eventSettings: EventSettingsModel = {
+        dataSource: scheduleData,
+    };
+    public enableAdaptiveUI: true;
+}
+```
+
+{% endtab %}
+
+> Refer [here](./resources/#adaptive-ui-in-desktop) to know more about adaptive UI in resources scheduler.
+
 ## Date header customization
 
 The Scheduler UI that displays the date text on all views are considered as the date header cells. You can customize the date header cells of Scheduler either using `dateHeaderTemplate` or `renderCell` event.

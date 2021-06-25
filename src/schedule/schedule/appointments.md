@@ -78,6 +78,8 @@ You can make use of the CSS customization to prevent the display of all-day row 
     </style>
 ```
 
+> You can also enable scroller for all-day row, please [refer](./how-to/enable-scroll-option-on-all-day-section/) here to know more.
+
 ## Recurring events
 
 Represents an appointment that is created for a certain time interval and occurring repeatedly on a daily, weekly, monthly or yearly basis at the same time interval based on the provided recurrence rule. Usually, the recurring events are indicated by a repeat marker added at the bottom-right position.
@@ -780,7 +782,7 @@ It is possible to drag and drop the unplanned items from any of the external sou
 
 In this example, we have used the tree view control as an external source and the child nodes from the tree view component are dragged and dropped onto the Scheduler. Therefore, it is necessary to make use of the `nodeDragStop` event of the TreeView component, where we can form an event object and save it using the `addEvent` method.
 
-{% tab template="schedule/external-drag-drop", sourceFiles="app/**/*.ts,app/app.component.html", iframeHeight="620px" %}
+{% tab template="schedule/external-drag-drop", sourceFiles="app/app.component.ts,app/app.module.ts,app/app.component.html,app/index.css", iframeHeight="620px" %}
 
 ```typescript
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
@@ -942,7 +944,7 @@ export class AppComponent {
 
 There are scenarios where you want to open the editor filled with data on newly dropped location and may need to proceed to save it, only when `Save` button is clicked on the editor. On clicking the cancel button should revert these changes. This can be achieved using the `dragStop` event of Scheduler.
 
-{% tab template="schedule/event", sourceFiles="app/**/*.ts", iframeHeight="588px" %}
+{% tab template="schedule/event", sourceFiles="app/**/*.ts,app/index.css", iframeHeight="588px" %}
 
 ```typescript
 import { Component, ViewChild } from '@angular/core';
@@ -1194,7 +1196,7 @@ Learn how easily you can customize the basic look and feel of Angular Scheduler 
 
 `youtube:Zc-JraA_Fak`
 
-{% tab template="schedule/event", sourceFiles="app/**/*.ts,app/app.component.html", iframeHeight="588px" %}
+{% tab template="schedule/event", sourceFiles="app/app.component.ts,app/app.module.ts,app/app.component.html,app/index.css", iframeHeight="588px" %}
 
 ```typescript
 import { Component, ViewEncapsulation } from '@angular/core';
@@ -1230,7 +1232,7 @@ export class AppComponent {
 
 The `eventRendered` event triggers before the appointment renders on the Scheduler. Therefore, this client-side event can be utilized to customize the look of events based on any specific criteria, before rendering them on the scheduler.
 
-{% tab template="schedule/event", sourceFiles="app/**/*.ts", iframeHeight="588px" %}
+{% tab template="schedule/event", sourceFiles="app/**/*.ts,app/index.css", iframeHeight="588px" %}
 
 ```typescript
 import { Component, ViewChild } from '@angular/core';
@@ -1274,7 +1276,7 @@ export class AppComponent {
 
 The customization of events can also be achieved using `cssClass` property of the Scheduler. In the following example, the background of appointments has been changed using the cssClass.
 
-{% tab template="schedule/event", sourceFiles="app/**/*.ts", iframeHeight="588px" %}
+{% tab template="schedule/event", sourceFiles="app/**/*.ts,app/index.css", iframeHeight="588px" %}
 
 ```typescript
 import { Component, ViewEncapsulation } from '@angular/core';
@@ -1538,7 +1540,7 @@ export class AppComponent {
 
 To differentiate the appearance of the appointments based on specific criteria such as displaying the past hour appointments with different colors on Scheduler, `eventRendered` event can be used which triggers before the appointment renders on the Scheduler.
 
-{% tab template="schedule/event", sourceFiles="app/**/*.ts, index.css", iframeHeight="588px" %}
+{% tab template="schedule/event", sourceFiles="app/**/*.ts,app/index.css", iframeHeight="588px" %}
 
 ```typescript
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
@@ -1657,7 +1659,7 @@ export class AppComponent {
 
 After enabling the default tooltip, it is possible to customize the display of needed event information on tooltip by making use of the `tooltipTemplate` option within the `eventSettings`.
 
-{% tab template="schedule/tooltip", sourceFiles="app/**/*.ts,app/app.component.html,app/index.css", iframeHeight="588px" %}
+{% tab template="schedule/tooltip", sourceFiles="app/app.component.ts,app/app.module.ts,app/app.component.html,app/index.css", iframeHeight="588px" %}
 
 ```typescript
 import { Component } from '@angular/core';
@@ -1771,7 +1773,7 @@ It is possible to access the information about the event fields of an appointmen
 
 In the following example, the subject of the appointment clicked has been displayed.
 
-{% tab template="schedule/event-template", sourceFiles="app/**/*.ts,app/app.component.html", iframeHeight="588px" %}
+{% tab template="schedule/event-template", sourceFiles="app/app.component.ts,app/app.module.ts,app/app.component.html,app/index.css", iframeHeight="588px" %}
 
 ```typescript
 import { Component, ViewChild } from '@angular/core';
@@ -1812,7 +1814,7 @@ export class AppComponent {
 
 To retrieve the appointments present in the current view of the Scheduler, you can make use of the `getCurrentViewEvents` public method. In the following example, the count of current view appointment collection rendered has been traced in `dataBound` event.
 
-{% tab template="schedule/event-data-bound", sourceFiles="app/**/*.ts,app/app.component.html", iframeHeight="588px" %}
+{% tab template="schedule/event-data-bound", sourceFiles="app/app.component.ts,app/app.module.ts,app/app.component.html,app/index.css", iframeHeight="588px" %}
 
 ```typescript
 import { Component, ViewChild } from '@angular/core';

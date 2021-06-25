@@ -363,7 +363,7 @@ namespace ScheduleSample.Controllers
                     foreach (var apps in param.deleted)
                     {
                         ScheduleEventData appointment = db.ScheduleEventDatas.Where(c => c.Id == apps.Id).FirstOrDefault();
-                        if (apps != null) db.ScheduleEventDatas.DeleteOnSubmit(appointment);
+                        if (appointment != null) db.ScheduleEventDatas.DeleteOnSubmit(appointment);
                     }
                 }
                 db.SubmitChanges();

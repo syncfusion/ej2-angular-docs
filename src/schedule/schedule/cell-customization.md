@@ -218,7 +218,7 @@ export class AppComponent {
 
 An alternative to `cellTemplate` is the `renderCell` event, which can also be used to customize the cells with appropriate images or formatted text values.
 
-{% tab template="schedule/default", sourceFiles="app/**/*.ts", iframeHeight="588px" %}
+{% tab template="schedule/default", sourceFiles="app/**/*.ts,app/index.css", iframeHeight="588px" %}
 
 ```typescript
 import { Component, ViewEncapsulation } from '@angular/core';

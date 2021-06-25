@@ -1275,7 +1275,7 @@ export class AppComponent {
 
 The following code example shows you how to customize the default more indicator popup in which number of events rendered count on the day has been shown in the header.
 
-{% tab template="schedule/editor-window", iframeHeight="588px", sourceFiles="app/**/*.ts" %}
+{% tab template="schedule/editor-window", iframeHeight="588px", sourceFiles="app/**/*.ts,app/index.css" %}
 
 ```typescript
 import { Component, ViewEncapsulation } from '@angular/core';

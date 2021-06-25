@@ -6,13 +6,13 @@ description: "This section shows the way to maintain and retain the scheduler co
 
 # Set state persistence
 
-State persistence allowed Scheduler to retain the [`currentView`](../../api/schedule/currentview), [`selectedDate`](../../api/schedule/selecteddate) and Scroll position values in the [`localStorage`](https://www.w3schools.com/html/html5_webstorage.asp#) for state maintenance even if the browser is refreshed or if you move to the next page within the browser. This action is handled through the [`enablePersistence`](../../api/schedule/enablepersistence) property which is set to false by default. When it is set to true, `currentView`, `selectedDate` and Scroll position values of the scheduler component will be retained even after refreshing the page.
+State persistence allowed Scheduler to retain the `currentView`, `selectedDate` and Scroll position values in the [`localStorage`](https://www.w3schools.com/html/html5_webstorage.asp#) for state maintenance even if the browser is refreshed or if you move to the next page within the browser. This action is handled through the `enablePersistence` property which is set to false by default. When it is set to true, `currentView`, `selectedDate` and Scroll position values of the scheduler component will be retained even after refreshing the page.
 
 > **Note**: Scheduler `id` is essential to set state persistence.
 
 The following sample demonstrates how to set state persistence of the Scheduler component.
 
-{% tab template="schedule/default", sourceFiles="app/**/*.ts", iframeHeight="588px" %}
+{% tab template="schedule/default", sourceFiles="app/**/*.ts,app/index.css", iframeHeight="588px" %}
 
 ```typescript
 import { Component } from '@angular/core';
