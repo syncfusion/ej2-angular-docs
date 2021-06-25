@@ -186,6 +186,8 @@ The following table shows that list of available tools in the Rich Text Editor's
 | ClearFormat | The clear format tool is useful to remove all formatting styles (such as bold, italic, underline, color, superscript, subscript, and more) from currently selected text. As a result, all the text formatting will be cleared and return to its default formatting styles.|toolbarSettings: { items: ['ClearFormat']}|
 | FullScreen | Stretches the editor to the maximum width and height of the browser window.|toolbarSettings: { items: ['FullScreen']}|
 | SourceCode | Rich Text Editor includes the ability for users to directly edit HTML code via “Source View”. If you made any modification in Source view directly, synchronize with Design view.|toolbarSettings: { items: ['SourceCode']}|
+| NumberFormatList | Allows to create list items with various list style types(numbered)|toolbarSettings: { items: ['NumberFormatList']}|
+| BulletFormatList | Allows to create list items with various list style types(bulleted)|toolbarSettings: { items: ['BulletFormatList']}|
 
 By default, tool will be arranged in following order.
 

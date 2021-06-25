@@ -357,3 +357,26 @@ export class AppComponent {
 ```
 
 {% endtab %}
+
+## Number and Bullet Format Lists
+
+This feature allows the user to change the appearance of the Numbered and Bulleted lists. Users can also apply different numbering or bullet formats lists such as lowercase greek, upper Alpha, square and circles. You can also customize the style type of the lists to be populated in the dropdown from the toolbar by using the `numberFormatList` and `bulletFormatList` properties in the Rich Text Editor.
+
+{% tab template="rich-text-editor/format-lists", sourceFiles="app/**/*.ts,index.html,index.css" %}
+
+```typescript
+import { Component } from '@angular/core';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService, CountService } from '@syncfusion/ej2-angular-richtexteditor';
+
+@Component({
+    selector: 'app-root',
+    template: `<ejs-richtexteditor id='defaultRTE' [toolbarSettings]='tools'>
+               </ejs-richtexteditor>`,
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService, CountService]
+})
+export class AppComponent  {
+    public tools = {items: ['NumberFormatList', 'BulletFormatList']};
+}
+```
+
+{% endtab %}
