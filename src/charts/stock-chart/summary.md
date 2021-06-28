@@ -8,6 +8,7 @@
 * [Technical Indicators](stock-chart/technical-indicators.md)
 * [Tooltip](stock-chart/tool-tip.md)
 * [Crosshair](stock-chart/cross-hair.md)
+* [Legend](stock-chart/legend.md)
 * [Period Selector](stock-chart/period-selector.md)
 * [Range Selector](stock-chart/range-selector.md)
 * [Export and Print](stock-chart/export-print.md)
