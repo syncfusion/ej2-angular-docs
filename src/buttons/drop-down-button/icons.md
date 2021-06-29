@@ -15,7 +15,7 @@ the [`iconPosition`](../api/drop-down-button#iconposition) property.
 
 In the following example, the DropdownButton with default iconPosition and iconPosition as `Top` is showcased.
 
-{% tab template="drop-down-button/dd-icons", sourceFiles="app/**/*.ts", isDefaultActive=true %}
+{% tab template="drop-down-button/dd-icons", sourceFiles="app/**/*.ts,styles.css", isDefaultActive=true %}
 
 ```typescript
 import { Component } from '@angular/core';
@@ -55,7 +55,7 @@ export class AppComponent {
 Icon only DropDownButton can be achieved by using [`iconCss`](../api/drop-down-button#iconcss) property and to hide drop
 down arrow `e-caret-hide` class is added using [`cssClass`](../api/drop-down-button#cssclass) property.
 
-{% tab template="drop-down-button/icon-only", sourceFiles="app/**/*.ts", isDefaultActive=true %}
+{% tab template="drop-down-button/icon-only", sourceFiles="app/**/*.ts,styles.css", isDefaultActive=true %}
 
 ```typescript
 
@@ -108,7 +108,7 @@ Sprite images can be loaded in DropDownButton instead of font icons using [`icon
 In this following example, `e-image` class is added with background url of the sprite image along with X and Y positions. The `width` and
 `height` of the element set as `32px`.
 
-{% tab template="drop-down-button/sprite", sourceFiles="app/**/*.ts", isDefaultActive=true %}
+{% tab template="drop-down-button/sprite", sourceFiles="app/**/*.ts,styles.css", isDefaultActive=true %}
 
 ```typescript
 
@@ -147,7 +147,7 @@ You can also use third party icons on the DropDownButton using the [`iconCss`](.
 Vertical button in DropDownButton can be achieved by adding `e-vertical` class
 using [`cssClass`](../api/drop-down-button#cssclass) property.
 
-{% tab template="drop-down-button/vertical", sourceFiles="app/**/*.ts", isDefaultActive=true %}
+{% tab template="drop-down-button/vertical", sourceFiles="app/**/*.ts,styles.css", isDefaultActive=true %}
 
 ```typescript
 import { Component } from '@angular/core';
