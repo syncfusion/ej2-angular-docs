@@ -6,6 +6,7 @@
 * [Customization](datepicker/customization.md)
 * [Start View and Depth Restriction](datepicker/date-views.md)
 * [Accessibility](datepicker/accessibility.md)
+* [Mask Support](datepicker/date-masking.md)
 * [JSON Data binding with DatePicker](datepicker/how-to/json-data-binding.md)
 * [Two-way binding](datepicker/how-to/two-way-binding.md)
 * [Disable, Placeholder, Read-only](datepicker/how-to/disable-placeholder-readonly.md)

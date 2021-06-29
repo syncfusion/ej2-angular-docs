@@ -3,6 +3,7 @@
 * [Globalization](timepicker/globalization.md)
 * [Strict Mode](timepicker/strict-mode.md)
 * [Accessibility](timepicker/accessibility.md)
+* [Mask Support](timepicker/time-masking.md)
 * [JSON Data binding with TimePicker](timepicker/how-to/json-data-binding-with-timepicker.md)
 * [Two-way binding](timepicker/how-to/two-way-binding.md)
 * [CSS customization](timepicker/how-to/css-customization.md)

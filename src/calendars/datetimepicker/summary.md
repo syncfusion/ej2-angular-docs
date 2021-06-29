@@ -4,6 +4,7 @@
 * [DateTime Range](datetimepicker/date-time-range.md)
 * [Customization](datetimepicker/customization.md)
 * [Accessibility](datetimepicker/accessibility.md)
+* [Mask Support](datetimepicker/date-time-masking.md)
 * [JSON Data binding with DateTimePicker](datetimepicker/how-to/json-data-binding-with-datetimepicker.md)
 * [Two-way binding](datetimepicker/how-to/two-way-binding.md)
 * [Disable, Placeholder, Read-only](datetimepicker/how-to/disable-placeholder-readonly.md)
