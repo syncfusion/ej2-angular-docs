@@ -122,7 +122,7 @@ ng serve
 
 The following example shows a basic Query Builder component.
 
-{% tab template="query-builder/default", sourceFiles="app/app.module.ts", isDefaultActive=true %}
+{% tab template="query-builder/default", sourceFiles="app/app.component.ts,app/app.module.ts", isDefaultActive=true %}
 
 ```typescript
 import { Component } from '@angular/core';
@@ -156,7 +156,7 @@ export class AppComponent {
 
 To render the Query Builder component with rule, use the [`rule`](https://ej2.syncfusion.com/angular/documentation/api/query-builder/#rule) property.
 
-{% tab template="query-builder/default", sourceFiles="app/app.module.ts", isDefaultActive=true %}
+{% tab template="query-builder/default", sourceFiles="app/app.component.ts,app/app.module.ts", isDefaultActive=true %}
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
