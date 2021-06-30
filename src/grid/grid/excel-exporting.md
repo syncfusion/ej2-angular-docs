@@ -958,6 +958,83 @@ export class AppComponent implements OnInit {
 
 > **Note:** Refer to the GitHub sample for quick implementation and testing from [here](https://github.com/SyncfusionExamples/Angular-EJ2-Grid-server-side-exporting).
 
+### CSV Export in server side
+
+You can export the Grid to CSV format by using the [`serverCsvExport`](../api/grid/#servercsvexport) method which will pass the Grid properties to server.
+
+In the below demo, we have invoked the above method inside the [`toolbarClick`](../api/grid/#toolbarclick) event. In server side, we have deserialized the Grid properties and passed to the `CsvExport` method which will export the properties to CSV format.
+
+```typescript
+
+        public ActionResult CsvGridExport([FromForm] string gridModel)
+        {
+            GridExcelExport exp = new GridExcelExport();
+            Grid gridProperty = ConvertGridObject(gridModel);
+            return exp.CsvExport<OrdersDetails>(gridProperty, orddata);
+        }
+
+        private Grid ConvertGridObject(string gridProperty)
+        {
+           Grid GridModel = (Grid)Newtonsoft.Json.JsonConvert.DeserializeObject(gridProperty, typeof(Grid));
+           GridColumnModel cols = (GridColumnModel)Newtonsoft.Json.JsonConvert.DeserializeObject(gridProperty, typeof(GridColumnModel));
+           GridModel.Columns = cols.columns;
+           return GridModel;
+        }
+
+        public IActionResult UrlDatasource([FromBody]DataManagerRequest dm)
+        {
+            IEnumerable DataSource = OrdersDetails.GetAllRecords();
+            DataOperations operation = new DataOperations();
+            int count = DataSource.Cast<OrdersDetails>().Count();
+            return dm.RequiresCounts ? Json(new { result = DataSource, count = count }) : Json(DataSource);
+        }
+
+
+```
+
+```typescript
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ToolbarItems, GridComponent } from '@syncfusion/ej2-angular-grids';
+import { DataManager, UrlAdaptor } from '@syncfusion/ej2-data';
+import { ClickEventArgs } from '@syncfusion/ej2-navigations';
+
+@Component({
+    selector: 'app-root',
+    template: `<ejs-grid #grid id='Grid' [dataSource]='data' [toolbar]='toolbar' height='273px'(toolbarClick)='toolbarClick($event)'>
+                <e-columns>
+                    <e-column field='OrderID' headerText='Order ID' textAlign='Right' width=120></e-column>
+                    <e-column field='CustomerID' headerText='Customer ID' width=150></e-column>
+                    <e-column field='ShipCity' headerText='Ship City' width=150></e-column>
+                    <e-column field='ShipName' headerText='Ship Name' width=150></e-column>
+                </e-columns>
+                </ejs-grid>`
+})
+export class AppComponent implements OnInit {
+
+    public data: DataManager;
+    public toolbar: ToolbarItems[];
+
+    public dataManager: DataManager = new DataManager({
+        url: 'Home/UrlDatasource',
+        adaptor: new UrlAdaptor()
+    });
+
+    @ViewChild('grid')
+    public grid: GridComponent;
+
+    ngOnInit(): void {
+        this.data = this.dataManager;
+        this.toolbar = ['CsvExport'];
+    }
+    toolbarClick(args: ClickEventArgs): void {
+        if (args.item.id === 'Grid_csvexport') { // 'Grid_csvexport' -> Grid component id + _ + toolbar item name
+            this.grid.serverCsvExport('Home/CsvGridExport');
+        }
+    }
+}
+
+```
+
 ## See Also
 
 * [Exporting Grid in Cordova application](./how-to/exporting-grid-in-cordova-application)
