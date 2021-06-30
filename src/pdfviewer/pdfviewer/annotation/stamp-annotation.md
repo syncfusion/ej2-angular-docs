@@ -38,7 +38,7 @@ In the pan mode, if the stamp annotation mode is entered, the PDF Viewer control
 * Click the **Stamp Annotation** drop-down button. A drop-down pop-up will appear and shows the stamp annotations to be added.
 * Click the Custom Stamp button.
 
-![CustomStamp](../../pdfviewer/images/customstamp.png)
+![CustomStamp](../../pdfviewer/images/customStamp.png)
 
 * The file explorer dialog will appear, choose the image and then add the image to the PDF page.
 
