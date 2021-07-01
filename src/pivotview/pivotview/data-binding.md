@@ -484,6 +484,48 @@ export class AppComponent implements OnInit {
 
 {% endtab %}
 
+### Querying in Data Manager
+
+By default, the data manager retrieves all the data from the provider which is mapped in it. The data from the provider can be filtered, sorted, paged, etc. by setting the own query in `defaultQuery` property in the data manager instance.
+
+{% tab template="pivot-grid/getting-started", sourceFiles="app/app.component.ts,app/app.module.ts" %}
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+import { IDataOptions, IDataSet, PivotView } from '@syncfusion/ej2-angular-pivotview';
+import { DataManager, WebApiAdaptor, Query, ReturnOption, ODataAdaptor } from '@syncfusion/ej2-data';
+
+@Component({
+  selector: 'app-container',
+  template: `<ejs-pivotview #pivotview id='PivotView' height='350' [dataSourceSettings]=dataSourceSettings width=width></ejs-pivotview>`
+})
+export class AppComponent implements OnInit {
+  public dataSourceSettings: IDataOptions;
+  public data: DataManager;
+  public width: string;
+
+  ngOnInit(): void {
+    this.data = new DataManager({
+      url: 'https://js.syncfusion.com/demos/ejServices/Wcf/Northwind.svc/Orders',
+      adaptor: new ODataAdaptor(),
+      crossDomain: true
+    });
+    this.data.defaultQuery = new Query().take(2);
+    this.width = '100%';
+    this.dataSourceSettings = {
+      dataSource: this.data,
+      expandAll: false,
+      columns: [{ name: 'CustomerID', caption: 'Customer ID' }],
+      rows: [{ name: 'ShipCountry', caption: 'Ship Country' }, { name: 'ShipCity', caption: 'Ship City' }],
+      values: [{ name: 'Freight' }]
+      };
+    }
+}
+
+```
+
+{% endtab %}
+
 ## Mapping
 
 One can define field information like alias name (caption), data type, aggregation type, show and hide subtotals etc. using the [`fieldMapping`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/dataSourceSettings/#fieldmapping) property under [`dataSourceSettings`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/dataSourceSettings/). The available options are,

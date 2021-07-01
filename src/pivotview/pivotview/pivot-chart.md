@@ -990,6 +990,67 @@ export class AppComponent implements OnInit {
 
 {% endtab %}
 
+One can also customize multi-level labels of primary x-axis by using the `multiLevelLabelRender` event in the [`chartSettings`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/chartSettings/), which fires on rendering each multi-level label in the pivot chart. It has the following parameters:
+
+`axis` - It holds the information of the current axis.
+
+`text` - It allows to change the text of the multi-level label.
+
+`textStyle` - It allows to customize the text font.
+
+`alignment` - It allows to set the text alignment.
+
+{% tab template="pivot-grid/getting-started", sourceFiles="app/app.component.ts,app/app.module.ts" %}
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+import { IDataOptions, DisplayOption, PivotChartService } from '@syncfusion/ej2-angular-pivotview';
+import { ChartSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/chartsettings';
+import { Pivot_Data } from './datasource.ts';
+
+@Component({
+  selector: 'app-container',
+  providers: [PivotChartService],
+  // specifies the template string for the pivot table component
+  template: `<ejs-pivotview #pivotview id='PivotView' height='350' [dataSourceSettings]=dataSourceSettings
+  [chartSettings]='chartSettings' (multiLevelLabelRender)='multiLevelLabelRender($event)' [displayOption]='displayOption'></ejs-pivotview>`
+})
+export class AppComponent implements OnInit {
+    public dataSourceSettings: IDataOptions;
+    public chartSettings: ChartSettings;
+    public displayOption: DisplayOption;
+
+    ngOnInit(): void {
+
+        this.dataSourceSettings = {
+            dataSource: Pivot_Data,
+            expandAll: false,
+            columns: [{ name: 'Year', caption: 'Production Year' }, { name: 'Quarter' }],
+            values: [{ name: 'Sold', caption: 'Units Sold' }, { name: 'Amount', caption: 'Sold Amount' }],
+            rows: [{ name: 'Country' }, { name: 'Products' }],
+            formatSettings: [{ name: 'Amount', format: 'C0' }],
+            filters: []
+        };
+
+        this.displayOption = { view: 'Chart' } as DisplayOPtion;
+        this.chartSettings = {
+            chartSeries: { type: 'Column' },
+            multiLevelLabelRender(e) {
+                e.alignment = 'Near';
+                e.textStyle = { fontFamily: 'Bold', fontWeight: '400', size: '16px', color: 'red' };
+                if (e.text === ' + United Kingdom') {
+                    e.text = 'Text Changed';
+                    e.textStyle = { fontFamily: 'Bold', fontWeight: '800', size: '16px', color: 'Blue' };
+                }
+            }
+        } as ChartSettings;
+    }
+}
+
+```
+
+{% endtab %}
+
 ## Legend customization
 
 User can customize legend using [`legendSettings`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/pivotChartSettingsLegendSettings/) in [`chartSettings`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/chartSettings/). By default, legend will be visible and it can be hidden by setting the property [`visible`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/pivotChartSettingsLegendSettings/#visible) in [`legendSettings`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/pivotChartSettingsLegendSettings/) as **false**.

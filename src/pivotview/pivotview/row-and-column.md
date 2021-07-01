@@ -160,6 +160,52 @@ export class AppComponent implements OnInit {
 
 {% endtab %}
 
+### Adjust width based on columns
+
+By default, if the component width set in code-behind is more than the width of the total columns, then the columns will be stretched to make it fit. To avoid the stretching, set the [`allowAutoResizing`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/gridSettings/#allowautoresizing) property in the [`gridSettings`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/gridSettings/) to **false**. By doing so, the component will be adjusted (shrinked) based on the width of total columns.
+
+{% tab template="pivot-grid/getting-started", sourceFiles="app/app.component.ts,app/app.module.ts" %}
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+import { IDataOptions } from '@syncfusion/ej2-angular-pivotview';
+import { GridSettings } from '@syncfusion/ej2-pivotview/src/pivotview/model/gridsettings';
+import { Pivot_Data } from './datasource.ts';
+
+@Component({
+  selector: 'app-container',
+  // specifies the template string for the pivot table component
+  template: `<ejs-pivotview #pivotview id='PivotView' height='350' [dataSourceSettings]=dataSourceSettings
+  [gridSettings]='gridSettings' width=width></ejs-pivotview>`
+})
+export class AppComponent implements OnInit {
+    public width: string;
+    public dataSourceSettings: IDataOptions;
+    public gridSettings: GridSettings;
+
+    ngOnInit(): void {
+
+        this.dataSourceSettings = {
+            dataSource: Pivot_Data,
+            expandAll: false,
+            columns: [{ name: 'Year', caption: 'Production Year' }],
+            values: [{ name: 'Sold', caption: 'Units Sold' }],
+            rows: [{ name: 'Country' }],
+            formatSettings: [{ name: 'Amount', format: 'C0' }],
+            filterSettings: [{ name: 'Year', type: 'Exclude', items: ['FY 2015', 'FY 2017'] }],
+            filters: []
+        };
+
+        this.gridSettings = {
+            allowAutoResizing: false
+        } as GridSettings;
+    }
+}
+
+```
+
+{% endtab %}
+
 ## Reorder
 
 Allows end user to reorder a particular column header from one index to another index within the pivot table through drag-and-drop option. It can be enabled by setting the [`allowReordering`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/gridSettings/#allowreordering) property in [`gridSettings`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/gridSettings/) to **true**.

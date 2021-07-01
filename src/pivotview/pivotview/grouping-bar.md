@@ -12,6 +12,7 @@ Similar to Field List, Grouping Bar UI also comes with basic interactions like,
 
 * Re-arranging fields through drag-and-drop operation between row, column, value and filter axes.
 * Remove fields from the existing report using remove icon.
+* Add fields to the report using fields panel option.
 * Filtering members of specific fields using filter icon.
 * Sorting members of specific fields using sort icon.
 
@@ -60,6 +61,50 @@ export class AppComponent {
 {% endtab %}
 
 The grouping bar provides some additional options to customize it's UI using `groupingBarSettings` property.
+
+## Show or hide fields panel
+
+The fields panel, which is positioned above the grouping bar, displays the fields that are available in the data source but are not bound in the report. The fields can be dragged and dropped into the appropriate axis. In addition, any field removed from any axes will be automatically added to the fields panel. The fields panel can be displayed by setting the [`showFieldsPanel`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/groupingBarSettings/#showfieldspanel) property in the [`groupingBarSettings`](https://ej2.syncfusion.com/angular/documentation/api/pivotview/groupingBarSettings/) to **true**.
+
+{% tab template="pivot-grid/getting-started", sourceFiles="app/app.component.ts,app/app.module.ts" %}
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+import { IDataOptions, GroupingBarSettings, GroupingBarService } from '@syncfusion/ej2-angular-pivotview';
+import { Pivot_Data } from './datasource.ts';
+
+@Component({
+  selector: 'app-container',
+  providers: [GroupingBarService],
+  // specifies the template string for the pivot table component
+  template: `<ejs-pivotview #pivotview id='PivotView' height='350' [dataSourceSettings]=dataSourceSettings showGroupingBar='true'
+  [groupingBarSettings]='groupingSettings' width=width></ejs-pivotview>`
+})
+export class AppComponent implements OnInit {
+    public width: string;
+    public dataSourceSettings: IDataOptions;
+    public groupingSettings: GroupingBarSettings;
+
+    ngOnInit(): void {
+        this.width = "100%";
+        this.dataSourceSettings = {
+            dataSource: Pivot_Data,
+            expandAll: false,
+            columns: [{ name: 'Year', caption: 'Production Year' }],
+            values: [{ name: 'Sold', caption: 'Units Sold' }],
+            rows: [{ name: 'Country' }],
+            formatSettings: [{ name: 'Amount', format: 'C0' }],
+            filters: []
+        };
+        this.groupingSettings = {
+            showFieldsPanel: true
+        } as GroupingBarSettings;
+    }
+}
+
+```
+
+{% endtab %}
 
 ## Show or hide all filter icon
 
@@ -758,6 +803,8 @@ The event [`aggregateMenuOpen`](https://ej2.syncfusion.com/angular/documentati
 
 * [`aggregateTypes`](https://ej2.syncfusion.com/angular/documentation/api/pivotview#aggregatetypes): It holds the aggregation types set for a field.
 
+* `displayMenuCount`: It allows to set the menu count to be displayed initially. By default, its count is 7.
+
 * `cancel`: It is a boolean property and by setting this to true, dropdown menu won’t be displayed.
 
 In the below sample, the aggregate types of the field "Amount" has been customized in it's dropdown menu.
@@ -781,6 +828,7 @@ export class AppComponent implements OnInit {
     public dataSourceSettings: IDataOptions;
 
     aggregateMenuOpen(args: AggregateMenuOpenEventArgs): void {
+        args.displayMenuCount = 4;
         if(args.fieldName === 'Amount') {
             args.aggregateTypes = ['Sum','Avg','Max'];
         }
