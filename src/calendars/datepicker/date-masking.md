@@ -46,7 +46,7 @@ import { Component } from '@angular/core';
 import { MaskedDateTimeService } from '@syncfusion/ej2-angular-calendars';
 @Component({
     selector: 'app-root',
-    template: `format.html`
+    templateUrl: './app/format.html`
     providers: [MaskedDateTimeService],
 })
 export class AppComponent {
@@ -63,6 +63,21 @@ constructor( ) {
 
 You can change mask placeholder value through property `maskPlaceholder`. By default , it takes the full name of date and time co-ordinates such as `day`, `month`, `year`, `hour` etc.
 
+While changing to a culture other than `English`, ensure that locale text for the concerned culture is loaded through load method of L10n class for mask placeholder values like below.
+
+```typescript
+//Load the L10n from ej2-base
+import { L10n } from '@syncfusion/ej2-base';
+
+//load the locale object to set the localized placeholder value
+L10n.load({
+'de': {
+    datepicker: { day: 'Tag' , month: 'Monat', year: 'Jahr' }
+}
+});
+
+```
+
 The following example demonstrates default and customized mask placeholder value.
 
 {% tab template="datepicker/mask-module", isDefaultActive = "true", sourceFiles="app/**/*.ts,app/**/maskplaceholder.html,styles.css" %}
@@ -73,7 +88,7 @@ import { Component } from '@angular/core';
 import { MaskedDateTimeService } from '@syncfusion/ej2-angular-calendars';
 @Component({
     selector: 'app-root',
-    template: `maskplaceholder.html`
+    templateUrl: './app/maskplaceholder.html`
     providers: [MaskedDateTimeService],
 })
 export class AppComponent {
