@@ -28,7 +28,7 @@ The loaded data will be cached and reused when it is needed for next time.
 ```typescript
 import { Component, OnInit } from '@angular/core';
 import { VirtualScrollService } from '@syncfusion/ej2-angular-grids';
-import { PageSettingsModel } from '@syncfusion/ej2-angular-grids';
+import { PageSettingsModel, EditSettingsModel, ToolbarItems } from '@syncfusion/ej2-angular-grids';
 
 const names = ['TOM', 'Hawk', 'Jon', 'Chandler', 'Monica', 'Rachel', 'Phoebe', 'Gunther', 'Ross', 'Geller', 'Joey', 'Bing', 'Tribbiani',
  'Janice', 'Bong', 'Perk', 'Green', 'Ken', 'Adams'];
@@ -51,13 +51,13 @@ const data = (count) => {
 
 @Component({
     selector: 'app-root',
-    template: `<ejs-grid [dataSource]='data' height=300 [enableVirtualization]=true [pageSettings]='options'>
+    template: `<ejs-grid [dataSource]='data' height=300 [enableVirtualization]=true [pageSettings]='options' [editSettings]='editSettings' [toolbar]='toolbar'>
                 <e-columns>
-                    <e-column field='TaskID' headerText='Task ID' textAlign='Right' width=70></e-column>
+                    <e-column field='TaskID' headerText='Task ID' textAlign='Right' width=100 isPrimaryKey='true' [validationRules]='rules'></e-column>
                     <e-column field='Engineer' width=100></e-column>
-                    <e-column field='Designation' width=100></e-column>
-                    <e-column field='Estimation' textAlign='Right' width=100></e-column>
-                    <e-column field='Status' width=100></e-column>
+                    <e-column field='Designation' width=100 editType='dropdownedit' [validationRules]='rules'></e-column>
+                    <e-column field='Estimation' textAlign='Right' width=100 editType='numericedit' [validationRules]='rules'></e-column>
+                    <e-column field='Status' width=100 editType='dropdownedit'></e-column>
                 </e-columns>
                 </ejs-grid>`,
     providers: [VirtualScrollService]
@@ -66,7 +66,12 @@ export class AppComponent implements OnInit {
 
     public data: object[];
     public options: PageSettingsModel;
+    public rules: object = { required: true };
+    public editSettings: EditSettingsModel;
+    public toolbar: ToolbarItems[];
     ngOnInit(): void {
+        this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'Normal' };
+        this.toolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel'];
         this.data = data(1000);
         this.options = { pageSize: 50 };
     }
@@ -90,7 +95,7 @@ To setup the column virtualization, set the
 ```typescript
 import { Component, OnInit } from '@angular/core';
 import { VirtualScrollService } from '@syncfusion/ej2-angular-grids';
-import { PageSettingsModel } from '@syncfusion/ej2-angular-grids';
+import { PageSettingsModel, EditSettingsModel, ToolbarItems } from '@syncfusion/ej2-angular-grids';
 
 let virtualData = [];
 let names: string[] = ['hardire', 'abramjo01', 'aubucch01', 'Hook', 'Rumpelstiltskin', 'Belle', 'Emma', 'Regina', 'Aurora', 'Elsa', 'Anna',
@@ -107,6 +112,7 @@ let names: string[] = ['hardire', 'abramjo01', 'aubucch01', 'Hook', 'Rumpelstilt
 function dataSource(): void {
     for (let i = 0; i < 1000; i++) {
         virtualData.push({
+            SNo: i + 1,
             FIELD1: names[Math.floor(Math.random() * names.length)],
             FIELD2: 1967 + (i % 10), FIELD3: Math.floor(Math.random() * 200),
             FIELD4: Math.floor(Math.random() * 100), FIELD5: Math.floor(Math.random() * 2000), FIELD6: Math.floor(Math.random() * 1000),
@@ -125,9 +131,10 @@ dataSource();
 @Component({
     selector: 'app-root',
     template: `<ejs-grid [dataSource]='data' height=300 [enableVirtualization]=true [enableColumnVirtualization]=true
-                [pageSettings]='options'>
+                [pageSettings]='options' [editSettings]='editSettings' [toolbar]='toolbar'>
                 <e-columns>
-                    <e-column field='FIELD1' headerText='Player Name' width=140></e-column>
+                    <e-column field='SNo' headerText='S.No' width=140 isPrimaryKey='true' [validationRules]='rules'></e-column>
+                    <e-column field='FIELD1' headerText='Player Name' width=140 editType='dropdownedit' [validationRules]='rules'></e-column>
                     <e-column field='FIELD2' headerText='Year' width=120 textAlign='Right'></e-column>
                     <e-column field='FIELD3' headerText='Stint' width=120 textAlign='Right'></e-column>
                     <e-column field='FIELD4' headerText='TMID' width=120 textAlign='Right'></e-column>
@@ -156,7 +163,7 @@ dataSource();
                     <e-column field='FIELD27' headerText='PostPoints' width=130 textAlign='Right'></e-column>
                     <e-column field='FIELD28' headerText='PostoRebounds' width=130 textAlign='Right'></e-column>
                     <e-column field='FIELD29' headerText='PostdRebounds' width=130 textAlign='Right'></e-column>
-                    <e-column field='FIELD30' headerText='PostRebounds' width=130 textAlign='Right'></e-column>
+                    <e-column field='FIELD30' headerText='PostRebounds' width=130 textAlign='Right' editType='numericedit' [validationRules]='rules'></e-column>
                 </e-columns>
                 </ejs-grid>`,
     providers: [VirtualScrollService]
@@ -165,7 +172,12 @@ export class AppComponent implements OnInit {
 
     public data: object[];
     public options: PageSettingsModel;
+    public editSettings: EditSettingsModel;
+    public toolbar: ToolbarItems[];
+    public rules: object = { required: true };
     ngOnInit(): void {
+        this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'Normal' };
+        this.toolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel'];
         this.data = virtualData;
         this.options = { pageSize: 50 };
     }
