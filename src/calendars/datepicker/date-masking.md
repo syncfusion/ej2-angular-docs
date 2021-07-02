@@ -36,7 +36,7 @@ The mask pattern is defined based on the provided date format to the component. 
 
 The selected portions of date and time co-ordinates  can  be incremented and decremented using the Up/Down arrow keys. You can also use Right/Left arrow keys to navigate from one segment to another.
 
-The following example demonstrates default and custom format of DatePicker component with mask module.
+The following example demonstrates default and custom format of DatePicker component with mask.
 
 {% tab template="datepicker/mask-module", isDefaultActive = "true", sourceFiles="app/**/*.ts,app/**/format.html,styles.css" %}
 
@@ -69,7 +69,7 @@ While changing to a culture other than `English`, ensure that locale text for th
 //Load the L10n from ej2-base
 import { L10n } from '@syncfusion/ej2-base';
 
-//load the locale object to set the localized placeholder value
+//load the locale object to set the localized mask placeholder value
 L10n.load({
 'de': {
     datepicker: { day: 'Tag' , month: 'Monat', year: 'Jahr' }
