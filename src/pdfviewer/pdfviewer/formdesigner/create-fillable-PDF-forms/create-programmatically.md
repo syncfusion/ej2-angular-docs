@@ -1,10 +1,10 @@
 ---
-title: "Programmatically work with form field"
+title: "Create Programmatically"
 component: "PDF Viewer"
 description: "Learn how to Programmatically work with form field support in PDF Viewer."
 ---
 
-# Programmatically work with form field
+# Create Programmatically
 
 The PDF Viewer control provides the option to add, edit and delete the Form Fields. The Form Fields type supported by the PDF Viewer Control are:
 
