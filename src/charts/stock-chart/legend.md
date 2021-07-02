@@ -14,7 +14,7 @@ Legend provides information about the series rendered in the Stock Chart. Legend
 
 By using the [`position`](../api/stock-chart/legendSettings/#position) property, legend can be placed at `Left`, `Right`, `Top`, `Bottom` or `Custom` of the Stock Chart. The legend is positioned at the bottom of the Stock Chart, by default.
 
-{% tab template="chart/axis/category", sourceFiles="app/**/*.ts" %}
+{% tab template="stock-chart/legend", sourceFiles="app/**/*.ts" %}
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
@@ -35,6 +35,7 @@ export class AppComponent implements OnInit {
     public title: string;
     public indicatorType: string[] = [];
     public trendlineType: string[] = [];
+    public legendSettings: Object;
     ngOnInit(): void {
         this.chartData = chartData;
         this.title = 'AAPL Stock Price';
@@ -54,7 +55,7 @@ export class AppComponent implements OnInit {
 
 [`Custom`](../api/stock-chart/legendSettings/#position) position is used to position the legend anywhere in the Stock Chart using x, y coordinates.
 
-{% tab template="chart/axis/category", sourceFiles="app/**/*.ts" %}
+{% tab template="stock-chart/legend", sourceFiles="app/**/*.ts" %}
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
@@ -75,6 +76,7 @@ export class AppComponent implements OnInit {
     public title: string;
     public indicatorType: string[] = [];
     public trendlineType: string[] = [];
+    public legendSettings: Object;
     ngOnInit(): void {
         this.chartData = chartData;
         this.title = 'AAPL Stock Price';
@@ -101,7 +103,7 @@ export class AppComponent implements OnInit {
 
 The legend can be align as `Center`, `Far` or `Near` to the Stock Chart using [`alignment`](../api/stock-chart/legendSettings/#alignment) property.
 
-{% tab template="chart/axis/category", sourceFiles="app/**/*.ts" %}
+{% tab template="stock-chart/legend", sourceFiles="app/**/*.ts" %}
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
@@ -122,6 +124,7 @@ export class AppComponent implements OnInit {
     public title: string;
     public indicatorType: string[] = [];
     public trendlineType: string[] = [];
+    public legendSettings: Object;
     ngOnInit(): void {
         this.chartData = chartData;
         this.title = 'AAPL Stock Price';
@@ -144,7 +147,7 @@ export class AppComponent implements OnInit {
 
 To change the legend icon shape, [`legendShape`](../api/stock-chart/stockSeries/#legendshape-string) property in the [`series`](../api/stock-chart/stockSeries/) can be used. By default legend icon shape is `seriesType`.
 
-{% tab template="chart/axis/category", sourceFiles="app/**/*.ts" %}
+{% tab template="stock-chart/legend", sourceFiles="app/**/*.ts" %}
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
@@ -165,6 +168,7 @@ export class AppComponent implements OnInit {
     public title: string;
     public indicatorType: string[] = [];
     public trendlineType: string[] = [];
+    public legendSettings: Object;
     ngOnInit(): void {
         this.chartData = chartData;
         this.title = 'AAPL Stock Price';
@@ -182,7 +186,7 @@ export class AppComponent implements OnInit {
 
 By default, legend takes 20% - 25% of the Stock Chart's height horizontally, when it is placed on top or bottom position and 20% - 25% of the width vertically, while placing on left or right position of the Stock Chart. The default legend size can be changed by using the [`width`](../api/stock-chart/legendSettings/#width) and [`height`](../api/stock-chart/legendSettings/#height) property of the `legendSettings`.
 
-{% tab template="chart/axis/category", sourceFiles="app/**/*.ts" %}
+{% tab template="stock-chart/legend", sourceFiles="app/**/*.ts" %}
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
@@ -203,6 +207,7 @@ export class AppComponent implements OnInit {
     public title: string;
     public indicatorType: string[] = [];
     public trendlineType: string[] = [];
+    public legendSettings: Object;
     ngOnInit(): void {
         this.chartData = chartData;
         this.title = 'AAPL Stock Price';
@@ -225,7 +230,7 @@ export class AppComponent implements OnInit {
 
 The size of the legend items can customized by using the [`shapeHeight`](../api/stock-chart/legendSettings/#shapeheight) and [`shapeWidth`](../api/stock-chart/legendSettings/#shapewidth) property.
 
-{% tab template="chart/axis/category", sourceFiles="app/**/*.ts" %}
+{% tab template="stock-chart/legend", sourceFiles="app/**/*.ts" %}
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
@@ -246,6 +251,7 @@ export class AppComponent implements OnInit {
     public title: string;
     public indicatorType: string[] = [];
     public trendlineType: string[] = [];
+    public legendSettings: Object;
     ngOnInit(): void {
         this.chartData = chartData;
         this.title = 'AAPL Stock Price';
@@ -267,7 +273,7 @@ export class AppComponent implements OnInit {
 
 By default, series name will be displayed as legend. To skip the legend for a particular series, empty string to the series name can be given.
 
-{% tab template="chart/axis/category", sourceFiles="app/**/*.ts" %}
+{% tab template="stock-chart/legend", sourceFiles="app/**/*.ts" %}
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
@@ -288,6 +294,7 @@ export class AppComponent implements OnInit {
     public title: string;
     public indicatorType: string[] = [];
     public trendlineType: string[] = [];
+    public legendSettings: Object;
     ngOnInit(): void {
         this.chartData = chartData;
         this.title = 'AAPL Stock Price';
@@ -305,7 +312,7 @@ export class AppComponent implements OnInit {
 
 The title for legend can be set using [`title`](../api/stock-chart/legendSettings/#title) property in `legendSettings`. Customize the [`fontStyle`](../api/stock-chart/stockChartFont/#fontstyle), [`size`](../api/stock-chart/stockChartFont/#size), [`fontWeight`](../api/stock-chart/stockChartFont/#fontweight), [`color`](../api/stock-chart/stockChartFont/#color), [`textAlignment`](../api/stock-chart/stockChartFont/#textalignment), [`fontFamily`](../api/stock-chart/stockChartFont/#fontfamily), [`opacity`](../api/stock-chart/stockChartFont/#opacity) and [`textOverflow`](../api/stock-chart/stockChartFont/#textoverflow) of legend title. [`titlePosition`](../api/stock-chart/legendSettings/#titleposition) is used to set the legend position in `Top`, `Left` and `Right` position. [`maximumTitleWidth`](../api/stock-chart/legendSettings/#maximumtitlewidth) is used to set the width of the legend title. By default, it will be `100px`.
 
-{% tab template="chart/axis/category", sourceFiles="app/**/*.ts" %}
+{% tab template="stock-chart/legend", sourceFiles="app/**/*.ts" %}
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
@@ -326,6 +333,7 @@ export class AppComponent implements OnInit {
     public title: string;
     public indicatorType: string[] = [];
     public trendlineType: string[] = [];
+    public legendSettings: Object;
     ngOnInit(): void {
         this.chartData = chartData;
         this.title = 'AAPL Stock Price';
