@@ -16,35 +16,26 @@ To change the [`tooltipText`](../../../api/toolbar/item#tooltiptext) to ej2-tool
 
 ```typescript
 import { Component, ViewChild } from '@angular/core';
-import { ToolbarComponent } from '@syncfusion/ej2-angular-navigations';
-import { Tooltip } from '@syncfusion/ej2-popups';
 
 @Component({
     selector: 'app-container',
     template: `
-        <div id = 'Tooltip'>
-        <ejs-toolbar id = 'Toolbar'>
-          <e-items>
-             <e-item text='Cut' tooltipText = 'Cut'></e-item>
-             <e-item text='Copy' tooltipText = 'Copy'></e-item>
-             <e-item text='Paste' tooltipText = 'Paste'></e-item>
-             <e-item text='Undo' tooltipText = 'Undo'></e-item>
-             <e-item text='Redo' tooltipText = 'Redo'></e-item>
-          </e-items>
-        </ejs-toolbar>
-        </div>
+        <ejs-tooltip id="Tooltip" target='#Toolbar [title]'>
+          <ejs-toolbar id='Toolbar'>
+            <e-items>
+              <e-item text='Cut' tooltipText = 'Cut'></e-item>
+              <e-item text='Copy' tooltipText = 'Copy'></e-item>
+              <e-item text='Paste' tooltipText = 'Paste'></e-item>
+              <e-item text='Undo' tooltipText = 'Undo'></e-item>
+              <e-item text='Redo' tooltipText = 'Redo'></e-item>
+              </e-items>
+          </ejs-toolbar>
+        </ejs-tooltip>
         `
 })
 
 export class AppComponent {
     @ViewChild('element') element;
-
-    ngAfterViewInit() {
-       let tooltip: Tooltip = new Tooltip({
-       target: '#Toolbar [title]',
-        });
-       tooltip.appendTo('#Tooltip');
-    }
 }
 ```
 
