@@ -85,6 +85,16 @@ this.documentEditor.selection.imageFormat.width = 800;
 this.documentEditor.selection.imageFormat.height = 800;
 ```
 
+>Note: Images are stored and processed(read/write) as base64 string in DocumentEditor. The online image URL is preserved as a URL in DocumentEditor upon saving.
+
+## Text wrapping style
+
+Text wrapping refers to how images fit with surrounding text in a document. Please [refer to this page](../document-editor/text-wrapping-style) for more information about text wrapping styles available in Word documents.
+
+## Positioning the image
+
+DocumentEditor preserves the position properties of the image and displays the image based on position properties. It does not support modifying the position properties. Whereas the image will be automatically moved along with text edited if it is positioned relative to the line or paragraph.
+
 ## See Also
 
 * [Feature modules](../document-editor/feature-module/)

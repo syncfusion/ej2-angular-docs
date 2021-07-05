@@ -1,28 +1,109 @@
 ---
-title: "DocumentEditor web services"
+title: "Java web service for Word Processor a.k.a. Document Editor"
 component: "DocumentEditor"
-description: "Learn how to create web service in Java for Import, RestrictEditing, Paste with formatting and Spell check."
+description: "Illustrates how to create web service in Java for the server-side dependent functionalities of Word Processor component a.k.a. Document Editor."
 ---
 
-# Creating DocumentEditor web service in Java
+# Using Java web service in JavaScript DocumentEditor control
 
-DocumentEditor depends on server side interaction for below listed operations can be written in Java using `syncfusion-ej2-wordprocessor-18.1.0.29.jar` file available in [Essential-JS2](https://www.syncfusion.com/downloads/essential-js2) build installed location.
-
-**Syntax:**
-> Jar file: `(installed location)/Syncfusion/Essential Studio/JavaScript - EJ2/18.1.0.29/JarFiles/syncfusion-ej2-wordprocessor-18.1.0.29.jar`
-
-**Example:**
-> Jar file: `C:/Program Files (x86)/Syncfusion/Essential Studio/JavaScript - EJ2/18.1.0.29/JarFiles/syncfusion-ej2-wordprocessor-18.1.0.29.jar`
+This page illustrates how to create web service in Java for the server-side dependent functionalities of Word Processor component a.k.a. Document Editor. Document Editor depends on server side interaction for below listed operations and it can be written in Java using `syncfusion-ej2-wordprocessor.jar` file.
 
 * Import Word Document
 * Paste with formatting
 * Restrict Editing
 
-This section explains how to create the service for DocumentEditor in Java.
+## Supported Java versions
+
+Syncfusion Java library supports Java SE 8.0(1.8) or above versions.
+
+## External Jars Required
+
+The following jar files are required to be referenced in your Java application.
+
+1. syncfusion-ej2-wordprocessor
+
+2. syncfusion-docio
+
+3. syncfusion-javahelper
+
+## Download JAR file
+
+The JAR file is available in both [Syncfusion Essential-JS2](https://www.syncfusion.com/downloads/essential-js2) build and maven repository.
+
+### Get JAR file from Syncfusion build
+
+You can get the `syncfusion-ej2-wordprocessor.jar` and its dependent jar files from Syncfusion build installed location.
+
+**Syntax:**
+> Jar file: `(installed location)/Syncfusion/Essential Studio/{Platform}/{version}/JarFiles/syncfusion-ej2-wordprocessor-{version}.jar`
+
+**Example:**
+> Jar file: `C:/Program Files (x86)/Syncfusion/Essential Studio/JavaScript - EJ2/18.4.0.30/JarFiles/syncfusion-ej2-wordprocessor-18.4.0.30.jar`
+
+You can also get the jar files by installing [file formats controls](https://www.syncfusion.com/sales/products/fileformats?utm_source=ug&utm_medium=listing&utm_campaign=java-word-processor#). You can find the required jars in the build installed location.
+
+**Syntax:**
+> Jar file: `(installed location)/Syncfusion/Essential Studio/{Platform}/{version}/JarFiles/syncfusion-ej2-wordprocessor-{version}.jar`
+
+**Example:**
+> Jar file: `C:/Program Files (x86)/Syncfusion/Essential Studio/FileFormats/18.4.0.30/JarFiles/syncfusion-ej2-wordprocessor-18.4.0.30.jar`
+
+### Referring JAR from Syncfusion Maven Repository
+
+You can download the jars from the Syncfusion [maven repository](https://jars.syncfusion.com/) to use our artifacts in your projects. It helps to use the Syncfusion Java packages without installing Essential Studio or platform installation to development with Syncfusion controls.
+
+#### Download Syncfusion Java packages
+
+You can easily download the Syncfusion packages for Java via maven repository. Follow the below guidelines to configure as per the tool.
+
+#### Refer the maven repository in build tool
+
+##### Gradle
+
+```java
+repositories {
+ maven {
+ // Syncfusion maven repository to download the artifacts
+ url "https://jars.syncfusion.com/repository/maven-public/"
+ }
+}
+```
+
+##### Apache Maven
+
+```java
+<repository>
+<id>Syncfusion-Java</id>
+<name>Syncfusion Java repo</name>
+<url>https://jars.syncfusion.com/repository/maven-public/</url>
+</repository>
+```
+
+#### Refer the Syncfusion package in your project as the dependency
+
+##### Gradle
+
+```java
+dependencies {
+implementation 'com.syncfusion:syncfusion-ej2-wordprocessor:18.4.0.30'
+}
+```
+
+##### Apache Maven
+
+```java
+<dependency>
+<groupId>com.syncfusion</groupId>
+<artifactId>syncfusion-ej2-wordprocessor</artifactId>
+<version>18.4.0.30</version>
+</dependency>
+```
+
+This section explains how to create the Java web service for DocumentEditor.
 
 ## Importing Word Document
 
-Word documents can be imported to DocumentEditor using the below code snippet.
+The following code converts the Word document to SFDT file and sends the converted SFDT to client for importing Word document in DocumentEditor.
 
 ```java
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -39,7 +120,7 @@ public String uploadFile(@RequestParam("files") MultipartFile file) throws Excep
 
 ## Paste with formatting
 
-Paste with formatting action is defined in the below code snippet.
+The following code converts the HTML, RTF content from client Clipboard to SFDT file and sends the converted SFDT to client for pasting formatted content in DocumentEditor.
 
 ```java
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -75,7 +156,7 @@ public class CustomParameter {
 
 ## Restrict editing
 
-Restrict editing action is defined in the below code snippet.
+The following code computes HASH for the specified password and sends the generated HASH to client for protecting the Word document in DocumentEditor.
 
 ```java
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -111,4 +192,4 @@ public class CustomRestrictParameter {
 }
 ```
 
->Note: Please refer the [Java Web API sample](https://github.com/SyncfusionExamples/EJ2-DocumentEditor-WebServices/tree/master/Java).
+>Note: Please refer the [Java Web API example from GitHub](https://github.com/SyncfusionExamples/EJ2-DocumentEditor-WebServices/tree/master/Java).

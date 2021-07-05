@@ -69,3 +69,41 @@ this.container.documentEditor.spellChecker.languageID = 1033; //LCID of "en-us";
 ```
 
 * Refer to the [Spell checker](https://github.com/SyncfusionExamples/EJ2-DocumentEditor-WebServices) link for configuring spell checker in server-side.
+
+### EnableOptimizedSpellCheck
+
+Document editor provides option to spellcheck page by page when loading the documents. The default value of this property is false, so when opening the document spellcheck web API will be called for each word in the document. To optimize the frequency of spellcheck web API calls, you can enable this property.
+
+The following code example illustrates how to enable optimized spell checking.
+
+```typescript
+this.container.documentEditor.spellChecker.enableOptimizedSpellCheck = true;
+```
+
+## Context menu
+
+Right click on error word to open the context menu with spell check options. Please see below screenshot for your reference.
+
+![Spell check option in context menu](images/spell-check-menu.png)
+
+### Suggestions
+
+Context menu shows the suggestions for mis-spelled words. By clicking on the required word from suggestion, the error word gets replaced automatically.
+
+### Add To Dictionary
+
+Using this option, you can add the current word to the dictionary. So that the spell checker does not consider that word as error in future.
+
+### Ignore Once and Ignore All
+
+If you do not wish to add the word to dictionary and do not want to show error, use Ignore Once or Ignore All options.
+
+Ignore: ignore only the current occurrence of a word from error.
+
+Ignore All: ignore all occurrence of a word from error in the entire document.
+
+### Spelling
+
+Using this option, you can open spell check dialog. Please see below screenshot for your reference.
+
+![Spell check dialog](images/spell-check-dialog.png)
