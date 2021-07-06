@@ -23,6 +23,7 @@
 * [Ribbon](spreadsheet/ribbon.md)
 * [Globalization](spreadsheet/global-local.md)
 * [Undo and Redo](spreadsheet/undo-redo.md)
+* [Styles and Appearance](spreadsheet/styles.md)
 * [Migration from Essential JS 1](spreadsheet/ej1-api-migration.md)
 * [Sort a range by custom list](spreadsheet/how-to/sort-a-range-by-custom-list.md)
 * [Print the single/multiple sheets](spreadsheet/how-to/print.md)
