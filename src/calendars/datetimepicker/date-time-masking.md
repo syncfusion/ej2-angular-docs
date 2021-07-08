@@ -20,7 +20,7 @@ import { MaskedDateTimeService } from '@syncfusion/ej2-angular-calendars';
     selector: 'app-root',
     template: `
         <ejs-datetimepicker [enableMask]="enableMaskSupport"></ejs-datetimepicker>
-        `
+        `,
     providers: [MaskedDateTimeService],
 })
 export class AppComponent {
@@ -50,7 +50,7 @@ import { Component } from '@angular/core';
 import { MaskedDateTimeService } from '@syncfusion/ej2-angular-calendars';
 @Component({
     selector: 'app-root',
-    templateUrl: './app/format.html`
+    templateUrl: './app/format.html',
     providers: [MaskedDateTimeService],
 })
 export class AppComponent {
@@ -92,7 +92,7 @@ import { Component } from '@angular/core';
 import { MaskedDateTimeService } from '@syncfusion/ej2-angular-calendars';
 @Component({
     selector: 'app-root',
-    templateUrl: './app/maskplaceholder.html`
+    templateUrl: './app/maskplaceholder.html',
     providers: [MaskedDateTimeService],
 })
 export class AppComponent {
