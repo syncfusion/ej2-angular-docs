@@ -47,7 +47,7 @@ import { Component, ViewChild } from '@angular/core';
         <button ejs-button [isPrimary]="true" (click)="btnClick($event)">Show Toast</button>
         </div>
         </div></div>
-        <ejs-toast #element (created)="onCreate($event)" [position] = 'position' >
+        <ejs-toast #element (created)="onCreate($event)" [position] = 'position' [animation] = 'animation' >
               <ng-template #title>
                   <div>Matt sent you a friend request</div>
               </ng-template>
@@ -63,6 +63,8 @@ export class AppComponent {
     @ViewChild('dropDownShow') dropShow;
     @ViewChild('dropDownHide') drophide;
     public position = { X: 'Right', Y : 'Bottom' };
+    public animation = { show: { effect: 'SlideRightIn' }, hide: { effect: 'SlideLeftOut' }
+};
     public AnimationShowDB = ['FadeIn', 'FadeZoomIn', 'FadeZoomOut', 'FlipLeftDownIn', 'FlipLeftDownOut', 'FlipLeftUpIn', 'FlipLeftUpOut', 'FlipRightDownIn', 'FlipRightDownOut', 'SlideBottomIn', 'SlideBottomOut', 'ZoomIn', 'ZoomOut'];
     public AnimationHideDB = ['Fadeout', 'FadeZoomIn', 'FadeZoomOut', 'FlipLeftDownIn', 'FlipLeftDownOut', 'FlipLeftUpIn', 'FlipLeftUpOut', 'FlipRightDownIn', 'FlipRightDownOut', 'SlideBottomIn', 'SlideBottomOut', 'ZoomIn', 'ZoomOut'];
 
