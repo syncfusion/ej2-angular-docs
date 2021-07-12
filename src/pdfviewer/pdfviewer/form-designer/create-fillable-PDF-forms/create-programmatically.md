@@ -182,3 +182,43 @@ You can invoke print action using the following code snippet.,
 We can open the already saved PDF document contains Form Fields in it by clicking the open icon in the toolbar. Refer the below GIF for further reference.
 
 ![Alt text](../../../pdfviewer/images/openexistingpdf.gif)
+
+## Validate form fields
+
+The form fields in the PDF Document will be validated when the `enableFormFieldsValidation` is set to true and hook the validateFormFields. The validateFormFields will be triggered when the PDF document is downloaded or printed with the non-filled form fields. The non-filled fields will be obtained in the `nonFillableFields` property of the event arguments of validateFormFields.
+
+Add the following code snippet to validate the form fields,
+
+```typescript
+
+import { ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {
+  PdfViewerComponent, LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService,
+  ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormDesignerService, FormFieldsService, LoadEventArgs, TextFieldSettings
+} from '@syncfusion/ej2-angular-pdfviewer';
+
+@Component({
+  selector: 'app-root',
+  // Specifies the template string for the PDF Viewer component.
+  template: `<div class="content-wrapper">
+  <ejs-pdfviewer id="pdfViewer" #pdfviewer [serviceUrl]='service' [documentPath]='document' [enableFormFieldsValidation]=true (validateFormFields)='validateFormFields($event)'style="height:640px;display:block"></ejs-pdfviewer>
+  </div>`,
+  providers: [LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService, ToolbarService,
+NavigationService, TextSearchService, TextSelectionService, PrintService, AnnotationService, FormDesignerService, FormFieldsService]
+})
+export class AppComponent implements OnInit {
+  @ViewChild('pdfviewer')
+  public pdfviewerControl: PdfViewerComponent;
+  public service: string = 'https://ej2services.syncfusion.com/production/web-services/api/pdfviewer';
+  public document: string = 'FormDesigner.pdf';
+
+  public validateFormFields(e: ValidateFormFieldsArgs): void {
+    this.e.nonFillableFields;
+  }
+
+  ngOnInit(): void {
+  }
+}
+
+```
