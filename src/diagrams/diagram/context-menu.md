@@ -20,8 +20,8 @@ The following code illustrates how to enable the default context menu items.
 
 ```typescript
 import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
-import { DiagramComponent, Diagram, NodeModel, ConnectorModel } from '@syncfusion/ej2-angular-diagrams';
-import { ContextMenuSettingsModel } from '@syncfusion/ej2-diagrams';
+import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
+import { ContextMenuSettingsModel, Diagram, NodeModel, ConnectorModel } from '@syncfusion/ej2-diagrams';
 
 @Component({
     selector: "app-container",
@@ -102,8 +102,9 @@ The following code example illustrates how to add custom context menu items.
 
 ```typescript
 import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
-import { DiagramComponent, Diagram, NodeModel, ConnectorModel } from '@syncfusion/ej2-angular-diagrams';
-import { ContextMenuSettingsModel } from '@syncfusion/ej2-diagrams';
+import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
+import { ContextMenuSettingsModel, Diagram, NodeModel, ConnectorModel } from '@syncfusion/ej2-diagrams';
+import { MenuEventArgs } from '@syncfusion/ej2-navigations';
 
 @Component({
     selector: "app-container",
@@ -204,8 +205,8 @@ To display the custom context menu items alone, set  the [`showCustomMenuOnly`](
 ```typescript
 import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
 import { createElement } from "@syncfusion/ej2-base";
-import { DiagramComponent, Diagram, NodeModel, ConnectorModel } from '@syncfusion/ej2-angular-diagrams';
-import { ContextMenuSettingsModel } from '@syncfusion/ej2-diagrams';
+import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
+import { ContextMenuSettingsModel, Diagram, NodeModel, ConnectorModel } from '@syncfusion/ej2-diagrams';
 
 @Component({
     selector: "app-container",
@@ -298,7 +299,9 @@ The following code example illustrates how to define those events.
 
 ```typescript
 import { Component, ViewEncapsulation, OnInit, ViewChild } from '@angular/core';
-import { DiagramComponent, Diagram, NodeModel, ConnectorModel, ContextMenuSettingsModel, DiagramBeforeMenuOpenEventArgs, MenuEventArgs } from '@syncfusion/ej2-angular-diagrams';
+import { DiagramComponent } from '@syncfusion/ej2-angular-diagrams';
+import { ContextMenuSettingsModel,DiagramBeforeMenuOpenEventArgs, Diagram, NodeModel, ConnectorModel } from '@syncfusion/ej2-diagrams';
+import { MenuEventArgs } from '@syncfusion/ej2-navigations';
 
 @Component({
     selector: "app-container",
