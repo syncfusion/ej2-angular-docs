@@ -1,12 +1,20 @@
-# Axes
+---
+title: " Axis in Angular Linear Gauge component | Syncfusion "
+
+component: "Linear Gauge"
+
+description: "Learn here all about Axis feature of Syncfusion Angular Linear Gauge component and more."
+---
+
+# Axis in Angular Linear Gauge
 
 <!-- markdownlint-disable MD013 -->
 
-Axes is a collection of linear axis which can be used to indicate the numeric values. Line, ticks, labels, ranges and pointers are the sub elements of an axis.
+Axis is used to indicate the numeric values in the linear scale. The Linear Gauge component can have any number of axes. The sub-elements of an axis are line, ticks, labels, ranges, and pointers.
 
-## Line Customization
+## Setting the start value and end value of the axis
 
-The [`line`](../api/linear-gauge/lineModel) property of an axis provides options to customize the [`height`](../api/linear-gauge/lineModel/#height-number), [`width`](../api/linear-gauge/lineModel/#width-number), [`color`](../api/linear-gauge/lineModel/#color-string) and [`offset`](../api/linear-gauge/lineModel/#offset-number) of the axis line.
+The start value and end value for the Linear Gauge can be set using the [`minimum`](../api/linear-gauge/axisModel/#minimum) and [`maximum`](../api/linear-gauge/axisModel/#maximum) properties in the [`e-axis`](../api/linear-gauge/axisModel/) respectively. By default, the start value of the axis is "**0**" and the end value of the axis is "**100**".
 
 {% tab template= "linear-gauge/axis", sourceFiles="app/**/*.ts" %}
 
@@ -18,15 +26,47 @@ import { Component } from '@angular/core';
     template: `
     <ejs-lineargauge id="gauge-container">
         <e-axes>
-            <e-axis [line]='Line'>
+            <e-axis minimum=20 maximum=200>
             </e-axis>
         </e-axes>
     </ejs-lineargauge>`
 })
 export class AppComponent {
-    public Line:Object;
     ngOnInit(): void {
-        this.Line = {
+    }
+}
+```
+
+{% endtab %}
+
+## Line Customization
+
+The following properties in the [`line`](../api/linear-gauge/lineModel) can be used to customize the axis line in the Linear Gauge.
+
+* [`height`](../api/linear-gauge/lineModel/#height) - To set the length of the axis line.
+* [`width`](../api/linear-gauge/lineModel/#width) - To set the thickness of the axis line.
+* [`color`](../api/linear-gauge/lineModel/#color) - To set the color of the axis line.
+* [`offset`](../api/linear-gauge/lineModel/#offset) - To render the axis line with the specified distance from the Linear Gauge.
+
+{% tab template= "linear-gauge/axis", sourceFiles="app/**/*.ts" %}
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+    selector: 'app-container',
+    template: `
+    <ejs-lineargauge id="gauge-container">
+        <e-axes>
+            <e-axis [line]='line'>
+            </e-axis>
+        </e-axes>
+    </ejs-lineargauge>`
+})
+export class AppComponent {
+    public line:Object;
+    ngOnInit(): void {
+        this.line = {
             height: 150,
             width: 2,
             color: '#4286f4',
@@ -40,7 +80,12 @@ export class AppComponent {
 
 ## Ticks Customization
 
-You can customize the [`height`](../api/linear-gauge/tickModel/#height-number), [`color`](../api/linear-gauge/tickModel/#color-string) and [`width`](../api/linear-gauge/tickModel/#width-number) of major and minor ticks, by using [`majorTicks`](../api/linear-gauge/tickModel) and [`minorTicks`](../api/linear-gauge/tickModel) property. By default, interval for major ticks will be calculated automatically and also you can customize the interval for major and minor ticks using interval property.
+Ticks are used to specify the interval in the axis. Ticks are of two types, major ticks and minor ticks. The following properties in the [`majorTicks`](../api/linear-gauge/axisModel/#majorticks) and [`minorTicks`](../api/linear-gauge/axisModel/#minorticks) can be used to customize the major ticks and minor ticks respectively.
+
+* [`height`](../api/linear-gauge/tickModel/#height) - To set the length of the major and minor ticks in pixel values.
+* [`color`](../api/linear-gauge/tickModel/#color) - To set the color of the major and minor ticks of the Linear Gauge.
+* [`width`](../api/linear-gauge/tickModel/#width) - To set the thickness of the major and minor ticks in pixel values.
+* [`interval`](../api/linear-gauge/tickModel/#interval) - To set the interval for the major ticks and minor ticks in the Linear Gauge.
 
 {% tab template= "linear-gauge/axis", sourceFiles="app/**/*.ts" %}
 
@@ -52,19 +97,20 @@ import { Component } from '@angular/core';
     template: `
     <ejs-lineargauge id="gauge-container">
         <e-axes>
-            <e-axis minimum=20 maximum=140 [majorTicks]='Major' [minorTicks]='Minor'>
+            <e-axis minimum=20 maximum=140 [majorTicks]='major' [minorTicks]='minor'>
             </e-axis>
         </e-axes>
     </ejs-lineargauge>`
 })
 export class AppComponent {
-    public Major:Object;
-    public Minor:Object;
+    public major:Object;
+    public minor:Object;
     ngOnInit(): void {
-        this.Major = {
-            interval: 20
+        this.major = {
+            interval: 20,
+            color: "Orange"
         };
-        this.Minor = {
+        this.minor = {
              interval: 5,
             color: 'red'
         };
@@ -74,10 +120,9 @@ export class AppComponent {
 
 {% endtab %}
 
-## Labels Customization
+### Positioning the ticks
 
-The [`labelStyle`](../api/linear-gauge/labelModel) property of an axis provides options to
-customize the [`offset`](../api/linear-gauge/labelModel/#offset-number), [`format`](../api/linear-gauge/labelModel/#format-string), [`color`](../api/linear-gauge/labelModel/#color-string) and [`font`](../api/linear-gauge/labelModel/#font-fontmodel) of the axis labels.
+The minor and major ticks can be positioned by using the [`offset`](../api/linear-gauge/tickModel/#offset) and [`position`](../api/linear-gauge/tickModel/#position) properties. The [`offset`](../api/linear-gauge/tickModel/#offset) is used to render the ticks with the specified distance from the axis. By default, the offset value is "**0**". The possible values of the [`position`](../api/linear-gauge/tickModel/#position) property are "**Inside**", "**Outside**", "**Cross**", and "**Auto**". By default, the ticks will be placed inside the axis.
 
 {% tab template= "linear-gauge/axis", sourceFiles="app/**/*.ts" %}
 
@@ -89,15 +134,61 @@ import { Component } from '@angular/core';
     template: `
     <ejs-lineargauge id="gauge-container">
         <e-axes>
-            <e-axis [labelStyle]='Label'>
+            <e-axis minimum=20 maximum=140 [majorTicks]='major' [minorTicks]='minor'>
             </e-axis>
         </e-axes>
     </ejs-lineargauge>`
 })
 export class AppComponent {
-    public Label:Object;
+    public major:Object;
+    public minor:Object;
     ngOnInit(): void {
-        this.Label =  {
+        this.major = {
+            interval: 20,
+            color: "Orange",
+            position: "Outside"
+        };
+        this.minor = {
+             interval: 5,
+            color: 'red',
+            position: "Cross"
+        };
+    }
+}
+```
+
+{% endtab %}
+
+## Labels Customization
+
+The style of the labels can be customized using the following properties in the [`font`](../api/linear-gauge/labelModel/#font) property in [`labelStyle`](../api/linear-gauge/labelModel).
+
+* [`color`](../api/linear-gauge/font/#color) - To set the color of the axis label.
+* [`fontFamily`](../api/linear-gauge/font/#fontfamily) - To set the font family of the axis label.
+* [`fontStyle`](../api/linear-gauge/font/#fontstyle) - To set the font style of the axis label.
+* [`fontWeight`](../api/linear-gauge/font/#fontweight) - To set the font weight of the axis label.
+* [`opacity`](../api/linear-gauge/font/#opacity) - To set the opacity of the axis label.
+* [`size`](../api/linear-gauge/font/#size) - To set the size of the axis label.
+
+{% tab template= "linear-gauge/axis", sourceFiles="app/**/*.ts" %}
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+    selector: 'app-container',
+    template: `
+    <ejs-lineargauge id="gauge-container">
+        <e-axes>
+            <e-axis [labelStyle]='label'>
+            </e-axis>
+        </e-axes>
+    </ejs-lineargauge>`
+})
+export class AppComponent {
+    public label:Object;
+    ngOnInit(): void {
+        this.label =  {
             font: {
               color: 'red'
           }
@@ -108,11 +199,9 @@ export class AppComponent {
 
 {% endtab %}
 
-<!-- markdownlint-disable MD036 -->
+### Positioning the axis label
 
-**Customize the display of the last label**
-
-If the last label is not in the visible range, it will be hidden by default. If you want to show the last label, set the [`showLastLabel`](../api/linear-gauge/axis/#showlastlabel) property to **true** in the axes property of linear gauge.
+Labels can be positioned by using [`offset`](../api/linear-gauge/labelModel/#offset) and [`position`](../api/linear-gauge/labelModel/#position) properties in the [`labelStyle`](../api/linear-gauge/labelModel). The [`offset`](../api/linear-gauge/labelModel/#offset) defines the distance between the labels and ticks. By default, the offset value is "**0**". The possible values of the [`position`](../api/linear-gauge/labelModel/#position) property are "**Inside**", "**Outside**", "**Cross**", and "**Auto**". By default, the labels will be placed inside the axis.
 
 {% tab template= "linear-gauge/axis", sourceFiles="app/**/*.ts" %}
 
@@ -124,26 +213,51 @@ import { Component } from '@angular/core';
     template: `
     <ejs-lineargauge id="gauge-container">
         <e-axes>
-            <e-axis [line]='Line' showLastLabel='true' [maximum]='Maximum'>
+            <e-axis [labelStyle]='label'>
+            </e-axis>
+        </e-axes>
+    </ejs-lineargauge>`
+})
+export class AppComponent {
+    public label:Object;
+    ngOnInit(): void {
+        this.label =  {
+            position: "Cross"
+        };
+    }
+}
+```
+
+{% endtab %}
+
+### Customizing the display of the last label
+
+If the last label is not in the visible range, it will be hidden by default. The last label can be made visible by setting the [`showLastLabel`](../api/linear-gauge/axis/#showlastlabel) property as "**true**" in the [`e-axis`](../api/linear-gauge/axisModel/).
+
+{% tab template= "linear-gauge/axis", sourceFiles="app/**/*.ts" %}
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+    selector: 'app-container',
+    template: `
+    <ejs-lineargauge id="gauge-container">
+        <e-axes>
+            <e-axis [showLastLabel]='isLabel' [maximum]='maximum'>
                 <e-pointers>
-                    <e-pointer value=20 [height]='height' [width]='width' color='#757575' offset=30></e-pointer>
+                    <e-pointer value=20></e-pointer>
                 </e-pointers>
             </e-axis>
         </e-axes>
     </ejs-lineargauge>`
 })
 export class AppComponent {
-    public Line:Object;
-    public height: number;
-    public width: number;
-    public Maximum: number;
+    public maximum: number;
+    public isLabel: boolean;
     ngOnInit(): void {
-        this.Line =  {
-              color: '#9E9E9E'
-        };
-        this.height = 15;
-        this.width= 15;
-        this.Maximum = 115;
+        this.maximum = 115;
+        this.isLabel = true;
     }
 }
 ```
@@ -152,9 +266,9 @@ export class AppComponent {
 
 <!-- markdownlint-disable MD036 -->
 
-**Label Format**
+### Label Format
 
-Axis labels can be formatted by using the [`format`](../api/linear-gauge/labelModel/#format-string) property in [`labelStyle`](../api/linear-gauge/axis/#labelstyle-labelmodel) and it supports all the globalized formats.
+Axis labels in the Linear Gauge control can be formatted using the [`format`](../api/linear-gauge/labelModel/#format) property in the [`labelStyle`](../api/linear-gauge/axis/#labelstyle). It is used to render the axis labels in a certain format or to add a user-defined unit in the label. It works with the help of placeholder like "**{value}°C**", where "**value**" represents the axis value. For example, 20°C.
 
 {% tab template= "linear-gauge/axis", sourceFiles="app/**/*.ts" %}
 
@@ -166,16 +280,16 @@ import { Component } from '@angular/core';
     template: `
     <ejs-lineargauge id="gauge-container">
         <e-axes>
-            <e-axis [labelStyle]='Label'>
+            <e-axis [labelStyle]='label'>
             </e-axis>
         </e-axes>
     </ejs-lineargauge>`
 })
 export class AppComponent {
-    public Label:Object;
+    public label:Object;
     ngOnInit(): void {
-        this.Label =  {
-            format: 'c'
+        this.label =  {
+            format: '{value}°C'
         };
     }
 }
@@ -183,7 +297,9 @@ export class AppComponent {
 
 {% endtab %}
 
-The following table describes the result of applying some commonly used label formats on numeric values.
+### Displaying numeric format in labels
+
+The numeric formats such as currency, percentage, and so on can be displayed in the labels of the Linear Gauge using the [`format`](../api/linear-gauge/labelModel/#format) property in the [`ejs-lineargauge`](../api/linear-gauge/linearGaugeModel/). The following table describes the result of applying some commonly used label formats on numeric values.
 
 <!-- markdownlint-disable MD033 -->
 <table>
@@ -197,55 +313,51 @@ The following table describes the result of applying some commonly used label fo
 <td>1000</td>
 <td>n1</td>
 <td>1000.0</td>
-<td>The Number is rounded to 1 decimal place</td>
+<td>The number is rounded to 1 decimal place.</td>
 </tr>
 <tr>
 <td>1000</td>
 <td>n2</td>
 <td>1000.00</td>
-<td>The Number is rounded to 2 decimal place</td>
+<td>The number is rounded to 2 decimal place.</td>
 </tr>
 <tr>
 <td>1000</td>
 <td>n3</td>
 <td>1000.000</td>
-<td>The Number is rounded to 3 decimal place</td>
+<td>The number is rounded to 3 decimal place.</td>
 </tr>
 <tr>
 <td>0.01</td>
 <td>p1</td>
 <td>1.0%</td>
-<td>The Number is converted to percentage with 1 decimal place</td>
+<td>The number is converted to percentage with 1 decimal place.</td>
 </tr>
 <tr>
 <td>0.01</td>
 <td>p2</td>
 <td>1.00%</td>
-<td>The Number is converted to percentage with 2 decimal place</td>
+<td>The number is converted to percentage with 2 decimal place.</td>
 </tr>
 <tr>
 <td>0.01</td>
 <td>p3</td>
 <td>1.000%</td>
-<td>The Number is converted to percentage with 3 decimal place</td>
+<td>The number is converted to percentage with 3 decimal place.</td>
 </tr>
 <tr>
 <td>1000</td>
 <td>c1</td>
 <td>$1,000.0</td>
-<td>The Currency symbol is appended to number and number is rounded to 1 decimal place</td>
+<td>The currency symbol is appended to number and number is rounded to 1 decimal place.</td>
 </tr>
 <tr>
 <td>1000</td>
 <td>c2</td>
 <td>$1,000.00</td>
-<td>The Currency symbol is appended to number and number is rounded to 2 decimal place</td>
+<td>The currency symbol is appended to number and number is rounded to 2 decimal place.</td>
 </tr>
 </table>
-
-**Custom Label Format**
-
-Axis also supports custom label format using placeholder like {value}°C, in which the value represents the axis label e.g. 20°C.
 
 {% tab template= "linear-gauge/axis", sourceFiles="app/**/*.ts" %}
 
@@ -255,19 +367,15 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'app-container',
     template: `
-    <ejs-lineargauge id="gauge-container">
+    <ejs-lineargauge id="gauge-container" format="c">
         <e-axes>
-            <e-axis minimum=20 maximum=140 [labelStyle]='Label'>
+            <e-axis minimum=20 maximum=140>
             </e-axis>
         </e-axes>
     </ejs-lineargauge>`
 })
 export class AppComponent {
-    public Label:Object;
     ngOnInit(): void {
-        this.Label =  {
-            format: '{value}°C'
-        };
     }
 }
 ```
@@ -276,7 +384,7 @@ export class AppComponent {
 
 ## Orientation
 
-By default, the linear gauge is rendered vertically. To change its orientation, the [`orientation`](../api/linear-gauge/linearGaugeModel/#orientation) property must be set to **"Horizontal"**
+By default, the Linear Gauge is rendered vertically. To change its orientation, the [`orientation`](../api/linear-gauge/linearGaugeModel/#orientation) property must be set to "**Horizontal**".
 
 {% tab template= "linear-gauge/axis", sourceFiles="app/**/*.ts" %}
 
@@ -286,26 +394,24 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'app-container',
     template: `
-    <ejs-lineargauge id="gauge-container" [axes]='Axes' [orientation]='Orientation'>
+    <ejs-lineargauge id="gauge-container" orientation='Horizontal'>
+        <e-axes>
+            <e-axis minimum=20 maximum=140>
+            </e-axis>
+        </e-axes>
     </ejs-lineargauge>`
 })
 export class AppComponent {
-    public Orientation: string
-    public Axes: Object[] = [{
-        minimum: 20,
-        maximum: 140
-    }];
     ngOnInit(): void {
-        this.Orientation = "Horizontal";
     }
 }
 ```
 
 {% endtab %}
 
-## Inverted Axes
+## Inverted Axis
 
-[`isInversed`](../api/linear-gauge/axis/#isinversed-boolean) property is used to choose the rendering of axis either bottom to top or top to bottom direction.
+The axis of the Linear Gauge component can be inversed by setting the [`isInversed`](../api/linear-gauge/axis/#isinversed) property to "**true**" in the [`e-axis`](../api/linear-gauge/axisModel/).
 
 {% tab template= "linear-gauge/axis", sourceFiles="app/**/*.ts" %}
 
@@ -317,24 +423,22 @@ import { Component } from '@angular/core';
     template: `
     <ejs-lineargauge id="gauge-container">
         <e-axes>
-            <e-axis [line]='Line' [isInversed]='Direction'>
+            <e-axis isInversed=true>
             </e-axis>
         </e-axes>
     </ejs-lineargauge>`
 })
 export class AppComponent {
-    public Direction:boolean;
     ngOnInit(): void {
-        this.Direction = true;
     }
 }
 ```
 
 {% endtab %}
 
-## Opposed Axes
+## Opposed Axis
 
-To place an axis opposite from its original position, set [`opposedPosition`](../api/linear-gauge/axis/#opposedposition-boolean) property as true in the axis.
+To place an axis opposite from its original position, [`opposedPosition`](../api/linear-gauge/axis/#opposedposition) property in the [`e-axis`](../api/linear-gauge/axisModel/) must be set as "**true**".
 
 {% tab template= "linear-gauge/axis", sourceFiles="app/**/*.ts" %}
 
@@ -346,15 +450,13 @@ import { Component } from '@angular/core';
     template: `
     <ejs-lineargauge id="gauge-container">
         <e-axes>
-            <e-axis [opposedPosition]='position'>
+            <e-axis opposedPosition=true>
             </e-axis>
         </e-axes>
     </ejs-lineargauge>`
 })
 export class AppComponent {
-    public position:boolean;
     ngOnInit(): void {
-       this.position = true;
     }
 }
 ```
@@ -363,8 +465,7 @@ export class AppComponent {
 
 ## Multiple Axes
 
-You can render any number of axis for a linear gauge by using array of axis objects.
-Each axis will have its own ranges, pointers, annotations and customization options.
+Multiple axes can be added to the Linear Gauge by adding multiple [`e-axis`](../api/linear-gauge/axisModel/) in the [`e-axes`](../api/linear-gauge/linearGaugeModel/#axes) and customization can be done with the [`e-axis`](../api/linear-gauge/axisModel/). Each axis can be customized separately as shown in the following example.
 
 {% tab template= "linear-gauge/axis", sourceFiles="app/**/*.ts" %}
 
@@ -376,21 +477,21 @@ import { Component } from '@angular/core';
     template: `
     <ejs-lineargauge id="gauge-container">
         <e-axes>
-            <e-axis [labelStyle]='Label1'>
+            <e-axis [labelStyle]='label1'>
             </e-axis>
-            <e-axis opposedPosition=true [labelStyle]='Label2'>
+            <e-axis opposedPosition=true [labelStyle]='label2'>
             </e-axis>
         </e-axes>
     </ejs-lineargauge>`
 })
 export class AppComponent {
-    public Label1:Object;
-    public Label2:Object;
+    public label1:Object;
+    public label2:Object;
     ngOnInit(): void {
-        this.Label1 =  {
+        this.label1 =  {
             format: '{value}°C'
         };
-        this.Label2 =  {
+        this.label2 =  {
             format: '{value}°F'
         };
     }

@@ -1,13 +1,20 @@
+---
+title: "Getting Started with Angular Linear Gauge component | Syncfusion "
 
-# Getting Started
+component: "Linear Gauge"
+
+description: "Learn here about getting started with Syncfusion Angular Linear Gauge component, its element and more."
+---
+
+# Getting Started with Angular Linear Gauge
 
 <!-- markdownlint-disable MD013 -->
 
-This section explains you the steps required to create a simple linear gauge and demonstrate the basic usage of the linear gauge control.
+This section explains you the steps required to create a simple Linear Gauge and demonstrate the basic usage of the Linear Gauge component.
 
 ## Dependencies
 
-Below is the list of minimum dependencies required to use the linear gauge component.
+Below is the list of minimum dependencies required to use the Linear Gauge component.
 
 ```javascript
 |-- @syncfusion/ej2-angular-lineargauge
@@ -20,9 +27,19 @@ Below is the list of minimum dependencies required to use the linear gauge compo
     |-- @syncfusion/ej2-popups
 ```
 
+## Setting up an angular project
+
+Angular provides the easiest way to set angular CLI projects using Angular CLI tool.
+
+Install the CLI application globally to your machine using the below command.
+
+```javascript
+npm install -g @angular/cli
+```
+
 ## Installation and Configuration
 
-* To setup basic `Angular` sample use following commands.
+* To get started with the basic `Angular` sample, use the following commands.
 
 ```javascript
 git clone https://github.com/angular/quickstart.git quickstart
@@ -32,17 +49,17 @@ npm install
 
 For more information, refer to [Angular sample setup](https://angular.io/guide/setup)
 
-* Install linear gauge packages using below command.
+* Install the Linear Gauge packages using below command. The Syncfusion packages can be be get from the npm [`link`](https://www.npmjs.com/search?q=%40syncfusion%2Fej2-angular-).
+
+Add `@syncfusion/ej2-angular-lineargauge` package to the application.
 
 ```javascript
 npm install @syncfusion/ej2-angular-lineargauge --save
 ```
 
-The above package installs `lineargauge dependencies`
-which are required to render the component in Angular environment
+The above package installs `Linear Gauge dependencies` which are required to render the Linear Gauge component in Angular environment
 
-* Syncfusion `ej2-angular-lineargauge`
-packages needs to be mapped in `systemjs.config.js` configuration file.
+* Syncfusion `ej2-angular-lineargauge` packages needs to be mapped in `systemjs.config.js` configuration file.
 
 ```javascript
 /**
@@ -104,8 +121,7 @@ packages needs to be mapped in `systemjs.config.js` configuration file.
 })(this);
 ```
 
-* Import LinearGauge module into Angular application(app.module.ts) from the package `@syncfusion/ej2-angular-lineargauge`
-`[src/app/app.module.ts]`.
+* Import LinearGauge module in the **app.module.ts** file into Angular application from the package `@syncfusion/ej2-angular-lineargauge`.
 
 ```javascript
 import { NgModule }      from '@angular/core';
@@ -123,8 +139,7 @@ import { AppComponent }  from './app.component';
 export class AppModule { }
 ```
 
-* Modify the template in `app.component.ts` file to render the `ej2-angular-lineargauge` component
-`[src/app/app.component.ts]`.
+* Change the template in `app.component.ts` file to render the `ej2-angular-lineargauge` component.
 
 ```javascript
 import { Component, ViewEncapsulation } from '@angular/core';
@@ -141,10 +156,10 @@ export class AppComponent  { }
 * Now run the application in the browser using the below command.
 
 ```cmd
-npm start
+ng serve
 ```
 
-The below example shows a basic linear gauge.
+The below example shows a basic Linear Gauge.
 
 {% tab template= "linear-gauge/getting-started", sourceFiles="app/**/*.ts" , isDefaultActive=true %}
 
@@ -165,14 +180,12 @@ export class AppComponent {
 
 ## Module Injection
 
-Lineargauge component are segregated into individual feature-wise modules. In order to use a particular feature, you need to inject its feature service in the AppModule. In the current application, we are
-going to modify the above basic chart to visualize sales data for a particular year.
-For this application we are going to use tooltip and annotation feature of the linear gauge. Please find relevant feature service name and description as follows.
+LinearGauge component is segregated into the individual feature-wise modules. In order to use a particular feature, inject its feature module using the `providers: {}`. Please find the feature module name and description as follows.
 
 * `AnnotationsService` - Inject this provider to use Annotation feature.
 * `GaugeTooltipService` - Inject this provider to use Tooltip feature.
 
-These modules should be injected to the provider section as follows,
+These modules should be injected in the providers section of the **app.module.ts** file as follows,
 
  ```javascript
     import { NgModule } from '@angular/core';
@@ -194,7 +207,7 @@ These modules should be injected to the provider section as follows,
 
 ## Add Gauge Title
 
-You can add a title using [`title`](../api/linear-gauge/linearGaugeModel#title-string) property to the linear gauge to provide quick information to the user about the user.
+The title can be added to the Linear Gauge component using the [`title`](../api/linear-gauge/linearGaugeModel#title-string) property in the Linear Gauge.
 
 {% tab template= "linear-gauge/getting-started", sourceFiles="app/**/*.ts" %}
 
@@ -222,7 +235,7 @@ export class AppComponent implements OnInit {
 
 ## Axis Range
 
-You can set the range to the axis using [`minimum`](../api/linear-gauge/axis#minimum-number) and [`maximum`](../api/linear-gauge/axis#maximum-number) properties.
+The range of the axis can be set using the [`minimum`](../api/linear-gauge/axis#minimum-number) and [`maximum`](../api/linear-gauge/axis#maximum-number) properties in the Linear Gauge.
 
 {% tab template= "linear-gauge/getting-started", sourceFiles="app/**/*.ts" %}
 
@@ -253,9 +266,9 @@ export class AppComponent implements OnInit {
 
 {% endtab %}
 
-To denote the axis values with temperature units, we can add °C as suffix to each label. This can be achieved by setting the {value}°C to the format property of labelStyle in the axis. Here, {value} acts as a placeholder for each axis label.
+To denote the axis labels with temperature units, add the °C as suffix to each label. This can be achieved by setting the **{value}°C** to the [`format`](../api/linear-gauge/labelModel/#format-string) property in the [`labelStyle`](../api/linear-gauge/axis#labelstyle-labelmodel) object of the axis. Here, **{value}** acts as a placeholder for each axis label.
 
-You can change the pointer value from the default value of the gauge by settings the [`value`](../api/linear-gauge/pointer/#value-number)  property in pointers option in axis.
+To change the pointer value from the default value of the gauge, set the [`value`](../api/linear-gauge/pointer/#value-number) property in [`pointers`](../api/linear-gauge/pointerModel/) object of the axis.
 
 {% tab template= "linear-gauge/getting-started", sourceFiles="app/**/*.ts" %}
 
@@ -295,9 +308,9 @@ export class AppComponent implements OnInit {
 
 {% endtab %}
 
-## Set Pointer Value
+## Setting the value of pointer
 
-You can change the pointer value in the below sample using [`value`](../api/linear-gauge/pointer/#value-number) property in [`pointers`](../api/linear-gauge/pointer).
+The pointer value is changed in the below sample using the [`value`](../api/linear-gauge/pointer/#value-number) property in [`pointers`](../api/linear-gauge/pointer) object of the axis.
 
 {% tab template= "linear-gauge/getting-started", sourceFiles="app/**/*.ts" %}
 

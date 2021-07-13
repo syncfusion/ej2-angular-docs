@@ -1,8 +1,16 @@
-# Pointers
+---
+title: " Pointers in Angular Linear Gauge component | Syncfusion "
+
+component: "Linear Gauge"
+
+description: "Learn here all about the pointers feature of Syncfusion Angular Linear Gauge component and more."
+---
+
+# Pointers in Angular Linear Gauge
 
 <!-- markdownlint-disable MD013 -->
 
-Pointers are used to indicate values on the axis. Value of the pointer can be modified using the [`value`](../api/linear-gauge/pointer/#value-number) property.
+Pointers are used to indicate values on an axis. The value of the pointer can be modified using the [`value`](../api/linear-gauge/pointerModel/#value) property in [`e-pointer`](../api/linear-gauge/pointerModel/).
 
 {% tab template= "linear-gauge/pointers", sourceFiles="app/**/*.ts" %}
 
@@ -30,21 +38,31 @@ export class AppComponent {
 
 {% endtab %}
 
-## Marker Pointer
+## Types of pointer
 
-A marker pointer is a shape, that can be placed to mark the pointer value in the linear gauge.
+The Linear Gauge supports the following types of pointers.
+
+* Bar
+* Marker
+
+The type of pointer can be modified by using the [`type`](../api/linear-gauge/pointerModel/#type) property in [`e-pointer`](../api/linear-gauge/pointerModel/).
+
+### Marker pointer
+
+A marker pointer is a shape that can be used to mark the pointer value in the Linear Gauge.
 
 <b>Types of marker shapes</b>
 
-The following marker types are available in linear gauge. You can change the marker shape using [`markerType`](../api/linear-gauge/pointer/#markertype-string) property in [`pointer`](../api/linear-gauge/pointer/#pointer-pointermodel) options. The available marker types are,
+By default, the marker shape for the pointer is "**InvertedTriangle**". To change the shape of the pointer, use the [`markerType`](../api/linear-gauge/pointerModel/#markertype) property in [`e-pointer`](../api/linear-gauge/pointerModel/). The following marker types are available in Linear Gauge.
 
 * Circle
 * Rectangle
 * Triangle
 * InvertedTriangle
 * Diamond
+* Image
 
-You can also use image instead of rendering shape as pointer. It can be achieved by using [`markerType`](../api/linear-gauge/pointer/#markertype-string) property as `Image` set image path to ['imageUrl'](../api/linear-gauge/pointer/#imageurl-string) in [`pointer`](../api/linear-gauge/pointer/#pointer-pointermodel).
+An image can be rendered instead of rendering a shape as a pointer. It can be achieved by setting the [`markerType`](../api/linear-gauge/pointerModel/#markertype) property to "**Image**" and setting the source URL of image to [`imageUrl`](../api/linear-gauge/pointerModel/#imageurl) property in [`e-pointer`](../api/linear-gauge/pointerModel/).
 
 {% tab template= "linear-gauge/pointers", sourceFiles="app/**/*.ts" %}
 
@@ -76,15 +94,17 @@ export class AppComponent {
 
 **Marker Pointer Customization**
 
-The marker can be customized by using the following properties.
+The marker pointer can be customized using the following properties.
 
-* [`height`](../api/linear-gauge/pointer/#height-number) - Specifies pointer height
-* [`width`](../api/linear-gauge/pointer/#width-number) - Specifies pointer width
-* [`color`](../api/linear-gauge/pointer/#color-string) - Specifies pointer color
-* [`placement`](../api/linear-gauge/pointer/#placement-string) - Specifies pointer placement position, available placement options are 'Near', 'Far', 'Center' and 'None'
-* [`offset`](../api/linear-gauge/pointer/#offset-number) - Specifies offset value from it default position.
-* [`animationDuration`](../api/linear-gauge/pointer/#animationduration-number) - Specifies pointer animation duration
-* [`border`](../api/linear-gauge/pointer/#pointer-bordermodel) - Specifies pointer border color and width
+* [`height`](../api/linear-gauge/pointerModel/#height) - To set the height of the pointer.
+* [`position`](../api/linear-gauge/pointerModel/#position) - The position of the pointer can be changed by setting the value as "**Inside**", "**Outside**", "**Cross**", or "**Auto**".
+* [`width`](../api/linear-gauge/pointerModel/#width) - To set the width of the pointer.
+* [`color`](../api/linear-gauge/pointerModel/#color) - To set the color of the pointer.
+* [`placement`](../api/linear-gauge/pointerModel/#placement) - To place the pointer in the specified position. By default, the pointer is placed "**Far**" from the axis. To change the placement, set the [`placement`](../api/linear-gauge/pointerModel/#placement) property as "**Near**", "**Center**", or "**None**".
+* [`offset`](../api/linear-gauge/pointer/#offset) - To place the pointer with specified distance from the axis.
+* [`opacity`](../api/linear-gauge/pointerModel/#opacity) - To set the opacity of the pointer.
+* [`animationDuration`](../api/linear-gauge/pointerModel/#animationduration) - To specify the duration of the animation in pointer.
+* [`border`](../api/linear-gauge/pointerModel/#border) - To set the color and width for the border of the pointer.
 
 {% tab template= "linear-gauge/pointers", sourceFiles="app/**/*.ts" %}
 
@@ -105,20 +125,20 @@ import { Component } from '@angular/core';
     </ejs-lineargauge>`
 })
 export class AppComponent {
-  public height: nnumber;
+  public height: number;
   public width: number;
-    ngOnInit(): void {
-      this.height = 15;
-      this.width= 15;
-    }
+  ngOnInit(): void {
+    this.height = 15;
+    this.width= 15;
+  }
 }
 ```
 
 {% endtab %}
 
-## Bar Pointer
+### Bar Pointer
 
-Bar pointer is used to track the axis value and it will render depending upon the container type. Bar pointer starts from the beginning of the gauge and ends at the pointer value.
+The bar pointer is used to track the axis value. The bar pointer starts from the beginning of the gauge and ends at the pointer value. To enable bar pointer set the [`type`](../api/linear-gauge/pointerModel/#type) property in [`e-pointer`](../api/linear-gauge/pointerModel/) as "**Bar**".
 
 {% tab template= "linear-gauge/pointers", sourceFiles="app/**/*.ts" %}
 
@@ -152,11 +172,15 @@ export class AppComponent {
 
 The bar pointer can be customized using following properties.
 
-* [`width`](../api/linear-gauge/pointer/#width-number) - Specifies bar pointer width
-* [`color`](../api/linear-gauge/pointer/#color-string) - Specifies bar pointer color
-* [`offset`](../api/linear-gauge/pointer/#offset-number) - Helps to move the bar pointer from its default position.
-* [`border`](../api/linear-gauge/pointer/#pointer-bordermodel) - Specifies bar pointer border width and color
-* [`placement`](../api/linear-gauge/pointer/#placement-string) property is not supported for bar pointer.
+* [`width`](../api/linear-gauge/pointerModel/#width) - To set the thickness of the bar pointer.
+* [`color`](../api/linear-gauge/pointerModel/#color) - To set the color of the bar pointer.
+* [`offset`](../api/linear-gauge/pointerModel/#offset) - To place the bar pointer with the specified distance from it's default position.
+* [`opacity`](../api/linear-gauge/pointerModel/#opacity) - To set the opacity of the bar pointer.
+* [`roundedCornerRadius`](../api/linear-gauge/pointerModel/#roundedcornerradius) - To set the corner radius for the bar pointer.
+* [`border`](../api/linear-gauge/pointerModel/#border) - To set the color and width for the border of the pointer.
+* [`animationDuration`](../api/linear-gauge/pointerModel/#animationduration) - To set the duration of the animation in bar pointer.
+
+> Note: The placement property is not applicable for the bar pointer.
 
 {% tab template= "linear-gauge/pointers", sourceFiles="app/**/*.ts" %}
 
@@ -184,44 +208,9 @@ export class AppComponent {
 
 {% endtab %}
 
-## Pointer placement
+## Multiple pointers
 
-You can placement the marker pointer in any of the following locations using [`placement`] property.
-
-* Far
-* Near
-* Center
-* None
-
-{% tab template= "linear-gauge/pointers", sourceFiles="app/**/*.ts" %}
-
-```typescript
-import { Component } from '@angular/core';
-
-@Component({
-    selector: 'app-container',
-    template: `
-    <ejs-lineargauge id="gauge-container">
-        <e-axes>
-         <e-axis>
-           <e-pointers>
-             <e-pointer value=60 markerType='Arrow' color='#f44141' placement='Near'></e-pointer>
-           </e-pointers>
-         </e-axis>
-      </e-axes>
-    </ejs-lineargauge>`
-})
-export class AppComponent {
-    ngOnInit(): void {
-    }
-}
-```
-
-{% endtab %}
-
-## Multiple Pointers
-
-In addition to the default pointer, you can add n number of pointer to an axis.
+Multiple pointers can be added to the Linear Gauge by adding multiple [`e-pointer`](../api/linear-gauge/pointerModel/) in the [`e-pointers`](../api/linear-gauge/axisModel/#pointers) and customization for the pointers can be done with [`e-pointer`](../api/linear-gauge/pointerModel/).
 
 {% tab template= "linear-gauge/pointers", sourceFiles="app/**/*.ts" %}
 
@@ -251,10 +240,9 @@ export class AppComponent {
 
 {% endtab %}
 
-## Pointer Animation
+## Pointer animation
 
-Pointer will animate on loading the gauge. This can be handled by using
-[`animationDuration`](../api/linear-gauge/pointer/#animationduration-number) property. You need to specify the duration of the animation in milliseconds.
+Pointer is animated on loading the gauge. This can be handled by using the [`animationDuration`](../api/linear-gauge/pointerModel/#animationduration) property. The duration of the animation can be specified in milliseconds.
 
 {% tab template= "linear-gauge/pointers", sourceFiles="app/**/*.ts" %}
 
@@ -284,16 +272,14 @@ export class AppComponent {
 
 ## Gradient Color
 
-Gradient support allows to add multiple colors in the ranges and pointers of the linear gauge. The following gradient types are supported in the linear gauge.
+Gradient support allows the addition of multiple colors in the pointers of the Linear Gauge. The following gradient types are supported in the Linear Gauge.
 
 * Linear Gradient
-* Circular Gradient
+* Radial Gradient
 
 ### Linear Gradient
 
-Using linear gradient, colors will be applied in a linear progression. The start value of the linear gradient can be set using the [`startValue`](../api/linear-gauge/linearGradient/#startvalue) property. The end value of the linear gradient will be set using the [`endValue`](../api/linear-gauge/linearGradient/#endvalue) property. The color stop values such as color, opacity and offset are set using [`colorStop`](../api/linear-gauge/linearGradient/#colorstop) property.
-
-The linear gradient can be applied to all pointer types like marker, range bar. To do so, follow the below code sample.
+Using linear gradient, colors will be applied in a linear progression. The start value of the linear gradient can be set using the [`startValue`](../api/linear-gauge/linearGradient/#startvalue) property. The end value of the linear gradient will be set using the [`endValue`](../api/linear-gauge/linearGradient/#endvalue) property. The color stop values such as [`color`](../api/linear-gauge/colorStopModel/#color), [`opacity`](../api/linear-gauge/colorStopModel/#opacity) and [`offset`](../api/linear-gauge/colorStopModel/#offset) are set using [`colorStop`](../api/linear-gauge/linearGradient/#colorstop) property. The linear gradient can be rendered for the pointer in the Linear Gauge by using the below example.
 
 {% tab template= "linear-gauge/pointers", sourceFiles="app/**/*.ts" %}
 
@@ -303,52 +289,58 @@ import { Component, OnInit } from '@angular/core';
 @Component({
     selector: 'app-container',
     template: `
-    <ejs-lineargauge id="gauge-container" [container]='container' orientation='horizontal' [axes]='axes'>
+    <ejs-lineargauge id="gauge-container" [container]='container' orientation='horizontal'>
+      <e-axes>
+        <e-axis minimum=0 maximum=100 [line]='line' [majorTicks]='majorTicks' [minorTicks]='minorTicks' [labelStyle]='labelStyle' [pointers]='pointers' [ranges]='ranges'>
+        </e-axis>
+      </e-axes>
     </ejs-lineargauge>`
 })
 export class AppComponent {
   public container: Object;
-  public axes: Object[];
-    ngOnInit(): void {
-      // Initialize objects
-      this.container = { width: 30, offset: 30 }
-      this.axes = [{
-        minimum: 0,
-        maximum: 100,
-        line: {
-          width: 0
-        },
-        majorTicks: {
-          interval: 25,
-          height: 0
-        },
-        minorTicks: {
-          height: 0
-        },
-        labelStyle: {
-          font: {
-          color: '#424242'
-          }, offset: 55
-        },
-        pointers: [{
-          value: 80, height: 25,
-          width: 35, placement: 'Near',
-          offset: -44, markerType: 'Triangle',
-          linearGradient: {
-            startValue: '0%',
-            endValue: '100%',
-            colorStop: [
-            { color: '#fef3f9', offset: '0%', opacity: 1 },
-            { color: '#f54ea2', offset: '100%', opacity: 1 }]
-          }
-        }],
-        ranges: [{
-            start: 0, end: 80,
-            startWidth: 30, endWidth: 30,
-            color: '#f54ea2', offset: 30
-        }]
-      }];
-   }
+  public line: Object;
+  public majorTicks: Object;
+  public minorTicks: Object;
+  public labelStyle: Object;
+  public pointers: Object[];
+  public ranges: Object[];
+  ngOnInit(): void {
+    this.container = { width: 30, offset: 30 }
+    this.line= {
+      width: 0
+    };
+    this.majorTicks= {
+      interval: 25,
+      height: 0
+    };
+    this.minorTicks= {
+      height: 0
+    },
+    this.labelStyle= {
+      font: {
+        color: '#424242',
+        size: '0px'
+      }, offset: 55
+    };
+    this.pointers = [{
+      value: 80, height: 25,
+      width: 35, placement: 'Near',
+      offset: -44, markerType: 'Triangle',
+      linearGradient: {
+        startValue: '0%',
+        endValue: '100%',
+        colorStop: [
+          { color: '#fef3f9', offset: '0%', opacity: 1 },
+          { color: '#f54ea2', offset: '100%', opacity: 1 }
+        ]
+      }
+    }];
+    this.ranges=[{
+      start: 0, end: 80,
+      startWidth: 30, endWidth: 30,
+      color: '#f54ea2', offset: 30
+    }]
+  }
 }
 ```
 
@@ -356,9 +348,7 @@ export class AppComponent {
 
 ### Radial Gradient
 
-Using radial gradient, colors will be applied in circular progression. The inner circle position of the radial gradient will be set using the [`innerPosition`](../api/linear-gauge/radialGradient/#innerposition) property. The outer circle position of the radial gradient can be set using the [`outerPosition`](../api/linear-gauge/radialGradient/#outerposition) property. The color stop values such as color, opacity and offset are set using [`colorStop`](../api/linear-gauge/radialGradient/#colorstop) property.
-
-The radial gradient can be applied to all pointer types like marker and range bar. To do so, follow the below code sample.
+Using radial gradient, colors will be applied in circular progression. The inner circle position of the radial gradient will be set using the [`innerPosition`](../api/linear-gauge/radialGradient/#innerposition) property. The outer circle position of the radial gradient can be set using the [`outerPosition`](../api/linear-gauge/radialGradient/#outerposition) property. The color stop values such as [`color`](../api/linear-gauge/colorStopModel/#color), [`opacity`](../api/linear-gauge/colorStopModel/#opacity), and [`offset`](../api/linear-gauge/colorStopModel/#offset) are set using [`colorStop`](../api/linear-gauge/radialGradient/#colorstop) property. The radial gradient can be rendered for the pointer in the Linear Gauge by using the below example.
 
 {% tab template= "linear-gauge/pointers", sourceFiles="app/**/*.ts" %}
 
@@ -368,54 +358,62 @@ import { Component, OnInit } from '@angular/core';
 @Component({
     selector: 'app-container',
     template: `
-    <ejs-lineargauge id="gauge-container" [container]='container' orientation='horizontal' [axes]='axes'>
+    <ejs-lineargauge id="gauge-container" [container]='container' orientation='horizontal'>
+      <e-axes>
+        <e-axis minimum=0 maximum=100 [line]='line' [majorTicks]='majorTicks' [minorTicks]='minorTicks' [labelStyle]='labelStyle' [pointers]='pointers' [ranges]='ranges'>
+        </e-axis>
+      </e-axes>
     </ejs-lineargauge>`
 })
 export class AppComponent {
   public container: Object;
-  public axes: Object[];
-    ngOnInit(): void {
-      // Initialize objects
-      this.container = { width: 30, offset: 30 }
-      this.axes = [{
-        minimum: 0,
-        maximum: 100,
-        line: {
-          width: 0
-        },
-        majorTicks: {
-          interval: 25,
-          height: 0
-        },
-        minorTicks: {
-          height: 0
-        },
-        labelStyle: {
-          font: {
-          color: '#424242',
-          }, offset: 55
-        },
-        pointers: [{
-          value: 80, height: 25,
-          width: 35, placement: 'Near',
-          offset: -44, markerType: 'Triangle',
-          radialGradient: {
-            radius: '60%',
-            outerPosition: { x: '50%', y: '50%' },
-            innerPosition: { x: '50%', y: '50%' },
-            colorStop: [
-            { color: '#fff5f5', offset: '0%', opacity: 0.9 },
-            { color: '#f54ea2', offset: '100%', opacity: 0.8 }]
-          }
-        }],
-        ranges: [{
-          start: 0, end: 80,
-          startWidth: 30, endWidth: 30,
-          color: '#f54ea2', offset: 30,
-        }]
-      }];
-    }
+  public line: Object;
+  public majorTicks: Object;
+  public minorTicks: Object;
+  public labelStyle: Object;
+  public pointers: Object[];
+  public ranges: Object[];
+  ngOnInit(): void {
+    this.container = { width: 30, offset: 30 }
+    this.line= {
+      width: 0
+    };
+    this.majorTicks= {
+      interval: 25,
+      height: 0
+    };
+    this.minorTicks= {
+      height: 0
+    },
+    this.labelStyle= {
+      font: {
+        color: '#424242',
+        size: '0px'
+      }, offset: 55
+    };
+    this.pointers = [{
+      value: 80, height: 25,
+      width: 35, placement: 'Near',
+      offset: -44, markerType: 'Triangle',
+      radialGradient: {
+        radius: '60%',
+        outerPosition: { x: '50%', y: '50%' },
+        innerPosition: { x: '50%', y: '50%' },
+        colorStop: [
+          { color: '#fff5f5', offset: '0%', opacity: 0.9 },
+          { color: '#f54ea2', offset: '100%', opacity: 0.8 }
+        ]
+      }
+    }];
+    this.ranges=[{
+      start: 0, end: 80,
+      startWidth: 30, endWidth: 30,
+      color: '#f54ea2', offset: 30
+    }]
+  }
 }
 ```
 
 {% endtab %}
+
+> Note: If we set both gradients, only the linear gradient gets rendered. If we set the [`startValue`](../api/linear-gauge/linearGradient/#startvalue) and [`endValue`](../api/linear-gauge/linearGradient/#endvalue) property of the [`linearGradient`](../api/linear-gauge/linearGradient/) as empty strings, then the radial gradient gets rendered in the pointer of the Linear Gauge.
