@@ -37,3 +37,5 @@ The execCommand is used to perform command for the modification of content in ed
 | removeFormat | remove all formatting styles (such as bold, italic, underline, color, superscript, subscript, and more) from currently selected text. |`rteObj.executeCommand('removeFormat');`|
 | insertText | Insert text to the current cursor position. | `rteObj.executeCommand('insertText', 'inserted a text');` |
 | insertImage | Insert an image to the current cursor position. | `rteObj.executeCommand('insertImage', { url: 'https://ej2.syncfusion.com/javascript/demos/src/rich-text-editor/images/RTEImage-Feather.png', cssClass: 'rte-img'});`
+
+> Note: The ‘ExecuteCommand’ public method is not supported in Syncfusion Markdown Editor
