@@ -32,14 +32,14 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-container',
-    template: `<ejs-tab id="draggableTab" heightAdjustMode='Auto' [allowDragAndDrop]='true' dragArea='#container'>
+    template: `<div id='tabparent'><ejs-tab id="draggableTab" heightAdjustMode='Auto' [allowDragAndDrop]='true' dragArea='#tabparent'>
             <e-tabitems>
                 <e-tabitem [header]='headerText[0]' [content]="content0"></e-tabitem>
                 <e-tabitem [header]='headerText[1]' [content]="content1"></e-tabitem>
                 <e-tabitem [header]='headerText[2]' [content]="content2"></e-tabitem>
                 <e-tabitem [header]='headerText[3]' [content]="content3"></e-tabitem>
             </e-tabitems>
-        </ejs-tab>`
+        </ejs-tab></div>`
 })
 
 export class AppComponent {
