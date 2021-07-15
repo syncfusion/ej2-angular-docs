@@ -64,18 +64,24 @@ export class AppComponent {
     @ViewChild('element') acrdnInstance: AccordionComponent;
     public clickEle: HTMLElement;
     public clicked(e: AccordionClickArgs) {
-      this.clickEle = e.originalEvent.target;
-    }
-   public beforeExpand (e: ExpandEventArgs):void {
-  let expandCount: number = this.acrdnInstance.element.querySelectorAll('.e-selected').length;
-  let ele: HTMLElement= this.acrdnInstance.element.querySelectorAll('.e-selected')[0];
-  if (ele) {
-    ele = ele.firstChild
+    this.clickEle = (e.originalEvent.target as Element).closest(
+      '.e-acrdn-header'
+    );
   }
+  public beforeExpand(e: ExpandEventArgs): void {
+    let expandCount: number = this.acrdnInstance.element.querySelectorAll(
+      '.e-selected'
+    ).length;
+    let ele: Element = this.acrdnInstance.element.querySelectorAll(
+      '.e-selected'
+    )[0];
+    if (ele) {
+      ele = ele.firstChild as Element;
+    }
     if (expandCount === 1 && ele === this.clickEle) {
       e.cancel = true;
+    }
   }
-}
 }
 ```
 

@@ -32,7 +32,7 @@ import { EmitType } from '@syncfusion/ej2-base';
 @Component({
     selector: 'app-container',
     template: `
-     <ejs-tab id="element" locale="fr-BE" showCloseButton=true>
+     <ejs-tab id="element" locale="fr-BE" [showCloseButton]='true'>
             <e-tabitems>
                 <e-tabitem [header]='headerText[0]' [content]="content0"></e-tabitem>
                 <e-tabitem [header]='headerText[1]' [content]="content1"></e-tabitem>
