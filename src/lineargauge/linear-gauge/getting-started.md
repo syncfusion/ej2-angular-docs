@@ -257,8 +257,8 @@ export class AppComponent implements OnInit {
     public Minimum: number;
     public Maximum: number;
     ngOnInit(): void {
-       this.Minimum: 0,
-       this.Maximum: 200
+       this.Minimum = 0,
+       this.Maximum = 200
     }
 }
 

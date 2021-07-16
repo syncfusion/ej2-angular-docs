@@ -63,7 +63,7 @@ To change the annotation content dynamically, use the [`setAnnotationValue`](../
 
 ```typescript
 import { Component, ViewChild } from '@angular/core';
-import { AnnotationService, LinearGaugeComponent } from '@syncfusion/ej2-angular-lineargauge';
+import { AnnotationsService, LinearGaugeComponent } from '@syncfusion/ej2-angular-lineargauge';
 @Component({
     selector: 'app-container',
     template: `
@@ -80,7 +80,7 @@ import { AnnotationService, LinearGaugeComponent } from '@syncfusion/ej2-angular
          </e-axis>
       </e-axes>
     </ejs-lineargauge>`,
-    providers: [AnnotationService]
+     providers: [AnnotationsService]
 })
 export class AppComponent {
   @ViewChild('gauge')

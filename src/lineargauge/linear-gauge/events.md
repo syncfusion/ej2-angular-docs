@@ -50,7 +50,7 @@ Before the annotation is rendered in the Linear Gauge, the [`annotationRender`](
 
 ```typescript
 import { Component } from '@angular/core';
-import { AnnotationService, LinearGaugeComponent } from '@syncfusion/ej2-angular-lineargauge';
+import { AnnotationsService, LinearGaugeComponent } from '@syncfusion/ej2-angular-lineargauge';
 import { IAnnotationRenderEventArgs } from '@syncfusion/ej2-lineargauge';
 
 @Component({
@@ -61,7 +61,7 @@ import { IAnnotationRenderEventArgs } from '@syncfusion/ej2-lineargauge';
             <e-annotation zIndex='1' content='<div id="first"><h1>Gauge</h1></div>' axisValue=0></e-annotation>
         </e-annotations>
     </ejs-lineargauge>`,
-    providers: [AnnotationService]
+    providers: [AnnotationsService]
 })
 export class AppComponent {
     annotationRender(args: IAnnotationRenderEventArgs) {
@@ -141,7 +141,7 @@ import { IPointerDragEventArgs } from '@syncfusion/ej2-lineargauge';
 @Component({
     selector: 'app-container',
     template: `
-    <ejs-lineargauge id="gauge-container" (dragEnd)='dragEnd($event)'>
+    <ejs-lineargauge style="display:block" id="gauge-container" (dragEnd)='dragEnd($event)'>
         <e-axes>
          <e-axis>
            <e-pointers>
@@ -173,7 +173,7 @@ import { IPointerDragEventArgs } from '@syncfusion/ej2-lineargauge';
 @Component({
     selector: 'app-container',
     template: `
-    <ejs-lineargauge id="gauge-container" (dragMove)='dragMove($event)'>
+    <ejs-lineargauge style="display:block" id="gauge-container" (dragMove)='dragMove($event)'>
         <e-axes>
          <e-axis>
            <e-pointers>
@@ -205,7 +205,7 @@ import { IPointerDragEventArgs } from '@syncfusion/ej2-lineargauge';
 @Component({
     selector: 'app-container',
     template: `
-    <ejs-lineargauge id="gauge-container" (dragStart)='dragStart($event)'>
+    <ejs-lineargauge style="display:block" id="gauge-container" (dragStart)='dragStart($event)'>
         <e-axes>
          <e-axis>
            <e-pointers>

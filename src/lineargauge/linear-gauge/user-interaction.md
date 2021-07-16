@@ -19,7 +19,7 @@ Linear Gauge displays the details about a pointer value through [`tooltip`](../a
 {% tab template= "linear-gauge/user-interaction", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-container',
@@ -57,7 +57,7 @@ Tooltip in the Linear Gauge control can be formatted using the [`format`](../api
 {% tab template= "linear-gauge/user-interaction", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-container',
@@ -92,7 +92,7 @@ The HTML element can be rendered in the tooltip of the Linear Gauge using the [`
 {% tab template= "linear-gauge/user-interaction", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-container',
@@ -134,7 +134,7 @@ The tooltip can be customized using the following properties in [`tooltip`](../a
 {% tab template= "linear-gauge/user-interaction", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-container',
@@ -173,7 +173,7 @@ The tooltip is positioned at the "**End**" of the pointer. To change the positio
 {% tab template= "linear-gauge/user-interaction", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-container',
@@ -208,7 +208,7 @@ To drag either marker or bar pointer to the desired axis value, set the [`enable
 {% tab template= "linear-gauge/user-interaction", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-container',

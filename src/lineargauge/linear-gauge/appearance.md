@@ -102,7 +102,7 @@ The "**Normal**" type will render the container as a rectangle and this is the d
 {% tab template= "linear-gauge/appearance", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-container',
@@ -138,7 +138,7 @@ The "**RoundedRectangle**" type will render the container as a rectangle with ro
 {% tab template= "linear-gauge/appearance", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-container',
@@ -175,7 +175,7 @@ The "**Thermometer**" type will render the container similar to the appearance o
 {% tab template= "linear-gauge/appearance", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-container',
@@ -195,7 +195,7 @@ import { Component } from '@angular/core';
 export class AppComponent implements OnInit {
     public container: Object;
     ngOnInit(): void {
-      this.Container = {
+      this.container = {
         width:30,
         type: "Thermometer"
       };
@@ -212,7 +212,7 @@ The Linear Gauge component is rendered with margin by default. To remove the mar
 {% tab template= "linear-gauge/appearance", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-container',
