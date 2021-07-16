@@ -29,6 +29,7 @@
 * [Set Default Value for Event Fields](schedule/how-to/set-default-value-for-event-fields.md)
 * [Open Editor Window Manually](schedule/how-to/open-event-editor-manually.md)
 * [Prevent the Date Navigation](schedule/how-to/prevent-date-navigation.md)
+* [Show half-yearly view](schedule/how-to/half-yearly-view.md)
 * [Set Different Working Hours on Different Days](schedule/how-to/set-different-work-hours.md)
 * [Show tooltip with delay](schedule/how-to/show-tool-tip-with-delay.md)
 * [Show quick info template](schedule/how-to/quick-info-template.md)

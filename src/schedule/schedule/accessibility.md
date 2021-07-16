@@ -53,3 +53,5 @@ Keys | Description |
 | <kbd>Space</kbd> or <kbd>Enter</kbd> | It activates any of the focused items. |
 | <kbd>Page Up</kbd> & <kbd>Page Down</kbd> | To scroll through the work cells area. |
 | <kbd>Home</kbd> | To move the selection to the first cell of Scheduler. |
+
+> You can refer to our [Angular Scheduler](https://www.syncfusion.com/angular-ui-components/angular-scheduler) feature tour page for its groundbreaking feature representations. You can also explore our [Angular Scheduler example](https://ej2.syncfusion.com/angular/demos/#/material/schedule/overview) to knows how to present and manipulate data.

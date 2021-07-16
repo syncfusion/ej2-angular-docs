@@ -6,7 +6,7 @@ description: "This article demonstrates how to create a simple Scheduler and con
 
 # Getting Started
 
-This section briefly explains how to create **Scheduler** component and configure its available functionalities in Angular Environment.
+This section briefly explains how to create [**Angular Scheduler**](https://www.syncfusion.com/angular-ui-components/angular-scheduler) component and configure its available functionalities in Angular Environment.
 
 To get start quickly with Angular Scheduler using CLI and Schematics, you can check on this video:
 
@@ -280,3 +280,5 @@ export class AppComponent {
 ```
 
 {% endtab %}
+
+> You can refer to our [Angular Scheduler](https://www.syncfusion.com/angular-ui-components/angular-scheduler) feature tour page for its groundbreaking feature representations. You can also explore our [Angular Scheduler example](https://ej2.syncfusion.com/angular/demos/#/material/schedule/overview) to knows how to present and manipulate data.
