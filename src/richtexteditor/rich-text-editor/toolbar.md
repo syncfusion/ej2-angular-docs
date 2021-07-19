@@ -186,8 +186,44 @@ The following table shows that list of available tools in the Rich Text Editor's
 | ClearFormat | The clear format tool is useful to remove all formatting styles (such as bold, italic, underline, color, superscript, subscript, and more) from currently selected text. As a result, all the text formatting will be cleared and return to its default formatting styles.|toolbarSettings: { items: ['ClearFormat']}|
 | FullScreen | Stretches the editor to the maximum width and height of the browser window.|toolbarSettings: { items: ['FullScreen']}|
 | SourceCode | Rich Text Editor includes the ability for users to directly edit HTML code via “Source View”. If you made any modification in Source view directly, synchronize with Design view.|toolbarSettings: { items: ['SourceCode']}|
-| NumberFormatList | Allows to create list items with various list style types(numbered)|toolbarSettings: { items: ['NumberFormatList']}|
-| BulletFormatList | Allows to create list items with various list style types(bulleted)|toolbarSettings: { items: ['BulletFormatList']}|
+| NumberFormatList | Allows to create list items with various list style types(numbered).|toolbarSettings: { items: ['NumberFormatList']}|
+| BulletFormatList | Allows to create list items with various list style types(bulleted).|toolbarSettings: { items: ['BulletFormatList']}|
+| JustifyLeft | Allows each line to begin at the same distance from the editor’s left-hand side. | toolbarSettings: { items: ['JustifyLeft']} |
+| JustifyCenter |There is an even space on each side of each line since the text is not aligned to the left or right margins. | toolbarSettings: { items: ['JustifyCenter']} |
+| JustifyRight | Allows each line to end at the same distance from the editor’s right-hand side. | toolbarSettings: { items: ['JustifyRight']} |
+| JustifyFull |The text is aligned with both right and left margins. | toolbarSettings: { items: ['JustifyFull']} |
+| Bold | Text that is thicker and darker than usual. | toolbarSettings: { items: ['Bold']} |
+| Italic |Shows a text that is leaned to the right. | toolbarSettings: { items: ['Italic']} |
+| Underline | The underline is added to the selected text. | toolbarSettings: { items: ['Underline']} |
+| ClearAll | Removes all styles that have been applied to the selected text.| toolbarSettings: { items: ['ClearAll']} |
+| Cut | Removes the text from its current location and places it into the clipboard. | toolbarSettings: { items: ['Cut']} |
+| Copy | The selected item is copied and pasted into the clipboard. | toolbarSettings: { items: ['Copy']} |
+| Paste | Allows you to insert a clipboard item into a specific location. | toolbarSettings: { items: ['Paste']} |
+| OpenLink | To open the URL link that is  attached to the selected text. | toolbarSettings: { items: ['OpenLink']} |
+| EditLink | Allows you to change the URL that has been attached to a specific item. | toolbarSettings: { items: ['EditLink']} |
+| CreateTable | Create a table with defined columns and rows. | toolbarSettings: { items: ['CreateTable']} |
+| RemoveTable | Removes the selected table and its contents. | toolbarSettings: { items: ['RemoveTable']} |
+| Replace | Replace the selected image with another image. | toolbarSettings: { items: ['Replace']} |
+| Align | The image can be aligned to the right, left, or center. | toolbarSettings: { items: ['Align']} |
+| Remove | Allows to remove the selected image from the editor. | toolbarSettings: { items: ['Remove']} |
+| OpenImageLink | Opens the link that is attached to the selected image. | toolbarSettings: { items: ['OpenImageLink']} |
+| EditImageLink | Allows to edit the link that is attached to the selected image. | toolbarSettings: { items: ['editImageLink']} |
+| RemoveImageLink | Removes the link that is attached to the selected image. | toolbarSettings: { items: ['removeImageLink']} |
+| InsertLink |Allows users to add a link to a particular item. | toolbarSettings: { items: ['InsertLink']} |
+| Display | Allows you to choose whether an image should be shown inline or as a block. | toolbarSettings: { items: ['Display']} |
+| AltText | To display image description when an image on a Web page cannot be displayed. | toolbarSettings: { items: ['AltText']} |
+| Dimension | Allows you to customize the image’s height and width. | toolbarSettings: { items: ['Dimension']} |
+| Maximize | Stretches the editor to the maximum width and height of the browser window. | toolbarSettings: { items: ['Maximize']} |
+| Minimize | Shrinks the editor to the default width and height. | toolbarSettings: { items: ['Minimize']} |
+| Preview | Allows to see how the editor’s content looks in a browser. | toolbarSettings: { items: ['Preview']} |
+| InsertCode |Represents preformatted text which is to be presented exactly as written in the HTML file. | toolbarSettings: { items: ['InsertCode']} |
+| RemoveLink | Allows you to remove the applied link from the selected item. | toolbarSettings: { items: ['RemoveLink']} |
+| TableHeader | Allows you to add a table header. | toolbarSettings: { items: ['TableHeader']} |
+| TableColumns | Shows the dropdown to insert a column or delete the selected column. | toolbarSettings: { items: ['TableColumns']} |
+| TableRows | Shows the dropdown to insert a row ors delete the selected row. | toolbarSettings: { items: ['TableRows']} |
+| TableCellHorizontalAlign | Allows the table cell content to be aligned horizontally. | toolbarSettings: { items: ['TableCellHorizontalAlign']} |
+| TableCellVerticalAlign | Allows the table cell content to be aligned vertically. | toolbarSettings: { items: ['TableCellVerticalAlign']} |
+| TableEditProperties | Allows you to change the table width, padding, and cell spacing styles. | toolbarSettings: { items: ['TableEditProperties']} |
 
 By default, tool will be arranged in following order.
 
