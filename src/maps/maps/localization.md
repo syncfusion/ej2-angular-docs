@@ -1,8 +1,14 @@
-# Localization
+---
+title: " Localization in Angular Maps control | Syncfusion "
 
-Localization library allows to localize the default text content of Maps. In Maps component, it has the static text on some
-features(like zooming toolbars) and this can be changed to any other culture(Arabic, Deutsch, French, etc) by defining
-the locale value and translation object.
+component: "Maps"
+
+description: "Learn here all about Localization of Syncfusion Angular Maps control and more."
+---
+
+# Localization in Angular Maps
+
+The localization library allows localizing the default text content of the Maps control. The Maps control has the static text of some features such as tooltip of zoom toolbar, and that can be changed to any other culture(Arabic, Deutsch, French, etc) by defining the locale value and translation object.
 
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD010 -->
@@ -18,11 +24,11 @@ the locale value and translation object.
 </tr>
 <tr>
 <td>ZoomIn</td>
-<td>ZoomIn</td>
+<td>Zoom In</td>
 </tr>
 <tr>
 <td>ZoomOut</td>
-<td>ZoomOut</td>
+<td>Zoom Out</td>
 </tr>
 <tr>
 <td>Reset</td>
@@ -31,17 +37,10 @@ the locale value and translation object.
 <tr>
 <td>Pan</td>
 <td>Pan</td>
-</tr>
-<tr>
-<td>ResetZoom</td>
-<td>Reset Zoom</td>
 </tr>
 </table>
 
-To load translation object in an application use load function of L10n class.
-
-For more information about localization, refer this
-[`localization`](http://ej2.syncfusion.com/documentation/base/localization.html)
+To load translation object in the application, use `load` function of **L10n** class. For more information about localization, refer [here](http://ej2.syncfusion.com/documentation/base/localization.html).
 
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
@@ -69,7 +68,7 @@ L10n.load({
     template:
     `<ejs-maps id='container' [locale]="Locale" [zoomSettings]='zoom'>
     <e-layers>
-    <e-layer [shapeData]="mapData"></e-layer>
+    <e-layer [shapeData]="mapData" [tooltipSettings]='tooltipSettings'></e-layer>
     </e-layers>
     <ejs-maps>`
 })
@@ -78,7 +77,10 @@ export class AppComponent implements OnInit {
     public mapData: object[] = world_map;
 	public Locale: string = 'ar-AR';
     public zoom: object = {
-     enable: true
+        enable: true
+    };
+    public tooltipSettings: object = {
+      enable: true
     };
  ngOnInit(): void {
    }

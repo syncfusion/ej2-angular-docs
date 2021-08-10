@@ -1,8 +1,6 @@
 # Custom Path Map
 
-You can customize the maps control as the desired layout using the custom path map feature. Here, the maps
-control has been showcased with normal geometry type shapes to represent the bus seat selection layout.
-Please refer to the following code example to render the bus seat selection.
+Maps control can be customized as the desired layout using the custom path map feature. Here, the Maps control has been showcased with normal geometry type shapes to represent the bus seat selection layout. Please refer to the following example to render the bus seat selection.
 
 [`app.module.ts`]
 

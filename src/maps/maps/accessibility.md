@@ -1,11 +1,14 @@
+---
+title: " Accessibility in Angular Maps control | Syncfusion "
 
-# Accessibility
+component: "Maps"
 
-Maps provides built-in compliance with the [WAI-ARIA](http://www.w3.org/WAI/PF/aria-practices/) specifications.
-WAI-ARIA Accessibility supports are achieved through the attributes like `aria-label`. It helps to provides information
-about elements in a document for assistive technology.
+description: "Learn here all about Accessibility feature of Syncfusion Angular Maps control and more."
+---
 
-**Aria-label:**   Attribute provides the text label with some default description for below elements in maps.
+# Accessibility in Angular Maps
+
+Maps provides built-in compliance with the [WAI-ARIA](http://www.w3.org/WAI/PF/aria-practices/) specifications. The WAI-ARIA accessibility support is achieved through the attribute like `aria-label` in the SVG element. It helps to provide information about elements in a document for assistive technology. This attribute sets the text label with some default description for the following elements in Maps.
 
 <!-- markdownlint-disable MD033 -->
 <table>
@@ -15,21 +18,20 @@ about elements in a document for assistive technology.
 </tr>
 <tr>
 <td>Maps container</td>
-<td>-</td>
+<td>Specifies the Maps control.</td>
 </tr>
 <tr>
-<td>Maps Title</td>
-<td>Reads the maps title</td>
+<td>Maps title</td>
+<td>Specifies the title of the Maps.</td>
 </tr>
 <tr>
-<td>Maps Subtitle</td>
-<td>Reads the maps subtitle</td>
+<td>Maps subtitle</td>
+<td>Specifies the sub-title of the Maps.</td>
 </tr>
 <tr>
-<td>Legend Title</td>
-<td>Reads the legend title</td>
+<td>Legend title</td>
+<td>Specifies the title of legend in the Maps.</td>
 </tr>
 </table>
 
- You can change this default description, using description property available in `Legend`, `TitleSettings`,
- `SubtitleSettings` and `Maps` object. It helps the screen reader to read for assistive purpose.
+To change this default description, use the [`description`](../api/maps/#description) property available in [`legendSettings`](../api/maps/commonTitleSettingsModel/#description), [`titleSettings`](../api/maps/titleSettingsModel/#description), [`subtitleSettings`](../api/maps/subTitleSettingsModel/#description) and [`Maps`](../api/maps/#description). It helps the screen reader to read for an assistive purpose.

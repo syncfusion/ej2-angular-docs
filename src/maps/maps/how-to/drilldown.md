@@ -1,30 +1,8 @@
 # Drilldown
 
-By clicking a continent, you can view all the countries available in that continent using the drill-down
-feature. For example, the countries in the `Africa` continent have been showcased here. You can showcase
-all the countries in `Africa` continent by clicking the [shapeSelected](../../api/maps/#shapeselected)
-event as mentioned in the following code example.
+By clicking a continent, all the countries available in that continent can be viewed using the drill-down feature. For example, the countries in the `Africa` continent have been showcased here. To showcase all the countries in `Africa` continent by clicking the [`shapeSelected`](../api/maps#shapeselected) event as mentioned in the following example.
 
-[`app.module.ts`]
-
-```typescript
-import { NgModule }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent }  from './app.component';
-import { MapsModule } from '@syncfusion/ej2-angular-maps';
-import { HighlightService,MarkerService } from '@syncfusion/ej2-angular-maps';
-
-
-@NgModule({
-  imports:      [ BrowserModule,MapsModule ],
-  declarations: [ AppComponent ],
-  bootstrap:    [ AppComponent ],
-  providers:    [ HighlightService,MarkerService ]
-})
-export class AppModule { }
-```
-
-[`app.component.ts`]
+{% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
 ```typescript
 import { Component, ViewEncapsulation,ViewChild } from '@angular/core';
@@ -46,26 +24,39 @@ export interface ShapeData { continent?: string; }
     </e-layers>
     </ejs-maps>
     </div>
-    </div>`,
+    </div>
+    <style>
+        .markerTemplate {
+            font-size: 12px;
+            color: white;
+            text-shadow: 0px 1px 1px black;
+            font-weight: 500
+        }
+        .markerTemplate {
+            height: 30px;
+            width: 30px;
+            display: block;
+            margin: auto;
+        }
+       </style>`,
     encapsulation: ViewEncapsulation.None
   })
 
-  export class AppComponent {
-       public worldmap=World_Map;
-       public dataSource=dafaultData;
-       public africa=Africa;
-       @ViewChild('drilldown')
-       public maps: MapsComponent;
-       public shapeSelected = (args: IShapeSelectedEventArgs) : void => {
+export class AppComponent {
+    public worldmap=World_Map;
+    public dataSource=dafaultData;
+    public africa=Africa;
+    @ViewChild('drilldown')
+    public maps: MapsComponent;
+    public shapeSelected = (args: IShapeSelectedEventArgs) : void => {
         let shape: string = (args.shapeData as ShapeData).continent;
         if (shape === 'Africa') {
-        this.maps.baseLayerIndex=1;
-        this.maps.refresh();
+            this.maps.baseLayerIndex=1;
+            this.maps.refresh();
         }
     };
-       public shapeSettings = {
-     colorValuePath: 'drillColor'
-    //    fill: 'blue'
+    public shapeSettings = {
+        colorValuePath: 'drillColor'
     };
     public markerSettings=[{
         visible: true,
@@ -76,29 +67,14 @@ export interface ShapeData { continent?: string; }
         ],
         animationDuration: 0
     }];
-    public africa_shapeSettings={
+    public africa_shapeSettings = {
         fill: '#80306A'
     };
-    public highlightSettings={
+    public highlightSettings = {
         enable: true,
         fill: '#80306A'
     };
 }
 ```
 
-```html
-      <style>
-          .markerTemplate {
-            font-size: 12px;
-            color: white;
-            text-shadow: 0px 1px 1px black;
-            font-weight: 500
-          }
-          .markerTemplate {
-            height: 30px;
-            width: 30px;
-            display: block;
-            margin: auto;
-          }
-       </style>
-```
+{% endtab %}

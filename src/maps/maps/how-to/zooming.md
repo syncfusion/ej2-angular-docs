@@ -1,31 +1,6 @@
 # Center position zooming
 
-You can achieve the center position zooming by using the [centerPosition](../../api/maps#centerposition)
-and [zoomFactor](../../api/maps/zoomSettings#zoomfactor) APIs as mentioned in the following code example. The
-center position is used to configure the zoom level of maps, and zoom factor is used to specify the center
-position where the map should be displayed.
-
-[`app.module.ts`]
-
-```typescript
-import { NgModule }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent }  from './app.component';
-import { MapsModule } from '@syncfusion/ej2-angular-maps';
-import { ZoomService } from '@syncfusion/ej2-angular-maps';
-
-
-@NgModule({
-  imports:      [ BrowserModule,MapsModule ],
-  declarations: [ AppComponent ],
-  bootstrap:    [ AppComponent ],
-  providers:    [ ZoomService ]
-})
-export class AppModule { }
-
-```
-
-[`app.component.ts`]
+The center position zooming can be achieved by using the [`centerPosition`](../api/maps#centerposition) and [`zoomFactor`](../api/maps/zoomSettingsModel/#zoomfactor) properties as mentioned in the following example. The center position is used to configure the zoom level of Maps, and the zoom factor is used to specify the center position where the Maps should be displayed.
 
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
@@ -43,13 +18,14 @@ import { world_map } from 'world-map.ts';
     </ejs-maps>`,
     encapsulation: ViewEncapsulation.None
   })
-  export class AppComponent {
-       public worldmap:object = world_map;
-       public zoomSettings:object = {
-          enable:false,
-          zoomFactor:13
+export class AppComponent {
+    public worldmap:object = world_map;
+    public zoomSettings:object = {
+        enable:true,
+        zoomFactor:13,
+        maxZoom: 25
     };
-    public centerPosition:object ={
+    public centerPosition:object = {
         latitude: 25.54244147012483,
         longitude: -89.62646484375
     }

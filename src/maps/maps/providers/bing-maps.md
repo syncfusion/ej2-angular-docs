@@ -1,12 +1,18 @@
-# Bing Maps
+---
+title: " Bing Maps in Angular Maps control | Syncfusion "
 
-Bing maps is a map of the entire World owned by Microsoft. As link OSM, it provides map title images based on our requests and combines those images into a single one to display the map area.
+component: "Maps"
 
-## Add Bing Maps
+description: "Learn here all about Bing Maps of Syncfusion Angular Maps control and more."
+---
 
-One of the most important features in Blazor Maps Component is the built-in online map provider support. By using this feature, you can render Bing maps in the maps component. This provides the ability to visualize satellite, aerial and street maps without using any external shape files.
+# Bing Maps in Angular Maps control
 
-you can enable this feature by setting `layerType` to `bing`.
+Bing maps is a online map provider owned by Microsoft. As like OSM, it provides map tile images based on our requests and combines those images into a single one to display the map area.
+
+## Adding Bing Maps
+
+The Bing Maps can be rendered by setting the [`layerType`](../api/maps/layerSettingsModel/#layertype) property as "**Bing**" and the key for the Bing Maps must be set in the [`key`](../api/maps/layerSettingsModel/#key) property. The Bing Maps key can be obtained from [here](https://www.microsoft.com/en-us/maps/create-a-bing-maps-key).
 
 ```typescript
 
@@ -38,6 +44,8 @@ export class AppComponent implements OnInit {
 > Specify Bing map key in the `key` property.
 
 ## Types of Bing maps
+
+Bing Maps provides different types of maps and it is supported in the Maps control.
 
 * **Aerial** - Displays satellite images to highlight roads and major landmarks for easy identification.
 * **AerialWithLabel** - Displays aerial map with labels for the continent, country, ocean, etc.
@@ -79,7 +87,7 @@ export class AppComponent implements OnInit {
 
 ## Zooming and panning
 
-You can zoom and pan the Bing maps layer. Zooming helps you get a closer look at a particular area on a map for in-depth analysis. Panning helps you to move a map around to focus the targeted area.
+Bing maps layer can be zoomed and panned. Zooming helps to get a closer look at a particular area on a map for in-depth analysis. Panning helps to move a map around to focus the targeted area.
 
 ```typescript
 
@@ -113,7 +121,7 @@ export class AppComponent implements OnInit {
 
 ## Adding markers and navigation line
 
-Markers can be added to the layers of Bing maps by setting the corresponding location's coordinates of latitude and longitude using `markerSettings` property. You can add navigation lines on top of an Bing maps layer for highlighting a path among various places by setting the corresponding locations's coordinates of latitude and longitude in the `navigationLineSettings` property.
+Markers can be added to the layers of Bing maps by setting the corresponding location's coordinates of latitude and longitude using [`markerSettings`](../api/maps/layerSettingsModel/#markersettings) property. Navigation lines can be added on top of an Bing maps layer for highlighting a path among various places by setting the corresponding location's coordinates of latitude and longitude in the [`navigationLineSettings`](../api/maps/layerSettingsModel/#navigationlinesettings) property.
 
 ```typescript
 
@@ -178,8 +186,4 @@ export class AppComponent implements OnInit {
 
 ## Sublayer
 
-You can render any GeoJSON shape as a sublayer on top of an Bing maps layer for highlighting a particular continent or country in Bing maps by adding another layer and specifying the type to SubLayer.
-
-## Key
-
-The Bing maps key is provided as input to this key property. The Bing Maps key can be obtained from [Bing Maps](http://www.microsoft.com/maps/create-a-bing-maps-key.aspx).
+Any GeoJSON shape can be rendered as a sublayer on top of the Bing maps layer for highlighting a particular continent or country in Bing maps by adding another layer and specifying the [`type`](../api/maps/layerSettingsModel/#type) property of maps layer to "**SubLayer**".

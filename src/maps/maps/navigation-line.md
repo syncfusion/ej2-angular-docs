@@ -1,29 +1,27 @@
-# Navigation Lines
+---
+title: " Navigation Lines in Angular Maps control | Syncfusion "
 
-Navigation lines are used to denote the path between the two locations. We can use this feature as flight or train or sea routes.
+component: "Maps"
+
+description: "Learn here all about Navigation Lines feature of Syncfusion Angular Maps control and more."
+---
+
+# Navigation Lines in Angular Maps control
+
+The navigation lines are used to denote the path between two locations. This feature can be used to draw flight or sea routes. Navigation lines are enabled by setting the [`visible`](../api/maps/navigationLineSettingsModel/#visible) property of the [`navigationLineSettings`](../api/maps/navigationLineSettingsModel) property to "**true**".
 
 ## Customization
 
-You can customize the following properties in the navigation lines by modifying their default values in `navigationlineSettings`
+The following properties are available in [`navigationLineSettings`](../api/maps/navigationLineSettingsModel/) property to customize the navigation line of the Maps control.
 
-* Color - Specifies the color of navigation line.
-* Dash array - Specifies the type of dash array line.
-* Width - Specifies the line width.
-* Angle - Specifies the navigation line angle.
-* Highlight settings - Customizes the opacity, border, and fill color when the cursor hovers over it.
-* Selection settings - Customizes the opacity, border, and fill color when the line is selected.
+* [`color`](../api/maps/navigationLineSettingsModel/#color) - To apply the color for navigation lines in Maps.
+* [`dashArray`](../api/maps/navigationLineSettingsModel/#dasharray) - To define the pattern of dashes and gaps that is applied to the outline of the navigation lines.
+* [`width`](../api/maps/navigationLineSettingsModel/#width) - To customize the width of the navigation lines.
+* [`angle`](../api/maps/navigationLineSettingsModel/#angle) - To customize the angle of the navigation lines.
+* [`highlightSettings`](../api/maps/navigationLineSettingsModel/#highlightsettings) - To customize the highlight settings of the navigation line.
+* [`selectionSettings`](../api/maps/navigationLineSettingsModel/#selectionsettings) - To customize the selection settings of the navigation line.
 
-Following example shows rendering the path between two locations using latitudes and longitudes.
-
-Yon can customize the navigation line color, dashArray, width and angle by modifying their default values in
-`navigationLineSettings`.
-
-Refer the below code snippet to navigate line between two cities in World map.
-Import usmap geo json data from World.ts file.
-Import the `NavigationLineService` and Inject into the Maps using `NgModule providers`.
-Provide two locations latitude and longitude values to `navigationLineSettings`.
-
-[`app.component.ts`]
+To navigate the line between two cities on the world map, use the below code snippet. The [`latitude`](../api/maps/navigationLineSettingsModel/#latitude) and [`longitude`](../api/maps/navigationLineSettingsModel/#longitude) values are used to indicate the start and end points of navigation lines drawn on Maps.
 
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
@@ -44,8 +42,8 @@ Maps.Inject(NavigationLine);
 })
 export class AppComponent implements OnInit {
     ngOnInit(): void {
-            public shapeData: Object = world_map;
-            public navigationLineSettings: object[] = [{
+        public shapeData: Object = world_map;
+        public navigationLineSettings: object[] = [{
             visible: true,
             latitude: [37.6276571, -122.4276688],
             longitude: [-74.0060, -117.7418381],
@@ -53,7 +51,7 @@ export class AppComponent implements OnInit {
             angle: 90,
             width: 2,
             dashArray: '4'
-        }],
+        }]
     };
 }
 
@@ -61,35 +59,14 @@ export class AppComponent implements OnInit {
 
 {% endtab %}
 
-[`app.module.ts`]
-
-Injecting NavigationLineService into NgModule.
-
-```typescript
-import { NgModule }      from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-// import the MapsModule for the Maps component
-import { MapsModule, NavigationLineService} from '@syncfusion/ej2-angular-maps';
-import { AppComponent }  from './app.component';
-
-@NgModule({
-  // declaration of ej2-angular-maps module into NgModule
-  imports:      [ BrowserModule, MapsModule ],
-  declarations: [ AppComponent ],
-  providers: [NavigationLineService],
-  bootstrap:    [ AppComponent ]
-})
-export class AppModule { }
-```
-
 ## Enabling the arrows
 
-You can enable the arrows in the navigation line using [`arrowSettings.showArrow`](../api/maps/arrow) API, also you can customize following properties in arrow
+To enable the arrow in the navigation line, set the [`showArrow`](../api/maps/arrowModel/#showarrow) property of [`arrowSettings`](../api/maps/navigationLineSettingsModel/#arrowsettings) property to "**true**". The following properties are available in [`arrowSettings`](../api/maps/navigationLineSettingsModel/#arrowsettings) property to customize the arrow of the navigation lines.
 
-* color - Specifies the color of the arrow
-* offset - Specifies the arrow's offset position
-* position - Specifies the arrow position to `start` or `end` line
-* size - Specifies the arrow size in pixel
+* [`color`](../api/maps/arrowModel/#color) - To apply the color for arrow of the navigation line.
+* [`offset`](../api/maps/arrowModel/#offset) - To customize the offset position of the navigation line's arrow.
+* [`position`](../api/maps/arrowModel/#position) - To customize the position of the arrow in navigation line. The possible values can be "**Start**" and "**End**".
+* [`size`](../api/maps/arrowModel/#size) - To customize the size of the arrow in pixels.
 
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
@@ -110,8 +87,8 @@ Maps.Inject(NavigationLine);
 })
 export class AppComponent implements OnInit {
     ngOnInit(): void {
-            public shapeData: Object = world_map;
-            public navigationLineSettings: object[] = [{
+        public shapeData: Object = world_map;
+        public navigationLineSettings: object[] = [{
             visible: true,
             latitude: [37.6276571, -122.4276688],
             longitude: [-74.0060, -117.7418381],
@@ -120,16 +97,14 @@ export class AppComponent implements OnInit {
             width: 2,
             dashArray: '4',
             arrowSettings: {
-              showArrow: true,
-              size: 15,
-              position: 'Start'
+                showArrow: true,
+                size: 15,
+                position: 'Start'
             }
-        }],
+        }]
     };
 }
 
 ```
 
 {% endtab %}
-
-Refer the [`API`](../api/maps/navigationLineSettingsModel) for Navigation Lines feature.

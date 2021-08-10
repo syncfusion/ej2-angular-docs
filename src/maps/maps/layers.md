@@ -1,39 +1,24 @@
-# Layers
+---
+title: " Layers in Angular Maps control | Syncfusion "
 
-Map is maintained through `layers` and it can accommodate one or more layers.
+component: "Maps"
+
+description: "Learn here all about Layers feature of Syncfusion Angular Maps control and more."
+---
+
+# Layers in Angular Maps control
+
+The Maps control is rendered through [`layers`](../api/maps/#layers) and any number of layers can be added to the Maps.
 
 ## Multilayer
 
-The Multilayer support allows you to load multiple shape files in a single container, enabling maps to display more information.
+The Multilayer support allows loading multiple shape files and map providers in a single container, enabling Maps to display more information. The shape layer or map providers are the main layers of the Maps. Multiple layers can be added as **SubLayer** over the main layers using the [`type`](../api/maps/layerSettingsModel/#type) property of [`layers`](../api/maps/#layers) property.
 
-### Adding Multiple Layers in the Map
+## Sublayer
 
-The shape layers is the core layer of the map. The multiple layers can be added in the shape layer `type` as `SubLayer`.
+Sublayer is a type of shape file layer. It allows loading multiple shape files in a single map view. For example, a sublayer can be added over the main layer to view geographic features such as rivers, valleys and cities in a map of a country. Similar to the main layer, elements in the Maps such as markers, bubbles, color mapping and legends can be added to the sub-layer.
 
-## SubLayer
-
-In this example, World Map shape is used as shape data by utilizing the `“WorldMap.json”`
-file in the following folder structure obtained from downloaded Maps_GeoJSON folder.
-
-..\ Maps_GeoJSON\
-
-You can assign the complete contents in `WorldMap.json` file to new JSON object. For better understanding,
-a TS file `WorldMap.ts` is already created to store JSON data in JSON object “world_map” and also copy the
-USA.json file data, bind value to “usMap” like “world_map”.
-
-`[WorldMap.ts]`
-
-```typescript
-export let world_map = //Paste all the content copied from the JSON file//
-```
-
-`[usa.ts]`
-
-```typescript
-export let usMap = //Paste all the content copied from the USA.JSON file//
-```
-
-**Note:** USA Map rendered as a sublayer using `layer.type` as "SubLayer".
+In this example, the United States map shape is used as shape data by utilizing "**usa.ts**" file, and "**texas.ts**" and "**california.ts**" files are used as sub-layers in the United States map.
 
 [`app.component.ts`]
 
@@ -49,7 +34,7 @@ import { california } from 'california.ts';
 @Component({
     selector: 'app-container',
     template:
-    `<ejs-maps id='rn-container' [layers]='layers'>
+    `<ejs-maps id='rn-container'>
      <e-layers>
     <e-layer [shapeData] = 'shapeData' [shapeSettings] ='shapeSettings'></e-layer>
     <e-layer [shapeData] = 'shapeData1' [shapeSettings] ='shapeSettings1' [type] = 'type'></e-layer>
@@ -58,23 +43,23 @@ import { california } from 'california.ts';
 })
 export class AppComponent implements OnInit {
     ngOnInit(): void {
-           public shapeData: Object = usa_map;
-           public shapeSettings: Object = {
-                fill: '#E5E5E5',
-                border: {
-                    color: 'black',
-                    width: 0.1
-                }
+        public shapeData: Object = usa_map;
+        public shapeSettings: Object = {
+            fill: '#E5E5E5',
+            border: {
+                color: 'black',
+                width: 0.1
             }
-           public shapeData1: Object = california;
-           public  type: String = 'SubLayer',
-           public shapeSettings1: Object = {
-                fill: 'rgba(141, 206, 255, 0.6)',
-                border: {
-                    color: '#1a9cff',
-                    width: 0.25
-                }
+        }
+        public shapeData1: Object = california;
+        public  type: String = 'SubLayer',
+        public shapeSettings1: Object = {
+            fill: 'rgba(141, 206, 255, 0.6)',
+            border: {
+                color: '#1a9cff',
+                width: 0.25
             }
+        }
     }
 }
 
@@ -100,13 +85,9 @@ import { AppComponent }  from './app.component';
 export class AppModule { }
 ```
 
-Refer the [`API`](../api/maps/layerSettingsModel) for Layers feature.
+## Displaying different layer in the view
 
-## Displaying layer in the view
-
-In Maps, you can load multiple shape files. Using the `baseLayerIndex` property, you can select a layer to display on user interface.
-
-In this example, we have two layers with the World map and the United States map share data and selected a layer using the `baseLayerIndex` property to show that layer on the web page.
+Multiple shape files and map providers can be loaded simultaneously in Maps. The [`baseLayerIndex`](../api/maps/mapsModel/#baselayerindex) property is used to determine which layer on the user interface should be displayed. This property is used for the Maps drill-down feature, so when the [`baseLayerIndex`](../api/maps/mapsModel/#baselayerindex) value is changed, the corresponding shape is loaded. In this example, two layers can be loaded with the World map and the United States map. Based on the given [`baseLayerIndex`](../api/maps/mapsModel/#baselayerindex) value the corresponding shape will be loaded in the user interface. If the [`baseLayerIndex`](../api/maps/mapsModel/#baselayerindex) value is set to 0, then the world map will be loaded.
 
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
@@ -121,7 +102,7 @@ import { california } from 'california.ts';
 @Component({
     selector: 'app-container',
     template:
-    `<ejs-maps id='rn-container' [baseLayerIndex] ='baseLayerIndex' [layers]='layers'>
+    `<ejs-maps id='rn-container' [baseLayerIndex] ='baseLayerIndex'>
      <e-layers>
     <e-layer [shapeData] = 'shapeData'></e-layer>
     <e-layer [shapeData] = 'shapeData1'></e-layer>
@@ -130,18 +111,12 @@ import { california } from 'california.ts';
 })
 export class AppComponent implements OnInit {
     ngOnInit(): void {
-           public shapeData: Object = world_map;
-           public shapeData1: Object = usa_map;
-           public baseLayerIndex: number = 1;
+        public shapeData: Object = world_map;
+        public shapeData1: Object = usa_map;
+         public baseLayerIndex: number = 1;
     }
 }
 
 ```
 
 {% endtab %}
-
-If you set the `baseLayerIndex` value to 0, the world map will be loaded.
-
-This concept is used in the Maps drill-down feature, so the corresponding shape will be loaded when clicking a shape of the maps.
-
-Refer the [`API`](../api/maps/layerSettingsModel/) for Layers feature.

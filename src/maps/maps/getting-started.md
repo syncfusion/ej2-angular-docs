@@ -195,13 +195,13 @@ export class AppComponent implements OnInit {
 <!-- markdownlint-disable MD009 -->
 The following properties in layers are used for binding data source to map.
 
-* [`dataSource`]
-* [`shapeDataPath`]
-* [`shapePropertyPath`]
+* dataSource
+* shapeDataPath
+* shapePropertyPath
 
-The [`dataSource`] property takes collection value as input. For example, the list of objects can be provided as input. This data is further used in tooltip, data label, bubble, legend and in color mapping.
+The [`dataSource`](../api/maps/layerSettingsModel/#datasource) property takes collection value as input. For example, the list of objects can be provided as input. This data is further used in tooltip, data label, bubble, legend and in color mapping.
 
-The [`shapeDataPath`] property used to refer the data ID in dataSource. Where as, the [`shapePropertyPath`] property is used to refer the column name in shapeData to identify the shape. Both the properties are related to each other. When the values of the shapeDataPath property in the dataSource property and the value of shapePropertyPath in the shapeData property match, then the associated object from the dataSource is bound to the corresponding shape.
+The [`shapeDataPath`](../api/maps/layerSettingsModel/#shapedatapath) property used to refer the data ID in dataSource. Where as, the [`shapePropertyPath`](../api/maps/layerSettingsModel/#shapepropertypath) property is used to refer the column name in shapeData to identify the shape. Both the properties are related to each other. When the values of the shapeDataPath property in the dataSource property and the value of shapePropertyPath in the shapeData property match, then the associated object from the dataSource is bound to the corresponding shape.
 
 The JSON object "electionData" is used as data source below.
 
@@ -241,9 +241,9 @@ export class AppComponent implements OnInit {
 
 ## Apply Color Mapping
 
-The Color Mapping feature supports customization of shape colors based on the underlying value of shape received from bounded data. Specify the field name from which the values have to be compared for the shapes in [`colorValuePath`] property in [`shapeSettings`].
+The Color Mapping feature supports customization of shape colors based on the underlying value of shape received from bounded data. Specify the field name from which the values have to be compared for the shapes in [`colorValuePath`](../api/maps/shapeSettingsModel/#colorvaluepath) property in [`shapeSettings`](../api/maps/shapeSettingsModel/).
 
-Specify color and value in [`colorMapping`] property. Here '#D84444' is specified for 'Trump' and '#316DB5' is specified for 'Clinton'.
+Specify color and value in [`colorMapping`](../api/maps/shapeSettingsModel/#colormapping) property. Here '#D84444' is specified for 'Trump' and '#316DB5' is specified for 'Clinton'.
 
 [`app.module.ts`]
 
@@ -294,7 +294,7 @@ export class AppComponent implements OnInit {
 
 ## Add Title for Maps
 
-You can add a title using [`titleSettings`] property to the map to provide quick
+You can add a title using [`titleSettings`](../api/maps/titleSettingsModel/) property to the map to provide quick
 information to the user about the shapes rendered in the map.
 
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
@@ -350,8 +350,8 @@ export class AppComponent implements OnInit {
 
 ## Enable Legend
 
-You can show legend for the maps by setting true to the [`visible`]
-property in [`legendSettings`] object and by injecting the `LegendService`
+You can show legend for the maps by setting true to the [`visible`](../api/maps/legendSettingsModel/#visible)
+property in [`legendSettings`](../api/maps/legendSettingsModel/) object and by injecting the `LegendService`
 module using `@NgModule.providers` method.
 
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
@@ -406,7 +406,7 @@ export class AppComponent implements OnInit {
 
 ## Add Data Label
 
-You can add data labels to show additional information of the shapes in map. This can be achieved by setting [`visible`] property to true in the [`dataLabelSettings`] object and by injecting `DataLabelService` module using `@NgModule.providers` method.
+You can add data labels to show additional information of the shapes in map. This can be achieved by setting [`visible`](../api/maps/dataLabelSettingsModel/#visible) property to true in the [`dataLabelSettings`](../api/maps/dataLabelSettingsModel/) object and by injecting `DataLabelService` module using `@NgModule.providers` method.
 
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
@@ -448,8 +448,8 @@ export class AppComponent implements OnInit {
 ## Enable Tooltip
 
 The tooltip is useful when you cannot display information by using the data labels due to space constraints.
-You can enable tooltip by setting the [`visible`] property as true
-in [`tooltipSettings`] object and by injecting `MapsTooltipService` module using
+You can enable tooltip by setting the [`visible`](../api/maps/tooltipSettingsModel/#visible) property as true
+in [`tooltipSettings`](../api/maps/tooltipSettingsModel/) object and by injecting `MapsTooltipService` module using
 `@NgModule.providers` method.
 
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}

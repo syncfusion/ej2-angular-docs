@@ -1,23 +1,32 @@
-# Internationalization
+---
+title: " Internationalization in Angular Maps control | Syncfusion "
 
-Maps provides support for internationalization for the below elements.
+component: "Maps"
 
-* Datalabel
+description: "Learn here all about Internationalization of Syncfusion Angular Maps control and more."
+---
+
+# Internationalization in Angular Maps control
+
+Maps provide support for internationalization for the below elements.
+
+* Data label
 * Tooltip
 
-For more information about number and date formatter you can refer
-[`internationalization`](http://ej2.syncfusion.com/documentation/base/intl.html).
+For more information about number and date formatter, refer to the
+[`internationalization`](http://ej2.syncfusion.com/documentation/base/intl.html) section.
 
 <!-- markdownlint-disable MD036 -->
-**Globalization**
 
-Globalization is the process of designing and developing an component that works in different
+## Globalization
+
+Globalization is the process of designing and developing a component that works in different
 cultures/locales. Internationalization library is used to globalize number, date, time values in
-Maps component using [`format`] property in the maps model.
+Maps component using [`format`](../api/maps/mapsModel/#format) property in the [`Maps`](../api/maps/mapsModel).
 
-**Numeric Format**
+## Numeric Format
 
-In the below example tooltip is globalized to Deutsch culture.
+The numeric formats such as currency, percentage and so on can be displayed in the tooltip and data labels of the Maps using the [`format`](../api/maps/mapsModel/#format) property in the [`Maps`](../api/maps/mapsModel). In the below example, the tooltip is globalized to **"German"** culture. When setting the [`useGroupingSeparator`](../api/maps/mapsModel/#usegroupingseparator) property as "**true**", the numeric text in the Maps separates with the comma separator.
 
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
@@ -25,107 +34,49 @@ In the below example tooltip is globalized to Deutsch culture.
 
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { Maps, MapTooltip } from '@syncfusion/ej2-angular-maps';
-import { usa_map } from 'usa.ts';
+import { world_map } from 'world-map.ts';
 import { data } from 'data.ts';
 Maps.Inject(MapTooltip);
 @Component({
     selector: 'app-container',
     template:
-    `<ejs-maps id='rn-container'>
+    `<ejs-maps id='rn-container' format="c" useGroupingSeparator="true">
     <e-layers>
-    <e-layer  [shapeData]= 'shapeData'  [shapePropertyPath]= 'shapePropertyPath' [shapeDataPath]= 'shapeDataPath' [dataSource] = 'dataSource' [shapeSettings] = 'shapeSettings' ></e-layer>
+    <e-layer  [shapeData]= 'shapeData'  [shapePropertyPath]= 'shapePropertyPath' [shapeDataPath]= 'shapeDataPath' [dataSource] = 'dataSource' [shapeSettings] = 'shapeSettings' [tooltipSettings]='tooltipSettings'></e-layer>
     </e-layers>
     </ejs-maps>`
 })
 
 export class AppComponent implements OnInit {
     ngOnInit(): void {
-        public dataSource: Object[] = data;
-        public shapeData: Object = usa_map;
+        public dataSource: Object = [
+            { "Country": "China", "Membership": "Permanent", population: '38332521'},
+            { "Country": "France", "Membership": "Permanent", population: '19651127' },
+            { "Country": "Russia", "Membership": "Permanent", population: '3090416'},
+            { "Country": "Kazakhstan", "Membership": "Non-Permanent", population: '1232521'},
+            { "Country": "Poland", "Membership": "Non-Permanent", population: '90332521'},
+            { "Country": "Sweden", "Membership": "Non-Permanent", population: '383521'}
+        ];
+        public shapeData: Object = world_map;
         public shapePropertyPath: String = 'name';
-        public shapeDataPath: String= 'name';
+        public shapeDataPath: String= 'Country';
         public shapeSettings: Object = {
-                colorValuePath: 'population',
+             colorValuePath: 'Membership',
                 colorMapping: [
                 {
-                            from: 580000 , to: 2800000, color: '#dae8f1', label: '<3M'
-                        },
-                        {
-                            from: 2800000, to: 5280000, color: '#b0cde1', label: '3-6M'
-                        },
-                        {
-                            from: 5280000, to:  8260000, color: '#90bad8', label: '6-9M'
-                        },
-                        {
-                            from: 8260000, to: 11660000, color: '#6ea7d2', label: '9-12M'
-                        },
-                        {
-                            from: 11660000, to: 19600000, color: '#4c96cb', label: '12-20M'
-                        },
-                        {
-                            from: 19600000, to: 26500000, color: '#3182bd', label: '20-25M'
-                        },
-                        {
-                            from: 26500000, to: 38400000, color: '#004374', label: '>25M'
-                        }];
-            };
+                    value: 'Permanent', color: '#D84444'
+                },
+                {
+                    value: 'Non-Permanent', color: '#316DB5'
+                }]
+        };
         public tooltipSettings: Object ={
-                    visible: true,
-                    valuePath: 'population',
-                    format: 'State: ${name} <br> Population: ${population}'
-                };
-   }
+            visible: true,
+            valuePath: 'population'
+        };
+    }
 }
 
 ```
 
 {% endtab %}
-
-```typescript
-
-import { Maps } from '@syncfusion/ej2-maps';
-import { Maps } from '@syncfusion/ej2-maps';
-import { usMap } from './MapData/USA';
-import { electionData } from './MapData/ElectionData';
-
-@Component({
-    selector: 'app-container',
-    template:
-    `<ejs-maps id='container' [format]="Format" [titleSettings]="titleSettings" [layers]='layers'>
-    <ejs-maps>`
-})
-
-export class AppComponent implements OnInit {
-
- ngOnInit(): void {
-        public Format:string = 'c';
-        public titleSettings: object = {
-         text: 'USA Election Results - 2016',
-          titleStyle: {
-            size: '16px'
-           }
-        };
-        public layers: object[] = [{
-            shapeData: usMap,
-            dataSource: electionData,
-            shapePropertyPath: 'name',
-            shapeDataPath: 'State',
-            shapeSettings: {
-                colorValuePath: 'Candidate',
-                colorMapping: [
-                {
-                    value: 'Trump', color: '#D84444'
-                },
-                {
-                    value: 'Clinton', color: '#316DB5'
-                }]
-            },
-            tooltipSettings: {
-                visible: true,
-                valuePath: 'State'
-            }
-        }];
-  }
-}
-
-```
