@@ -26,7 +26,7 @@ In this example, the United States map shape is used as shape data by utilizing 
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps } from '@syncfusion/ej2-angular-maps';
 import { usa_map } from 'usa.ts';
 import { california } from 'california.ts';
@@ -42,18 +42,23 @@ import { california } from 'california.ts';
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public shapeSettings: object;
+    public shapeData1: object;
+    public  type: string;
+    public shapeSettings1: object;
     ngOnInit(): void {
-        public shapeData: Object = usa_map;
-        public shapeSettings: Object = {
+        this.shapeData = usa_map;
+        this.shapeSettings = {
             fill: '#E5E5E5',
             border: {
                 color: 'black',
                 width: 0.1
             }
         }
-        public shapeData1: Object = california;
-        public  type: String = 'SubLayer',
-        public shapeSettings1: Object = {
+        this.shapeData1 = california;
+        this.type = 'SubLayer',
+        this.shapeSettings1 = {
             fill: 'rgba(141, 206, 255, 0.6)',
             border: {
                 color: '#1a9cff',
@@ -93,7 +98,7 @@ Multiple shape files and map providers can be loaded simultaneously in Maps. The
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps } from '@syncfusion/ej2-angular-maps';
 import { usa_map } from 'usa.ts';
 import { world_map } from 'world-map.ts';
@@ -110,10 +115,13 @@ import { california } from 'california.ts';
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public shapeData1: object;
+    public baseLayerIndex: number;
     ngOnInit(): void {
-        public shapeData: Object = world_map;
-        public shapeData1: Object = usa_map;
-         public baseLayerIndex: number = 1;
+        this.shapeData = world_map;
+        this.shapeData1 = usa_map;
+        this.baseLayerIndex = 1;
     }
 }
 

@@ -20,9 +20,6 @@ The OSM map can be rendered using by setting the [`layerType`](../api/maps/layer
 
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { Maps } from '@syncfusion/ej2-angular-maps';
-import { usa_map } from 'usa.ts';
-import { world_map } from 'world-map.ts';
-import { california } from 'california.ts';
 
 @Component({
     selector: 'app-container',
@@ -34,18 +31,19 @@ import { california } from 'california.ts';
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public layerType: string;
     ngOnInit(): void {
-           public layerType: string = 'OSM';
+        this.layerType = 'OSM';
     }
 }
 
 ```
 
+{% endtab %}
+
 ### Changing the tile server of the OpenStreetMap
 
 The OSM tile server can be changed by setting the tile URL in the [`urlTemplate`](../api/maps/layerSettingsModel/#urltemplate) property. For more details about the OSM tile server, refer [here](https://wiki.openstreetmap.org/wiki/Tiles).
-
-{% endtab %}
 
 ## Zooming and panning
 
@@ -71,9 +69,11 @@ Maps.Inject(Zoom);
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public layerType: string;
+    public zoomSettings: object;
     ngOnInit(): void {
-           public layerType: string = 'OSM';
-           public zoomSettings: object = {
+           this.layerType = 'OSM';
+           this.zoomSettings = {
                enable: true
            }
     }
@@ -107,16 +107,21 @@ Maps.Inject(Zoom, Marker, NavigationLine);
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public layerType: string;
+    public zoomSettings: object;
+    public centerPosition: object;
+    public markerSettings: object;
+    public navigationLineSettings: object
     ngOnInit(): void {
-           public layerType: string = 'OSM';
-           public zoomSettings: object = {
+           this.layerType = 'OSM';
+           this.zoomSettings = {
                zoomFactor: 4
            };
-           public centerPosition: object = {
+           this.centerPosition = {
                latitude: 29.394708,
                 longitude: -94.954653
            };
-            public markerSettings: object = [{
+            this.markerSettings = [{
                 visible: true,
                 height: 25,
                 width: 15,
@@ -133,7 +138,7 @@ export class AppComponent implements OnInit {
                     }
                 ]
             }];
-            public navigationLineSettings: object = [{
+            this.navigationLineSettings = [{
                 visible: true,
                 color: "blue",
                 width: 5,
@@ -172,11 +177,15 @@ import { california } from 'california.ts';
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public layerType: string;
+    public type: string;
+    public shapeData: object;
+    public shapeSettings: object;
     ngOnInit(): void {
-           public layerType: string = 'OSM';
-           public type: string = 'SubLayer';
-           public shapeData: object = usa_map;
-           public shapeSettings: object = {
+           this.layerType = 'OSM';
+           this.type = 'SubLayer';
+           this.shapeData = usa_map;
+           this.shapeSettings = {
                fill: 'blue'
            };
     }

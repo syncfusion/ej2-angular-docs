@@ -32,9 +32,11 @@ import { california } from 'california.ts';
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public layerType: string;
+    public urlTemplate: string;
     ngOnInit(): void {
-           public layerType: string = 'OSM';
-           public urlTemplate: string = "http://mt1.google.com/vt/lyrs=m@129&hl=en&x=tileX&y=tileY&z=level";
+           this.layerType = 'OSM';
+           this.urlTemplate = "http://mt1.google.com/vt/lyrs=m@129&hl=en&x=tileX&y=tileY&z=level";
     }
 }
 
@@ -66,10 +68,13 @@ Maps.Inject(Zoom);
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public layerType: string;
+    public urlTemplate: string;
+    public zoomSettings: object;
     ngOnInit(): void {
-           public layerType: string = 'OSM';
-           public urlTemplate: string = "http://mt1.google.com/vt/lyrs=m@129&hl=en&x=tileX&y=tileY&z=level";
-           public zoomSettings: object = {
+           this.layerType = 'OSM';
+           this.urlTemplate = "http://mt1.google.com/vt/lyrs=m@129&hl=en&x=tileX&y=tileY&z=level";
+           this.zoomSettings = {
                enable: true
            }
     }
@@ -103,17 +108,22 @@ Maps.Inject(Zoom, Marker, NavigationLine);
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public layerType: string;
+    public urlTemplate: string;
+    public zoomSettings: object;
+    public markerSettings: object;
+    public navigationLineSettings: object;
     ngOnInit(): void {
-           public layerType: string = 'OSM';
-           public urlTemplate: string = "http://mt1.google.com/vt/lyrs=m@129&hl=en&x=tileX&y=tileY&z=level";
-           public zoomSettings: object = {
+            this.layerType = 'OSM';
+            this.urlTemplate = "http://mt1.google.com/vt/lyrs=m@129&hl=en&x=tileX&y=tileY&z=level";
+            this.zoomSettings = {
                zoomFactor: 4
-           };
-           public centerPosition: object = {
+            };
+            this.centerPosition = {
                latitude: 29.394708,
                 longitude: -94.954653
-           };
-            public markerSettings: object = [{
+            };
+            this.markerSettings = [{
                 visible: true,
                 height: 25,
                 width: 15,
@@ -130,7 +140,7 @@ export class AppComponent implements OnInit {
                     }
                 ]
             }];
-            public navigationLineSettings: object = [{
+            this.navigationLineSettings = [{
                 visible: true,
                 color: "blue",
                 width: 5,
@@ -169,12 +179,17 @@ import { california } from 'california.ts';
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public layerType: string;
+    public urlTemplate: string;
+    public type: string;
+    public shapeData: object;
+    public shapeSettings: object;
     ngOnInit(): void {
-           public layerType: string = 'OSM';
-           public urlTemplate: string = "http://mt1.google.com/vt/lyrs=m@129&hl=en&x=tileX&y=tileY&z=level";
-           public type: string = 'SubLayer';
-           public shapeData: object = usa_map;
-           public shapeSettings: object = {
+           this.layerType = 'OSM';
+           this.urlTemplate = "http://mt1.google.com/vt/lyrs=m@129&hl=en&x=tileX&y=tileY&z=level";
+           this.type = 'SubLayer';
+           this.shapeData = usa_map;
+           this.shapeSettings = {
                fill: 'blue'
            };
     }

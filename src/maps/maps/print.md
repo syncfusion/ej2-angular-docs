@@ -35,17 +35,17 @@ import { PrintService, MapsComponent, LegendService } from '@syncfusion/ej2-angu
 export class AppComponent {
     @ViewChild('maps')
     public mapObj: MapsComponent;
-    public dataSource: Object[] = [
+    public dataSource: object[] = [
         {  "Country": "China", "Membership": "Permanent"},
         { "Country": "France", "Membership": "Permanent" },
         { "Country": "Russia", "Membership": "Permanent"},
         { "Country": "Kazakhstan", "Membership": "Non-Permanent"},
         { "Country": "Poland", "Membership": "Non-Permanent"},
         { "Country": "Sweden", "Membership": "Non-Permanent"}];
-    public shapeData: Object = world_map;
-    public shapePropertyPath: String = 'name';
-    public shapeDataPath: String= 'Country';
-    public shapeSettings: Object = {
+    public shapeData: object = world_map;
+    public shapePropertyPath: string = 'name';
+    public shapeDataPath: string= 'Country';
+    public shapeSettings: object = {
         colorValuePath: 'Membership',
         colorMapping: [
             {
@@ -55,7 +55,7 @@ export class AppComponent {
                 value: 'Non-Permanent', color: '#316DB5'
             }]
         };
-    public legendSettings: Object = {
+    public legendSettings: object = {
         visible: true
     };
     public print() {
@@ -100,17 +100,17 @@ import { ImageExportService, MapsComponent, LegendService } from '@syncfusion/ej
 export class AppComponent {
      @ViewChild('maps')
     public mapObj: MapsComponent;
-    public dataSource: Object[] = [
+    public dataSource: object[] = [
         {  "Country": "China", "Membership": "Permanent"},
         { "Country": "France", "Membership": "Permanent" },
         { "Country": "Russia", "Membership": "Permanent"},
         { "Country": "Kazakhstan", "Membership": "Non-Permanent"},
         { "Country": "Poland", "Membership": "Non-Permanent"},
         { "Country": "Sweden", "Membership": "Non-Permanent"}];
-    public shapeData: Object = world_map;
-    public shapePropertyPath: String = 'name';
-    public shapeDataPath: String= 'Country';
-    public shapeSettings: Object = {
+    public shapeData: object = world_map;
+    public shapePropertyPath: string = 'name';
+    public shapeDataPath: string= 'Country';
+    public shapeSettings: object = {
         colorValuePath: 'Membership',
         colorMapping: [
             {
@@ -120,7 +120,7 @@ export class AppComponent {
                 value: 'Non-Permanent', color: '#316DB5'
             }]
     };
-    public legendSettings: Object = {
+    public legendSettings: object = {
         visible: true
     };
     public export() {
@@ -152,24 +152,24 @@ import { ImageExportService, LegendService, MapsComponent } from '@syncfusion/ej
     <e-layers>
     <e-layer  [shapeData]= 'shapeData'  [shapePropertyPath]= 'shapePropertyPath' [shapeDataPath]= 'shapeDataPath' [dataSource] = 'dataSource' [shapeSettings] = 'shapeSettings'></e-layer>
     </e-layers>
-    </ejs-maps>  <button  id='print' (click)='export()'>Export</button>`,
+    </ejs-maps>  <button  id='print' (click)='export()'>Export</button> <div id="data"></div>`,
     providers: [ImageExportService, LegendService]
 })
 
 export class AppComponent {
      @ViewChild('maps')
     public mapObj: MapsComponent;
-    public dataSource: Object[] = [
+    public dataSource: object[] = [
         {  "Country": "China", "Membership": "Permanent"},
         {"Country": "France","Membership": "Permanent" },
         { "Country": "Russia","Membership": "Permanent"},
         {"Country": "Kazakhstan","Membership": "Non-Permanent"},
         { "Country": "Poland","Membership": "Non-Permanent"},
         {"Country": "Sweden","Membership": "Non-Permanent"}];
-    public shapeData: Object = world_map;
-    public shapePropertyPath: String = 'name';
-    public shapeDataPath: String= 'Country';
-    public shapeSettings: Object = {
+    public shapeData: object = world_map;
+    public shapePropertyPath: string = 'name';
+    public shapeDataPath: string= 'Country';
+    public shapeSettings: object = {
         colorValuePath: 'Membership',
         colorMapping: [
             {
@@ -179,13 +179,13 @@ export class AppComponent {
                 value: 'Non-Permanent', color: '#316DB5'
             }]
     };
-    public legendSettings: Object = {
+    public legendSettings: object = {
         visible: true
     };
     public export() {
         const promise = this.mapObj.export('PNG','Maps',null,false);
             promise.then((data)=>{
-                document.writeln(data);
+                document.getElementById('data').innerHTML = data;
             })
     };
 }
@@ -221,17 +221,17 @@ import { PdfExportService, MapsComponent, LegendService } from '@syncfusion/ej2-
 export class AppComponent {
     @ViewChild('maps')
     public mapObj: MapsComponent;
-    public dataSource: Object[] = [
+    public dataSource: object[] = [
         {  "Country": "China", "Membership": "Permanent"},
         { "Country": "France", "Membership": "Permanent" },
         { "Country": "Russia", "Membership": "Permanent"},
         { "Country": "Kazakhstan", "Membership": "Non-Permanent"},
         { "Country": "Poland", "Membership": "Non-Permanent"},
         { "Country": "Sweden", "Membership": "Non-Permanent"}];
-    public shapeData: Object = world_map;
-    public shapePropertyPath: String = 'name';
-    public shapeDataPath: String= 'Country';
-    public shapeSettings: Object = {
+    public shapeData: object = world_map;
+    public shapePropertyPath: string = 'name';
+    public shapeDataPath: string= 'Country';
+    public shapeSettings: object = {
         colorValuePath: 'Membership',
         colorMapping: [
             {
@@ -241,7 +241,7 @@ export class AppComponent {
                 value: 'Non-Permanent', color: '#316DB5'
             }]
         };
-    public legendSettings: Object = {
+    public legendSettings: object = {
         visible: true
     };
     public export() {
@@ -283,17 +283,15 @@ import { PdfExportService, ImageExportService, MapsComponent, LegendService } fr
     providers: [PdfExportService, ImageExportService, LegendService]
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent {
     @ViewChild('maps')
     public mapObj: MapsComponent;
-    ngOnInit(): void {
-        public titleSettings: Object = {
-            text: 'OSM'
-        };
-        public export() {
-            this.mapObj.export('JPEG', 'Maps');
-        };
-    }
+    public titleSettings: object = {
+        text: 'OSM'
+    };
+    public export() {
+        this.mapObj.export('JPEG', 'Maps');
+    };
 }
 
 ```

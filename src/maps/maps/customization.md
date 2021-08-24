@@ -67,7 +67,7 @@ import { world_map } from 'world-map.ts';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
-    public titleSettings: Object = {
+    public titleSettings: object = {
         text: 'Maps Control',
         textStyle: {
             color: 'red',
@@ -158,11 +158,11 @@ import { world_map } from 'world-map.ts';
 })
 export class AppComponent {
     public background: string = '#CCD1D1';
-    public border: Object = {
+    public border: object = {
         color: 'green',
         width: 2
     };
-    public margin: Object = {
+    public margin: object = {
         bottom: 10,
         left: 20,
         right: 20,
@@ -199,7 +199,7 @@ import { world_map } from 'world-map.ts';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
-    public mapsArea: Object = {
+    public mapsArea: object = {
         background: '#CCD1D1',
         border: {
             width: 2,
@@ -364,6 +364,7 @@ By default, the Maps are rendered by the "**Mercator**" projection type in which
 ```typescript
 import { Component, ViewEncapsulation } from '@angular/core';
 import { world_map } from 'world-map.ts';
+import { Maps, ProjectionType } from '@syncfusion/ej2-angular-maps';
 
 @Component({
   selector: 'app-container',
@@ -371,30 +372,7 @@ import { world_map } from 'world-map.ts';
   template:
     `<div>
       <div>
-        <table id="property" title="Properties">
-           <tbody>
-              <tr style="height: 50px">
-                  <td style="width: 60%">
-                      <div>Projection Type</div>
-                  </td>
-                  <td style="width: 40%;">
-                      <select name="projectionType" id="projectiontype" style="margin-left: -25px">
-                                    <option value="Mercator">Mercator</option>
-                                    <option value="Equirectangular">Equirectangular</option>
-                                    <option value="Miller">Miller</option>
-                                    <option value="Eckert3">Eckert3</option>
-                                    <option value="Eckert5">Eckert5</option>
-                                    <option value="Eckert6">Eckert6</option>
-                                    <option value="Winkel3">Winkel3</option>
-                                    <option value="AitOff">AitOff</option>
-                                </select>
-                  </td>
-              </tr>
-            </tbody>
-          </table>
-      </div>
-      <div>
-        <ejs-maps id='maps' #maps style="display:block;">
+        <ejs-maps id='maps' #maps style="display:block;" projectionType="Miller">
           <e-layers>
             <e-layer [shapeData]='shapeData'></e-layer>
           </e-layers>
@@ -405,14 +383,6 @@ import { world_map } from 'world-map.ts';
 })
 export class AppComponent {
   public shapeData = world_map;
-  ngAfterViewInit(){
-      document.getElementById("projectiontype").onchange =function() {
-      let ele: HTMLSelectElement = (<HTMLSelectElement>document.getElementById("projectiontype"));
-      let maps: Maps = document.getElementById('maps').f[0];
-      maps.projectionType = <ProjectionType>ele.value;
-      maps.refresh();
-      }
-  }
 }
 ```
 

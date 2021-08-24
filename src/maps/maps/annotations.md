@@ -35,8 +35,8 @@ Maps.Inject(Annotations);
 })
 
 export class AppComponent implements OnInit {
-    public annotations: Object;
-    public shapeData: Object;
+    public annotations: object;
+    public shapeData: object;
         ngOnInit(): void {
             this.annotations = [{
                 content: '<div id="first"><h1>Maps</h1></div>',
@@ -74,8 +74,8 @@ Maps.Inject(Annotations);
 })
 
 export class AppComponent implements OnInit {
-    public annotations: Object;
-    public shapeData: Object;
+    public annotations: object;
+    public shapeData: object;
         ngOnInit(): void {
             this.annotations = [{
                 content: '<div id="first"><h1>Maps</h1></div>',
@@ -111,8 +111,8 @@ Maps.Inject(Annotations);
 })
 
 export class AppComponent implements OnInit {
-    public annotations: Object;
-    public shapeData: Object
+    public annotations: object;
+    public shapeData: object
     ngOnInit(): void {
         this.annotations = [{
             content: '<div id="first"><h1>Maps</h1></div>',
@@ -148,8 +148,8 @@ Maps.Inject(Annotations);
 })
 
 export class AppComponent implements OnInit {
-    public annotations: Object;
-    public shapeData: Object;
+    public annotations: object;
+    public shapeData: object;
     ngOnInit(): void {
         this.annotations = [{
             content: '<div id="first"><h1>Maps</h1></div>',
@@ -187,8 +187,8 @@ Maps.Inject(Annotations);
 })
 
 export class AppComponent implements OnInit {
-    public annotations: Object;
-    public shapeData: Object;
+    public annotations: object;
+    public shapeData: object;
     ngOnInit(): void {
         this.annotations = [{
             content: '<div id="first"><h1>Maps-Annotation</h1></div>',

@@ -18,7 +18,7 @@ To display data labels in the Maps, the [`labelPath`](../api/maps/dataLabelSetti
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, DataLabel } from '@syncfusion/ej2-angular-maps';
 import { usa_map } from 'usa.ts';
 
@@ -34,12 +34,15 @@ Maps.Inject(DataLabel);
 })
 
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public shapeSettings: object;
+    public dataLabelSettings: object
     ngOnInit(): void {
-         public shapeData: Object = usa_map;
-         public shapeSettings: Object = {
+        this.shapeData = usa_map;
+        this.shapeSettings = {
                 autofill: true
             };
-        public dataLabelSettings: Object = {
+        this.dataLabelSettings = {
             visible: true,
             labelPath: 'name',
         };
@@ -56,7 +59,7 @@ In the following example, the value of [`labelPath`](../api/maps/dataLabelSettin
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, DataLabel } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 
@@ -72,18 +75,24 @@ Maps.Inject(DataLabel);
 })
 
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public shapePropertyPath: string;
+    public shapeDataPath: string;
+    public dataSource: object;
+    public shapeSettings: object;
+    public dataLabelSettings: object;
     ngOnInit(): void {
-        public shapeData: Object = world_map;
-        public shapePropertyPath: String = 'name';
-        public shapeDataPath: String = 'name';
-        public dataSource: Object = [
+        this.shapeData = world_map;
+        this.shapePropertyPath = 'name';
+        this.shapeDataPath = 'name';
+        this.dataSource = [
             {"name": "Afghanistan", "value": 53, "countryCode": "AF", "population": "29863010", "color": "red", "density": "119", "continent": "Asia"},
             {"name": "Albania", "value": 117, "countryCode": "AL", "population": "3195000", "color": "Blue", "density": "111", "continent": "Europe"},
             {"name": "Algeria", "value": 15, "countryCode": "DZ", "population": "34895000", "color": "Green", "density": "15", "continent": "Africa"}]
-        public shapeSettings: Object = {
+        this.shapeSettings = {
             autofill: true
         };
-        public dataLabelSettings: Object = {
+        this.dataLabelSettings = {
             visible: true,
             labelPath: "continent",
             smartLabelMode: 'Trim'
@@ -108,7 +117,7 @@ The following properties are available in the [`dataLabelSettings`](../api/maps/
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Maps, DataLabel } from '@syncfusion/ej2-angular-maps';
 import { usa_map } from 'usa.ts';
 
@@ -124,12 +133,15 @@ Maps.Inject(DataLabel);
 })
 
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public shapeSettings: object;
+    public dataLabelSettings: object;
     ngOnInit(): void {
-        public shapeData: Object = usa_map;
-        public shapeSettings: Object = {
+        this.shapeData = usa_map;
+        this.shapeSettings = {
                 autofill: true
             };
-        public dataLabelSettings: Object = {
+        this.dataLabelSettings = {
             visible: true,
             labelPath: 'name',
             border: {
@@ -164,7 +176,7 @@ The Maps control provides an option to handle the labels when they intersect wit
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, DataLabel } from '@syncfusion/ej2-angular-maps';
 import { usa_map } from 'usa.ts';
 
@@ -180,12 +192,15 @@ Maps.Inject(DataLabel);
 })
 
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public shapeSettings: object;
+    public dataLabelSettings: object;
     ngOnInit(): void {
-        public shapeData: Object = usa_map;
-        public shapeSettings: Object = {
+        this.shapeData = usa_map;
+        this.shapeSettings = {
             autofill: true
         };
-        public dataLabelSettings: Object = {
+        this.dataLabelSettings = {
             visible: true,
             labelPath: 'name',
             smartLabelMode: 'Hide'
@@ -209,7 +224,7 @@ The Maps component provides an option to handle the labels when a label intersec
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, DataLabel } from '@syncfusion/ej2-angular-maps';
 import { usa_map } from 'usa.ts';
 
@@ -225,12 +240,15 @@ Maps.Inject(DataLabel);
 })
 
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public shapeSettings: object;
+    public dataLabelSettings: object;
     ngOnInit(): void {
-        public shapeData: Object = usa_map;
-        public shapeSettings: Object = {
+        this.shapeData = usa_map;
+        this.shapeSettings = {
             autofill: true
         };
-        public dataLabelSettings: Object = {
+        this.dataLabelSettings = {
             visible: true,
             labelPath: 'name',
             intersectionAction: 'Trim'
@@ -252,7 +270,7 @@ The data label can be added as a template in the Maps component. The [`template`
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, DataLabel } from '@syncfusion/ej2-angular-maps';
 import { usa_map } from 'usa.ts';
 
@@ -268,13 +286,17 @@ Maps.Inject(DataLabel);
 })
 
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public shapeSettings: object;
+    public dataLabelSettings: object;
     ngOnInit(): void {
-        public shapeData: Object = usa_map;
-        public shapeSettings: Object = {
+        this.shapeData = usa_map;
+        this.shapeSettings = {
             autofill: true
         };
-        public dataLabelSettings: Object = {
+        this.dataLabelSettings = {
             visible: true,
+            labelPath: 'name',
             template: 'Label'
         };
     }

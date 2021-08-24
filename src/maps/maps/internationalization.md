@@ -32,11 +32,11 @@ The numeric formats such as currency, percentage and so on can be displayed in t
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { Maps, MapTooltip } from '@syncfusion/ej2-angular-maps';
+import { Component, OnInit } from '@angular/core';
+import { Maps, MapsTooltip } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 import { data } from 'data.ts';
-Maps.Inject(MapTooltip);
+Maps.Inject(MapsTooltip);
 @Component({
     selector: 'app-container',
     template:
@@ -48,8 +48,14 @@ Maps.Inject(MapTooltip);
 })
 
 export class AppComponent implements OnInit {
+    public dataSource: object;
+    public shapePropertyPath: string;
+    public shapeDataPath: string;
+    public shapeSettings: object;
+    public tooltipSettings: object;
+    public shapeData: object;
     ngOnInit(): void {
-        public dataSource: Object = [
+        this.dataSource = [
             { "Country": "China", "Membership": "Permanent", population: '38332521'},
             { "Country": "France", "Membership": "Permanent", population: '19651127' },
             { "Country": "Russia", "Membership": "Permanent", population: '3090416'},
@@ -57,10 +63,10 @@ export class AppComponent implements OnInit {
             { "Country": "Poland", "Membership": "Non-Permanent", population: '90332521'},
             { "Country": "Sweden", "Membership": "Non-Permanent", population: '383521'}
         ];
-        public shapeData: Object = world_map;
-        public shapePropertyPath: String = 'name';
-        public shapeDataPath: String= 'Country';
-        public shapeSettings: Object = {
+        this.shapeData = world_map;
+        this.shapePropertyPath = 'name';
+        this.shapeDataPath = 'Country';
+        this.shapeSettings = {
              colorValuePath: 'Membership',
                 colorMapping: [
                 {
@@ -70,7 +76,7 @@ export class AppComponent implements OnInit {
                     value: 'Non-Permanent', color: '#316DB5'
                 }]
         };
-        public tooltipSettings: Object ={
+        this.tooltipSettings ={
             visible: true,
             valuePath: 'population'
         };

@@ -28,7 +28,7 @@ To enable the panning feature, set the [`enablePanning`](../api/maps/zoomSetting
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Zoom } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Zoom);
@@ -42,12 +42,14 @@ Maps.Inject(Zoom);
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public zoomSettings: object;
+    public shapeData: object;
     ngOnInit(): void {
-        public zoomSettings: Object = {
+        this.zoomSettings = {
             enable: true,
 		    enablePanning: true
         };
-         public shapeData: Object = world_map;
+        this.shapeData = world_map;
     }
 }
 
@@ -100,7 +102,7 @@ The following properties are available in toolbars to customize the zooming tool
 * [`verticalAlignment`](../api/maps/zoomSettingsModel/#verticalalignment) - To customize the position type of toolbar when it is placed vertically.
 
 ``` typescript
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Zoom } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Zoom);
@@ -114,8 +116,10 @@ Maps.Inject(Zoom);
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public zoomSettings: object;
+    public shapeData: object;
     ngOnInit(): void {
-        public zoomSettings: Object = {
+        this.zoomSettings = {
             enable: true,
             color: 'green',
             highlightColor: 'blue',
@@ -123,7 +127,7 @@ export class AppComponent implements OnInit {
             horizontalAlignment: 'Center',
             toolbars: ['ZoomIn', 'ZoomOut', 'Pan', 'Reset']
         };
-        public shapeData: Object = world_map;
+        this.shapeData = world_map;
     }
 }
 
@@ -134,7 +138,7 @@ export class AppComponent implements OnInit {
 To enable or disable the pinch zooming, use the [`pinchZooming`](../api/maps/zoomSettingsModel/#pinchzooming) property in [`zoomSettings`](../api/maps/zoomSettingsModel) property.
 
 ``` typescript
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Zoom } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Zoom);
@@ -148,12 +152,14 @@ Maps.Inject(Zoom);
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public zoomSettings: object;
+    public shapeData: object;
     ngOnInit(): void {
-        public zoomSettings: Object = {
+        this.zoomSettings = {
             enable: true,
             pinchZooming:true
         };
-        public shapeData: Object = world_map;
+        this.shapeData = world_map;
     }
 }
 
@@ -164,7 +170,7 @@ export class AppComponent implements OnInit {
 To enable or disable the single-click zooming, use the [`zoomOnClick`](../api/maps/zoomSettingsModel/#zoomonclick) property in [`zoomSettings`](../api/maps/zoomSettingsModel) property.
 
 ``` typescript
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Zoom } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Zoom);
@@ -178,12 +184,14 @@ Maps.Inject(Zoom);
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public zoomSettings: object;
+     public shapeData: object;
     ngOnInit(): void {
-        public zoomSettings: Object = {
+        this.zoomSettings = {
             enable: true,
             zoomOnClick:true
         };
-        public shapeData: Object = world_map;
+        this.shapeData = world_map;
     }
 }
 
@@ -194,7 +202,7 @@ export class AppComponent implements OnInit {
 To enable or disable the double-click zooming, use the [`doubleClickZoom`](../api/maps/zoomSettingsModel/#doubleclickzoom) property in [`zoomSettings`](../api/maps/zoomSettingsModel/) property.
 
 ``` typescript
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Zoom } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Zoom);
@@ -208,12 +216,14 @@ Maps.Inject(Zoom);
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public zoomSettings: object;
+    public shapeData: object;
     ngOnInit(): void {
-        public zoomSettings: Object = {
+        this.zoomSettings = {
             enable: true,
             doubleClickZoom:true
         };
-        public shapeData: Object = world_map;
+        this.shapeData = world_map;
     }
 }
 
@@ -224,7 +234,7 @@ export class AppComponent implements OnInit {
 To enable or disable mouse wheel zooming, use the [`mouseWheelZoom`](../api/maps/zoomSettingsModel/#mousewheelzoom) property in [`zoomSettings`](../api/maps/zoomSettingsModel/) property.
 
 ``` typescript
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Zoom } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Zoom);
@@ -238,12 +248,14 @@ Maps.Inject(Zoom);
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public zoomSettings: object;
+    public shapeData: object;
     ngOnInit(): void {
-        public zoomSettings: Object = {
+        this.zoomSettings = {
             enable: true,
             mouseWheelZoom:true
         };
-        public shapeData: Object = world_map;
+        this.shapeData = world_map;
     }
 }
 
@@ -254,7 +266,7 @@ export class AppComponent implements OnInit {
 To enable or disable selection zooming, use the [`enableSelectionZooming`](../api/maps/zoomSettingsModel/#enableselectionzooming) property in [`zoomSettings`](../api/maps/zoomSettingsModel/) property. The [`enablePanning`](../api/maps/zoomSettingsModel/#enablepanning) property must be set to **false** to enable the selection zooming in Maps.
 
 ``` typescript
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Zoom } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Zoom);
@@ -268,13 +280,15 @@ Maps.Inject(Zoom);
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public zoomSettings: object;
+    public shapeData: object;
     ngOnInit(): void {
-        public zoomSettings: Object = {
+        this.zoomSettings = {
             enable: true,
             enableSelectionZooming: true,
             enablePanning: false
         };
-        public shapeData: Object = world_map;
+        this.shapeData = world_map;
     }
 }
 
@@ -285,7 +299,7 @@ export class AppComponent implements OnInit {
 The zooming range can be adjusted using the [`minZoom`](../api/maps/zoomSettingsModel/#minzoom) and [`maxZoom`](../api/maps/zoomSettingsModel/#maxzoom) properties in [`zoomSettings`](../api/maps/zoomSettingsModel/) property. The minZoom value is set to 1 by default, and the maxZoom value is set to 10.
 
 ``` typescript
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Zoom } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Zoom);
@@ -299,13 +313,15 @@ Maps.Inject(Zoom);
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public zoomSettings: object;
+    public shapeData: object;
     ngOnInit(): void {
-        public zoomSettings: Object = {
+        this.zoomSettings = {
             enable: true,
             minZoom: 2,
             maxZoom: 12
         };
-        public shapeData: Object = world_map;
+        this.shapeData = world_map;
     }
 }
 
@@ -316,7 +332,7 @@ export class AppComponent implements OnInit {
 To zoom in or zoom out the Maps with animation, use the [`animationDuration`](../api/maps/layerSettingsModel/#animationduration) property in [`layers`](../api/maps/layerSettingsModel) property.
 
 ``` typescript
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Zoom } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Zoom);
@@ -330,13 +346,16 @@ Maps.Inject(Zoom);
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public zoomSettings: object;
+    public shapeData: object;
+    public animationDuration: number;
     ngOnInit(): void {
-        public zoomSettings: Object = {
+        this.zoomSettings = {
             enable: true,
             mouseWheelZoom:true
         };
-        public animationDuration: number = 500;
-        public shapeData: Object = world_map;
+        this.animationDuration = 500;
+        this.shapeData = world_map;
     }
 }
 
@@ -348,7 +367,7 @@ export class AppComponent implements OnInit {
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Zoom } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Zoom);
@@ -362,11 +381,13 @@ Maps.Inject(Zoom);
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public zoomSettings: object;
+    public shapeData: object;
     ngOnInit(): void {
-        public zoomSettings: Object = {
+        this.zoomSettings = {
         enable: true,
     };
-        public shapeData: Object = world_map;
+        this.shapeData = world_map;
     }
 }
 
@@ -393,7 +414,7 @@ By tapping on the specific legend, the shapes which are bounded to the selected 
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Selection, Legend } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Selection, Legend);
@@ -407,16 +428,23 @@ Maps.Inject(Selection, Legend);
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public selectionSettings: object;
+    public shapeData: object;
+    public shapePropertyPath: string;
+    public shapeDataPath: string;
+    public dataSource: object;
+    public shapeSettings: object;
+    public legendSettings: object;
     ngOnInit(): void {
-        public selectionSettings: Object = {
+        this.selectionSettings = {
             enable: true,
             fill: 'blue',
             border: { color: 'white', width: 2}
         };
-        public shapeData: Object = world_map;
-        public shapePropertyPath: String = "name";
-        public shapeDataPath: String = "Country";
-        public dataSource: Object = [
+        this.shapeData = world_map;
+        this.shapePropertyPath = "name";
+        this.shapeDataPath = "Country";
+        this.dataSource = [
             {  "Country": "China", "Membership": "Permanent"},
             { "Country": "France","Membership": "Permanent" },
             { "Country": "Russia","Membership": "Permanent"},
@@ -424,7 +452,7 @@ export class AppComponent implements OnInit {
             { "Country": "Poland","Membership": "Non-Permanent"},
             { "Country": "Sweden","Membership": "Non-Permanent"}
         ];
-        public shapeSettings: Object = {
+        this.shapeSettings = {
             colorValuePath: 'Membership',
                 colorMapping: [
                     {
@@ -434,9 +462,10 @@ export class AppComponent implements OnInit {
                         value: 'Non-Permanent', color: '#316DB5'
                    }]
         };
-        public legendSettings: Object = {
+        this.legendSettings = {
             visible: true
     }
+}
 }
 
 ```
@@ -452,7 +481,7 @@ To enable the selection for bubbles in Maps, set the [`selectionSettings`](../ap
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Bubble, Selection } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Bubble, Selection);
@@ -467,11 +496,15 @@ Maps.Inject(Bubble, Selection);
 })
 
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public shapeDataPath: object;
+    public shapePropertyPath: object;
+    public bubbleSettings: object;
     ngOnInit(): void {
-        public shapeData: Object = world_map;
-        public shapeDataPath: Object = 'name',
-        public shapePropertyPath: Object = 'name',
-        public bubbleSettings: Object = [{
+        this.shapeData = world_map;
+        this.shapeDataPath = 'name',
+        this.shapePropertyPath = 'name',
+        this.bubbleSettings = [{
             visible: true,
             dataSource: [
                 { name: 'India', population: '38332521' },
@@ -500,7 +533,7 @@ To enable the selection for markers in Maps, set the [`selectionSettings`](../ap
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Marker, Selection } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Marker, Selection);
@@ -515,9 +548,11 @@ Maps.Inject(Marker, Selection);
 })
 
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public markerSettings: object;
     ngOnInit(): void {
-        public shapeData: Object = world_map;
-        public markerSettings: Object = [{
+        this.shapeData = world_map;
+        this.markerSettings = [{
            visible: true,
             height: 20,
             width: 20,
@@ -562,23 +597,21 @@ Maps.Inject(Selection);
     </ejs-maps> <button  id='select' (click)='select()'>select</button> <button id='unselect' (click)='unselect()'>unselect</button>`
 })
 
-export class AppComponent implements OnInit {
+export class AppComponent {
     @ViewChild('maps')
     public mapObj: MapsComponent;
-    ngOnInit(): void {
-        public shapeData: Object = world_map;
-        public selectionSettings: Object = {
-            enable: true,
-            fill: 'green',
-            border: { color: 'white', width: 2 }
-        };
+    public shapeData: object = world_map;
+    public selectionSettings: object = {
+        enable: true,
+        fill: 'green',
+        border: { color: 'white', width: 2 }
+    };
     select(){
         this.mapObj.shapeSelection(0, "continent", "Asia", true);
     };
     unselect(){
         this.mapObj.shapeSelection(0, "continent", "Asia", false);
     }
-   }
 }
 ```
 
@@ -593,7 +626,7 @@ The shape is initially selected using the [`initialShapeSelection`](../api/maps/
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Selection} from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Selection);
@@ -608,13 +641,16 @@ Maps.Inject(Selection);
 })
 
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public initialShapeSelection: object;
+    public selectionSettings: object;
     ngOnInit(): void {
-        public shapeData: Object = world_map;
-        public initialShapeSelection: Object = [
+        this.shapeData = world_map;
+        this.initialShapeSelection = [
             { shapePath: 'continent', shapeValue: 'Africa' },
             { shapePath: 'name', shapeValue: 'India' }
         ];
-        public selectionSettings: Object = {
+        this.selectionSettings = {
             enable: true,
             fill: 'green',
             border: { color: 'white', width: 2 }
@@ -634,7 +670,7 @@ Using the [`initialMarkerSelection`](../api/maps/initialMarkerSelectionSettingsM
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Marker, Selection } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Marker, Selection);
@@ -649,9 +685,11 @@ Maps.Inject(Marker, Selection);
 })
 
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public markerSettings: object;
     ngOnInit(): void {
-        public shapeData: Object = world_map;
-        public markerSettings: Object = [{
+        this.shapeData = world_map;
+        this.markerSettings = [{
             visible: true,
             height: 20,
             width: 20,
@@ -695,7 +733,7 @@ Hovering on the specific legend, the shapes which are bounded to the selected le
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Highlight, Legend } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Highlight, Legend);
@@ -709,16 +747,23 @@ Maps.Inject(Highlight, Legend);
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public highlightSettings: object;
+    public shapeData: object;
+    public shapePropertyPath: string;
+    public shapeDataPath: string;
+    public dataSource: object;
+    public shapeSettings: object;
+    public legendSettings: object;
     ngOnInit(): void {
-        public highlightSettings: Object = {
+        this.highlightSettings = {
             enable: true,
             fill: 'green',
             border: { color: 'white', width: 2}
         }
-        public shapeData: Object = world_map;
-        public shapePropertyPath: String = "name";
-        public shapeDataPath: String = "Country";
-        public dataSource: Object = [
+        this.shapeData = world_map;
+        this.shapePropertyPath= "name";
+        this.shapeDataPath = "Country";
+        this.dataSource = [
             {  "Country": "China", "Membership": "Permanent"},
             { "Country": "France","Membership": "Permanent" },
             { "Country": "Russia","Membership": "Permanent"},
@@ -726,7 +771,7 @@ export class AppComponent implements OnInit {
             { "Country": "Poland","Membership": "Non-Permanent"},
             { "Country": "Sweden","Membership": "Non-Permanent"}
         ];
-        public shapeSettings: Object = {
+        this.shapeSettings = {
             colorValuePath: 'Membership',
                 colorMapping: [
                     {
@@ -736,7 +781,7 @@ export class AppComponent implements OnInit {
                         value: 'Non-Permanent', color: '#316DB5'
                    }]
         };
-        public legendSettings: Object = {
+        this.legendSettings= {
             visible: true
         }
     }
@@ -755,7 +800,7 @@ To enable the highlight for bubbles in Maps, set the [`highlightSettings`](../ap
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Bubble, Highlight } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Bubble, Highlight);
@@ -770,11 +815,15 @@ Maps.Inject(Bubble, Highlight);
 })
 
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public shapeDataPath: object;
+    public shapePropertyPath: object;
+    public bubbleSettings: object;
     ngOnInit(): void {
-        public shapeData: Object = world_map;
-        public shapeDataPath: Object = 'name',
-        public shapePropertyPath: Object = 'name',
-        public bubbleSettings: Object = [{
+        this.shapeData = world_map;
+        this.shapeDataPath = 'name',
+        this.shapePropertyPath = 'name',
+        this.bubbleSettings = [{
             visible: true,
             dataSource: [
                 { name: 'India', population: '38332521' },
@@ -803,7 +852,7 @@ To enable the highlight for markers in Maps, set the [`highlightSettings`](../ap
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Marker, Highlight } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Marker, Highlight);
@@ -818,9 +867,11 @@ Maps.Inject(Marker, Highlight);
 })
 
 export class AppComponent implements OnInit {
+    public shapeData: object;
+     public markerSettings: object;
     ngOnInit(): void {
-        public shapeData: Object = world_map;
-        public markerSettings: Object = [{
+        this.shapeData = world_map;
+        this.markerSettings = [{
            visible: true,
             height: 20,
             width: 20,
@@ -855,7 +906,7 @@ On mouse over or touch end event, the tooltip is used to get more information ab
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, MapsTooltip } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(MapsTooltip);
@@ -869,12 +920,14 @@ Maps.Inject(MapsTooltip);
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public tooltipSettings: object;
+    public shapeData: object;
     ngOnInit(): void {
-        public tooltipSettings: Object ={
+        this.tooltipSettings ={
             visible: true,
             valuePath: 'name'
         }
-        public shapeData: Object = world_map;
+        this.shapeData = world_map;
     }
 }
 
@@ -915,7 +968,7 @@ The following properties are available to customize the tooltip of the Maps comp
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, MapsTooltip } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(MapsTooltip);
@@ -929,8 +982,10 @@ Maps.Inject(MapsTooltip);
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public tooltipSettings: object;
+    public shapeData: object;
     ngOnInit(): void {
-        public tooltipSettings: Object ={
+        this.tooltipSettings ={
             visible: true,
             valuePath: 'name',
             fill: '#D0D0D0',
@@ -940,7 +995,7 @@ export class AppComponent implements OnInit {
                 fontStyle: 'Sans-serif'
             }
         }
-        public shapeData: Object = world_map;
+        this.shapeData = world_map;
     }
 }
 
@@ -956,79 +1011,33 @@ The HTML element can be rendered in the tooltip of the Maps using the [`template
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { Maps, MapsTooltip } from '@syncfusion/ej2-angular-maps';
+import { Component } from '@angular/core';
+import { Maps, MapsTooltip, ITooltipRenderEventArgs } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
-import { tooltipData } from 'data.ts';
+import { default_data } from 'data.ts';
 Maps.Inject(MapsTooltip);
 @Component({
     selector: 'app-container',
     template:
-    `<ejs-maps id='rn-container' [legendSettings]='legendSettings' (tooltipRender)="tooltipRender($event)">
+    `<ejs-maps id='rn-container'>
     <e-layers>
    <e-layer [shapeData] ='shapeData' [shapePropertyPath]='shapePropertyPath' [shapeDataPath]='shapeDataPath' [dataSource]='dataSource' [shapeSettings]='shapeSettings' [tooltipSettings] ='tooltipSettings'></e-layer>
    </e-layers>
-   </ejs-maps>
-   <style>
-       .toolback {
-        border-radius: 4px;
-        border: 1px #abb9c6;
-        opacity: 90%;
-        background: rgba(53, 63, 76, 0.90);
-        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.40);
-        padding-bottom: 5px;
-        padding-top: 10px;
-        padding-left: 10px;
-        padding-right: 10px
-    }
-
-    .listing1 {
-        font-size: 13px;
-        color: #cccccc
-    }
-
-    .listing2 {
-        font-size: 13px;
-        color: #ffffff;
-        font-weight: 500;
-    }
-</style>`
+   </ejs-maps>`
 })
-export class AppComponent implements OnInit {
-    ngOnInit(): void {
-        public tooltipRender = (args: ITooltipRenderEventArgs) => {
-            if (!args.options['data']) {
-                args.cancel = true;
+export class AppComponent {
+        public tooltipSettings: object ={
+            visible: true,
+            valuePath: 'continent',
+            template: '<div style="width:60px; text-align:center; background-color: white; border: 2px solid black; padding-bottom: 10px;padding-top: 10px;padding-left: 10px;padding-right: 10px;"><span>${continent}</span></div>',
+            textStyle: {
+                color: 'black'
             }
-       };
-        public tooltipSettings: Object ={
-            visible: true,
-            valuePath: 'name',
-            template: '<div id="template"> <div class="toolback"> <div class="listing2"> <center> ${country} </center> </div> <hr style="margin-top: 2px;margin-bottom:5px;border:0.5px solid #DDDDDD"> <div> <span class="listing1">Finalist : </span><span class="listing2">${value1}</span> </div> <div> <span class="listing1">Win : </span><span class="listing2">${value2}</span> </div> </div> </div>'
         }
-        public legendSettings: Object = {
-            visible: true,
-            mode: 'Interactive',
-            position: 'Left',
-            orientation: 'Vertical',
-            height: '70%',
-            width: '10'
-        }
-        public shapePropertyPath: String = "name";
-        public shapeDataPath: String = "name";
-        public dataSource: Object = tooltipData;
-        public shapeData: Object = world_map;
-        public shapeSettings: Object = {
-            fill: '#E5E5E5',
-            colorMapping: [
-                { color: '#b3daff', value: '1' },
-                { color: '#80c1ff', value: '2' },
-                { color: '#1a90ff', value: '3' },
-                { color: '#005cb3', value: '7' }
-            ],
-            colorValuePath: 'value1'
-        }
-    }
+        public shapePropertyPath: string = "continent";
+        public shapeDataPath: string = "continent";
+        public dataSource: object = default_data;
+        public shapeData: object = world_map;
 }
 
 ```

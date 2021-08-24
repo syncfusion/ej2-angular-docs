@@ -16,26 +16,25 @@ The Bing Maps can be rendered by setting the [`layerType`](../api/maps/layerSett
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { Maps } from '@syncfusion/ej2-angular-maps';
-import { usa_map } from 'usa.ts';
-import { world_map } from 'world-map.ts';
-import { california } from 'california.ts';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-container',
     template:
-    `<ejs-maps id='rn-container' [layers]='layers'>
+    `<ejs-maps id='rn-container' style="display:block">
      <e-layers>
     <e-layer [layerType] = 'layerType' [bingMapType] = 'bingMapType' [key]='key'></e-layer>
     </e-layers>
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public layerType: string;
+    public bingMapType: string;
+     public key: string;
     ngOnInit(): void {
-           public layerType: string = 'Bing';
-           public bingMapType: string = 'AerialWithLabel';
-           public key: string = '// …bingMapKey';
+           this.layerType = 'Bing';
+           this.bingMapType = 'AerialWithLabel';
+           this.key = '//..bingmapkey';
     }
 }
 
@@ -58,26 +57,25 @@ To render the light version of the road maps, set the `bingMapType` to `CanvasLi
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { Maps } from '@syncfusion/ej2-angular-maps';
-import { usa_map } from 'usa.ts';
-import { world_map } from 'world-map.ts';
-import { california } from 'california.ts';
+import { Component, OnInit} from '@angular/core';
 
 @Component({
     selector: 'app-container',
     template:
-    `<ejs-maps id='rn-container' [layers]='layers'>
+    `<ejs-maps id='rn-container' style="display:block">
      <e-layers>
     <e-layer [layerType] = 'layerType' [bingMapType] = 'bingMapType' [key]='key'></e-layer>
     </e-layers>
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public layerType: string;
+    public bingMapType: string;
+    public key: string;
     ngOnInit(): void {
-           public layerType: string = 'Bing';
-           public bingMapType: string = 'CanvasLight';
-           public key: string = '// …bingMapKey';
+           this.layerType = 'Bing';
+           this.bingMapType = 'CanvasLight';
+           this.key = '//..bingmapkey';
     }
 }
 
@@ -91,28 +89,32 @@ Bing maps layer can be zoomed and panned. Zooming helps to get a closer look at 
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Zoom } from '@syncfusion/ej2-angular-maps';
-import { usa_map } from 'usa.ts';
-import { world_map } from 'world-map.ts';
-import { california } from 'california.ts';
 Maps.Inject(Zoom);
 @Component({
-    selector: 'app-container',
-    template:
-    `<ejs-maps id='rn-container' [layers]='layers' [zoomSettings]='zoomSettings'>
-     <e-layers>
-    <e-layer [layerType] = 'layerType'></e-layer>
-    </e-layers>
-    </ejs-maps>`
+  selector: 'app-container',
+  template: `
+    <ejs-maps id="rn-container" [zoomSettings]="zoomSettings" style="display:block">
+      <e-layers>
+        <e-layer [layerType]="layerType" [key]="key" [bingMapType]="bingMapType"></e-layer>
+      </e-layers>
+    </ejs-maps>
+  `
 })
 export class AppComponent implements OnInit {
-    ngOnInit(): void {
-           public layerType: string = 'Bing';
-           public zoomSettings: object = {
-               enable: true
-           }
-    }
+  public layerType: string;
+  public zoomSettings: object;
+  public bingMapType: string;
+  public key: string;
+  ngOnInit(): void {
+    this.layerType = 'Bing';
+    this.bingMapType = 'CanvasLight';
+    this.key = '//..bingmapkey';
+    this.zoomSettings = {
+      enable: true
+    };
+  }
 }
 
 ```
@@ -125,59 +127,68 @@ Markers can be added to the layers of Bing maps by setting the corresponding loc
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Zoom, Marker, NavigationLine } from '@syncfusion/ej2-angular-maps';
-import { usa_map } from 'usa.ts';
-import { world_map } from 'world-map.ts';
-import { california } from 'california.ts';
+
 Maps.Inject(Zoom, Marker, NavigationLine);
 @Component({
-    selector: 'app-container',
-    template:
-    `<ejs-maps id='rn-container' [layers]='layers' [zoomSettings]='zoomSettings' [centerPosition]='centerPosition'>
-     <e-layers>
-    <e-layer [layerType] = 'layerType' [bingMapType]= 'bingMapType' [key]='key' [markerSettings]='markerSettings' [navigationLineSettings]='navigationLineSettings'></e-layer>
-    </e-layers>
-    </ejs-maps>`
+  selector: 'app-container',
+  template: `
+    <ejs-maps id="rn-container" style="display:block" [zoomSettings]="zoomSettings" [centerPosition]="centerPosition">
+      <e-layers>
+        <e-layer [layerType]="layerType" [bingMapType]="bingMapType" [key]="key" [markerSettings]="markerSettings" [navigationLineSettings]="navigationLineSettings"></e-layer>
+      </e-layers>
+    </ejs-maps>
+  `
 })
 export class AppComponent implements OnInit {
-    ngOnInit(): void {
-           public layerType: string = 'Bing';
-           public bingMapType: string = 'CanvasLight';
-           public key: string = '// …bingMapKey';
-           public zoomSettings: object = {
-               zoomFactor: 4
-           };
-           public centerPosition: object = {
-               latitude: 29.394708,
-                longitude: -94.954653
-           };
-            public markerSettings: object = [{
-                visible: true,
-                height: 25,
-                width: 15,
-                dataSource: [
-                    {
-                        latitude: 34.060620,
-                        longitude: -118.330491,
-                        name: "California"
-                    },
-                    {
-                        latitude: 40.724546,
-                        longitude: -73.850344,
-                        name: "New York"
-                    }
-                ]
-            }];
-            public navigationLineSettings: object = [{
-                visible: true,
-                color: "blue",
-                width: 5,
-                angle: 0.1,
-                latitude: [34.060620, 40.724546],
-                longitude: [-118.330491,-73.850344]
-            }];
-    }
+  public layerType: string;
+  public bingMapType: string;
+  public key: string;
+  public zoomSettings: object;
+  public centerPosition: object;
+  public markerSettings: object;
+  public navigationLineSettings: object;
+  ngOnInit(): void {
+    this.layerType = 'Bing';
+    this.bingMapType = 'CanvasLight';
+    this.key = '//..bingmapkey';
+    this.zoomSettings = {
+      zoomFactor: 4
+    };
+    this.centerPosition = {
+      latitude: 29.394708,
+      longitude: -94.954653
+    };
+    this.markerSettings = [
+      {
+        visible: true,
+        height: 25,
+        width: 15,
+        dataSource: [
+          {
+            latitude: 34.06062,
+            longitude: -118.330491,
+            name: 'California'
+          },
+          {
+            latitude: 40.724546,
+            longitude: -73.850344,
+            name: 'New York'
+          }
+        ]
+      }
+    ];
+    this.navigationLineSettings = [
+    {
+        visible: true,
+        color: 'blue',
+        width: 5,
+        angle: 0.1,
+        latitude: [34.06062, 40.724546],
+        longitude: [-118.330491, -73.850344]
+    }];
+  }
 }
 
 ```

@@ -145,7 +145,7 @@ This section explains how to bind GeoJSON data to the map.
 
 ```javascript
 
-let usMap: Object =
+let usMap: object =
 {
     "type": "FeatureCollection",
     "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
@@ -168,7 +168,7 @@ Elements in the maps will get rendered in the layers. So add a layer collection 
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 
@@ -182,8 +182,9 @@ import { world_map } from 'world-map.ts';
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public shapeData: object;
     ngOnInit(): void {
-           public shapeData: object = world_map;
+        this.shapeData = world_map;
     }
 }
 ```
@@ -209,7 +210,7 @@ The JSON object "electionData" is used as data source below.
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 @Component({
@@ -222,16 +223,20 @@ import { world_map } from 'world-map.ts';
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public dataSource: object[];
+    public shapeData: object;
+    public shapePropertyPath: string;
+    public shapeDataPath: string;
     ngOnInit(): void {
-        public dataSource: Object[] = [{  "Country": "China", "Membership": "Permanent"},
+        this.dataSource = [{  "Country": "China", "Membership": "Permanent"},
             {"Country": "France","Membership": "Permanent" },
             { "Country": "Russia","Membership": "Permanent"},
             {"Country": "Kazakhstan","Membership": "Non-Permanent"},
             { "Country": "Poland","Membership": "Non-Permanent"},
             {"Country": "Sweden","Membership": "Non-Permanent"}];
-            public shapeData: Object = world_map;
-    public shapePropertyPath: String = 'name';
-    public shapeDataPath: String= 'Country';
+        this.shapeData = world_map;
+        this.shapePropertyPath = 'name';
+        this.shapeDataPath = 'Country';
     };
 }
 
@@ -265,17 +270,22 @@ import { world_map } from 'world-map.ts';
 })
 
 export class AppComponent implements OnInit {
+    public dataSource: object[];
+    public shapeData: object;
+    public shapePropertyPath: string;
+    public shapeDataPath: string;
+    public shapeSettings: object;
     ngOnInit(): void {
-            public dataSource: Object[] = [{  "Country": "China", "Membership": "Permanent"},
+        this.dataSource = [{  "Country": "China", "Membership": "Permanent"},
             {"Country": "France","Membership": "Permanent" },
             { "Country": "Russia","Membership": "Permanent"},
             {"Country": "Kazakhstan","Membership": "Non-Permanent"},
             { "Country": "Poland","Membership": "Non-Permanent"},
             {"Country": "Sweden","Membership": "Non-Permanent"}];
-            public shapeData: Object = world_map;
-    public shapePropertyPath: String = 'name';
-    public shapeDataPath: String= 'Country';
-    public shapeSettings: Object = {
+        this.shapeData = world_map;
+        this.shapePropertyPath = 'name';
+        this.shapeDataPath = 'Country';
+        this.shapeSettings = {
                 colorValuePath: 'Membership',
                 colorMapping: [
                 {
@@ -301,7 +311,7 @@ information to the user about the shapes rendered in the map.
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 @Component({
@@ -315,23 +325,29 @@ import { world_map } from 'world-map.ts';
 })
 
 export class AppComponent implements OnInit {
+    public titleSettings: object;
+    public dataSource: object[];
+    public shapeData: object;
+    public shapePropertyPath: string;
+    public shapeDataPath: string;
+    public shapeSettings: object;
     ngOnInit(): void {
-        public titleSettings: object = {
+        this.titleSettings = {
          text: 'World map membership',
           titleStyle: {
             size: '16px'
            }
         }
-            public dataSource: Object[] = [{  "Country": "China", "Membership": "Permanent"},
+        this.dataSource = [{  "Country": "China", "Membership": "Permanent"},
             {"Country": "France","Membership": "Permanent" },
             { "Country": "Russia","Membership": "Permanent"},
             {"Country": "Kazakhstan","Membership": "Non-Permanent"},
             { "Country": "Poland","Membership": "Non-Permanent"},
             {"Country": "Sweden","Membership": "Non-Permanent"}];
-            public shapeData: Object = world_map;
-    public shapePropertyPath: String = 'name';
-    public shapeDataPath: String= 'Country';
-    public shapeSettings: Object = {
+        this.shapeData = world_map;
+        this.shapePropertyPath = 'name';
+        this.shapeDataPath = 'Country';
+        this.shapeSettings = {
                 colorValuePath: 'Membership',
                 colorMapping: [
                 {
@@ -358,7 +374,7 @@ module using `@NgModule.providers` method.
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Legend } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 
@@ -374,17 +390,23 @@ Maps.Inject(Legend);
 })
 
 export class AppComponent implements OnInit {
+    public dataSource: object[];
+    public shapeData: object;
+    public shapePropertyPath: string;
+    public shapeDataPath: string;
+    public shapeSettings: object;
+    public legendSettings: object;
     ngOnInit(): void {
-            public dataSource: Object[] = [{  "Country": "China", "Membership": "Permanent"},
+        this.dataSource = [{  "Country": "China", "Membership": "Permanent"},
             {"Country": "France","Membership": "Permanent" },
             { "Country": "Russia","Membership": "Permanent"},
             {"Country": "Kazakhstan","Membership": "Non-Permanent"},
             { "Country": "Poland","Membership": "Non-Permanent"},
             {"Country": "Sweden","Membership": "Non-Permanent"}];
-            public shapeData: Object = world_map;
-    public shapePropertyPath: String = 'name';
-    public shapeDataPath: String= 'Country';
-    public shapeSettings: Object = {
+        this.shapeData = world_map;
+        this.shapePropertyPath = 'name';
+        this.shapeDataPath = 'Country';
+        this.shapeSettings = {
                 colorValuePath: 'Membership',
                 colorMapping: [
                 {
@@ -394,7 +416,7 @@ export class AppComponent implements OnInit {
                     value: 'Non-Permanent', color: '#316DB5'
                 }]
             };
-            public legendSettings: Object = {
+        this.legendSettings = {
                 visible: true
                 }
    }
@@ -412,7 +434,7 @@ You can add data labels to show additional information of the shapes in map. Thi
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, DataLabel } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 
@@ -428,16 +450,19 @@ Maps.Inject(DataLabel);
 })
 
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public shapeSettings: object;
+    public dataLabelSettings: object;
     ngOnInit(): void {
-         public shapeData: Object = world_map;
-         public shapeSettings: Object = {
-                autofill: true
-            };
-            public dataLabelSettings: Object = {
-                visible: true,
-                labelPath: 'name',
-                smartLabelMode: 'Trim'
-            };
+        this.shapeData = world_map;
+        this.shapeSettings = {
+            autofill: true
+        };
+        this.dataLabelSettings = {
+            visible: true,
+            labelPath: 'name',
+            smartLabelMode: 'Trim'
+        };
    }
 }
 
@@ -456,7 +481,7 @@ in [`tooltipSettings`](../api/maps/tooltipSettingsModel/) object and by injectin
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, MapsTooltip, DataLabel } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 
@@ -472,23 +497,28 @@ Maps.Inject(MapsTooltip, DataLabel);
 })
 
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public shapeSettings: object;
+    public tooltipSettings: object;
     ngOnInit(): void {
-         public shapeData: Object = world_map;
-         public shapeSettings: Object = {
+        this.shapeData = world_map;
+        this.shapeSettings = {
                 autofill: true
             };
-            public dataLabelSettings: Object = {
-                visible: true,
-                labelPath: 'name',
-                smartLabelMode: 'Trim'
-            };
-            public tooltipSettings: Object = {
-                visible: true,
-                valuePath: 'name'
-            };
+        this.dataLabelSettings = {
+            visible: true,
+            labelPath: 'name',
+            smartLabelMode: 'Trim'
+        };
+        this.tooltipSettings = {
+            visible: true,
+            valuePath: 'name'
+        };
    }
 }
 
 ```
 
 {% endtab %}
+
+N> You can refer to our [Angular Map](https://www.syncfusion.com/angular-ui-components/angular-maps) feature tour page for its groundbreaking feature representations. You can also explore our [Angular Map example](https://ej2.syncfusion.com/angular/demos/#/material/maps/default) to know how to render and configure the map.

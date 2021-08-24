@@ -71,11 +71,11 @@ import { Population_Density } from 'data.ts';
 })
 
 export class AppComponent implements OnInit {
-    public shapeData: Object;
-    public shapeDataPath: String;
-    public shapePropertyPath : String;
-    public dataSource : Object[];
-    public shapeSettings: Object;
+    public shapeData: object;
+    public shapeDataPath: string;
+    public shapePropertyPath : string;
+    public dataSource : object[];
+    public shapeSettings: object;
     ngOnInit(): void {
         this.shapeData = world_map;
         this.shapeDataPath = 'name';
@@ -155,11 +155,11 @@ import { unCountries } from 'data.ts';
 })
 
 export class AppComponent implements OnInit {
-    public shapeData: Object;
-    public shapeDataPath: String;
-    public shapePropertyPath : String;
-    public dataSource : Object[];
-    public shapeSettings: Object;
+    public shapeData: object;
+    public shapeDataPath: string;
+    public shapePropertyPath : string;
+    public dataSource : object[];
+    public shapeSettings: object;
     ngOnInit(): void {
         this.shapeData = world_map;
         this.shapeDataPath = 'Country';
@@ -212,11 +212,11 @@ import { Population_Density } from 'data.ts';
 })
 
 export class AppComponent implements OnInit {
-    public shapeData: Object;
-    public shapeDataPath: String;
-    public shapePropertyPath : String;
-    public dataSource : Object[];
-    public shapeSettings: Object;
+    public shapeData: object;
+    public shapeDataPath: string;
+    public shapePropertyPath : string;
+    public dataSource : object[];
+    public shapeSettings: object;
     ngOnInit(): void {
         this.shapeData = world_map;
         this.shapeDataPath = 'name';
@@ -269,11 +269,11 @@ import { Population_Density } from 'data.ts';
 })
 
 export class AppComponent implements OnInit {
-    public shapeData: Object;
-    public shapeDataPath: String;
-    public shapePropertyPath : String;
-    public dataSource : Object[];
-    public shapeSettings: Object;
+    public shapeData: object;
+    public shapeDataPath: string;
+    public shapePropertyPath : string;
+    public dataSource : object[];
+    public shapeSettings: object;
     ngOnInit(): void {
         this.shapeData = world_map;
         this.shapeDataPath = 'name';
@@ -326,11 +326,11 @@ import { Population_Density } from 'data.ts';
 })
 
 export class AppComponent implements OnInit {
-    public shapeData: Object;
-    public shapeDataPath: String;
-    public shapePropertyPath : String;
-    public dataSource : Object[];
-    public shapeSettings: Object;
+    public shapeData: object;
+    public shapeDataPath: string;
+    public shapePropertyPath : string;
+    public dataSource : object[];
+    public shapeSettings: object;
     ngOnInit(): void {
         this.shapeData = world_map;
         this.shapeDataPath = 'name';
@@ -379,10 +379,10 @@ Maps.Inject(Bubble);
 })
 
 export class AppComponent implements OnInit {
-    public shapeData: Object;
-    public shapeDataPath: Object;
-    public shapePropertyPath: Object;
-    public bubbleSettings: Object;
+    public shapeData: object;
+    public shapeDataPath: object;
+    public shapePropertyPath: object;
+    public bubbleSettings: object;
     ngOnInit(): void {
         this.shapeData = world_map;
         this.shapeDataPath = 'name';

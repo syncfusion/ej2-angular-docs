@@ -33,7 +33,7 @@ import { africa_continent } from 'africa-continent.ts';
 import { world_map } from 'world-map.ts';
 
 @Component({
-    selector: 'my-app',
+    selector: 'app-container',
     // specifies the template string for the maps component
     template:`<div class="control-section">
     <div align='center'>
@@ -68,9 +68,6 @@ import { world_map } from 'world-map.ts';
           </div>
        </div>
     </div>
-    <div id="compass-maps" style="display: none;">
-        <img src="templates/datetime/compass.png" height="75px" width="75px">
-    </div>
    <style>
         #annotation {
             color: #DDDDDD;
@@ -92,13 +89,10 @@ export class AppComponent {
     public shapeSettings = {
         fill: 'url(#grad1)'
     };
-    public annotation:Object[] = [
+    public annotation:object[] = [
         {
             content:'#maps-annotation',
             x: '0%', y: '70%'
-        }, {
-            content: '#compass-maps',
-             x: '85%', y: '5%'
         }
     ];
 }

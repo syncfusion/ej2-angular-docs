@@ -20,7 +20,7 @@ To add the markers, the [`dataSource`](../api/maps/markerSettingsModel/#datasour
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Marker } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Marker);
@@ -35,9 +35,11 @@ Maps.Inject(Marker);
 })
 
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public markerSettings: object;
     ngOnInit(): void {
-        public shapeData: Object = world_map;
-        public markerSettings: Object = [{
+        this.shapeData = world_map;
+        this.markerSettings = [{
             visible: true,
             height: 20,
             width: 20,
@@ -61,7 +63,7 @@ The Marker can be added as a template in the Maps component. The [`template`](..
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Marker } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Marker);
@@ -76,9 +78,11 @@ Maps.Inject(Marker);
 })
 
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public markerSettings: object;
     ngOnInit(): void {
-        public shapeData: Object = world_map;
-        public markerSettings: Object = [
+        this.shapeData = world_map;
+        this.markerSettings = [
             {
                 visible: true,
                 template: '<div id="marker4" class="markerTemplate">Europe' +
@@ -130,7 +134,7 @@ The following properties are available in [`markerSettings`](../api/maps/markerS
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Marker } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Marker);
@@ -145,9 +149,11 @@ Maps.Inject(Marker);
 })
 
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public markerSettings: object;
     ngOnInit(): void {
-        public shapeData: Object = world_map;
-        public markerSettings: Object = [{
+        this.shapeData = world_map;
+        this.markerSettings = [{
             visible: true,
             border: {
                 color: 'green',
@@ -195,7 +201,7 @@ To render a marker as an image in Maps, set the [`shape`](../api/maps/markerSett
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Marker } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Marker);
@@ -210,9 +216,11 @@ Maps.Inject(Marker);
 })
 
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public markerSettings: object;
     ngOnInit(): void {
-        public shapeData: Object = world_map;
-        public markerSettings: Object = [{
+        this.shapeData = world_map;
+        this.markerSettings = [{
             visible: true,
             shape: 'Image',
             imageUrl: 'maps/default-map/datetime/ballon.png',
@@ -237,7 +245,7 @@ Multiple groups of markers can be added to the Maps using the [`markerSettings`]
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Marker } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Marker);
@@ -252,9 +260,11 @@ Maps.Inject(Marker);
 })
 
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public markerSettings: object;
     ngOnInit(): void {
-        public shapeData: Object = world_map;
-        public markerSettings: Object = [{
+        this.shapeData = world_map;
+        this.markerSettings = [{
             visible: true,
             shape: 'Diamond',
             height: 15,
@@ -301,7 +311,7 @@ Using the [`shapeValuePath`](../api/maps/markerSettingsModel/#shapevaluepath) an
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Marker } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Marker);
@@ -316,9 +326,11 @@ Maps.Inject(Marker);
 })
 
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public markerSettings: object;
     ngOnInit(): void {
-        public shapeData: Object = world_map;
-        public markerSettings: Object = [{
+        this.shapeData = world_map;
+        this.markerSettings = [{
             visible: true,
             shapeValuePath:'shape',
             colorValuePath:'color',
@@ -343,7 +355,7 @@ The latitude and longitude values are used to determine the location of each mar
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Marker } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Marker);
@@ -358,9 +370,11 @@ Maps.Inject(Marker);
 })
 
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public markerSettings: object;
     ngOnInit(): void {
-        public shapeData: Object = world_map;
-        public markerSettings: Object = [{
+        this.shapeData = world_map;
+        this.markerSettings = [{
             visible: true,
             latitudeValuePath: 'latitude',
             longitudeValuePath: 'longitude',
@@ -383,7 +397,7 @@ The Maps can be initially scaled to the center value based on the marker distanc
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Marker, Zoom } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Marker, Zoom);
@@ -398,9 +412,12 @@ Maps.Inject(Marker, Zoom);
 })
 
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public markerSettings: object;
+    public zoomSettings: object
     ngOnInit(): void {
-        public shapeData: Object = world_map;
-        public markerSettings: Object = [
+        this.shapeData = world_map;
+        this.markerSettings = [
         {
             visible: true,
             dataSource: [
@@ -410,7 +427,7 @@ export class AppComponent implements OnInit {
             ],
         },
         ];
-        public zoomSettings: Object = {
+        this.zoomSettings = {
             enable: true,
             horizontalAlignment:'Near',
             shouldZoomInitially: true
@@ -443,11 +460,13 @@ Maps.Inject(Marker, MapsTooltip, Zoom);
 })
 
 export class AppComponent implements OnInit {
+    public zoomSettings: object;
+    public layers: object;
     ngOnInit(): void {
-        public zoomSettings: object = {
+        this.zoomSettings = {
             enable: true
         };
-        public layers: object = [{
+        this.layers = [{
             shapeData: world_map,
             shapeSettings: { fill: '#C1DFF5' },
             markerClusterSettings: {
@@ -508,11 +527,13 @@ Maps.Inject(Marker, MapsTooltip, Zoom);
 })
 
 export class AppComponent implements OnInit {
+    public zoomSettings: object;
+    public layers: object;
     ngOnInit(): void {
-        public zoomSettings: object = {
+        this.zoomSettings = {
             enable: true
         };
-        public layers: object = [{
+        this.layers = [{
             shapeData: world_map,
             shapeSettings: { fill: '#C1DFF5' },
             markerClusterSettings: {
@@ -557,7 +578,7 @@ The cluster is formed by grouping an identical and non-identical marker from the
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Marker, Legend, Zoom } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Marker, Legend, Zoom);
@@ -572,9 +593,13 @@ Maps.Inject(Marker, Legend, Zoom);
 })
 
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public markerSettings: object;
+    public zoomSettings: object;
+    public markerClusterSettings: object;
     ngOnInit(): void {
-        public shapeData: Object = world_map;
-        public markerSettings: Object = [{
+        this.shapeData = world_map;
+        this.markerSettings = [{
             visible: true,
             dataSource: [
                 { latitude: 49.95121990866204, longitude: 18.468749999999998, name:'Europe' },
@@ -588,11 +613,11 @@ export class AppComponent implements OnInit {
                 { latitude: -6.64607562172573, longitude: -55.54687499999999, name:'South America'}
             ]
         }];
-        public zoomSettings: Object = {
+        this.zoomSettings = {
             enable: true,
             mouseWheelZoom : true,
         },
-        public markerClusterSettings: Object = {
+        this.markerClusterSettings = {
             allowClustering: true,
             allowClusterExpand: true,
             shape: 'Circle',
@@ -613,7 +638,7 @@ Tooltip is used to display more information about a marker on mouse over or touc
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Marker } from '@syncfusion/ej2-angular-maps';
 import { usa_map } from 'usa.ts';
 Maps.Inject(Marker);
@@ -628,9 +653,11 @@ Maps.Inject(Marker);
 })
 
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public markerSettings: object;
     ngOnInit(): void {
-        public shapeData: Object = usa_map;
-        public markerSettings: Object = [{
+        this.shapeData = usa_map;
+        this.markerSettings = [{
             dataSource: [
                 { latitude: 40.7424509, longitude: -74.0081468, city: 'New York' }
             ],

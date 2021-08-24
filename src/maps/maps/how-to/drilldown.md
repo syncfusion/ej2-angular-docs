@@ -7,13 +7,12 @@ By clicking a continent, all the countries available in that continent can be vi
 ```typescript
 import { Component, ViewEncapsulation,ViewChild } from '@angular/core';
 import { IShapeSelectedEventArgs, MapsComponent} from '@syncfusion/ej2-angular-maps';
-import { World_Map } from './MapData/WorldMap';
-import { Africa } from './MapData/Africa';
-import { dafaultData } from './MapData/salesCountry';
+import { world_map } from 'world-map.ts';
+import { africa_continent } from 'africa-continent.ts';
 export interface ShapeData { continent?: string; }
 
 @Component({
-    selector: 'my-app',
+    selector: 'app-container',
     // specifies the template string for the maps component
     template:`<div class="control-section">
     <div align='center'>
@@ -43,9 +42,8 @@ export interface ShapeData { continent?: string; }
   })
 
 export class AppComponent {
-    public worldmap=World_Map;
-    public dataSource=dafaultData;
-    public africa=Africa;
+    public worldmap=world_map;
+    public africa=africa_continent;
     @ViewChild('drilldown')
     public maps: MapsComponent;
     public shapeSelected = (args: IShapeSelectedEventArgs) : void => {

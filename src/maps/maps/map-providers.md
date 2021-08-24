@@ -21,11 +21,11 @@ import { Component, ViewEncapsulation } from '@angular/core';
   selector: 'my-app',
   // specifies the template string for the maps component
   template:
-    `><ejs-maps id='container'>
+    `<ejs-maps id='container'>
     <e-layers>
     <e-layer layerType='OSM' [urlTemplate]='urlTemplate'></e-layer>
     </e-layers>
-  </ejs-maps`,
+  </ejs-maps>`,
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {

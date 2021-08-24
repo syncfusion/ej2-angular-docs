@@ -41,9 +41,11 @@ Maps.Inject(NavigationLine);
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public navigationLineSettings: object[];
     ngOnInit(): void {
-        public shapeData: Object = world_map;
-        public navigationLineSettings: object[] = [{
+        this.shapeData = world_map;
+        this.navigationLineSettings = [{
             visible: true,
             latitude: [37.6276571, -122.4276688],
             longitude: [-74.0060, -117.7418381],
@@ -86,9 +88,11 @@ Maps.Inject(NavigationLine);
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public navigationLineSettings: object[];
     ngOnInit(): void {
-        public shapeData: Object = world_map;
-        public navigationLineSettings: object[] = [{
+        this.shapeData = world_map;
+        this.navigationLineSettings = [{
             visible: true,
             latitude: [37.6276571, -122.4276688],
             longitude: [-74.0060, -117.7418381],

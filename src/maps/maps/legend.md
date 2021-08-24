@@ -24,6 +24,65 @@ Default mode legends having symbols with legend labels, used to identify the sha
 
 The legends can be made interactive with an arrow mark indicating the exact range color in the legend when the mouse hovers over the corresponding shapes. To enable this type of mode by setting the [`mode`](../api/maps/legendSettingsModel/#mode) property of [`legendSettings`](../api/maps/legendSettingsModel) as "**Interactive**". The [`invertedPointer`](../api/maps/legendSettingsModel/#invertedpointer) property is used to enable or disable the visibility of the inverted pointer in interactive legend in Maps.
 
+{% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
+
+```typescript
+
+import { Component, OnInit } from '@angular/core';
+import { Maps, Legend } from '@syncfusion/ej2-angular-maps';
+import { world_map } from 'world-map.ts';
+
+Maps.Inject(Legend);
+@Component({
+    selector: 'app-container',
+    template:
+    `<ejs-maps id='rn-container' [legendSettings] = 'legendSettings'>
+    <e-layers>
+    <e-layer  [shapeData]= 'shapeData'  [shapePropertyPath]= 'shapePropertyPath' [shapeDataPath]= 'shapeDataPath' [dataSource] = 'dataSource' [shapeSettings] = 'shapeSettings'></e-layer>
+    </e-layers>
+    </ejs-maps>`
+})
+
+export class AppComponent implements OnInit {
+    public dataSource: object[];
+    public shapeData: object;
+    public shapePropertyPath: string;
+    public shapeDataPath: string;
+    public shapeSettings: object;
+    public legendSettings: object;
+    ngOnInit(): void {
+        this.dataSource = [
+            { "Country": "China", "Membership": "Permanent" },
+            { "Country": "France", "Membership": "Permanent" },
+            { "Country": "Russia", "Membership": "Permanent" },
+            { "Country": "Kazakhstan", "Membership": "Non-Permanent" },
+            { "Country": "Poland", "Membership": "Non-Permanent" },
+            { "Country": "Sweden", "Membership": "Non-Permanent" }];
+        this.shapeData = world_map;
+        this.shapePropertyPath = 'name';
+        this.shapeDataPath = 'Country';
+        this.shapeSettings = {
+            colorValuePath: 'Membership',
+            colorMapping: [
+                {
+                    value: 'Permanent', color: '#D84444'
+                },
+                {
+                    value: 'Non-Permanent', color: '#316DB5'
+                }]
+        };
+        this.legendSettings = {
+            visible: true,
+            mode: 'Interactive',
+            invertedPointer: true
+        }
+    }
+}
+
+```
+
+{% endtab %}
+
 ## Positioning of the legend
 
 The legend can be positioned in the following two ways:
@@ -46,17 +105,11 @@ Legends are positioned in the following locations within the container. The [`po
 
 The above four positions can be aligned with combination of "**Near**", "**Center**" and "**Far**" using [`alignment`](../api/maps/legendSettingsModel/#alignment) property in [`legendSettings`](../api/maps/legendSettingsModel) property. So, the legend can be aligned to 12 positions.
 
-## Legend for shapes
-
-Legend for shapes can be generated from color mapping types such as equal color mapping, range color mapping and desaturation color mapping.
-
-The below code snippet demonstrate the equal color mapping legends for the shapes. To bind the given data source to the [`dataSource`](../api/maps/layerSettingsModel/#datasource) property of [`layerSettings`](../api/maps/layerSettingsModel/) property. Set the value of [`shapePropertyPath`](../api/maps/layerSettingsModel/#shapepropertypath) to **"name"** and [`shapeDataPath`](../api/maps/layerSettingsModel/#shapedatapath) to **"Country"**. To enable equal color mapping, set the [`colorMapping`](../api/maps/colorMappingSettingsModel/) as an array in [`shapeSettings`](../api/maps/shapeSettingsModel/) property. Finally, set the [`visible`](../api/maps/legendSettingsModel/#visible) property of [`legendSettings`](../api/maps/legendSettingsModel) as "**true**". The [`label`](../api/maps/colorMappingSettingsModel/#label) property in [`colorMapping`](../api/maps/colorMappingSettingsModel/) property is used to set the text name for legend in Maps.
-
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Legend } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 
@@ -72,18 +125,24 @@ Maps.Inject(Legend);
 })
 
 export class AppComponent implements OnInit {
+    public dataSource: object[];
+    public shapeData: object;
+    public shapePropertyPath: string;
+    public shapeDataPath: string;
+    public shapeSettings: object;
+    public legendSettings: object;
     ngOnInit(): void {
-        public dataSource: Object[] = [
+        this.dataSource = [
             { "Country": "China", "Membership": "Permanent" },
             { "Country": "France", "Membership": "Permanent" },
             { "Country": "Russia", "Membership": "Permanent" },
-            { "Country": "Kazakhstan","Membership": "Non-Permanent" },
+            { "Country": "Kazakhstan", "Membership": "Non-Permanent" },
             { "Country": "Poland", "Membership": "Non-Permanent" },
             { "Country": "Sweden", "Membership": "Non-Permanent" }];
-        public shapeData: Object = world_map;
-        public shapePropertyPath: String = 'name';
-        public shapeDataPath: String= 'Country';
-        public shapeSettings: Object = {
+        this.shapeData = world_map;
+        this.shapePropertyPath = 'name';
+        this.shapeDataPath = 'Country';
+        this.shapeSettings = {
             colorValuePath: 'Membership',
             colorMapping: [
                 {
@@ -93,7 +152,72 @@ export class AppComponent implements OnInit {
                     value: 'Non-Permanent', color: '#316DB5'
                 }]
         };
-        public legendSettings: Object = {
+        this.legendSettings = {
+            visible: true,
+            position: 'Top',
+            alignment: 'Near'
+        }
+    }
+}
+
+```
+
+{% endtab %}
+
+## Legend for shapes
+
+Legend for shapes can be generated from color mapping types such as equal color mapping, range color mapping and desaturation color mapping.
+
+The below code snippet demonstrate the equal color mapping legends for the shapes. To bind the given data source to the [`dataSource`](../api/maps/layerSettingsModel/#datasource) property of [`layerSettings`](../api/maps/layerSettingsModel/) property. Set the value of [`shapePropertyPath`](../api/maps/layerSettingsModel/#shapepropertypath) to **"name"** and [`shapeDataPath`](../api/maps/layerSettingsModel/#shapedatapath) to **"Country"**. To enable equal color mapping, set the [`colorMapping`](../api/maps/colorMappingSettingsModel/) as an array in [`shapeSettings`](../api/maps/shapeSettingsModel/) property. Finally, set the [`visible`](../api/maps/legendSettingsModel/#visible) property of [`legendSettings`](../api/maps/legendSettingsModel) as "**true**". The [`label`](../api/maps/colorMappingSettingsModel/#label) property in [`colorMapping`](../api/maps/colorMappingSettingsModel/) property is used to set the text name for legend in Maps.
+
+{% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
+
+```typescript
+
+import { Component, OnInit } from '@angular/core';
+import { Maps, Legend } from '@syncfusion/ej2-angular-maps';
+import { world_map } from 'world-map.ts';
+
+Maps.Inject(Legend);
+@Component({
+    selector: 'app-container',
+    template:
+    `<ejs-maps id='rn-container' [legendSettings] = 'legendSettings'>
+    <e-layers>
+    <e-layer  [shapeData]= 'shapeData'  [shapePropertyPath]= 'shapePropertyPath' [shapeDataPath]= 'shapeDataPath' [dataSource] = 'dataSource' [shapeSettings] = 'shapeSettings'></e-layer>
+    </e-layers>
+    </ejs-maps>`
+})
+
+export class AppComponent implements OnInit {
+    public dataSource: object[];
+    public shapeData: object;
+    public shapePropertyPath: string;
+    public shapeDataPath: string;
+    public shapeSettings: object;
+    public legendSettings: object;
+    ngOnInit(): void {
+        this.dataSource = [
+            { "Country": "China", "Membership": "Permanent" },
+            { "Country": "France", "Membership": "Permanent" },
+            { "Country": "Russia", "Membership": "Permanent" },
+            { "Country": "Kazakhstan","Membership": "Non-Permanent" },
+            { "Country": "Poland", "Membership": "Non-Permanent" },
+            { "Country": "Sweden", "Membership": "Non-Permanent" }];
+        this.shapeData = world_map;
+        this.shapePropertyPath = 'name';
+        this.shapeDataPath = 'Country';
+        this.shapeSettings = {
+            colorValuePath: 'Membership',
+            colorMapping: [
+                {
+                    value: 'Permanent', color: '#D84444'
+                },
+                {
+                    value: 'Non-Permanent', color: '#316DB5'
+                }]
+        };
+        this.legendSettings = {
             visible: true
         }
     }
@@ -141,7 +265,7 @@ The following properties are available in legend to customize the legend shape a
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Legend } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 
@@ -157,18 +281,24 @@ Maps.Inject(Legend);
 })
 
 export class AppComponent implements OnInit {
+    public dataSource: object[];
+    public shapeData: object;
+    public shapePropertyPath: string;
+    public shapeDataPath: string;
+    public shapeSettings: object;
+    public legendSettings: object;
     ngOnInit(): void {
-        public dataSource: Object[] = [
+        this.dataSource = [
             { "Country": "China", "Membership": "Permanent" },
             { "Country": "France", "Membership": "Permanent" },
             { "Country": "Russia", "Membership": "Permanent" },
             { "Country": "Kazakhstan","Membership": "Non-Permanent" },
             { "Country": "Poland", "Membership": "Non-Permanent" },
             { "Country": "Sweden", "Membership": "Non-Permanent" }];
-        public shapeData: Object = world_map;
-        public shapePropertyPath: String = 'name';
-        public shapeDataPath: String= 'Country';
-        public shapeSettings: Object = {
+        this.shapeData = world_map;
+        this.shapePropertyPath = 'name';
+        this.shapeDataPath = 'Country';
+        this.shapeSettings = {
             colorValuePath: 'Membership',
             colorMapping: [
                 {
@@ -178,7 +308,7 @@ export class AppComponent implements OnInit {
                     value: 'Non-Permanent', color: '#316DB5'
                 }]
         };
-        public legendSettings: Object = {
+        this.legendSettings = {
             visible: true,
             background: 'green',
             border: {
@@ -248,7 +378,7 @@ The following example shows how to enable legend for items excluded from the col
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Legend } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 import{ Population_Density } from 'data.ts'
@@ -265,12 +395,18 @@ Maps.Inject(Legend);
 })
 
 export class AppComponent implements OnInit {
+    public dataSource: object[];
+    public shapeData: object;
+    public shapePropertyPath: string;
+    public shapeDataPath: string;
+    public shapeSettings: object;
+    public legendSettings: object;
     ngOnInit(): void {
-        public dataSource: Object[] = Population_Density;
-        public shapeData: Object = world_map;
-        public shapePropertyPath: String = 'name';
-        public shapeDataPath: String= 'name';
-        public shapeSettings: Object = {
+        this.dataSource = Population_Density;
+        this.shapeData = world_map;
+        this.shapePropertyPath = 'name';
+        this.shapeDataPath = 'name';
+        this.shapeSettings = {
             colorValuePath: 'density',
             colorMapping: [
                 {
@@ -284,7 +420,7 @@ export class AppComponent implements OnInit {
                 },
             ]
         };
-        public legendSettings: Object = {
+        this.legendSettings = {
             visible: true
         }
     }
@@ -302,7 +438,7 @@ Use the [`showLegend`](../api/maps/colorMappingSettingsModel/#showlegend) proper
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Legend } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 
@@ -318,18 +454,24 @@ Maps.Inject(Legend);
 })
 
 export class AppComponent implements OnInit {
+    public dataSource: object[];
+    public shapeData: object;
+    public shapePropertyPath: string;
+    public shapeDataPath: string;
+    public shapeSettings: object;
+    public legendSettings: object;
     ngOnInit(): void {
-        public dataSource: Object[] = [
+        this.dataSource = [
             { "Country": "China", "Membership": "Permanent"},
             { "Country": "France", "Membership": "Permanent" },
             { "Country": "Russia","Membership": "Permanent"},
             { "Country": "Kazakhstan", "Membership": "Both"},
             { "Country": "Poland", "Membership": "Non-Permanent"},
             { "Country": "Sweden", "Membership": "Non-Permanent"}];
-        public shapeData: Object = world_map;
-        public shapePropertyPath: String = 'name';
-        public shapeDataPath: String= 'Country';
-        public shapeSettings: Object = {
+        this.shapeData = world_map;
+        this.shapePropertyPath = 'name';
+        this.shapeDataPath = 'Country';
+        this.shapeSettings = {
             colorValuePath: 'Membership',
             colorMapping: [
                 {
@@ -342,7 +484,7 @@ export class AppComponent implements OnInit {
                     color: 'violet', showLegend : false
                 }]
         };
-        public legendSettings: Object = {
+        this.legendSettings = {
             visible: true
         }
     }
@@ -360,7 +502,7 @@ Depending on the boolean values provided in the data source, the legend items wi
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Legend } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 
@@ -376,21 +518,27 @@ Maps.Inject(Legend);
 })
 
 export class AppComponent implements OnInit {
+    public dataSource: object[];
+    public shapeData: object;
+    public shapePropertyPath: string;
+    public shapeDataPath: string;
+    public shapeSettings: object;
+    public legendSettings: object;
     ngOnInit(): void {
-        public dataSource: Object[] = [
+        this.dataSource = [
             { "Country": "China", "Membership": "Permanent", "visibility" : "true", "color" : "red"},
             { "Country": "France", "Membership": "Permanent", "visibility" : "true", "color" : "blue" },
             { "Country": "Russia", "Membership": "Permanent", "visibility" : "true", "color" : "green"},
             { "Country": "Kazakhstan", "Membership": "Both", "visibility" : "true", "color" : "orange"},
             { "Country": "Poland","Membership": "Non-Permanent", "visibility" : "true", "color" : "yellow"},
             { "Country": "Sweden", "Membership": "Non-Permanent", "visibility" : "true", "color" : "pink"}];
-        public shapeData: Object = world_map;
-        public shapePropertyPath: String = 'name';
-        public shapeDataPath: String= 'Country';
-        public shapeSettings: Object = {
+        this.shapeData = world_map;
+        this.shapePropertyPath = 'name';
+        this.shapeDataPath = 'Country';
+        this.shapeSettings = {
             colorValuePath: 'color',
         };
-        public legendSettings: Object = {
+        this.legendSettings = {
             visible: true,
             showLegendPath: 'visibility'
         }
@@ -409,7 +557,7 @@ To show the legend text based on values provided in the data source, use the [`v
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Legend } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 
@@ -425,21 +573,27 @@ Maps.Inject(Legend);
 })
 
 export class AppComponent implements OnInit {
+    public dataSource: object[];
+    public shapeData: object;
+    public shapePropertyPath: string;
+    public shapeDataPath: string;
+    public shapeSettings: object;
+    public legendSettings: object;
     ngOnInit(): void {
-        public dataSource: Object[] = [
+        this.dataSource = [
             { "Country": "China", "Membership": "Permanent", "visibility" : "true", "color" : "red"},
             { "Country": "France", "Membership": "Permanent", "visibility" : "true", "color" : "blue" },
             { "Country": "Russia","Membership": "Permanent", "visibility" : "true", "color" : "green"},
             { "Country": "Kazakhstan", "Membership": "Both", "visibility" : "true", "color" : "orange"},
             { "Country": "Poland", "Membership": "Non-Permanent", "visibility" : "true", "color" : "yellow"},
             { "Country": "Sweden", "Membership": "Non-Permanent", "visibility" : "true", "color" : "pink"}];
-        public shapeData: Object = world_map;
-        public shapePropertyPath: String = 'name';
-        public shapeDataPath: String= 'Country';
-        public shapeSettings: Object = {
+        this.shapeData = world_map;
+        this.shapePropertyPath = 'name';
+        this.shapeDataPath = 'Country';
+        this.shapeSettings = {
             colorValuePath: 'color',
         };
-        public legendSettings: Object = {
+        this.legendSettings = {
             visible: true,
             valuePath: 'Country'
         }
@@ -458,7 +612,7 @@ To hide the duplicate legend items in Maps, set the [`removeDuplicateLegend`](..
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Legend } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 
@@ -474,21 +628,27 @@ Maps.Inject(Legend);
 })
 
 export class AppComponent implements OnInit {
+    public dataSource: object[];
+    public shapeData: object;
+    public shapePropertyPath: string;
+    public shapeDataPath: string;
+    public shapeSettings: object;
+    public legendSettings: object;
     ngOnInit(): void {
-        public dataSource: Object[] = [
+        this.dataSource = [
             { "Country": "China", "Membership": "Permanent","visibility" : "true", "color" : "red"},
             { "Country": "France", "Membership": "Permanent", "visibility" : "true", "color" : "blue" },
             { "Country": "Russia", "Membership": "Permanent", "visibility" : "true", "color" : "green"},
             { "Country": "Kazakhstan", "Membership": "Both", "visibility" : "true", "color" : "orange"},
             { "Country": "Poland", "Membership": "Non-Permanent", "visibility" : "true", "color" : "yellow"},
             { "Country": "Sweden", "Membership": "Non-Permanent", "visibility" : "true", "color" : "pink"}];
-        public shapeData: Object = world_map;
-        public shapePropertyPath: String = 'name';
-        public shapeDataPath: String= 'Country';
-        public shapeSettings: Object = {
+        this.shapeData = world_map;
+        this.shapePropertyPath = 'name';
+        this.shapeDataPath = 'Country';
+        this.shapeSettings = {
             colorValuePath: 'color',
         };
-        public legendSettings: Object = {
+        this.legendSettings  = {
             visible: true,
             valuePath: 'Membership',
             removeDuplicateLegend: true
@@ -517,7 +677,7 @@ The following example demonstrates how to enable the toggle option to legend.
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Legend } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 import{ Population_Density } from 'data.ts'
@@ -534,12 +694,18 @@ Maps.Inject(Legend);
 })
 
 export class AppComponent implements OnInit {
+    public dataSource: object[];
+    public shapeData: object;
+    public shapePropertyPath: string;
+    public shapeDataPath: string;
+    public shapeSettings: object;
+    public legendSettings: object;
     ngOnInit(): void {
-        public dataSource: Object[] = Population_Density;
-        public shapeData: Object = world_map;
-        public shapePropertyPath: String = 'name';
-        public shapeDataPath: String= 'name';
-        public shapeSettings: Object = {
+        this.dataSource = Population_Density;
+        this.shapeData = world_map;
+        this.shapePropertyPath = 'name';
+        this.shapeDataPath = 'name';
+        this.shapeSettings = {
             colorValuePath: 'density',
                 colorMapping: [
                 {
@@ -552,7 +718,7 @@ export class AppComponent implements OnInit {
                     color: 'rgb(77,112,184)'
                 }]
         };
-        public legendSettings: Object = {
+        this.legendSettings = {
             visible: true,
             toggleLegendSettings: {
                 enable: true,
@@ -577,7 +743,7 @@ To enable the legend for the bubble by setting the [`visible`](../api/maps/legen
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Bubble, Legend } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Bubble, Legend);
@@ -592,11 +758,16 @@ Maps.Inject(Bubble, Legend);
 })
 
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public shapeDataPath: object;
+    public shapePropertyPath: object;
+    public bubbleSettings: object;
+    public legendSettings: object;
     ngOnInit(): void {
-        public shapeData: Object = world_map;
-        public shapeDataPath: Object = 'name',
-        public shapePropertyPath: Object = 'name',
-        public bubbleSettings: Object = [{
+        this.shapeData = world_map;
+        this.shapeDataPath = 'name',
+        this.shapePropertyPath = 'name',
+        this.bubbleSettings = [{
             visible: true,
             minRadius: 20,
             dataSource:  [
@@ -608,7 +779,7 @@ export class AppComponent implements OnInit {
             valuePath: 'population',
             colorValuePath: 'color'
         }];
-        public legendSettings: Object = {
+        this.legendSettings = {
             visible: true,
             type: 'Bubbles'
         };
@@ -625,7 +796,7 @@ To enable legend for marker by setting the [`visible`](../api/maps/legendSetting
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
 ```typescript
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps, Marker, Legend } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Marker, Legend);
@@ -640,9 +811,12 @@ Maps.Inject(Marker, Legend);
 })
 
 export class AppComponent implements OnInit {
+    public shapeData: object;
+    public markerSettings: object;
+    public legendSettings: object;
     ngOnInit(): void {
-        public shapeData: Object = world_map;
-        public markerSettings: Object = [{
+        this.shapeData = world_map;
+        this.markerSettings = [{
             visible: true,
             legendText: 'city',
             dataSource: [
@@ -651,7 +825,7 @@ export class AppComponent implements OnInit {
                 { latitude: 42, longitude: -93, city: 'Iowa' }
             ]
         }];
-        public legendSettings: Object = {
+        this.legendSettings = {
             visible: true,
             type: 'Markers'
         }

@@ -35,10 +35,10 @@ Maps.Inject(Bubble);
 })
 
 export class AppComponent implements OnInit {
-    public shapeData: Object;
-    public shapeDataPath: Object;
-    public shapePropertyPath: Object;
-    public bubbleSettings: Object
+    public shapeData: object;
+    public shapeDataPath: object;
+    public shapePropertyPath: object;
+    public bubbleSettings: object
     ngOnInit(): void {
         this.shapeData = world_map;
         this.shapeDataPath = 'name';
@@ -87,10 +87,10 @@ Maps.Inject(Bubble);
 })
 
 export class AppComponent implements OnInit {
-    public shapeData: Object;
-    public shapeDataPath: Object;
-    public shapePropertyPath: Object;
-    public bubbleSettings: Object;
+    public shapeData: object;
+    public shapeDataPath: object;
+    public shapePropertyPath: object;
+    public bubbleSettings: object;
     ngOnInit(): void {
         this.shapeData = world_map;
         this.shapeDataPath = 'name';
@@ -138,10 +138,10 @@ Maps.Inject(Bubble);
 })
 
 export class AppComponent implements OnInit {
-    public shapeData: Object;
-    public shapeDataPath: Object;
-    public shapePropertyPath: Object
-    public bubbleSettings: Object;
+    public shapeData: object;
+    public shapeDataPath: object;
+    public shapePropertyPath: object
+    public bubbleSettings: object;
     ngOnInit(): void {
         this.shapeData = world_map;
         this.shapeDataPath = 'name';
@@ -193,10 +193,10 @@ Maps.Inject(Bubble);
 })
 
 export class AppComponent implements OnInit {
-    public shapeData: Object;
-    public shapeDataPath: Object;
-    public shapePropertyPath: Object;
-    public bubbleSettings: Object;
+    public shapeData: object;
+    public shapeDataPath: object;
+    public shapePropertyPath: object;
+    public bubbleSettings: object;
     ngOnInit(): void {
         this.shapeData = world_map;
         this.shapeDataPath = 'name';
@@ -241,10 +241,10 @@ Maps.Inject(Bubble);
 })
 
 export class AppComponent implements OnInit {
-    public shapeData: Object;
-    public shapeDataPath: Object;
-    public shapePropertyPath: Object;
-    public bubbleSettings: Object;
+    public shapeData: object;
+    public shapeDataPath: object;
+    public shapePropertyPath: object;
+    public bubbleSettings: object;
     ngOnInit(): void {
         this.shapeData = world_map;
         this.shapeDataPath = 'name';
@@ -288,10 +288,10 @@ Maps.Inject(Bubble);
 })
 
 export class AppComponent implements OnInit {
-    public shapeData: Object;
-    public shapeDataPath: Object;
-    public shapePropertyPath: Object;
-    public bubbleSettings: Object;
+    public shapeData: object;
+    public shapeDataPath: object;
+    public shapePropertyPath: object;
+    public bubbleSettings: object;
     ngOnInit(): void {
         this.shapeData = world_map;
         this.shapeDataPath = 'name';
@@ -368,10 +368,10 @@ Maps.Inject(Bubble, MapsTooltip);
 })
 
 export class AppComponent implements OnInit {
-    public shapeData: Object;
-    public shapeDataPath: Object;
-    public shapePropertyPath: Object;
-    public bubbleSettings: Object;
+    public shapeData: object;
+    public shapeDataPath: object;
+    public shapePropertyPath: object;
+    public bubbleSettings: object;
     ngOnInit(): void {
         this.shapeData = world_map;
         this.shapeDataPath = 'name';

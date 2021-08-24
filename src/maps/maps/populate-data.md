@@ -107,7 +107,7 @@ In the below example, both "**name**" fields contain the same value as "**Afghan
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 @Component({
@@ -120,8 +120,13 @@ import { world_map } from 'world-map.ts';
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public dataSource: object[];
+    public shapeData: object;
+    public shapePropertyPath: string;
+    public shapeDataPath: string;
+    public shapeSettings: object;
     ngOnInit(): void {
-        public dataSource: Object[] = [  
+        this.dataSource = [  
             {
                 'code': 'AF',
                 'value': 53,
@@ -171,10 +176,10 @@ export class AppComponent implements OnInit {
                 'color': '#a69d70'
             }
         ]
-        public shapeData: Object = world_map;
-        public shapePropertyPath: String = 'name';
-        public shapeDataPath: String= 'name';
-        public shapeSettings: Object = {
+        this.shapeData = world_map;
+        this.shapePropertyPath = 'name';
+        this.shapeDataPath= 'name';
+        this.shapeSettings = {
             colorValuePath: 'color',
             fill: '#E5E5E5'
         }
@@ -203,7 +208,7 @@ Refer complex support for data source as illustrated in the following example.
 
 ```typescript
 
-import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Maps , Marker, Bubble, MapsTooltip } from '@syncfusion/ej2-angular-maps';
 import { world_map } from 'world-map.ts';
 Maps.Inject(Marker, Bubble, MapsTooltip);
@@ -219,8 +224,16 @@ Maps.Inject(Marker, Bubble, MapsTooltip);
     </ejs-maps>`
 })
 export class AppComponent implements OnInit {
+    public dataSource: object[];
+    public shapeData: object;
+    public shapePropertyPath: string;
+    public shapeDataPath: string;
+    public shapeSettings: object;
+    public tooltipSettings: object;
+    public bubbleSettings: object[];
+    public markerSettings: object[];
     ngOnInit(): void {
-        public dataSource: Object[] = [
+        this.dataSource = [
 			{ "Continent": "North America", 'color': '#71B081',
             data: { "continent": "North America", 'color': '#71B081' }
             },
@@ -240,17 +253,17 @@ export class AppComponent implements OnInit {
             data: { "continent": "Australia", 'color': '#124F5E' }
             }
 		]
-        public shapeData: Object = world_map;
-        public shapePropertyPath: String = 'continent';
-        public shapeDataPath: String= 'data.continent';
-	    public shapeSettings: Object = {
+        this.shapeData = world_map;
+        this.shapePropertyPath = 'continent';
+        this.shapeDataPath= 'data.continent';
+	    this.shapeSettings = {
 	       colorValuePath : 'data.color'
 	    };
-	    public tooltipSettings: Object = {
+	    this.tooltipSettings = {
 	        visible: true,
             valuePath: 'data.continent'
 	    };
-	    public bubbleSettings: Object[] =  [
+	    this.bubbleSettings =  [
             {
                 visible: true,
                 valuePath: 'data.value',
@@ -271,7 +284,7 @@ export class AppComponent implements OnInit {
                 }
             }
         ];
-	    public markerSettings: Object[] = [
+	    this.markerSettings = [
             {
                 visible: true,
                 dataSource: [
