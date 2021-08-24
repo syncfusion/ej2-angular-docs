@@ -33,7 +33,7 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public tooltip: Object;
+    public tooltip: object;
     ngOnInit(): void {
         // Initialize objects
         this.tooltip = {
@@ -74,12 +74,12 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public tooltip: Object;
+    public tooltip: object;
     ngOnInit(): void {
         // Initialize objects
         this.tooltip = {
             enable: true,
-            template: '<div id="templateWrap"><div style="float: right; padding-left:10px; line-height:30px;"><span>Pointer &nbsp;&nbsp;:&nbsp; ${Math.round(pointers[0].value)}</span></div></div>'
+            template: '<div id="templateWrap">Pointer value:${value}</div>'
         };
     }
 
@@ -146,11 +146,11 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public lineStyle: Object;
-    public majorTicks: Object;
-    public minorTicks: Object;
-    public tooltip: Object;
-    public cap: Object;
+    public lineStyle: object;
+    public majorTicks: object;
+    public minorTicks: object;
+    public tooltip: object;
+    public cap: object;
     public annotaions;
     ngOnInit(): void {
         // Initialize objects
@@ -215,7 +215,7 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public tooltip: Object;
+    public tooltip: object;
     ngOnInit(): void {
         // Initialize objects.
         this.tooltip = {

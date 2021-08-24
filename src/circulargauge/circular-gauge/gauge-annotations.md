@@ -28,7 +28,7 @@ import { Component, OnInit } from '@angular/core';
                     <e-pointer value = 50></e-pointer>
                 </e-pointers>
                 <e-annotations>
-                    <e-annotation>
+                    <e-annotation zIndex="1">
 						<ng-template #content>
 							<div>
 							  <div><span>Pointer Value : 50</span>
@@ -75,7 +75,7 @@ import { Component, OnInit } from '@angular/core';
                     <e-pointer value = 50></e-pointer>
                 </e-pointers>
                 <e-annotations>
-                    <e-annotation angle=90 radius="150%">
+                    <e-annotation angle=90 radius="150%" zIndex="1">
 						<ng-template #content>
 							<div>
 								<div><span>Pointer Value : 50</span>
@@ -145,14 +145,14 @@ import { ILoadedEventArgs } from '@syncfusion/ej2-circulargauge';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public labelStyle: Object;
-    public lineStyle: Object;
-    public pointerBorder: Object;
-    public pointerCap: Object;
-    public pointerTail: Object;
-    public pointerAnimation: Object;
-    public pointerCap1: Object;
-    public pointerTail1: Object;
+    public labelStyle: object;
+    public lineStyle: object;
+    public pointerBorder: object;
+    public pointerCap: object;
+    public pointerTail: object;
+    public pointerAnimation: object;
+    public pointerCap1: object;
+    public pointerTail1: object;
     public loaded: Function;
     ngOnInit(): void {
         // Initialize objects

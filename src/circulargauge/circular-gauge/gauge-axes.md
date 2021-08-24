@@ -29,7 +29,7 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public lineStyle: Object;
+    public lineStyle: object;
     ngOnInit(): void {
         // Initialize objects
         this.lineStyle= {
@@ -201,8 +201,8 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public majorTicks: Object;
-    public minorTicks: Object;
+    public majorTicks: object;
+    public minorTicks: object;
     ngOnInit(): void {
         // Initialize objects
         this.majorTicks= {
@@ -252,8 +252,8 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public majorTicks: Object;
-    public minorTicks: Object;
+    public majorTicks: object;
+    public minorTicks: object;
     ngOnInit(): void {
         // Initialize objects
         this.majorTicks= {
@@ -301,7 +301,7 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public labelStyle: Object;
+    public labelStyle: object;
     ngOnInit(): void {
         // Initialize objects
         this.labelStyle= {
@@ -343,7 +343,7 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public labelStyle: Object;
+    public labelStyle: object;
     ngOnInit(): void {
         // Initialize objects
         this.labelStyle= {
@@ -377,7 +377,7 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public labelStyle: Object;
+    public labelStyle: object;
     ngOnInit(): void {
         // Initialize objects
         this.labelStyle= {
@@ -415,9 +415,9 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public majorTicks: Object;
-    public minorTicks: Object;
-    public labelStyle: Object;
+    public majorTicks: object;
+    public minorTicks: object;
+    public labelStyle: object;
     ngOnInit(): void {
         // Initialize objects
         this.majorTicks= {
@@ -462,7 +462,7 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public labelStyle: Object;
+    public labelStyle: object;
     ngOnInit(): void {
         // Initialize objects
         this.labelStyle= {
@@ -555,7 +555,7 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public labelStyle: Object;
+    public labelStyle: object;
     ngOnInit(): void {
         // Initialize objects
         this.labelStyle= {
@@ -588,8 +588,8 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public minorTicks: Object;
-    public majorTicks: Object;
+    public minorTicks: object;
+    public majorTicks: object;
     ngOnInit(): void {
         // Initialize objects
         this.majorTicks= {
@@ -658,11 +658,11 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public majorTicks: Object;
-    public minorTicks: Object;
-    public majorTicks1: Object;
-    public minorTicks1: Object;
-    public pointers: Object;
+    public majorTicks: object;
+    public minorTicks: object;
+    public majorTicks1: object;
+    public minorTicks1: object;
+    public pointers: object;
     ngOnInit(): void {
         // Initialize objects
         this.pointers = [];

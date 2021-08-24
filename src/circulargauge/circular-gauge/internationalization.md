@@ -36,7 +36,7 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public labelStyle: Object;
+    public labelStyle: object;
     ngOnInit(): void {
         // Initialize objects.
         this.labelStyle= {

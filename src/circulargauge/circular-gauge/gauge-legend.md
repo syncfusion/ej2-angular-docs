@@ -97,9 +97,9 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public lineStyle: Object;
-    public majorTicks: Object;
-    public minorTicks: Object;
+    public lineStyle: object;
+    public majorTicks: object;
+    public minorTicks: object;
     public legendSettings: object;
     ngOnInit(): void {
         // Initialize objects.
@@ -157,9 +157,9 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public lineStyle: Object;
-    public majorTicks: Object;
-    public minorTicks: Object;
+    public lineStyle: object;
+    public majorTicks: object;
+    public minorTicks: object;
     public legendSettings: object;
     ngOnInit(): void {
         // Initialize objects.
@@ -211,9 +211,9 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public lineStyle: Object;
-    public majorTicks: Object;
-    public minorTicks: Object;
+    public lineStyle: object;
+    public majorTicks: object;
+    public minorTicks: object;
     public legendSettings: object;
     ngOnInit(): void {
         // Initialize objects.
@@ -265,9 +265,9 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public lineStyle: Object;
-    public majorTicks: Object;
-    public minorTicks: Object;
+    public lineStyle: object;
+    public majorTicks: object;
+    public minorTicks: object;
     public legendSettings: object;
     ngOnInit(): void {
         // Initialize objects.

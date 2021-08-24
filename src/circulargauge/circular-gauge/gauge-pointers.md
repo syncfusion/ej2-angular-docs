@@ -67,8 +67,8 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public cap: Object;
-    public needleTail: Object;
+    public cap: object;
+    public needleTail: object;
     ngOnInit(): void {
         // Initialize objects
         this.cap= {
@@ -115,8 +115,8 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public cap: Object;
-    public needleTail: Object;
+    public cap: object;
+    public needleTail: object;
     ngOnInit(): void {
         // Initialize objects
         this.cap= {
@@ -172,13 +172,13 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public cap: Object;
-    public needleTail: Object;
-	public animation: Object;
-    public labelStyle: Object;
-	public lineStyle: Object;
-	public majorTicks: Object;
-	public minorTicks: Object;
+    public cap: object;
+    public needleTail: object;
+	public animation: object;
+    public labelStyle: object;
+	public lineStyle: object;
+	public majorTicks: object;
+	public minorTicks: object;
 	public needleStartWidth: Number;
 	public needleEndWidth: Number;
     ngOnInit(): void {
@@ -281,7 +281,7 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public pointerBorder: Object;
+    public pointerBorder: object;
     ngOnInit(): void {
         // Initialize objects
         this.pointerBorder = {
@@ -325,7 +325,7 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-   public lineStyle: Object;
+   public lineStyle: object;
    ngOnInit(): void {
         // Initialize objects
 		this.lineStyle = {
@@ -415,7 +415,7 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public pointerBorder: Object;
+    public pointerBorder: object;
     public markerSize: number;
     ngOnInit(): void {
         // Initialize objects
@@ -457,7 +457,7 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public animation: Object;
+    public animation: object;
     ngOnInit(): void {
     }
 }
@@ -493,8 +493,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
     public markerSize: number;
-    public pointerCap: Object;
-    public pointerTail: Object;
+    public pointerCap: object;
+    public pointerTail: object;
     ngOnInit(): void {
         // Initialize objects
         this.markerSize = 15;
@@ -541,7 +541,7 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public animation: Object;
+    public animation: object;
     ngOnInit(): void {
         // Initialize objects
         this.animation= {
@@ -585,12 +585,12 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public lineStyle: Object;
-    public labelStyle: Object;
-    public majorTicks: Object;
-    public minorTicks: Object;
-    public pointers: Object[];
-    public pointerLinearGradient: Object = {
+    public lineStyle: object;
+    public labelStyle: object;
+    public majorTicks: object;
+    public minorTicks: object;
+    public pointers: object[];
+    public pointerLinearGradient: object = {
         startValue: '0%',
         endValue: '100%',
         colorStop: [
@@ -673,12 +673,12 @@ import { Component, OnInit } from '@angular/core';
     </ejs-circulargauge>`
 })
 export class AppComponent implements OnInit {
-    public lineStyle: Object;
-    public labelStyle: Object;
-    public majorTicks: Object;
-    public minorTicks: Object;
-    public pointers: Object[];
-    public pointerRadialGradient : Object = {
+    public lineStyle: object;
+    public labelStyle: object;
+    public majorTicks: object;
+    public minorTicks: object;
+    public pointers: object[];
+    public pointerRadialGradient : object = {
         radius: '50%',
         innerPosition: { x: '50%', y: '50%' },
         outerPosition: { x: '50%', y: '50%' },

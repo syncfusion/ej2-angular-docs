@@ -82,7 +82,7 @@ import { ImageExportService, CircularGaugeComponent } from '@syncfusion/ej2-angu
     template:
     `<ejs-circulargauge id="circular-container" [allowImageExport]=true #gauge>
     </ejs-circulargauge>
-    <div><button  id='export' (click)='export()'>Export</button></div>`,
+    <div><button  id='export' (click)='export()'>Export</button></div> <div id="data"></div>`,
     providers: [ImageExportService]
 })
 export class AppComponent implements OnInit {
@@ -92,7 +92,7 @@ export class AppComponent implements OnInit {
         public export() {
             const promise = this.gaugeObj.export('PNG','Gauge',null,false);
             promise.then((data)=> {
-                document.writeln(data);
+                document.getElementById('data').innerHTML = data;
             })
         }
     }
