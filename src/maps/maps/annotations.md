@@ -1,5 +1,5 @@
 ---
-title: " Annotations in Angular Maps control | Syncfusion "
+title: "Annotations in Angular Maps control | Syncfusion"
 
 component: "Maps"
 
@@ -54,7 +54,7 @@ export class AppComponent implements OnInit {
 
 ### Changing the z-index
 
-The stack order of an annotation element can be changed using the [`zIndex`](../api/maps/annotationModel/#zindex) property in the [`annotations`](../api/maps/annotationModel) property.
+The stack order of an annotation element can be changed using the [`zIndex`](../api/maps/annotationModel/#zindex) property in the [`annotations`](../api/maps/annotationModel).
 
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
@@ -91,7 +91,7 @@ export class AppComponent implements OnInit {
 
 ### Positioning an annotation
 
-Annotations can be placed anywhere in the Maps by specifying pixel or percentage values to the [`x`](../api/maps/annotationModel/#x) and [`y`](../api/maps/annotationModel/#y) properties in the [`annotations`](../api/maps/annotationModel) property.
+Annotations can be placed anywhere in the Maps by specifying pixel or percentage values to the [`x`](../api/maps/annotationModel/#x) and [`y`](../api/maps/annotationModel/#y) properties in the [`annotations`](../api/maps/annotationModel).
 
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
@@ -128,7 +128,7 @@ export class AppComponent implements OnInit {
 
 ### Alignment of an annotation
 
-Annotations can be aligned using the [`horizontalAlignment`](../api/maps/annotationModel/#horizontalalignment) and [`verticalAlignment`](../api/maps/annotationModel/#verticalalignment) properties in the [`annotations`](../api/maps/annotationModel) property. The possible values can be "**Center**", "**Far**", "**Near**" and "**None**".
+Annotations can be aligned using the [`horizontalAlignment`](../api/maps/annotationModel/#horizontalalignment) and [`verticalAlignment`](../api/maps/annotationModel/#verticalalignment) properties in the [`annotations`](../api/maps/annotationModel). The possible values can be **Center**, **Far**, **Near** and **None**.
 
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
@@ -167,7 +167,7 @@ export class AppComponent implements OnInit {
 
 ## Multiple Annotation
 
-Multiple annotations can be added to the Maps using the [`annotations`](../api/maps/annotationModel) property in which the properties of annotations are added as an array. The customization for the annotations can be done with the [`annotations`](../api/maps/annotationModel) property.
+Multiple annotations can be added to the Maps using the [`annotations`](../api/maps/annotationModel) in which the properties of annotations are added as an array. The customization for the annotations can be done with the [`annotations`](../api/maps/annotationModel).
 
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 

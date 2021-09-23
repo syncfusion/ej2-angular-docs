@@ -1,18 +1,18 @@
 ---
-title: " Open Street Maps in Angular Maps control | Syncfusion "
+title: "Open Street Maps in Angular Maps control | Syncfusion"
 
 component: "Maps"
 
 description: "Learn here all about Open Street Maps of Syncfusion Angular Maps control and more."
 ---
 
-# Open Street Maps in Angular Maps control
+# OpenStreetMaps in Angular Maps control
 
-The OpenStreetMap (OSM) is the online map provider built by a community of developers; it is free to use under an open license. It allows to view geographical data in a collaborative way from anywhere on the earth. The OSM map provides small tile images based on our requests and combines those images into a single image to display the map area in the Maps component.
+The OpenStreetMap (OSM) is the online Maps provider built by a community of developers; it is free to use under an open license. It allows to view geographical data in a collaborative way from anywhere on the earth. The OSM Maps provides small tile images based on our requests and combines those images into a single image to display the Maps area in the Maps component.
 
 ## Adding OpenStreetMap
 
-The OSM map can be rendered using by setting the [`layerType`](../api/maps/layerSettingsModel/#layertype) property value as "**OSM**".
+The OSM Maps can be rendered using by setting the [`layerType`](../api/maps/layerSettingsModel/#layertype) property value as **OSM**.
 
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
@@ -45,9 +45,9 @@ export class AppComponent implements OnInit {
 
 The OSM tile server can be changed by setting the tile URL in the [`urlTemplate`](../api/maps/layerSettingsModel/#urltemplate) property. For more details about the OSM tile server, refer [here](https://wiki.openstreetmap.org/wiki/Tiles).
 
-## Zooming and panning
+## Zooming and Panning
 
-The OSM maps layer can be zoomed and panned. Zooming helps to get a closer look at a particular area on a map for in-depth analysis. Panning helps to move a map around to focus the targeted area.
+The OSM Maps layer can be zoomed and panned. Zooming helps to get a closer look at a particular area on a Maps for in-depth analysis. Panning helps to move a Maps around to focus the targeted area.
 
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
@@ -85,7 +85,7 @@ export class AppComponent implements OnInit {
 
 ## Adding markers and navigation line
 
-Markers can be added to the layers of OSM maps by setting the corresponding location's coordinates of latitude and longitude using [`markerSettings`](../api/maps/layerSettingsModel/#markersettings) property. Navigation lines can be added on top of an OSM maps layer for highlighting a path among various places by setting the corresponding location's coordinates of latitude and longitude in the [`navigationLineSettings`](../api/maps/layerSettingsModel/#navigationlinesettings) property.
+Markers can be added to the layers of OSM Maps by setting the corresponding location's coordinates of latitude and longitude using [`markerSettings`](../api/maps/layerSettingsModel/#markersettings). Navigation lines can be added on top of an OSM Maps layer for highlighting a path among various places by setting the corresponding location's coordinates of latitude and longitude in the [`navigationLineSettings`](../api/maps/layerSettingsModel/#navigationlinesettings).
 
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
@@ -155,7 +155,7 @@ export class AppComponent implements OnInit {
 
 ## Sublayer
 
-Any GeoJSON shape can be rendered as a sublayer on top of the OSM maps layer for highlighting a particular continent or country in OSM maps by adding another layer and specifying the [`type`](../api/maps/layerSettingsModel/#type) property of maps layer to "**SubLayer**".
+Any GeoJSON shape can be rendered as a sublayer on top of the OSM Maps layer for highlighting a particular continent or country in OSM Maps by adding another layer and specifying the [`type`](../api/maps/layerSettingsModel/#type) property of Maps layer to **SubLayer**.
 
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 

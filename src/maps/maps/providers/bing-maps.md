@@ -1,5 +1,5 @@
 ---
-title: " Bing Maps in Angular Maps control | Syncfusion "
+title: "Bing Maps in Angular Maps control | Syncfusion"
 
 component: "Maps"
 
@@ -8,11 +8,11 @@ description: "Learn here all about Bing Maps of Syncfusion Angular Maps control 
 
 # Bing Maps in Angular Maps control
 
-Bing maps is a online map provider owned by Microsoft. As like OSM, it provides map tile images based on our requests and combines those images into a single one to display the map area.
+Bing Maps is a online Maps provider, owned by Microsoft. As like OSM, it provide Maps tile images based on our requests and combines those images into a single one to display Maps area.
 
 ## Adding Bing Maps
 
-The Bing Maps can be rendered by setting the [`layerType`](../api/maps/layerSettingsModel/#layertype) property as "**Bing**" and the key for the Bing Maps must be set in the [`key`](../api/maps/layerSettingsModel/#key) property. The Bing Maps key can be obtained from [here](https://www.microsoft.com/en-us/maps/create-a-bing-maps-key).
+The Bing Maps can be rendered by setting the [`layerType`](../api/maps/layerSettingsModel/#layertype) property as **Bing** and the key for the Bing Maps must be set in the [`key`](../api/maps/layerSettingsModel/#key) property. The Bing Maps key can be obtained from [here](https://www.microsoft.com/en-us/maps/create-a-bing-maps-key).
 
 ```typescript
 
@@ -40,20 +40,20 @@ export class AppComponent implements OnInit {
 
 ```
 
-> Specify Bing map key in the `key` property.
+>Specify Bing Maps key in the `key` property.
 
-## Types of Bing maps
+## Types of Bing Maps
 
-Bing Maps provides different types of maps and it is supported in the Maps control.
+Bing Maps provides different types of Maps and it is supported in the Maps control.
 
 * **Aerial** - Displays satellite images to highlight roads and major landmarks for easy identification.
-* **AerialWithLabel** - Displays aerial map with labels for the continent, country, ocean, etc.
-* **Road** - Displays the default map view of roads, buildings, and geography.
-* **CanvasDark** - Displays dark version of the road maps.
-* **CanvasLight** - Displays light version of the road maps.
-* **CanvasGray** - Displays grayscale version of the road maps.
+* **AerialWithLabel** - Displays aerial Maps with labels for the continent, country, ocean, etc.
+* **Road** - Displays the default Maps view of roads, buildings, and geography.
+* **CanvasDark** - Displays dark version of the road Maps.
+* **CanvasLight** - Displays light version of the road Maps.
+* **CanvasGray** - Displays grayscale version of the road Maps.
 
-To render the light version of the road maps, set the `bingMapType` to `CanvasLight` as demonstrated in the following code sample.
+To render the light version of the road Maps, set the `bingMapType` to `CanvasLight` as demonstrated in the following code sample.
 
 ```typescript
 
@@ -81,11 +81,11 @@ export class AppComponent implements OnInit {
 
 ```
 
-> Specify Bing maps key in the `key` property.
+>Specify Bing Maps key in the `key` property.
 
-## Zooming and panning
+## Zooming and Panning
 
-Bing maps layer can be zoomed and panned. Zooming helps to get a closer look at a particular area on a map for in-depth analysis. Panning helps to move a map around to focus the targeted area.
+Bing Maps layer can be zoomed and panned. Zooming helps to get a closer look at a particular area on a Maps for in-depth analysis. Panning helps to move a Maps around to focus the targeted area.
 
 ```typescript
 
@@ -119,11 +119,11 @@ export class AppComponent implements OnInit {
 
 ```
 
-> Specify Bing map key in the `key` property.
+>Specify Bing Maps key in the `key` property.
 
 ## Adding markers and navigation line
 
-Markers can be added to the layers of Bing maps by setting the corresponding location's coordinates of latitude and longitude using [`markerSettings`](../api/maps/layerSettingsModel/#markersettings) property. Navigation lines can be added on top of an Bing maps layer for highlighting a path among various places by setting the corresponding location's coordinates of latitude and longitude in the [`navigationLineSettings`](../api/maps/layerSettingsModel/#navigationlinesettings) property.
+Markers can be added to the layers of Bing Maps by setting the corresponding location's coordinates of latitude and longitude using [`markerSettings`](../api/maps/layerSettingsModel/#markersettings). Navigation lines can be added on top of an Bing Maps layer for highlighting a path among various places by setting the corresponding location's coordinates of latitude and longitude in the [`navigationLineSettings`](../api/maps/layerSettingsModel/#navigationlinesettings).
 
 ```typescript
 
@@ -193,8 +193,8 @@ export class AppComponent implements OnInit {
 
 ```
 
-> Specify Bing map key in the `Key` property.
+>Specify Bing Maps key in the `Key` property.
 
 ## Sublayer
 
-Any GeoJSON shape can be rendered as a sublayer on top of the Bing maps layer for highlighting a particular continent or country in Bing maps by adding another layer and specifying the [`type`](../api/maps/layerSettingsModel/#type) property of maps layer to "**SubLayer**".
+Any GeoJSON shape can be rendered as a sublayer on top of the Bing Maps layer for highlighting a particular continent or country in Bing Maps by adding another layer and specifying the [`type`](../api/maps/layerSettingsModel/#type) property of Maps layer to **SubLayer**.

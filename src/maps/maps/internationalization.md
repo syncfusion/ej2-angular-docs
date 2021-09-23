@@ -26,7 +26,7 @@ Maps component using [`format`](../api/maps/mapsModel/#format) property in the [
 
 ## Numeric Format
 
-The numeric formats such as currency, percentage and so on can be displayed in the tooltip and data labels of the Maps using the [`format`](../api/maps/mapsModel/#format) property in the [`Maps`](../api/maps/mapsModel). In the below example, the tooltip is globalized to **"German"** culture. When setting the [`useGroupingSeparator`](../api/maps/mapsModel/#usegroupingseparator) property as "**true**", the numeric text in the Maps separates with the comma separator.
+The numeric formats such as currency, percentage and so on can be displayed in the tooltip and data labels of the Maps using the [`format`](../api/maps/mapsModel/#format) property in the [`Maps`](../api/maps/mapsModel). In the below example, the tooltip is globalized to **German** culture. When setting the [`useGroupingSeparator`](../api/maps/mapsModel/#usegroupingseparator) property as **true**, the numeric text in the Maps separates with the comma separator.
 
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 

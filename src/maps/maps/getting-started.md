@@ -520,5 +520,3 @@ export class AppComponent implements OnInit {
 ```
 
 {% endtab %}
-
-N> You can refer to our [Angular Map](https://www.syncfusion.com/angular-ui-components/angular-maps) feature tour page for its groundbreaking feature representations. You can also explore our [Angular Map example](https://ej2.syncfusion.com/angular/demos/#/material/maps/default) to know how to render and configure the map.

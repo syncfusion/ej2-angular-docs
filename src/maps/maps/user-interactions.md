@@ -1,5 +1,5 @@
 ---
-title: " User interactions in Angular Maps control | Syncfusion "
+title: "User interactions in Angular Maps control | Syncfusion"
 
 component: "Maps"
 
@@ -10,17 +10,17 @@ description: "Learn here all about User interactions of Syncfusion Angular Maps 
 
 ## Zooming
 
-The zooming feature is used to zoom in and out the Map to show in-depth information. It is controlled by the [`zoomFactor`](../api/maps/zoomSettingsModel/#zoomfactor) property of the [`zoomSettings`](../api/maps/zoomSettingsModel) of the Maps. The Map is zoomed in when the [`zoomFactor`](../api/maps/zoomSettingsModel/#zoomfactor) is increased. The Map will be zoomed out as the [`zoomFactor`](../api/maps/zoomSettingsModel/#zoomfactor) is reduced.
+The zooming feature is used to zoom in and out of Maps to show in-depth information. It is controlled by the [`zoomFactor`](../api/maps/zoomSettingsModel/#zoomfactor) property of the [`zoomSettings`](../api/maps/zoomSettingsModel). The [`zoomFactor`](../api/maps/zoomSettingsModel/#zoomfactor) is increased or decrease dynamically based on zoom in and out interaction.
 
 <b>Enable zooming</b>
 
-Zooming of Maps is enabled by setting the [`enable`](../api/maps/zoomSettingsModel/#enable) property of [`zoomSettings`](../api/maps/zoomSettingsModel/) property to "**true**".
+Zooming of Maps is enabled by setting the [`enable`](../api/maps/zoomSettingsModel/#enable) property of [`zoomSettings`](../api/maps/zoomSettingsModel/) to **true**.
 
 <!-- markdownlint-disable MD010 -->
 
 <b>Enable panning</b>
 
-To enable the panning feature, set the [`enablePanning`](../api/maps/zoomSettingsModel/#enablepanning) property of [`zoomSettings`](../api/maps/zoomSettingsModel) to "**true**".
+To enable the panning feature, set the [`enablePanning`](../api/maps/zoomSettingsModel/#enablepanning) property of [`zoomSettings`](../api/maps/zoomSettingsModel) to **true**.
 
 <b>app.component.ts</b>
 
@@ -135,7 +135,7 @@ export class AppComponent implements OnInit {
 
 #### Pinch zooming
 
-To enable or disable the pinch zooming, use the [`pinchZooming`](../api/maps/zoomSettingsModel/#pinchzooming) property in [`zoomSettings`](../api/maps/zoomSettingsModel) property.
+To enable or disable the pinch zooming, use the [`pinchZooming`](../api/maps/zoomSettingsModel/#pinchzooming) property in [`zoomSettings`](../api/maps/zoomSettingsModel).
 
 ``` typescript
 import { Component, OnInit } from '@angular/core';
@@ -167,7 +167,7 @@ export class AppComponent implements OnInit {
 
 #### Single-click zooming
 
-To enable or disable the single-click zooming, use the [`zoomOnClick`](../api/maps/zoomSettingsModel/#zoomonclick) property in [`zoomSettings`](../api/maps/zoomSettingsModel) property.
+To enable or disable the single-click zooming, use the [`zoomOnClick`](../api/maps/zoomSettingsModel/#zoomonclick) property in [`zoomSettings`](../api/maps/zoomSettingsModel).
 
 ``` typescript
 import { Component, OnInit } from '@angular/core';
@@ -199,7 +199,7 @@ export class AppComponent implements OnInit {
 
 #### Double-click zooming
 
-To enable or disable the double-click zooming, use the [`doubleClickZoom`](../api/maps/zoomSettingsModel/#doubleclickzoom) property in [`zoomSettings`](../api/maps/zoomSettingsModel/) property.
+To enable or disable the double-click zooming, use the [`doubleClickZoom`](../api/maps/zoomSettingsModel/#doubleclickzoom) property in [`zoomSettings`](../api/maps/zoomSettingsModel/).
 
 ``` typescript
 import { Component, OnInit } from '@angular/core';
@@ -231,7 +231,7 @@ export class AppComponent implements OnInit {
 
 #### Mouse wheel zooming
 
-To enable or disable mouse wheel zooming, use the [`mouseWheelZoom`](../api/maps/zoomSettingsModel/#mousewheelzoom) property in [`zoomSettings`](../api/maps/zoomSettingsModel/) property.
+To enable or disable mouse wheel zooming, use the [`mouseWheelZoom`](../api/maps/zoomSettingsModel/#mousewheelzoom) property in [`zoomSettings`](../api/maps/zoomSettingsModel/).
 
 ``` typescript
 import { Component, OnInit } from '@angular/core';
@@ -263,7 +263,7 @@ export class AppComponent implements OnInit {
 
 #### Selection zooming
 
-To enable or disable selection zooming, use the [`enableSelectionZooming`](../api/maps/zoomSettingsModel/#enableselectionzooming) property in [`zoomSettings`](../api/maps/zoomSettingsModel/) property. The [`enablePanning`](../api/maps/zoomSettingsModel/#enablepanning) property must be set to **false** to enable the selection zooming in Maps.
+To enable or disable selection zooming, use the [`enableSelectionZooming`](../api/maps/zoomSettingsModel/#enableselectionzooming) property in [`zoomSettings`](../api/maps/zoomSettingsModel/). The [`enablePanning`](../api/maps/zoomSettingsModel/#enablepanning) property must be set to **false** to enable the selection zooming in Maps.
 
 ``` typescript
 import { Component, OnInit } from '@angular/core';
@@ -296,7 +296,7 @@ export class AppComponent implements OnInit {
 
 ### Setting minimum and maximum values for zoom factor
 
-The zooming range can be adjusted using the [`minZoom`](../api/maps/zoomSettingsModel/#minzoom) and [`maxZoom`](../api/maps/zoomSettingsModel/#maxzoom) properties in [`zoomSettings`](../api/maps/zoomSettingsModel/) property. The minZoom value is set to 1 by default, and the maxZoom value is set to 10.
+The zooming range can be adjusted using the [`minZoom`](../api/maps/zoomSettingsModel/#minzoom) and [`maxZoom`](../api/maps/zoomSettingsModel/#maxzoom) properties in [`zoomSettings`](../api/maps/zoomSettingsModel/). The minZoom value is set to 1 by default, and the maxZoom value is set to 10.
 
 ``` typescript
 import { Component, OnInit } from '@angular/core';
@@ -329,7 +329,7 @@ export class AppComponent implements OnInit {
 
 ### Zooming with animation
 
-To zoom in or zoom out the Maps with animation, use the [`animationDuration`](../api/maps/layerSettingsModel/#animationduration) property in [`layers`](../api/maps/layerSettingsModel) property.
+To zoom in or zoom out the Maps with animation, use the [`animationDuration`](../api/maps/layerSettingsModel/#animationduration) property in [`layers`](../api/maps/layerSettingsModel).
 
 ``` typescript
 import { Component, OnInit } from '@angular/core';
@@ -399,7 +399,7 @@ export class AppComponent implements OnInit {
 
 Each shape in the Maps can be selected and deselected during interaction with the shapes. Selection is enabled by setting the [`enable`](../api/maps/selectionSettingsModel/#enable) property of [`selectionSettings`](../api/maps/selectionSettingsModel) to **true**.
 
-The following properties are available to customize the selection of Map elements such as shapes, bubbles, markers and legends.
+The following properties are available to customize the selection of Maps elements such as shapes, bubbles, markers and legends.
 
 * [`border`](../api/maps/selectionSettingsModel/#border) - To customize the color, width and opacity of the border of which element is selected in Maps.
 * [`fill`](../api/maps/selectionSettingsModel/#fill) - Applies the color for the element that is selected.
@@ -474,9 +474,9 @@ export class AppComponent implements OnInit {
 
 ### Enable selection for bubbles
 
-To enable the selection for bubbles in Maps, set the [`selectionSettings`](../api/maps/selectionSettingsModel) property in [`bubbleSettings`](../api/maps/bubbleSettingsModel/) property and set the [`enable`](../api/maps/selectionSettingsModel/#enable) property of [`selectionSettings`](../api/maps/selectionSettingsModel) property as **true**.
+To enable the selection for bubbles in Maps, set the [`selectionSettings`](../api/maps/selectionSettingsModel) in [`bubbleSettings`](../api/maps/bubbleSettingsModel/) and set the [`enable`](../api/maps/selectionSettingsModel/#enable) property of [`selectionSettings`](../api/maps/selectionSettingsModel) as **true**.
 
-**Note:** To use the bubble feature, the Bubble module must be injected.
+>To use the bubble feature, the Bubble module must be injected.
 
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
@@ -526,9 +526,9 @@ export class AppComponent implements OnInit {
 
 ### Enable selection for markers
 
-To enable the selection for markers in Maps, set the [`selectionSettings`](../api/maps/selectionSettingsModel) property in the [`markerSettings`](../api/maps/markerSettingsModel) property and set the [`enable`](../api/maps/selectionSettingsModel/#enable) property of the [`selectionSettings`](../api/maps/selectionSettingsModel) property as **true**.
+To enable the selection for markers in Maps, set the [`selectionSettings`](../api/maps/selectionSettingsModel) in the [`markerSettings`](../api/maps/markerSettingsModel) and set the [`enable`](../api/maps/selectionSettingsModel/#enable) property of the [`selectionSettings`](../api/maps/selectionSettingsModel) as **true**.
 
-**Note:** To use the marker feature, the Marker module must be injected.
+>To use the marker feature, the Marker module must be injected.
 
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
@@ -619,9 +619,9 @@ export class AppComponent {
 
 ### Initial shape selection
 
-The shape is initially selected using the [`initialShapeSelection`](../api/maps/initialShapeSelectionSettingsModel) property, and the values are mapped to the [`shapePath`](../api/maps/initialShapeSelectionSettingsModel/#shapepath) and [`shapeValue`](../api/maps/initialShapeSelectionSettingsModel/#shapevalue).
+The shape is initially selected using the [`initialShapeSelection`](../api/maps/initialShapeSelectionSettingsModel), and the values are mapped to the [`shapePath`](../api/maps/initialShapeSelectionSettingsModel/#shapepath) and [`shapeValue`](../api/maps/initialShapeSelectionSettingsModel/#shapevalue).
 
-**Note:** initialShapeSelection is an Array property.
+>initialShapeSelection is an Array property.
 
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
@@ -663,7 +663,7 @@ export class AppComponent implements OnInit {
 
 ### Initial marker selection
 
-Using the [`initialMarkerSelection`](../api/maps/initialMarkerSelectionSettingsModel) property, the marker shape can be selected initially. Markers render based on the [`latitude`](../api/maps/initialMarkerSelectionSettingsModel/#latitude) and [`longitude`](../api/maps/initialMarkerSelectionSettingsModel/#longitude) values.
+Using the [`initialMarkerSelection`](../api/maps/initialMarkerSelectionSettingsModel), the marker shape can be selected initially. Markers render based on the [`latitude`](../api/maps/initialMarkerSelectionSettingsModel/#latitude) and [`longitude`](../api/maps/initialMarkerSelectionSettingsModel/#longitude) values.
 
 **Note:** initialMarkerSelection is an Array property.
 
@@ -717,9 +717,9 @@ export class AppComponent implements OnInit {
 
 ## Highlight
 
-Each shape in the Map can be highlighted during mouse hover on the Map elements such as shapes, bubbles, markers and legends. Highlight is enabled by setting the [`enable`](../api/maps/highlightSettingsModel/#enable) property of [`highlightSettings`](../api/maps/highlightSettingsModel) to "**true**".
+Each shape in the Maps can be highlighted during mouse hover on the Maps elements such as shapes, bubbles, markers and legends. Highlight is enabled by setting the [`enable`](../api/maps/highlightSettingsModel/#enable) property of [`highlightSettings`](../api/maps/highlightSettingsModel) to **true**.
 
-The following properties are available to customize the highlight of Map elements such as shapes, bubbles, markers and legends.
+The following properties are available to customize the highlight of Maps elements such as shapes, bubbles, markers and legends.
 
 * [`border`](../api/maps/highlightSettingsModel/#border) - To customize the color, width and opacity of the border of which element is highlighted in Maps.
 * [`fill`](../api/maps/highlightSettingsModel/#fill) - Applies the color for the element that is highlighted.
@@ -793,9 +793,9 @@ export class AppComponent implements OnInit {
 
 ### Enable highlight for bubbles
 
-To enable the highlight for bubbles in Maps, set the [`highlightSettings`](../api/maps/highlightSettingsModel) property in [`bubbleSettings`](../api/maps/bubbleSettingsModel) property and set the [`enable`](../api/maps/highlightSettingsModel/#enable) property of [`highlightSettings`](../api/maps/highlightSettingsModel) property as **true**.
+To enable the highlight for bubbles in Maps, set the [`highlightSettings`](../api/maps/highlightSettingsModel) in [`bubbleSettings`](../api/maps/bubbleSettingsModel) and set the [`enable`](../api/maps/highlightSettingsModel/#enable) property of [`highlightSettings`](../api/maps/highlightSettingsModel) as **true**.
 
-**Note:** To use the bubble feature, the Bubble module must be injected.
+>To use the bubble feature, the Bubble module must be injected.
 
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
@@ -845,7 +845,7 @@ export class AppComponent implements OnInit {
 
 ### Enable highlight for markers
 
-To enable the highlight for markers in Maps, set the [`highlightSettings`](../api/maps/highlightSettingsModel) property in [`markerSettings`](../api/maps/markerSettingsModel) property and set the [`enable`](../api/maps/highlightSettingsModel/#enable) property of [`highlightSettings`](../api/maps/highlightSettingsModel) property as **true**.
+To enable the highlight for markers in Maps, set the [`highlightSettings`](../api/maps/highlightSettingsModel) in [`markerSettings`](../api/maps/markerSettingsModel) and set the [`enable`](../api/maps/highlightSettingsModel/#enable) property of [`highlightSettings`](../api/maps/highlightSettingsModel) as **true**.
 
 **Note:** To use the marker feature, the Marker module must be injected.
 
@@ -896,7 +896,7 @@ export class AppComponent implements OnInit {
 
 ## Tooltip
 
-On mouse over or touch end event, the tooltip is used to get more information about the layer, bubble, or marker. To enable tooltip in Maps, the **Tooltip** module must be injected into Maps using **Maps.Inject(Tooltip)** method. It can be enabled separately for layer or bubble or marker by using the [`visible`](../api/maps/tooltipSettingsModel/#visible) property of [`tooltipSettings`](../api/maps/tooltipSettingsModel/) as **true**. The [`valuePath`](../api/maps/tooltipSettingsModel/#valuepath) property in the tooltip takes the field name that presents in data source and displays that value as tooltip text. The [`tooltipDisplayMode`](../api/maps/mapsModel/#tooltipdisplaymode) property is used to change the display mode of the tooltip in Maps. Following display modes of tooltip are available in the Maps component. By default,  [`tooltipDisplayMode`](../api/maps/mapsModel/#tooltipdisplaymode) is set to **"MouseMove"**.
+On mouse over or touch end event, the tooltip is used to get more information about the layer, bubble, or marker. To enable tooltip in Maps, the **Tooltip** module must be injected into Maps using **Maps.Inject(Tooltip)** method. It can be enabled separately for layer or bubble or marker by using the [`visible`](../api/maps/tooltipSettingsModel/#visible) property of [`tooltipSettings`](../api/maps/tooltipSettingsModel/) as **true**. The [`valuePath`](../api/maps/tooltipSettingsModel/#valuepath) property in the tooltip takes the field name that presents in data source and displays that value as tooltip text. The [`tooltipDisplayMode`](../api/maps/mapsModel/#tooltipdisplaymode) property is used to change the display mode of the tooltip in Maps. Following display modes of tooltip are available in the Maps component. By default,  [`tooltipDisplayMode`](../api/maps/mapsModel/#tooltipdisplaymode) is set to **MouseMove**.
 
 * MouseMove
 * Click
@@ -1005,7 +1005,7 @@ export class AppComponent implements OnInit {
 
 ### Tooltip template
 
-The HTML element can be rendered in the tooltip of the Maps using the [`template`](../api/maps/tooltipSettingsModel/#template) property of the [`tooltipSettings`](../api/maps/tooltipSettingsModel/) property.
+The HTML element can be rendered in the tooltip of the Maps using the [`template`](../api/maps/tooltipSettingsModel/#template) property of the [`tooltipSettings`](../api/maps/tooltipSettingsModel/).
 
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 

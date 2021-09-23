@@ -2,7 +2,7 @@
 
 ## State Persistence
 
-For state maintenance, state persistence allows Maps to save the current modal value in browser cookies. This action is handled through the [`enablePersistence`](../api/maps#enablepersistence) property which is set to **false** by default. When this property is set to true, some of the Maps component model values are preserved even after the page is refreshed.
+State persistence allows the Maps to retain the current model value in the browser cookies for state maintenance. This action is handled through the [`enablePersistence`](../api/maps#enablepersistence) property which is set to **false** by default. When this property is set to **true**, some of the Maps component model values are preserved even after the page is refreshed.
 
 ```typescript
 import { Component, OnInit } from '@angular/core';

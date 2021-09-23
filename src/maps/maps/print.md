@@ -10,7 +10,7 @@ description: "Learn here all about Print And Export feature of Syncfusion Angula
 
 ## Print
 
-The rendered Maps can be printed directly from the browser by calling the [`print`](../api/maps/#print) method. To use the print functionality, the **PrintService** must be injected into the Maps using **providers** of the Angular component and set the [`allowPrint`](../api/maps/#allowprint) property to "**true**".
+The rendered Maps can be printed directly from the browser by calling the [`print`](../api/maps/#print) method. To use the print functionality, the **PrintService** must be injected into the Maps using **providers** of the Angular component and set the [`allowPrint`](../api/maps/#allowprint) property to **true**.
 
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
@@ -132,7 +132,7 @@ export class AppComponent {
 
 {% endtab %}
 
-#### Exporting Maps as base64 string of the file
+### Exporting Maps as base64 string of the file
 
 We can get the image file as base64 string for the JPEG and PNG formats. The rendered Maps can be exported to image as a base64 string using the [`export`](../api/maps/#export) method. There are four parameters required: image type, file name, orientation of the exported PDF document which must be set as **null** for image export and finally **allowDownload** which should be set as **false** to return base64 string.
 
@@ -196,7 +196,7 @@ export class AppComponent {
 
 ### PDF Export
 
-To use the PDF export functionality, **PdfExport** module must be injected into the Maps using **Maps.Inject(PdfExport)** method and set the [`allowPdfExport`](../api/maps/#allowpdfexport) property to **true**. The rendered map can be exported as PDF using the [`export`](../api/maps/#export) method. The [`export`](../api/maps/#export) method requires three parameters: file type, file name and orientation of the PDF document. The orientation setting is optional and "0" indicates portrait and "1" indicates landscape.
+To use the PDF export functionality, **PdfExport** module must be injected into the Maps using **Maps.Inject(PdfExport)** method and set the [`allowPdfExport`](../api/maps/#allowpdfexport) property to **true**. The rendered map can be exported as PDF using the [`export`](../api/maps/#export) method. The [`export`](../api/maps/#export) method requires three parameters: file type, file name and orientation of the PDF document. The orientation setting is optional and **0** indicates portrait and **1** indicates landscape.
 
 {% tab template="maps/default-map/datetime", sourceFiles="app/**/*.ts" %}
 
@@ -253,7 +253,7 @@ export class AppComponent {
 
 {% endtab %}
 
->Note: The exporting of the map as base64 string is not supported in the PDF export.
+>The exporting of the map as base64 string is not supported in the PDF export.
 
 ### Export the tile maps
 
