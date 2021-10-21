@@ -31,7 +31,7 @@ cd my-app
 
 All the available Essential JS 2 packages are published in [`npmjs.com`](https://www.npmjs.com/~syncfusionorg) registry.
 
-To install Pager component, use the following command.
+To install Angular Pager component, use the following command.
 
 ```bash
 npm install @syncfusion/ej2-angular-grids --save
@@ -73,7 +73,7 @@ The CSS files are available in ../node_modules/@syncfusion package folder. This 
 
 ## Adding Pager component
 
-Modify the template in [src/app/app.component.ts] file to render the pager component. Add the Angular pager by using `<ejs-pager>` selector in template section of the app.component.ts file.
+Modify the template in [src/app/app.component.ts] file to render the Angular pager component. Add the Angular pager by using `<ejs-pager>` selector in template section of the app.component.ts file.
 
 ```typescript
 import { Component, OnInit } from '@angular/core';

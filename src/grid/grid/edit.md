@@ -358,7 +358,7 @@ export class AppComponent implements OnInit {
 
 > Normal edit mode is default mode of editing.
 
-### Automatically update the column based on another column edited value
+#### Automatically update the column based on another column edited value
 
 You can update the column value based on another column edited value by using the Cell Edit Template feature.
 
@@ -464,11 +464,11 @@ export class AppComponent implements OnInit {
 
 {% endtab %}
 
-### Cancel edit based on condition
+#### Cancel edit based on condition
 
 You can prevent the CRUD operations of the Grid by using condition in the [`actionBegin`](../api/grid/#actionbegin) event with requestType as `beginEdit` for editing, `add` for adding and `delete` for deleting actions.
 
-In the below demo, we prevent the CRUD operation based on the `Role` column value. If the Role Column is ‘employee’, we are unable to edit/delete that row.
+In the below demo, we prevent the CRUD operation based on the `Role` column value. If the Role Column is `Employee`, we are unable to edit/delete that row.
 
 {% tab template="grid/edit", sourceFiles="app/app.component.ts,app/app.module.ts,app/main.ts" %}
 
@@ -615,7 +615,7 @@ export class AppComponent implements OnInit {
 
 {% endtab %}
 
-### Automatically update the column based on another column edited value in Batch mode
+#### Automatically update the column based on another column edited value in Batch mode
 
 You can update the column value based on another column edited value in Batch mode by using the Cell Edit Template feature.
 
@@ -723,6 +723,69 @@ export class AppComponent implements OnInit {
     }
   }
 }
+```
+
+{% endtab %}
+
+#### Cancel edit based on condition in Batch mode
+
+You can prevent the CRUD operations of the Batch edit Grid by using condition in the [`cellEdit`](../api/grid/#cellEdit), [`beforeBatchAdd`](../api/grid/#beforeBatchAdd) and [`beforeBatchDelete`](../api/grid/#beforeBatchDelete) events for Edit, Add and Delete actions respectively.
+
+In the below demo, we prevent the CRUD operation based on the `Role` column value. If the Role Column is `Employee`, we are unable to edit/delete that row.
+
+{% tab template="grid/edit", sourceFiles="app/app.component.ts,app/app.module.ts,app/main.ts" %}
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+import { data } from './datasource';
+import { EditSettingsModel, ToolbarItems } from '@syncfusion/ej2-angular-grids';
+
+@Component({
+    selector: 'app-root',
+    template: `<button (click)="btnClick($event)">Grid is Addable</button>
+               <ejs-grid [dataSource]='data' [editSettings]='editSettings' [toolbar]='toolbar' (cellEdit)="cellEdit($event)" (beforeBatchAdd)="beforeBatchAdd($event)" (beforeBatchDelete)="beforeBatchDelete($event)" height='240px'>
+                <e-columns>
+                    <e-column field='OrderID' headerText='Order ID' textAlign='Right' isPrimaryKey='true' width=100></e-column>
+                    <e-column field='Role' headerText='Role' width=120></e-column>
+                    <e-column field='Freight' headerText='Freight' textAlign= 'Right'
+                     editType= 'numericedit' width=120 format= 'C2'></e-column>
+                    <e-column field='ShipCountry' headerText='Ship Country' editType= 'dropdownedit' width=150></e-column>
+                </e-columns>
+               </ejs-grid>`
+})
+export class AppComponent implements OnInit {
+
+    public data: object[];
+    public editSettings: EditSettingsModel;
+    public toolbar: ToolbarItems[];
+    public isAddable: boolean = true;
+
+    ngOnInit(): void {
+        this.data = data;
+        this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'Batch' };
+        this.toolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel'];
+    }
+    cellEdit(args) {
+        if (args.rowData['Role'] == 'Employee') {
+            args.cancel = true;
+        }
+    }
+    beforeBatchAdd(args) {
+        if (!this.isAddable) {
+            args.cancel = true;
+        }
+    }
+    beforeBatchDelete(args) {
+        if (args.rowData['Role'] == 'Employee') {
+            args.cancel = true;
+        }
+    }
+    btnClick(args) {
+        args.target.innerText == 'Grid is Addable' ? (args.target.innerText = 'Grid is Not Addable') : (args.target.innerText = 'Grid is Addable');
+        this.isAddable = !this.isAddable;
+    }
+}
+
 ```
 
 {% endtab %}
