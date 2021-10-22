@@ -150,7 +150,7 @@ object.
 ```typescript
 import { Component, OnInit } from '@angular/core';
 import { data } from './datasource';
-import { ReturnType } from '@syncfusion/ej2-grids';
+import { ReturnType, AggregateColumnModel } from '@syncfusion/ej2-grids';
 
 @Component({
     selector: 'app-root',
@@ -159,12 +159,11 @@ import { ReturnType } from '@syncfusion/ej2-grids';
 export class AppComponent implements OnInit {
 
     public data: object[];
-    public ShipCountry = 'ShipCountry';
     ngOnInit(): void {
         this.data = data;
     }
-    public customAggregateFn = (sdata: ReturnType) =>
-        sdata.result.filter((item: object) => item[this.ShipCountry] === 'Brazil').length
+    public customAggregateFn = (sdata: ReturnType, aggColumn: AggregateColumnModel) =>
+        sdata.result.filter((item: object) => item[aggColumn.columnName] === 'Brazil').length
 }
 
 
