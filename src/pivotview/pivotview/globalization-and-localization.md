@@ -33,7 +33,7 @@ import { loadCldr} from '@syncfusion/ej2-base';
 loadCldr(
     require('cldr-data/supplemental/numberingSystems.json'),
     require('cldr-data/main/fr-CH/ca-gregorian.json'),
-    require('cldr-data/main/fr-CH/numbers.json'));
+    require('cldr-data/main/fr-CH/numbers.json'),
     require('cldr-data/main/fr-CH/timeZoneNames.json'));
 ```
 
