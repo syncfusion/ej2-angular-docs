@@ -109,7 +109,7 @@ This can be referenced in [src/styles.css] using following code.
 
 ## Adding DateTimePicker component
 
-Modify the template in [src/app/app.component.ts] file to render the DateTimePicker component.
+Modify the template in [src/app/app.component.ts] file to render the Angular DateTime Picker component.
 Add the Angular DateTimePicker by using `<ejs-datetimepicker>` selector in `template` section of the app.component.ts file.
 
 ```javascript
@@ -154,7 +154,7 @@ export class AppComponent {
 
 ## Setting the min and max
 
-The minimum and maximum date time can be defined with the help of `min` and `max` property. The following example demonstrates to set the `min` and `max` on initializing the DateTimePicker. To know more about range restriction in DateTimePicker, please refer this [page](./date-time-range).
+The minimum and maximum date time can be defined with the help of `min` and `max` property. The following example demonstrates to set the `min` and `max` on initializing the DateTimePicker. To know more about range restriction in Angular DateTime Picker, please refer this [page](./date-time-range).
 
 {% tab template="datetimepicker/accessibility", sourceFiles="app/**/*.ts", isDefaultActive=true %}
 
@@ -182,6 +182,8 @@ export class AppComponent {
 changed through code behind, then you have to
 update the `value` property to set within the
 range.
+
+N> You can refer to our [Angular DateTime Picker]( https://www.syncfusion.com/angular-ui-components/angular-datetime-picker) feature tour page for its groundbreaking feature representations. You can also explore our [Angular DateTime Picker example](https://ej2.syncfusion.com/angular/demos/#/material/datetimepicker/default) that shows how to render the DateTime Picker in Angular.
 
 ## See Also
 

@@ -19,7 +19,7 @@ import { MaskedDateTimeService } from '@syncfusion/ej2-angular-calendars';
 @Component({
     selector: 'app-root',
     template: `
-        <ejs-datepicker [format]="format" [enableMask]="enableMaskSupport"></ejs-datepicker>
+        <ejs-datepicker  [enableMask]="enableMaskSupport"></ejs-datepicker>
         `,
     providers: [MaskedDateTimeService],
 })

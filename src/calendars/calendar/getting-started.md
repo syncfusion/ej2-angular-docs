@@ -181,6 +181,8 @@ export class AppComponent {
 
 {% endtab %}
 
+> You can refer to our [Angular Calendar](https://www.syncfusion.com/angular-ui-components/angular-calendar) feature tour page for its groundbreaking feature representations. You can also explore our [Angular Calendar example](https://ej2.syncfusion.com/angular/demos/#/material/calendar/default) that shows how to render the Calendar in Angular.
+
 ## See Also
 
 * [Select multiple dates in the Calendar](./multi-select)
