@@ -24,6 +24,7 @@
 * [Globalization](schedule/localization.md)
 * [Accessibility](schedule/accessibility.md)
 * [Styling And Appearance](schedule/scheduler-styling.md)
+* [FAQ](schedule/frequently-asked-questions.md)
 * [Migration from Essential JS 1](schedule/ej1-api-migration.md)
 * [Perform CRUD Actions Dynamically](schedule/how-to/add-edit-and-remove-events.md)
 * [Set Default Value for Event Fields](schedule/how-to/set-default-value-for-event-fields.md)
