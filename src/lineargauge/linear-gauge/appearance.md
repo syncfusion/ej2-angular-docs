@@ -1,5 +1,5 @@
 ---
-title: " Appearance in Angular Linear Gauge component | Syncfusion "
+title: "Appearance in Angular Linear Gauge component | Syncfusion"
 
 component: "Linear Gauge"
 
@@ -81,7 +81,7 @@ export class AppComponent {
 
 ## Customizing the Linear Gauge container
 
-The area used to render the ranges and pointers at the center position of the gauge is called container. It is of three types namely,
+The area used to render the ranges and pointers at the center position of the gauge is called container. The following types of container to be applicable for Linear Gauge.
 
 * Normal
 * Rounded Rectangle
@@ -97,7 +97,7 @@ The  type of the container can be modified by using the [`type`](../api/linear-g
 
 ### Normal
 
-The "**Normal**" type will render the container as a rectangle and this is the default container type.
+The **Normal** type will render the container as a rectangle and this is the default container type.
 
 {% tab template= "linear-gauge/appearance", sourceFiles="app/**/*.ts" %}
 
@@ -133,7 +133,7 @@ export class AppComponent implements OnInit {
 
 ### Rounded Rectangle
 
-The "**RoundedRectangle**" type will render the container as a rectangle with rounded corner radius. The rounded corner radius of the container can be customized using the [`roundedCornerRadius`](../api/linear-gauge/container/#roundedcornerradius) property in [`container`](../api/linear-gauge/containerModel).
+The **RoundedRectangle** type will render the container as a rectangle with rounded corner radius. The rounded corner radius of the container can be customized using the [`roundedCornerRadius`](../api/linear-gauge/container/#roundedcornerradius) property in [`container`](../api/linear-gauge/containerModel).
 
 {% tab template= "linear-gauge/appearance", sourceFiles="app/**/*.ts" %}
 
@@ -170,7 +170,7 @@ export class AppComponent implements OnInit {
 
 ### Thermometer
 
-The "**Thermometer**" type will render the container similar to the appearance of thermometer.
+The **Thermometer** type will render the container similar to the appearance of thermometer.
 
 {% tab template= "linear-gauge/appearance", sourceFiles="app/**/*.ts" %}
 
@@ -207,7 +207,7 @@ export class AppComponent implements OnInit {
 
 ## Fitting the Linear Gauge to the control
 
-The Linear Gauge component is rendered with margin by default. To remove the margin around the Linear Gauge, the [`allowMargin`](api/linear-gauge/#allowmargin) property in [`ejs-lineargauge`](../api/linear-gauge) is set as "**false**".
+The Linear Gauge component is rendered with margin by default. To remove the margin around the Linear Gauge, the [`allowMargin`](api/linear-gauge/#allowmargin) property in [`ejs-lineargauge`](../api/linear-gauge) is set as **false**.
 
 {% tab template= "linear-gauge/appearance", sourceFiles="app/**/*.ts" %}
 
@@ -251,4 +251,4 @@ export class AppComponent implements OnInit {
 
 {% endtab %}
 
-> Note: To use this feature, set the [`allowMargin`](api/linear-gauge/#allowmargin) property to "**false**", the [`width`](api/linear-gauge/#width) property to "**100%**" and the properties of [`margin`](api/linear-gauge/#margin) to "**0**".
+>To use this feature, set the [`allowMargin`](api/linear-gauge/#allowmargin) property to **false**, the [`width`](api/linear-gauge/#width) property to **100%** and the properties of [`margin`](api/linear-gauge/#margin) to **0**.

@@ -1,5 +1,5 @@
 * [Getting Started](linear-gauge/getting-started.md)
-* [Linear Gauge Dimensions](linear-gauge/dimensions.md)
+* [Dimensions](linear-gauge/dimensions.md)
 * [Axis](linear-gauge/axis.md)
 * [Ranges](linear-gauge/ranges.md)
 * [Pointers](linear-gauge/pointers.md)

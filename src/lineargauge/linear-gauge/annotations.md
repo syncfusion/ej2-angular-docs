@@ -1,5 +1,5 @@
 ---
-title: " Annotations in Angular Linear Gauge component | Syncfusion "
+title: "Annotations in Angular Linear Gauge component | Syncfusion"
 
 component: "Linear Gauge"
 
@@ -51,12 +51,12 @@ export class AppComponent {
 
 The following properties are used to customize the annotation.
 
-* [`zIndex`](../api/linear-gauge/annotation/#zindex) - This property is used to bring the annotation to the front or back, when annotation overlaps with another element.
-* [`axisValue`](../api/linear-gauge/annotation/#axisvalue) - This property is used to place the annotation in the specified axis value with respect to the provided axis index.
-* [`axisIndex`](../api/linear-gauge/annotation/#axisindex) - This property is used to place the annotation in the specified axis with respect to the provided axis value.
-* [`horizontalAlignment`](../api/linear-gauge/annotation#horizontalalignment-string) - This property is used to place the annotation horizontally.
-* [`verticalAlignment`](../api/linear-gauge/annotation#verticalalignment-string) - This property is used to place the annotation vertically.
-* [`x`](../api/linear-gauge/annotation/#x), [`y`](../api/linear-gauge/annotation/#y) - This property is used to place the annotation in the specified location.
+* [`zIndex`](../api/linear-gauge/annotation/#zindex) - Bring the annotation to the front or back, when annotation overlaps with another element.
+* [`axisValue`](../api/linear-gauge/annotation/#axisvalue) - To place the annotation in the specified axis value with respect to the provided axis index.
+* [`axisIndex`](../api/linear-gauge/annotation/#axisindex) - To place the annotation in the specified axis with respect to the provided axis value.
+* [`horizontalAlignment`](../api/linear-gauge/annotation#horizontalalignment-string) - To place the annotation horizontally.
+* [`verticalAlignment`](../api/linear-gauge/annotation#verticalalignment-string) - To place the annotation vertically.
+* [`x`](../api/linear-gauge/annotation/#x), [`y`](../api/linear-gauge/annotation/#y) - To place the annotation in the specified location.
 
 ### Changing the z-index
 
@@ -120,7 +120,7 @@ export class AppComponent {
 
 ### Alignment of annotation
 
-The annotation can be aligned horizontally and vertically by using the [`horizontalAlignment`](../api/linear-gauge/annotation/#horizontalalignment) and [`verticalAlignment`](../api/linear-gauge/annotation/#verticalalignment) properties respectively. The possible values can be "**Center**", "**Far**", "**Near**", and "**None**". The [`horizontalAlignment`](../api/linear-gauge/annotation/#horizontalalignment) and [`verticalAlignment`](../api/linear-gauge/annotation/#verticalalignment) properties are not applicable when the [`x`](../api/linear-gauge/annotation/#x) and [`y`](../api/linear-gauge/annotation/#y) properties are set in the [`e-annotation`](../api/linear-gauge/annotation).
+The annotation can be aligned horizontally and vertically by using the [`horizontalAlignment`](../api/linear-gauge/annotation/#horizontalalignment) and [`verticalAlignment`](../api/linear-gauge/annotation/#verticalalignment) properties respectively. The possible values can be **Center**, **Far**, **Near**, and **None**. The [`horizontalAlignment`](../api/linear-gauge/annotation/#horizontalalignment) and [`verticalAlignment`](../api/linear-gauge/annotation/#verticalalignment) properties are not applicable when the [`x`](../api/linear-gauge/annotation/#x) and [`y`](../api/linear-gauge/annotation/#y) properties are set in the [`e-annotation`](../api/linear-gauge/annotation).
 
 {% tab template= "linear-gauge/annotations", sourceFiles="app/**/*.ts" %}
 

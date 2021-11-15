@@ -1,5 +1,5 @@
 ---
-title: " Events in Angular Linear Gauge component | Syncfusion "
+title: "Events in Angular Linear Gauge component | Syncfusion"
 
 component: "Linear Gauge"
 

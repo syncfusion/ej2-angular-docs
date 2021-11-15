@@ -1,5 +1,5 @@
 ---
-title: " Internationalization in Angular Linear Gauge component | Syncfusion "
+title: "Internationalization in Angular Linear Gauge component | Syncfusion"
 
 component: "Linear Gauge"
 

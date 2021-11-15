@@ -1,5 +1,5 @@
 ---
-title: " Pointers in Angular Linear Gauge component | Syncfusion "
+title: "Pointers in Angular Linear Gauge component | Syncfusion"
 
 component: "Linear Gauge"
 
@@ -53,7 +53,7 @@ A marker pointer is a shape that can be used to mark the pointer value in the Li
 
 <b>Types of marker shapes</b>
 
-By default, the marker shape for the pointer is "**InvertedTriangle**". To change the shape of the pointer, use the [`markerType`](../api/linear-gauge/pointerModel/#markertype) property in [`e-pointer`](../api/linear-gauge/pointerModel/). The following marker types are available in Linear Gauge.
+By default, the marker shape for the pointer is **InvertedTriangle**. To change the shape of the pointer, use the [`markerType`](../api/linear-gauge/pointerModel/#markertype) property in [`e-pointer`](../api/linear-gauge/pointerModel/). The following marker types are available in Linear Gauge.
 
 * Circle
 * Rectangle
@@ -62,7 +62,7 @@ By default, the marker shape for the pointer is "**InvertedTriangle**". To chang
 * Diamond
 * Image
 
-An image can be rendered instead of rendering a shape as a pointer. It can be achieved by setting the [`markerType`](../api/linear-gauge/pointerModel/#markertype) property to "**Image**" and setting the source URL of image to [`imageUrl`](../api/linear-gauge/pointerModel/#imageurl) property in [`e-pointer`](../api/linear-gauge/pointerModel/).
+An image can be rendered instead of rendering a shape as a pointer. It can be achieved by setting the [`markerType`](../api/linear-gauge/pointerModel/#markertype) property to **Image** and setting the source URL of image to [`imageUrl`](../api/linear-gauge/pointerModel/#imageurl) property in [`e-pointer`](../api/linear-gauge/pointerModel/).
 
 {% tab template= "linear-gauge/pointers", sourceFiles="app/**/*.ts" %}
 
@@ -97,10 +97,10 @@ export class AppComponent {
 The marker pointer can be customized using the following properties.
 
 * [`height`](../api/linear-gauge/pointerModel/#height) - To set the height of the pointer.
-* [`position`](../api/linear-gauge/pointerModel/#position) - The position of the pointer can be changed by setting the value as "**Inside**", "**Outside**", "**Cross**", or "**Auto**".
+* [`position`](../api/linear-gauge/pointerModel/#position) - The position of the pointer can be changed by setting the value as **Inside**, **Outside**, **Cross**, or **Auto**.
 * [`width`](../api/linear-gauge/pointerModel/#width) - To set the width of the pointer.
 * [`color`](../api/linear-gauge/pointerModel/#color) - To set the color of the pointer.
-* [`placement`](../api/linear-gauge/pointerModel/#placement) - To place the pointer in the specified position. By default, the pointer is placed "**Far**" from the axis. To change the placement, set the [`placement`](../api/linear-gauge/pointerModel/#placement) property as "**Near**", "**Center**", or "**None**".
+* [`placement`](../api/linear-gauge/pointerModel/#placement) - To place the pointer in the specified position. By default, the pointer is placed **Far** from the axis. To change the placement, set the [`placement`](../api/linear-gauge/pointerModel/#placement) property as **Near**, **Center**, or **None**.
 * [`offset`](../api/linear-gauge/pointer/#offset) - To place the pointer with specified distance from the axis.
 * [`opacity`](../api/linear-gauge/pointerModel/#opacity) - To set the opacity of the pointer.
 * [`animationDuration`](../api/linear-gauge/pointerModel/#animationduration) - To specify the duration of the animation in pointer.
@@ -138,7 +138,7 @@ export class AppComponent {
 
 ### Bar Pointer
 
-The bar pointer is used to track the axis value. The bar pointer starts from the beginning of the gauge and ends at the pointer value. To enable bar pointer set the [`type`](../api/linear-gauge/pointerModel/#type) property in [`e-pointer`](../api/linear-gauge/pointerModel/) as "**Bar**".
+The bar pointer is used to track the axis value. The bar pointer starts from the beginning of the gauge and ends at the pointer value. To enable bar pointer set the [`type`](../api/linear-gauge/pointerModel/#type) property in [`e-pointer`](../api/linear-gauge/pointerModel/) as **Bar**.
 
 {% tab template= "linear-gauge/pointers", sourceFiles="app/**/*.ts" %}
 
@@ -180,7 +180,7 @@ The bar pointer can be customized using following properties.
 * [`border`](../api/linear-gauge/pointerModel/#border) - To set the color and width for the border of the pointer.
 * [`animationDuration`](../api/linear-gauge/pointerModel/#animationduration) - To set the duration of the animation in bar pointer.
 
-> Note: The placement property is not applicable for the bar pointer.
+>The placement property is not applicable for the bar pointer.
 
 {% tab template= "linear-gauge/pointers", sourceFiles="app/**/*.ts" %}
 
@@ -279,7 +279,7 @@ Gradient support allows the addition of multiple colors in the pointers of the L
 
 ### Linear Gradient
 
-Using linear gradient, colors will be applied in a linear progression. The start value of the linear gradient can be set using the [`startValue`](../api/linear-gauge/linearGradient/#startvalue) property. The end value of the linear gradient will be set using the [`endValue`](../api/linear-gauge/linearGradient/#endvalue) property. The color stop values such as [`color`](../api/linear-gauge/colorStopModel/#color), [`opacity`](../api/linear-gauge/colorStopModel/#opacity) and [`offset`](../api/linear-gauge/colorStopModel/#offset) are set using [`colorStop`](../api/linear-gauge/linearGradient/#colorstop) property. The linear gradient can be rendered for the pointer in the Linear Gauge by using the below example.
+Using linear gradient, colors will be applied in a linear progression. The start value of the linear gradient can be set using the [`startValue`](../api/linear-gauge/linearGradient/#startvalue) property. The end value of the linear gradient will be set using the [`endValue`](../api/linear-gauge/linearGradient/#endvalue) property. The color stop values such as [`color`](../api/linear-gauge/colorStopModel/#color), [`opacity`](../api/linear-gauge/colorStopModel/#opacity) and [`offset`](../api/linear-gauge/colorStopModel/#offset) are set using [`colorStop`](../api/linear-gauge/linearGradient/#colorstop) property.
 
 {% tab template= "linear-gauge/pointers", sourceFiles="app/**/*.ts" %}
 
@@ -348,7 +348,7 @@ export class AppComponent {
 
 ### Radial Gradient
 
-Using radial gradient, colors will be applied in circular progression. The inner circle position of the radial gradient will be set using the [`innerPosition`](../api/linear-gauge/radialGradient/#innerposition) property. The outer circle position of the radial gradient can be set using the [`outerPosition`](../api/linear-gauge/radialGradient/#outerposition) property. The color stop values such as [`color`](../api/linear-gauge/colorStopModel/#color), [`opacity`](../api/linear-gauge/colorStopModel/#opacity), and [`offset`](../api/linear-gauge/colorStopModel/#offset) are set using [`colorStop`](../api/linear-gauge/radialGradient/#colorstop) property. The radial gradient can be rendered for the pointer in the Linear Gauge by using the below example.
+Using radial gradient, colors will be applied in circular progression. The inner circle position of the radial gradient will be set using the [`innerPosition`](../api/linear-gauge/radialGradient/#innerposition) property. The outer circle position of the radial gradient can be set using the [`outerPosition`](../api/linear-gauge/radialGradient/#outerposition) property. The color stop values such as [`color`](../api/linear-gauge/colorStopModel/#color), [`opacity`](../api/linear-gauge/colorStopModel/#opacity), and [`offset`](../api/linear-gauge/colorStopModel/#offset) are set using [`colorStop`](../api/linear-gauge/radialGradient/#colorstop) property.
 
 {% tab template= "linear-gauge/pointers", sourceFiles="app/**/*.ts" %}
 
@@ -416,4 +416,4 @@ export class AppComponent {
 
 {% endtab %}
 
-> Note: If we set both gradients, only the linear gradient gets rendered. If we set the [`startValue`](../api/linear-gauge/linearGradient/#startvalue) and [`endValue`](../api/linear-gauge/linearGradient/#endvalue) property of the [`linearGradient`](../api/linear-gauge/linearGradient/) as empty strings, then the radial gradient gets rendered in the pointer of the Linear Gauge.
+>If we set both gradients, only the linear gradient gets rendered. If we set the [`startValue`](../api/linear-gauge/linearGradient/#startvalue) and [`endValue`](../api/linear-gauge/linearGradient/#endvalue) property of the [`linearGradient`](../api/linear-gauge/linearGradient/) as empty strings, then the radial gradient gets rendered in the pointer of the Linear Gauge.

@@ -1,5 +1,5 @@
 ---
-title: " Ranges in Angular Linear Gauge component | Syncfusion "
+title: "Ranges in Angular Linear Gauge component | Syncfusion"
 
 component: "Linear Gauge"
 
@@ -41,12 +41,12 @@ export class AppComponent {
 
 Ranges can be customized using the following properties in [`e-range`](../api/linear-gauge/rangeModel/).
 
-* [`startWidth`](../api/linear-gauge/rangeModel/#startwidth) - To set the thickness of the range at the start axis value.
-* [`endWidth`](../api/linear-gauge/rangeModel/#endwidth) - To set the thickness of the range at the end axis value.
-* [`color`](../api/linear-gauge/rangeModel/#color) - To set the color of the range.
+* [`startWidth`](../api/linear-gauge/rangeModel/#startwidth) - Customize the range thickness at the start axis value.
+* [`endWidth`](../api/linear-gauge/rangeModel/#endwidth) - Customize the range thickness at the end axis value.
+* [`color`](../api/linear-gauge/rangeModel/#color) - Customize the range color.
 * [`position`](../api/linear-gauge/rangeModel/#position) - To place the range. By default, the range is placed outside of the axis. To change the position, this property can be set as "**Inside**", "**Outside**", "**Cross**", or "**Auto**".
-* [`Offset`](../api/linear-gauge/rangeModel/#offset) - To place the range with the specified distance from the axis.
-* [`border`](../api/linear-gauge/rangeModel/#border) - To set the color and width for the border of the range.
+* [`Offset`](../api/linear-gauge/rangeModel/#offset) - To place the range with specified distance from the axis.
+* [`border`](../api/linear-gauge/rangeModel/#border) - Customize color and width of range border.
 
 {% tab template= "linear-gauge/ranges", sourceFiles="app/**/*.ts" %}
 
@@ -76,7 +76,7 @@ export class AppComponent {
 
 ## Setting the range color for the labels
 
-To set the color of the labels like the range color, set the [`useRangeColor`](../api/linear-gauge/labelModel/#userangecolor) property as "**true**" in the [`labelStyle`](../api/linear-gauge/axisModel/#labelstyle).
+To set the color of the labels like the range color, set the [`useRangeColor`](../api/linear-gauge/labelModel/#userangecolor) property as **true** in the [`labelStyle`](../api/linear-gauge/axisModel/#labelstyle).
 
 {% tab template= "linear-gauge/ranges", sourceFiles="app/**/*.ts" %}
 
@@ -110,7 +110,7 @@ export class AppComponent {
 
 ## Multiple ranges
 
-Multiple ranges can be added to the Linear Gauge by adding the multiple [`e-range`](../api/linear-gauge/rangeModel/) classes in the [`e-ranges`](../api/linear-gauge/axisModel/#ranges) and customization for the ranges can be done with [`e-range`](../api/linear-gauge/rangeModel/).
+Multiple ranges can be added to the Linear Gauge by adding collections of [`e-range`](../api/linear-gauge/rangeModel/) in the [`e-ranges`](../api/linear-gauge/axisModel/#ranges) and customization of ranges can be done with [`e-range`](../api/linear-gauge/rangeModel/).
 
 {% tab template= "linear-gauge/ranges", sourceFiles="app/**/*.ts" %}
 
@@ -142,14 +142,14 @@ export class AppComponent {
 
 ## Gradient Color
 
-Gradient support allows the addition of multiple colors in the range of the Linear Gauge. The following gradient types are supported in the Linear Gauge.
+Gradient support allows the addition of multiple colors in the range. The following gradient types are supported in the Linear Gauge.
 
 * Linear Gradient
 * Radial Gradient
 
 ### Linear Gradient
 
-Using linear-gradient, colors will be applied in a linear progression. The start value of the linear gradient can be set using the [`startValue`](../api/linear-gauge/linearGradient/#startvalue) property. The end value of the linear gradient will be set using the [`endValue`](../api/linear-gauge/linearGradient/#endvalue) property. The color stop values such as [`color`](../api/linear-gauge/colorStopModel/#color), [`opacity`](../api/linear-gauge/colorStopModel/#opacity), and [`offset`](../api/linear-gauge/colorStopModel/#offset) are set using [`colorStop`](../api/linear-gauge/linearGradient/#colorstop) property. The linear gradient can be rendered for the range in the Linear Gauge by using the below example.
+Using linear-gradient, colors will be applied in a linear progression. The start value of the linear gradient can be set using the [`startValue`](../api/linear-gauge/linearGradient/#startvalue) property. The end value of the linear gradient will be set using the [`endValue`](../api/linear-gauge/linearGradient/#endvalue) property. The color stop values such as [`color`](../api/linear-gauge/colorStopModel/#color), [`opacity`](../api/linear-gauge/colorStopModel/#opacity), and [`offset`](../api/linear-gauge/colorStopModel/#offset) to be defined in [`colorStop`](../api/linear-gauge/linearGradient/#colorstop).
 
 {% tab template= "linear-gauge/ranges", sourceFiles="app/**/*.ts" %}
 
@@ -213,7 +213,7 @@ export class AppComponent {
 
 ### Radial Gradient
 
-Using radial gradient, colors will be applied in circular progression. The inner circle position of the radial gradient will be set using the [`innerPosition`](../api/linear-gauge/radialGradient/#innerposition) property. The outer circle position of the radial gradient can be set using the [`outerPosition`](../api/linear-gauge/radialGradient/#outerposition) property. The color stop values such as [`color`](../api/linear-gauge/colorStopModel/#color), [`opacity`](../api/linear-gauge/colorStopModel/#opacity), and [`offset`](../api/linear-gauge/colorStopModel/#offset) are set using [`colorStop`](../api/linear-gauge/radialGradient/#colorstop) property. The radial gradient can be rendered for the range in the Linear Gauge by using the below example.
+Using radial gradient, colors will be applied in circular progression. The inner circle position of the radial gradient will be set using the [`innerPosition`](../api/linear-gauge/radialGradient/#innerposition) property. The outer circle position of the radial gradient can be set using the [`outerPosition`](../api/linear-gauge/radialGradient/#outerposition) property. The color stop values such as [`color`](../api/linear-gauge/colorStopModel/#color), [`opacity`](../api/linear-gauge/colorStopModel/#opacity), and [`offset`](../api/linear-gauge/colorStopModel/#offset) to be defined in [`colorStop`](../api/linear-gauge/radialGradient/#colorstop).
 
 {% tab template= "linear-gauge/ranges", sourceFiles="app/**/*.ts" %}
 
@@ -276,4 +276,4 @@ export class AppComponent {
 
 {% endtab %}
 
-> Note: If we set both gradients for the range, only the linear gradient gets rendered. If we set the [`startValue`](../api/linear-gauge/linearGradient/#startvalue) and [`endValue`](../api/linear-gauge/linearGradient/#endvalue) property of the [`linearGradient`](../api/linear-gauge/linearGradient/) as empty strings, then the radial gradient gets rendered in the range of the Linear Gauge.
+>If we set both gradients for the range, only the linear gradient gets rendered. If we set the [`startValue`](../api/linear-gauge/linearGradient/#startvalue) and [`endValue`](../api/linear-gauge/linearGradient/#endvalue) property of the [`linearGradient`](../api/linear-gauge/linearGradient/) as empty strings, then the radial gradient gets rendered in the range of the Linear Gauge.

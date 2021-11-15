@@ -1,10 +1,11 @@
 ---
-title: " Methods in Angular Linear Gauge component | Syncfusion "
+title: "Methods in Angular Linear Gauge component | Syncfusion"
 
 component: "Linear Gauge"
 
 description: "Learn here all about the Methods of Syncfusion Angular Linear Gauge component and more."
 ---
+
 # Methods in Angular Linear Gauge
 
 The following methods are available in the Linear Gauge component.
@@ -95,7 +96,7 @@ export class AppComponent {
 
 ## refresh
 
-The [`refresh`](../api/linear-gauge#refresh) method can be used to change the state of the component and render it again. In the following example, the gauge is rendered again using the [`refresh`](../api/linear-gauge#refresh) method.
+The [`refresh`](../api/linear-gauge#refresh) method can be used to change the state of the component and render it again.
 
 {% tab template= "linear-gauge/axis", sourceFiles="app/**/*.ts" %}
 

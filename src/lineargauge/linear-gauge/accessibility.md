@@ -1,5 +1,5 @@
 ---
-title: " Accessibility in Angular Linear Gauge component | Syncfusion "
+title: "Accessibility in Angular Linear Gauge component | Syncfusion"
 
 component: "Linear Gauge"
 

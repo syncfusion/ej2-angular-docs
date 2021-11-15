@@ -1,5 +1,5 @@
 ---
-title: " Axis in Angular Linear Gauge component | Syncfusion "
+title: "Axis in Angular Linear Gauge Component | Syncfusion"
 
 component: "Linear Gauge"
 
@@ -14,7 +14,7 @@ Axis is used to indicate the numeric values in the linear scale. The Linear Gaug
 
 ## Setting the start value and end value of the axis
 
-The start value and end value for the Linear Gauge can be set using the [`minimum`](../api/linear-gauge/axisModel/#minimum) and [`maximum`](../api/linear-gauge/axisModel/#maximum) properties in the [`e-axis`](../api/linear-gauge/axisModel/) respectively. By default, the start value of the axis is "**0**" and the end value of the axis is "**100**".
+The start value and end value for the Linear Gauge can be set using the [`minimum`](../api/linear-gauge/axisModel/#minimum) and [`maximum`](../api/linear-gauge/axisModel/#maximum) properties in the [`e-axis`](../api/linear-gauge/axisModel/) respectively. By default, the start value of the axis is **0** and the end value of the axis is **100**.
 
 {% tab template= "linear-gauge/axis", sourceFiles="app/**/*.ts" %}
 
@@ -122,7 +122,7 @@ export class AppComponent {
 
 ### Positioning the ticks
 
-The minor and major ticks can be positioned by using the [`offset`](../api/linear-gauge/tickModel/#offset) and [`position`](../api/linear-gauge/tickModel/#position) properties. The [`offset`](../api/linear-gauge/tickModel/#offset) is used to render the ticks with the specified distance from the axis. By default, the offset value is "**0**". The possible values of the [`position`](../api/linear-gauge/tickModel/#position) property are "**Inside**", "**Outside**", "**Cross**", and "**Auto**". By default, the ticks will be placed inside the axis.
+The minor and major ticks can be positioned by using the [`offset`](../api/linear-gauge/tickModel/#offset) and [`position`](../api/linear-gauge/tickModel/#position) properties. The [`offset`](../api/linear-gauge/tickModel/#offset) is used to render the ticks with the specified distance from the axis. By default, the offset value is **0**. The possible values of the [`position`](../api/linear-gauge/tickModel/#position) property are **Inside**, **Outside**, **Cross**, and **Auto**. By default, the ticks will be placed inside the axis.
 
 {% tab template= "linear-gauge/axis", sourceFiles="app/**/*.ts" %}
 
@@ -201,7 +201,7 @@ export class AppComponent {
 
 ### Positioning the axis label
 
-Labels can be positioned by using [`offset`](../api/linear-gauge/labelModel/#offset) and [`position`](../api/linear-gauge/labelModel/#position) properties in the [`labelStyle`](../api/linear-gauge/labelModel). The [`offset`](../api/linear-gauge/labelModel/#offset) defines the distance between the labels and ticks. By default, the offset value is "**0**". The possible values of the [`position`](../api/linear-gauge/labelModel/#position) property are "**Inside**", "**Outside**", "**Cross**", and "**Auto**". By default, the labels will be placed inside the axis.
+Labels can be positioned by using [`offset`](../api/linear-gauge/labelModel/#offset) and [`position`](../api/linear-gauge/labelModel/#position) properties in the [`labelStyle`](../api/linear-gauge/labelModel). The [`offset`](../api/linear-gauge/labelModel/#offset) defines the distance between the labels and ticks. By default, the offset value is **0**. The possible values of the [`position`](../api/linear-gauge/labelModel/#position) property are **Inside**, **Outside**, **Cross**, and **Auto**. By default, the labels will be placed inside the axis.
 
 {% tab template= "linear-gauge/axis", sourceFiles="app/**/*.ts" %}
 
@@ -232,7 +232,7 @@ export class AppComponent {
 
 ### Customizing the display of the last label
 
-If the last label is not in the visible range, it will be hidden by default. The last label can be made visible by setting the [`showLastLabel`](../api/linear-gauge/axis/#showlastlabel) property as "**true**" in the [`e-axis`](../api/linear-gauge/axisModel/).
+If the last label is not in the visible range, it will be hidden by default. The last label can be made visible by setting the [`showLastLabel`](../api/linear-gauge/axis/#showlastlabel) property as **true** in the [`e-axis`](../api/linear-gauge/axisModel/).
 
 {% tab template= "linear-gauge/axis", sourceFiles="app/**/*.ts" %}
 
@@ -268,7 +268,7 @@ export class AppComponent {
 
 ### Label Format
 
-Axis labels in the Linear Gauge control can be formatted using the [`format`](../api/linear-gauge/labelModel/#format) property in the [`labelStyle`](../api/linear-gauge/axis/#labelstyle). It is used to render the axis labels in a certain format or to add a user-defined unit in the label. It works with the help of placeholder like "**{value}°C**", where "**value**" represents the axis value. For example, 20°C.
+Axis labels in the Linear Gauge control can be formatted using the [`format`](../api/linear-gauge/labelModel/#format) property in the [`labelStyle`](../api/linear-gauge/axis/#labelstyle). It is used to render the axis labels in a certain format or to add a user-defined unit in the label. It works with the help of placeholder like **{value}°C**, where **value** represents the axis value. For example, 20°C.
 
 {% tab template= "linear-gauge/axis", sourceFiles="app/**/*.ts" %}
 
@@ -411,7 +411,7 @@ export class AppComponent {
 
 ## Inverted Axis
 
-The axis of the Linear Gauge component can be inversed by setting the [`isInversed`](../api/linear-gauge/axis/#isinversed) property to "**true**" in the [`e-axis`](../api/linear-gauge/axisModel/).
+The axis of the Linear Gauge component can be inversed by setting the [`isInversed`](../api/linear-gauge/axis/#isinversed) property to **true** in the [`e-axis`](../api/linear-gauge/axisModel/).
 
 {% tab template= "linear-gauge/axis", sourceFiles="app/**/*.ts" %}
 
@@ -438,7 +438,7 @@ export class AppComponent {
 
 ## Opposed Axis
 
-To place an axis opposite from its original position, [`opposedPosition`](../api/linear-gauge/axis/#opposedposition) property in the [`e-axis`](../api/linear-gauge/axisModel/) must be set as "**true**".
+To place an axis opposite from its original position, [`opposedPosition`](../api/linear-gauge/axis/#opposedposition) property in the [`e-axis`](../api/linear-gauge/axisModel/) must be set as **true**.
 
 {% tab template= "linear-gauge/axis", sourceFiles="app/**/*.ts" %}
 
