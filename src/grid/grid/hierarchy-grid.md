@@ -417,3 +417,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 ```
 
 {% endtab %}
+
+## See Also
+
+* [Multiple querystring in hierarchy child grid in Angular Grid](https://www.syncfusion.com/forums/165124/multiple-querystring-in-hierarchy-child-grid-in-angular-grid)

@@ -327,3 +327,7 @@ To sort multiple columns, tap the popup![Multi Sorting](images/msorting.jpg) and
 The following screenshot represents a Grid touch sorting in the device.
 
 ![Touch Interaction](images/touch-sorting.jpg)
+
+## See Also
+
+* [How to remove the Sorting indicator from the column headers in Angular Grid](https://www.syncfusion.com/forums/150597/how-to-remove-the-sorting-indicator-from-the-column-headers-in-angular-grid)

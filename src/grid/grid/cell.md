@@ -285,3 +285,7 @@ export class AppComponent implements OnInit {
 {% endtab %}
 
 >By default, [`columns.clipMode`](../api/grid/column/#clipmode) value is **Ellipsis**.
+
+## See Also
+
+* [Is it possible to apply gradient color based on min and max value in Angular Grid?](https://www.syncfusion.com/forums/160346/is-it-possible-to-apply-gradient-color-based-on-min-and-max-value-in-angular-grid)

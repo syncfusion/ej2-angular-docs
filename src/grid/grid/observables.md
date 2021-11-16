@@ -482,3 +482,7 @@ export class AppComponent implements OnInit {
 }
 
 ```
+
+## See also
+
+* [How to perform asynchronous operation in actionBegin event in Angular Grid](https://www.syncfusion.com/forums/158744/how-to-perform-asynchronous-operation-in-actionbegin-event-in-angular-grid)

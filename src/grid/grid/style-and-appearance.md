@@ -477,3 +477,7 @@ Column selection background can be customized using below CSS.
     background-color: #deecf9;
 }
 ```
+
+## See Also
+
+* [Footer template styling in Angular Grid](https://ej2.syncfusion.com/angular/documentation/grid/style-and-appearance/#customizing-the-column-selection-background)

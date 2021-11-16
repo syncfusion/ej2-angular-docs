@@ -199,3 +199,8 @@ export class AppComponent implements OnInit {
 * The aggregated information and total group items are displayed based on the current view items. To get these information regardless of the view items, refer to the
 [`Group with Page`](./grouping/#Group-with-paging) topic.
 * Programmatic selection using the [`selectRows`](../api/grid/#selectrows) and [`selectRow`](../api/grid/#selectrow) method is not supported in infinite scrolling.
+
+## See Also
+
+* [How to fetch the data when the scrollbar reaches the end of the scroller in Angular Grid](https://www.syncfusion.com/forums/156622/how-to-fetch-the-data-when-the-scrollbar-reaches-the-end-of-the-scroller-in-angular-grid)
+* [Lazy loading in Angular Grid](https://www.syncfusion.com/forums/160679/lazy-loading-in-angular-grid)

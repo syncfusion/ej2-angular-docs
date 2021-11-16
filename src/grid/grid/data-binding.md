@@ -508,3 +508,7 @@ export class AppComponent implements OnInit {
 ```
 
 > * If you bind the dataSource from this way, then it acts like a local dataSource. So you cannot perform any server side crud actions.
+
+## See also
+
+* [Binding a firebase data source to Grid using AngularFire2](https://www.syncfusion.com/blogs/post/binding-a-firebase-data-source-to-grid-using-angularfire2.aspx)

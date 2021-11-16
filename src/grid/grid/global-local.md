@@ -329,3 +329,4 @@ export class AppComponent implements OnInit {
 
 * [Internationalization](../common/internationalization)
 * [Localization](../common/localization/)
+* [Animate the Grid selected row in Angular Grid](https://www.syncfusion.com/forums/144844/apply-grid-localization-from-external-json-file-in-angular-grid)

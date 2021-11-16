@@ -1859,3 +1859,6 @@ export class AppComponent implements OnInit {
 * [How to Perform aggregation in Foreign Key Column](./how-to/perform-aggregation-in-foreign-key-column)
 * [How to set complex column as Foreignkey column](./how-to/complex-column-as-foreign-key-column)
 * [Complex Data Binding with list of Array Of Objects](./how-to/list-of-array-of-objects)
+* [Format grid with auto generation columns in Angular Grid](https://www.syncfusion.com/forums/141181/format-grid-with-auto-generation-columns-in-angular-grid)
+* [Background color change for stacked headers and calculated columns in Angular Grid](https://www.syncfusion.com/forums/139804/background-color-change-for-stacked-headers-and-calculated-columns-in-angular-grid)
+* [Drag and Drop Between two grids in Angular Grid](https://www.syncfusion.com/forums/150058/drag-and-drop-between-two-grids-in-angular-grid)

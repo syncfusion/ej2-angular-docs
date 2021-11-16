@@ -667,3 +667,5 @@ export class AppComponent implements OnInit {
 * [Customizing filter menu operators list](./how-to/customizing-filter-menu-operators-list)
 * [Customizing Filter Dialog by using an additional parameter](./how-to/add-params-for-filtering)
 * [Hide sorting options on Excel filter dialog](./how-to/hide-sorting-in-excel-filter)
+* [How to apply initial filter on custom binding in Angular Grid](https://www.syncfusion.com/forums/152157/how-to-apply-initial-filter-on-custom-binding-in-angular-grid)
+* [How to custom the display value of checkbox filter option in Angular Grid](https://www.syncfusion.com/forums/154478/how-to-custom-the-display-value-of-checkbox-filter-option-in-angular-grid)

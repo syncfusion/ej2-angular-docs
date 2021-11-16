@@ -486,3 +486,10 @@ export class AppComponent implements OnInit {
 {% endtab %}
 
 > In virtual scrolling mode, it is not applicable to set the [`rowHeight`](../api/grid/#rowheight) using the [`rowDataBound`](../api/grid/#rowdatabound) event.
+
+## See Also
+
+* [How to customize the row height in Angular Grid](https://www.syncfusion.com/forums/138140/how-to-customize-the-row-height-in-angular-grid)
+* [How to set font size and padding of Angular Grid's toolbar and filter bar](https://www.syncfusion.com/forums/150181/how-to-set-font-size-and-padding-of-angular-grids-toolbar-and-filter-bar)
+* [How to displaying serial number in Angular Grid](https://www.syncfusion.com/forums/166563/how-to-displaying-serial-number-in-angular-grid)
+* [How to add/update a new row programmatically in Angular Grid](https://www.syncfusion.com/forums/144356/how-to-add-update-a-new-row-programmatically-in-angular-grid)

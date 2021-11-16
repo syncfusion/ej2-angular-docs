@@ -135,3 +135,7 @@ The following features are not supported in the immutable mode:
 * Virtualization
 * Infinite scroll
 * Grouping
+
+## See also
+
+* [How to update data without re-rendering an entire Grid](https://www.syncfusion.com/blogs/post/how-to-update-data-without-rerendering-an-entire-grid-in-angular.aspx)

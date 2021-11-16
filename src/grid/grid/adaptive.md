@@ -187,3 +187,7 @@ The following features are only supported in vertical row rendering:
 * Aggregate
 * Infinite scroll
 * Toolbar
+
+## See Also
+
+* [Effective ways to utilize responsiveness](https://www.syncfusion.com/blogs/post/essential-js-2-effective-ways-to-utilize-responsiveness-in-the-angular-grid.aspx)

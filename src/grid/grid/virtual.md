@@ -220,3 +220,7 @@ If you want to increase the row height to accommodate the content then you can s
 ```
 
 * Programmatic selection using [`selectRows`](../api/grid/#selectrows) method is not supported in virtual scrolling.
+
+## See also
+
+* [How to load a million records in less than a second Grid](https://www.syncfusion.com/blogs/post/how-to-load-a-million-records-in-less-than-a-second-in-syncfusion-angular-data-grid.aspx)

@@ -1038,3 +1038,4 @@ export class AppComponent implements OnInit {
 ## See Also
 
 * [Exporting Grid in Cordova application](./how-to/exporting-grid-in-cordova-application)
+* [How to get grid display numbers without grouping and same format to be exported to excel in Angular Grid](https://www.syncfusion.com/forums/151524/how-to-get-grid-display-numbers-without-grouping-and-same-format-to-be-exported-to-excel-in)
