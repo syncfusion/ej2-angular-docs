@@ -12,35 +12,38 @@ DocumentEditor depends on server side interaction for below listed operations ca
 * Paste with formatting
 * Restrict Editing
 * Spell Check
+* Save as file formats other than SFDT and DOCX
 
-This section explains how to create the service for DocumentEditor in ASP.NET Core.
+> Note: Syncfusion provides a predefined [Word Processor server docker image](https://hub.docker.com/r/syncfusion/word-processor-server) targeting ASP.NET Core 2.1 framework. You can directly pull this docker image and deploy it in server on the go. You can also create own docker image by customizing the existing [docker project from GitHub](https://github.com/SyncfusionExamples/Word-Processor-Server-Docker). To know more, refer this link.[Word Processor Server Docker Image Overview](../document-editor/server-deployment/word-processor-server-docker-image-overview.md)
+
+This section explains how to create the service for Document Editor in ASP.NET Core.
 
 ## Importing Word Document
 
-Word documents can be imported to DocumentEditor using the below code snippet.
+Word documents can be imported to Document Editor using the below code snippet.
 
 ```csharp
-[AcceptVerbs("Post")]
-[HttpPost]
-[EnableCors("AllowAllOrigins")]
-[Route("Import")]
-public string Import(IFormCollection data)
-{
-    if (data.Files.Count == 0)
-        return null;
-    Stream stream = new MemoryStream();
-    IFormFile file = data.Files[0];
-    int index = file.FileName.LastIndexOf('.');
-    string type = index > -1 && index < file.FileName.Length - 1 ?
-        file.FileName.Substring(index) : ".docx";
-    file.CopyTo(stream);
-    stream.Position = 0;
-
-    WordDocument document = WordDocument.Load(stream, GetFormatType(type.ToLower()));
-    string json = Newtonsoft.Json.JsonConvert.SerializeObject(document);
-    document.Dispose();
-    return json;
-}
+  [AcceptVerbs("Post")]
+  [HttpPost]
+  [EnableCors("AllowAllOrigins")]
+  [Route("Import")]
+  public string Import(IFormCollection data)
+  {
+        if (data.Files.Count == 0)
+            return null;
+        Stream stream = new MemoryStream();
+        IFormFile file = data.Files[0];
+        int index = file.FileName.LastIndexOf('.');
+        string type = index > -1 && index < file.FileName.Length - 1 ?
+            file.FileName.Substring(index) : ".docx";
+        file.CopyTo(stream);
+        stream.Position = 0;
+        //Convert the word document into sfdt.
+        WordDocument document = WordDocument.Load(stream, GetFormatType(type.ToLower()));
+        string json = Newtonsoft.Json.JsonConvert.SerializeObject(document);
+        document.Dispose();
+        return json;
+  }
 ```
 
 ## Paste with formatting
@@ -48,34 +51,35 @@ public string Import(IFormCollection data)
 Paste with formatting action is defined in the below code snippet.
 
 ```csharp
-[AcceptVerbs("Post")]
-[HttpPost]
-[EnableCors("AllowAllOrigins")]
-[Route("SystemClipboard")]
-public string SystemClipboard([FromBody]CustomParameter param)
-{
-    if (param.content != null && param.content != "")
+    [AcceptVerbs("Post")]
+    [HttpPost]
+    [EnableCors("AllowAllOrigins")]
+    [Route("SystemClipboard")]
+    public string SystemClipboard([FromBody]CustomParameter param)
     {
-        try
-        {
-            WordDocument document = WordDocument.LoadString(param.content, GetFormatType(param.type.ToLower()));
-            string json = Newtonsoft.Json.JsonConvert.SerializeObject(document);
-            document.Dispose();
-            return json;
-        }
-        catch (Exception)
-        {
-            return "";
-        }
+          if (param.content != null && param.content != "")
+          {
+              try
+              {
+                  //Convert the pasted content into sfdt.
+                  WordDocument document = WordDocument.LoadString(param.content, GetFormatType(param.type.ToLower()));
+                  string json = Newtonsoft.Json.JsonConvert.SerializeObject(document);
+                  document.Dispose();
+                  return json;
+              }
+              catch (Exception)
+              {
+                  return "";
+              }
+          }
+          return "";
     }
-    return "";
-}
 
-public class CustomParameter
-{
-    public string content { get; set; }
-    public string type { get; set; }
-}
+    public class CustomParameter
+    {
+          public string content { get; set; }
+          public string type { get; set; }
+    }
 ```
 
 ## Restrict editing
@@ -83,23 +87,24 @@ public class CustomParameter
 Restrict editing action is defined in the below code snippet.
 
 ```csharp
-[AcceptVerbs("Post")]
-[HttpPost]
-[EnableCors("AllowAllOrigins")]
-[Route("RestrictEditing")]
-public string[] RestrictEditing([FromBody]CustomRestrictParameter param)
-{
-    if (param.passwordBase64 == "" && param.passwordBase64 == null)
-        return null;
-    return WordDocument.ComputeHash(param.passwordBase64, param.saltBase64, param.spinCount);
-}
+  [AcceptVerbs("Post")]
+  [HttpPost]
+  [EnableCors("AllowAllOrigins")]
+  [Route("RestrictEditing")]
+  public string[] RestrictEditing([FromBody]CustomRestrictParameter param)
+  {
+        if (param.passwordBase64 == "" && param.passwordBase64 == null)
+            return null;
+        //Compure hash value for the specified password.
+        return WordDocument.ComputeHash(param.passwordBase64, param.saltBase64, param.spinCount);
+  }
 
-public class CustomRestrictParameter
-{
-    public string passwordBase64 { get; set; }
-    public string saltBase64 { get; set; }
-    public int spinCount { get; set; }
-}
+  public class CustomRestrictParameter
+  {
+        public string passwordBase64 { get; set; }
+        public string saltBase64 { get; set; }
+        public int spinCount { get; set; }
+  }
 ```
 
 ## Spell Check
@@ -107,51 +112,52 @@ public class CustomRestrictParameter
 Spell check action is defined in the below code snippet.
 
 ```csharp
-[AcceptVerbs("Post")]
-[HttpPost]
-[EnableCors("AllowAllOrigins")]
-[Route("SpellCheck")]
-public string SpellCheck([FromBody] SpellCheckJsonData spellChecker)
-{
-    try
-    {
-        SpellChecker spellCheck = new SpellChecker(spellDictionary);
-        spellCheck.GetSuggestions(spellChecker.LanguageID, spellChecker.TexttoCheck, spellChecker.CheckSpelling, spellChecker.CheckSuggestion, spellChecker.AddWord);
-        return Newtonsoft.Json.JsonConvert.SerializeObject(spellCheck);
-    }
-    catch
-    {
-        return "{\"SpellCollection\":[],\"HasSpellingError\":false,\"Suggestions\":null}";
-    }
-}
+  [AcceptVerbs("Post")]
+  [HttpPost]
+  [EnableCors("AllowAllOrigins")]
+  [Route("SpellCheck")]
+  public string SpellCheck([FromBody] SpellCheckJsonData spellChecker)
+  {
+        try
+        {
+            SpellChecker spellCheck = new SpellChecker(spellDictionary);
+            //Check spelling and get suggestions.
+            spellCheck.GetSuggestions(spellChecker.LanguageID, spellChecker.TexttoCheck, spellChecker.CheckSpelling, spellChecker.CheckSuggestion, spellChecker.AddWord);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(spellCheck);
+        }
+        catch
+        {
+            return "{\"SpellCollection\":[],\"HasSpellingError\":false,\"Suggestions\":null}";
+        }
+  }
 
-[AcceptVerbs("Post")]
-[HttpPost]
-[EnableCors("AllowAllOrigins")]
-[Route("SpellCheckByPage")]
-public string SpellCheckByPage([FromBody] SpellCheckJsonData spellChecker)
-{
-    try
-    {
-        SpellChecker spellCheck = new SpellChecker(spellDictionary);
-        spellCheck.CheckSpelling(spellChecker.LanguageID, spellChecker.TexttoCheck);
-        return Newtonsoft.Json.JsonConvert.SerializeObject(spellCheck);
-    }
-    catch
-    {
-        return "{\"SpellCollection\":[],\"HasSpellingError\":false,\"Suggestions\":null}";
-    }
-}
+  [AcceptVerbs("Post")]
+  [HttpPost]
+  [EnableCors("AllowAllOrigins")]
+  [Route("SpellCheckByPage")]
+  public string SpellCheckByPage([FromBody] SpellCheckJsonData spellChecker)
+  {
+        try
+        {
+            SpellChecker spellCheck = new SpellChecker(spellDictionary);
+            //Check spelling for the specified text.
+            spellCheck.CheckSpelling(spellChecker.LanguageID, spellChecker.TexttoCheck);
+            return Newtonsoft.Json.JsonConvert.SerializeObject(spellCheck);
+        }
+        catch
+        {
+            return "{\"SpellCollection\":[],\"HasSpellingError\":false,\"Suggestions\":null}";
+        }
+  }
 
-public class SpellCheckJsonData
-{
-    public int LanguageID { get; set; }
-    public string TexttoCheck { get; set; }
-    public bool CheckSpelling { get; set; }
-    public bool CheckSuggestion { get; set; }
-    public bool AddWord { get; set; }
-
-}
+  public class SpellCheckJsonData
+  {
+        public int LanguageID { get; set; }
+        public string TexttoCheck { get; set; }
+        public bool CheckSpelling { get; set; }
+        public bool CheckSuggestion { get; set; }
+        public bool AddWord { get; set; }
+  }
 ```
 
 >Note: Please refer the [ASP.NET Core Web API sample](https://github.com/SyncfusionExamples/EJ2-DocumentEditor-WebServices/tree/master/ASP.NET%20Core).

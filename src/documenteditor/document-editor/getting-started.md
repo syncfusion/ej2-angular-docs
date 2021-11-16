@@ -1,16 +1,16 @@
 ---
 title: "Getting Started"
 component: "DocumentEditor"
-description: "Learn how to get started using JavaScript document editor component through simple steps."
+description: "Learn how to get started using Angular document editor component through simple steps."
 ---
 
 # Getting Started
 
-This section explains the steps to create a Word document editor within your application and demonstrates the basic usage of the DocumentEditor component.
+This section explains the steps to create a Word document editor within your application and demonstrates the basic usage of the Document Editor component.
 
 ## Dependencies
 
-The list of dependencies required to use the DocumentEditor component in your application is given below:
+The list of dependencies required to use the Document Editor component in your application is given below:
 
 ```javascript
 |-- @syncfusion/ej2-angular-documenteditor
@@ -29,6 +29,20 @@ The list of dependencies required to use the DocumentEditor component in your ap
     |-- @syncfusion/ej2-splitbuttons
     |-- @syncfusion/ej2-charts
 ```
+
+### Server side dependencies
+
+The Document Editor component requires server-side interactions for the following operations:
+
+* [Open file formats other than SFDT](../document-editor/import#convert-word-documents-into-sfdt)
+* [Paste with formatting](../document-editor/clipboard#paste-with-formatting)
+* [Restrict editing](../document-editor/document-management)
+* [Spellcheck](../document-editor/spell-check)
+* [Save as file formats other than SFDT and DOCX](../document-editor/server-side-export)
+
+>Note: If you don't require the above functionalities then you can deploy as pure client-side component without any server-side interactions.
+
+To know about server-side dependencies, please refer this [page](../document-editor/web-services).
 
 ## Setup your development environment
 
@@ -127,61 +141,58 @@ Syncfusion `ej2-angular-documenteditor` packages have to be mapped in the system
 
 ## Adding CSS reference
 
- Combined CSS files are available in the Essential JS 2 package root folder.
-This can be referenced in your [src/styles.css] using following code.
+Combined CSS files are available in the Essential JS 2 package root folder.
+This can be referenced in your `[src/styles/styles.css]` using the following code.
 
 ```css
-@import '../node_modules/@syncfusion/ej2-base/styles/material.css';
-@import '../node_modules/@syncfusion/ej2-buttons/styles/material.css';
-@import '../node_modules/@syncfusion/ej2-inputs/styles/material.css';
-@import '../node_modules/@syncfusion/ej2-popups/styles/material.css';
-@import '../node_modules/@syncfusion/ej2-lists/styles/material.css';
-@import '../node_modules/@syncfusion/ej2-navigations/styles/material.css';
-@import '../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
-@import '../node_modules/@syncfusion/ej2-dropdowns/styles/material.css';
-@import '../node_modules/@syncfusion/ej2-angular-documenteditor/styles/material.css';
+@import '../../node_modules/@syncfusion/ej2/material.css';
 ```
+
+> To know about individual component CSS, please refer to
+[Individual Component theme files](../appearance/theme#referring-individual-control-theme/) section.
 
 ## Adding Component -
 
 You can add `DocumentEditorContainer` Component with  predefined toolbar and properties pane options or `DocumentEditor` component with customize options.
 
-## DocumentEditor Component
+>Note: Starting from `v19.3.0.x`, we have optimized the accuracy of text size measurements such as to match Microsoft Word pagination for most Word documents. This improvement is included as default behavior along with an optional API [to disable it and retain the document pagination behavior of older versions](../document-editor/how-to/disable-optimized-text-measuring).
+
+### DocumentEditor Component
 
 DocumentEditor Component is used to create , view and edit word documents. In this , you can customize the UI options based on your requirements to modify the document.
 
-### Registering DocumentEditor Module
+#### Registering DocumentEditor Module
 
-Import DocumentEditor module into Angular application(app.module.ts) from the package `@syncfusion/ej2-angular-documenteditor` [src/app/app.module.ts].
+Import Document Editor module into Angular application(app.module.ts) from the package `@syncfusion/ej2-angular-documenteditor` [src/app/app.module.ts].
 
 ```typescript
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-// import the DocumentEditorModule for the DocumentEditor component
-import { DocumentEditorModule } from '@syncfusion/ej2-angular-documenteditor';
-import { AppComponent }  from './app.component';
+  import { NgModule } from '@angular/core';
+  import { BrowserModule } from '@angular/platform-browser';
+  // import the DocumentEditorModule for the DocumentEditor component
+  import { DocumentEditorModule } from '@syncfusion/ej2-angular-documenteditor';
+  import { AppComponent } from './app.component';
 
-@NgModule({
-  //declaration of ej2-angular-documenteditor module into NgModule
-  imports:      [ BrowserModule, DocumentEditorModule ],
-  declarations: [ AppComponent ],
-  bootstrap:    [ AppComponent ]
-})
-export class AppModule { }
+  @NgModule({
+        //declaration of ej2-angular-documenteditor module into NgModule
+        imports: [BrowserModule, DocumentEditorModule],
+        declarations: [AppComponent],
+        bootstrap: [AppComponent]
+  })
+  export class AppModule { }
 ```
 
-### Adding DocumentEditor component
+#### Adding DocumentEditor component
 
-Modify the template in [src/app/app.component.ts] file to render the DocumentEditor component.
-Add the Angular DocumentEditor by using `<ejs-documenteditor>` selector in `template` section of the app.component.ts file.
+Modify the template in [src/app/app.component.ts] file to render the Document Editor component.
+Add the Angular Document Editor by using `<ejs-documenteditor>` selector in `template` section of the app.component.ts file.
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-container',
-  // specifies the template string for the DocumentEditor component
-  template: `<ejs-documenteditor serviceUrl="https://ej2services.syncfusion.com/production/web-services/api/documenteditor/"> </ejs-documenteditor>`
+      selector: 'app-container',
+      // specifies the template string for the DocumentEditor component
+      template: `<ejs-documenteditor serviceUrl="https://ej2services.syncfusion.com/production/web-services/api/documenteditor/"> </ejs-documenteditor>`
 })
 export class AppComponent implements OnInit {
 
@@ -191,15 +202,7 @@ export class AppComponent implements OnInit {
 
 ```
 
-> The DocumentEditor requires server-side interactions for the following operations:
->
-> * Paste with formatting
-> * Restrict editing
-> * Spellcheck
->
-> Refer to this [link](https://github.com/SyncfusionExamples/EJ2-DocumentEditor-WebServices) to configure the web service and set the [serviceUrl](https://ej2.syncfusion.com/angular/documentation/api/document-editor#serviceurl).
-
-### Run the  DocumentEditor application
+#### Run the  DocumentEditor application
 
 The quickstart project is configured to compile and run the application in a browser. Use the following command to run the application.
 
@@ -223,45 +226,42 @@ import {
 } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-    selector: 'app-container',
-    template: `<ejs-documenteditor  id="container" serviceUrl="https://ej2services.syncfusion.com/production/web-services/api/documenteditor/" style="display:block;height:400px" [isReadOnly]=false [enableSelection]=true
-    [enablePrint]=true [enableSfdtExport]=true [enableWordExport]=true [enableOptionsPane]=true [enableContextMenu]=true
-    [enableHyperlinkDialog]=true [enableBookmarkDialog]=true [enableTableOfContentsDialog]=true [enableSearch]=true
-    [enableParagraphDialog]=true [enableListDialog]=true [enableTablePropertiesDialog]=true [enableBordersAndShadingDialog]=true
-    [enablePageSetupDialog]=true [enableStyleDialog]=true [enableFontDialog]=true [enableTableOptionsDialog]=true
-    [enableTableDialog]=true [enableImageResizer]=true [enableEditor]=true [enableEditorHistory]=true>
-    </ejs-documenteditor>`,
-    encapsulation: ViewEncapsulation.None,
-    providers: [PrintService, SfdtExportService, WordExportService, TextExportService, SelectionService, SearchService, EditorService,
-    ImageResizerService, EditorHistoryService, ContextMenuService, OptionsPaneService, HyperlinkDialogService, TableDialogService,
-    BookmarkDialogService, TableOfContentsDialogService, PageSetupDialogService, StyleDialogService, ListDialogService,
-    ParagraphDialogService, BulletsAndNumberingDialogService, FontDialogService, TablePropertiesDialogService,
-    BordersAndShadingDialogService, TableOptionsDialogService, CellOptionsDialogService, StylesDialogService]
+      selector: 'app-container',
+      template: `<ejs-documenteditor id="container" serviceUrl="https://ej2services.syncfusion.com/production/web-services/api/documenteditor/" height="330px" style="display:block" [isReadOnly]=false [enableSelection]=true
+      [enablePrint]=true [enableSfdtExport]=true [enableWordExport]=true [enableOptionsPane]=true [enableContextMenu]=true
+      [enableHyperlinkDialog]=true [enableBookmarkDialog]=true [enableTableOfContentsDialog]=true [enableSearch]=true
+      [enableParagraphDialog]=true [enableListDialog]=true [enableTablePropertiesDialog]=true [enableBordersAndShadingDialog]=true
+      [enablePageSetupDialog]=true [enableStyleDialog]=true [enableFontDialog]=true [enableTableOptionsDialog]=true
+      [enableTableDialog]=true [enableImageResizer]=true [enableEditor]=true [enableEditorHistory]=true>
+      </ejs-documenteditor>`,
+      encapsulation: ViewEncapsulation.None,
+      providers: [PrintService, SfdtExportService, WordExportService, TextExportService, SelectionService, SearchService, EditorService,
+          ImageResizerService, EditorHistoryService, ContextMenuService, OptionsPaneService, HyperlinkDialogService, TableDialogService,
+          BookmarkDialogService, TableOfContentsDialogService, PageSetupDialogService, StyleDialogService, ListDialogService,
+          ParagraphDialogService, BulletsAndNumberingDialogService, FontDialogService, TablePropertiesDialogService,
+          BordersAndShadingDialogService, TableOptionsDialogService, CellOptionsDialogService, StylesDialogService]
 })
 
 export class AppComponent {
 
 }
-
 ```
 
 {% endtab %}
 
-## DocumentEditorContainer Component
+### DocumentEditorContainer Component
 
-DocumentEditorContainer Component is also used to create, view and edit word document. But here, you can use predefined toolbar and properties pane to view and modify word document.
+DocumentEditorContainer is a predefined component which wraps DocumentEditor, Toolbar, Properties pane, and Status bar into a single component. And the toolbar and properties pane is used to view and modify the document in DocumentEditor thought public APIs available in it.
 
-### Registering DocumentEditorContainer Module
+#### Registering DocumentEditorContainer Module
 
-Import DocumentEditorContainer module into Angular application(app.module.ts) from the package `@syncfusion/ej2-angular-documenteditor` [src/app/app.module.ts].
+Import `DocumentEditorContainer` module into Angular application(app.module.ts) from the package `@syncfusion/ej2-angular-documenteditor` [src/app/app.module.ts].
 
 ```typescript
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { DocumentEditorContainerModule } from '@syncfusion/ej2-angular-documenteditor';
 import { AppComponent } from './default.component';
-
-
 
 /**
  * Module
@@ -277,39 +277,30 @@ import { AppComponent } from './default.component';
 export class AppModule { }
 ```
 
-### Adding DocumentEditorContainer component
+#### Adding DocumentEditorContainer component
 
-Modify the template in [src/app/app.component.ts] file to render the DocumentEditorContainer component.
-Add the Angular DocumentEditorContainer by using `<ejs-documenteditor>` selector in `template` section of the app.component.ts file.
+Modify the template in [src/app/app.component.ts] file to render the Document Editor Container component.
+Add the Angular Document Editor Container by using `<ejs-documenteditor>` selector in `template` section of the app.component.ts file.
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
 import { ToolbarService } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-  selector: 'app-container',
-  // specifies the template string for the DocumentEditorContainer component
-  template: `<ejs-documenteditorcontainer serviceUrl="https://ej2services.syncfusion.com/production/web-services/api/documenteditor/" [enableToolbar]=true> </ejs-documenteditorcontainer>`,
-  providers: [ToolbarService]
+    selector: 'app-container',
+    // specifies the template string for the DocumentEditorContainer component
+    template: `<ejs-documenteditorcontainer serviceUrl="https://ej2services.syncfusion.com/production/web-services/api/documenteditor/" [enableToolbar]=true> </ejs-documenteditorcontainer>`,
+    providers: [ToolbarService]
 })
 export class AppComponent implements OnInit {
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 }
 
 ```
 
-> The DocumentEditorContainer requires server-side interactions for the following operations:
->
-> * Opening word documents
-> * Paste with formatting
-> * Restrict editing
-> * Spellcheck
->
-> Refer to this [link](https://github.com/SyncfusionExamples/EJ2-DocumentEditor-WebServices) to configure the web service and set the [serviceUrl](https://ej2.syncfusion.com/angular/documentation/api/document-editor-container#serviceurl).
-
-### Run the DocumentEditorContainer application
+#### Run the DocumentEditorContainer application
 
 The quickstart project is configured to compile and run the application in a browser. Use the following command to run the application.
 
@@ -325,17 +316,22 @@ DocumentEditorContainer output will be displayed as follows.
 import { Component, OnInit } from '@angular/core';
 import { ToolbarService } from '@syncfusion/ej2-angular-documenteditor';
 @Component({
-  selector: 'app-container',
-  // specifies the template string for the DocumentEditorContainer component
-  template: `<ejs-documenteditorcontainer serviceUrl="https://ej2services.syncfusion.com/production/web-services/api/documenteditor/" style="display:block;height:600px" [enableToolbar]=true> </ejs-documenteditorcontainer>`,
-  providers: [ToolbarService]
+    selector: 'app-container',
+    // specifies the template string for the DocumentEditorContainer component
+    template: `<ejs-documenteditorcontainer serviceUrl="https://ej2services.syncfusion.com/production/web-services/api/documenteditor/" height="600px" style="display:block" [enableToolbar]=true> </ejs-documenteditorcontainer>`,
+    providers: [ToolbarService]
 })
 export class AppComponent implements OnInit {
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 }
-
 ```
 
 {% endtab %}
+
+## Frequently Asked Questions
+
+* [How to localize the Documenteditor container](../document-editor/global-local).
+* [How to load the document by default](../document-editor/how-to/open-default-document).
+* [How to customize tool bar](../document-editor/how-to/customize-tool-bar).

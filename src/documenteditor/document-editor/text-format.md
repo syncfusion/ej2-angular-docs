@@ -1,12 +1,12 @@
 ---
 title: "Working with Text Formatting"
 component: "DocumentEditor"
-description: "Learn text formatting supported in JavaScript document editor and how to apply it for selected contents."
+description: "Learn text formatting supported in Angular document editor and how to apply it for selected contents."
 ---
 
 # Working with Text Formatting
 
-Document editor supports several formatting options for text like bold, italic, font color, highlight color, and more. This section describes how to modify the formatting for selected text in detail.
+Document Editor supports several formatting options for text like bold, italic, font color, highlight color, and more. This section describes how to modify the formatting for selected text in detail.
 
 ## Bold
 
@@ -144,55 +144,54 @@ Refer to the following example.
 ```typescript
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import {
-    DocumentEditorComponent, EditorService, SelectionService, EditorHistoryService , SfdtExportService, ContextMenuService
+    DocumentEditorComponent, EditorService, SelectionService, EditorHistoryService, SfdtExportService, ContextMenuService
 } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-    selector: 'app-container',
-    styleUrls: ['styles.css'],
-    template: `<div style="width:100%;height:330px">
-    <div>
-        <ejs-toolbar (clicked)='toolbarClickHandler($event)'>
-            <e-items>
-                <e-item prefixIcon="e-de-icon-Bold" tooltipText="Bold" id="bold"></e-item>
-                <e-item prefixIcon="e-de-icon-Italic" tooltipText="Italic" id="italic"></e-item>
-                <e-item prefixIcon="e-de-icon-Underline" tooltipText="Underline" id="underline"></e-item>
-                <e-item prefixIcon="e-de-icon-Strikethrough" tooltipText="Strikethrough" id="strikethrough"></e-item>
-                <e-item prefixIcon="e-de-icon-Subscript" tooltipText="Subscript" id="subscript"></e-item>
-                <e-item prefixIcon="e-de-icon-Superscript" tooltipText="Superscript" id="superscript"></e-item>
-                <e-item type="Seperator"></e-item>
-                <e-item type="Input">
-                 <ng-template #template>
-                   <ejs-colorpicker [value]='#000000' [showButtons]=true (change)='onFontColorChange()' ></ejs-colorpicker>
-                 </ng-template>
-                </e-item>
-                <e-item type="Seperator"></e-item>
-                <e-item type="Input">
+      selector: 'app-container',
+      styleUrls: ['styles.css'],
+      template: `<div>
+      <div>
+          <ejs-toolbar (clicked)='toolbarClickHandler($event)'>
+              <e-items>
+                  <e-item prefixIcon="e-de-ctnr-bold e-icons" tooltipText="Bold" id="bold"></e-item>
+                  <e-item prefixIcon="e-de-ctnr-italic e-icons" tooltipText="Italic" id="italic"></e-item>
+                  <e-item prefixIcon="e-de-ctnr-underline e-icons" tooltipText="Underline" id="underline"></e-item>
+                  <e-item prefixIcon="e-de-ctnr-strikethrough e-icons" tooltipText="Strikethrough" id="strikethrough"></e-item>
+                  <e-item prefixIcon="e-de-ctnr-subscript e-icons" tooltipText="Subscript" id="subscript"></e-item>
+                  <e-item prefixIcon="e-de-ctnr-superscript e-icons" tooltipText="Superscript" id="superscript"></e-item>
+                  <e-item type="Seperator"></e-item>
+                  <e-item type="Input">
                   <ng-template #template>
-                      <ejs-combobox [dataSource]='fontStyle' [width]='120' [index]='2' [allowCustom]=true (change)='onFontFamilyChange()' [showClearButton]=false></ejs-combobox>
+                    <ejs-colorpicker [value]='#000000' [showButtons]=true (change)='onFontColorChange()' ></ejs-colorpicker>
                   </ng-template>
-                </e-item>
-                <e-item type="Input">
-                  <ng-template #template>
-                    <ejs-combobox [dataSource]='fontSize' [width]='80' [index]='2' [allowCustom]='true' (change)='onFontSizeChange()'  [showClearButton]='false'></ejs-combobox>
-                  </ng-template>
-                </e-item>
-            </e-items>
-        </ejs-toolbar>
-      </div>
-      <ejs-documenteditor #document_editor (selectionChange)='onSelectionChange()' [enableSelection]='true' [isReadOnly]='false' [enableEditor]=true [enableEditorHistory]=true [enableSfdtExport]=true [enableContextMenu]=true style="display:block;width: 100%;height: 100%;"></ejs-documenteditor>
-    </div>`,
-    encapsulation: ViewEncapsulation.None,
-    providers: [EditorService, SelectionService, EditorHistoryService , SfdtExportService, ContextMenuService]
+                  </e-item>
+                  <e-item type="Seperator"></e-item>
+                  <e-item type="Input">
+                    <ng-template #template>
+                        <ejs-combobox [dataSource]='fontStyle' [width]='120' [index]='2' [allowCustom]=true (change)='onFontFamilyChange()' [showClearButton]=false></ejs-combobox>
+                    </ng-template>
+                  </e-item>
+                  <e-item type="Input">
+                    <ng-template #template>
+                      <ejs-combobox [dataSource]='fontSize' [width]='80' [index]='2' [allowCustom]='true' (change)='onFontSizeChange()'  [showClearButton]='false'></ejs-combobox>
+                    </ng-template>
+                  </e-item>
+              </e-items>
+          </ejs-toolbar>
+        </div>
+        <ejs-documenteditor #document_editor (selectionChange)='onSelectionChange()' [enableSelection]='true' [isReadOnly]='false' [enableEditor]=true [enableEditorHistory]=true [enableSfdtExport]=true [enableContextMenu]=true height="330px" style="display:block"></ejs-documenteditor>
+      </div>`,
+      encapsulation: ViewEncapsulation.None,
+      providers: [EditorService, SelectionService, EditorHistoryService, SfdtExportService, ContextMenuService]
 })
-
 export class AppComponent {
     @ViewChild('document_editor')
     public documentEditor: DocumentEditorComponent;
 
     public fontStyle: string[] = ['Algerian', 'Arial', 'Calibri', 'Cambria', 'Cambria Math', 'Candara', 'Courier New', 'Georgia', 'Impact', 'Segoe Print', 'Segoe Script', 'Segoe UI', 'Symbol', 'Times New Roman', 'Verdana', 'Windings'];
 
-    public fontSize: string[] = ['8', '9', '10', '11', '12', '14', '16', '18','20', '22', '24', '26', '28', '36', '48', '72', '96'];
+    public fontSize: string[] = ['8', '9', '10', '11', '12', '14', '16', '18', '20', '22', '24', '26', '28', '36', '48', '72', '96'];
 
     public toolbarButtonClick(arg: any) {
         switch (arg.item.id) {
@@ -249,11 +248,10 @@ export class AppComponent {
         }
     }
 }
-
 ```
 
 ## See Also
 
 * [Feature modules](../document-editor/feature-module/)
-* [Font dialog](../document-editor/dialog#font-dialog/)
-* [Keyboard shortcuts](../document-editor/keyboard-shortcut#text-formatting/)
+* [Font dialog](../document-editor/dialog#font-dialog)
+* [Keyboard shortcuts](../document-editor/keyboard-shortcut#text-formatting)

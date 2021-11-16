@@ -1,12 +1,12 @@
 ---
 title: "Scrolling"
 component: "DocumentEditor"
-description: "Learn scrolling and zooming can be customized in JavaScript document editor."
+description: "Learn scrolling and zooming can be customized in Angular document editor."
 ---
 
 # Scrolling
 
-The Document editor renders the document as page by page. You can scroll through the pages by mouse wheel or touch interactions. You can also scroll through the page by using ‘scrollToPage()’ method of document editor instance. Refer to the following code example.
+The Document Editor renders the document as page by page. You can scroll through the pages by mouse wheel or touch interactions. You can also scroll through the page by using ‘scrollToPage()’ method of document editor instance. Refer to the following code example.
 
 {% tab template="document-editor/find-replace",isDefaultActive=false, sourceFiles="app/**/*.ts" %}
 
@@ -18,8 +18,8 @@ import {
 
 @Component({
     selector: 'app-container',
-    template: `<div style="width:100%;height:330px">
-    <ejs-documenteditor #document_editor style="width:100%;height:100%;display:block" (created)="onCreated()"></ejs-documenteditor>
+    template: `<div>
+    <ejs-documenteditor #document_editor height="330px" style="display:block" (created)="onCreated()"></ejs-documenteditor>
     </div>`,
     encapsulation: ViewEncapsulation.None
 })
@@ -79,8 +79,9 @@ export class AppComponent {
                     }
                 ]
             };
-
+            //Open the default document in Document Editor.
             this.documentEditor.open(JSON.stringify(sfdt));
+            //Scroll to specified page number.
             this.documentEditor.scrollToPage(2);
         }
     }
@@ -104,8 +105,8 @@ import {
 
 @Component({
     selector: 'app-container',
-    template: `<div style="width:100%;height:330px">
-    <ejs-documenteditor #document_editor style="width:100%;height:100%;display:block" [enableSelection]=true (created)="onCreated()"></ejs-documenteditor>
+    template: `<div>
+    <ejs-documenteditor #document_editor height="330px" style="display:block" [enableSelection]=true (created)="onCreated()"></ejs-documenteditor>
     </div>`,
     encapsulation: ViewEncapsulation.None,
     providers: [SelectionService]
@@ -114,9 +115,10 @@ import {
 export class AppComponent {
     @ViewChild('document_editor')
     public documentEditor: DocumentEditorComponent;
+
     onCreated(): void {
         if (this.documentEditor.isDocumentLoaded) {
-            let sfdt: string = {
+            let sfdt: string = `{
                 "sections": [
                     {
                         "blocks": [
@@ -165,14 +167,14 @@ export class AppComponent {
                         "name": "Default Paragraph Font"
                     }
                 ]
-            };
-
+            }`;
+            //Open the document in Document Editor.
             this.documentEditor.open(JSON.stringify(sfdt));
+            //Navigate to specified page number.
             this.documentEditor.selection.goToPage(2);
         }
     }
 }
-
 ```
 
 {% endtab %}
@@ -187,7 +189,7 @@ this.documentEditor.zoomFactor = 3;
 
 ## Page Fit Type
 
-Apart from specifying the zoom factor as value, the Document editor provides option to specify page fit options such as fit to full page or fit to page width. You can set this option using ‘fitPage’ method of document editor instance. Refer to the following code example.
+Apart from specifying the zoom factor as value, the Document Editor provides option to specify page fit options such as fit to full page or fit to page width. You can set this option using ‘fitPage’ method of document editor instance. Refer to the following code example.
 
 ```typescript
 this.documentEditor.fitPage('Fit page width');
@@ -205,8 +207,8 @@ import {
 
 @Component({
     selector: 'app-container',
-    template: `<div style="width:100%;height:330px">
-     <ejs-documenteditor #documenteditor_editor (selectionChange)='onSelectionChange()' (viewChange)='onViewChange($event)' (documentChange)='onDocumentChange()' (created)="onCreated()" [enableSelection]=true [isReadOnly]=false style="width: 100%;height: 100%;"></ejs-documenteditor>
+    template: `<div>
+     <ejs-documenteditor #documenteditor_editor (selectionChange)='onSelectionChange()' (viewChange)='onViewChange($event)' (documentChange)='onDocumentChange()' (created)="onCreated()" [enableSelection]=true [isReadOnly]=false height="330px" style="display:block"></ejs-documenteditor>
     </div>
     <div id="documenteditor_statusbar">
         <label style="margin-top: 6px;margin-right: 2px">Page </label>
@@ -253,85 +255,88 @@ export class AppComponent {
     public pageCount: number = 1;
     public currentPage: number = 1;
 
-  onCreated(): void {
+    onCreated(): void {
         if (this.documentEditor.isDocumentLoaded) {
-            let sfdt: string = {
-            "sections": [
-                {
-                    "blocks": [
-                        {
-                            "paragraphFormat": {
-                                "styleName": "Normal"
-                            },
-                            "inlines": [
-                                {
-                                    "text": "First page"
-                                }
-                            ]
-                        }
-                    ],
-                    "headersFooters": {},
+            let sfdt: string = `{
+                "sections": [
+                    {
+                        "blocks": [
+                            {
+                                "paragraphFormat": {
+                                    "styleName": "Normal"
+                                },
+                                "inlines": [
+                                    {
+                                        "text": "First page"
+                                    }
+                                ]
+                            }
+                        ],
+                        "headersFooters": {},
+                    },
+                    {
+                        "blocks": [
+                            {
+                                "paragraphFormat": {
+                                    "styleName": "Normal"
+                                },
+                                "inlines": [
+                                    {
+                                        "text": "Second page"
+                                    }
+                                ]
+                            }
+                        ],
+                        "headersFooters": {},
+                    },
+                    {
+                        "blocks": [
+                            {
+                                "paragraphFormat": {
+                                    "styleName": "Normal"
+                                },
+                                "inlines": [
+                                    {
+                                        "text": "Third page"
+                                    }
+                                ]
+                            }
+                        ],
+                        "headersFooters": {},
+                    }
+                ],
+                "characterFormat": {},
+                "paragraphFormat": {},
+                "background": {
+                    "color": "#FFFFFFFF"
                 },
-                {
-                    "blocks": [
-                        {
-                            "paragraphFormat": {
-                                "styleName": "Normal"
-                            },
-                            "inlines": [
-                                {
-                                    "text": "Second page"
-                                }
-                            ]
-                        }
-                    ],
-                    "headersFooters": {},
-                },
-                {
-                    "blocks": [
-                        {
-                            "paragraphFormat": {
-                                "styleName": "Normal"
-                            },
-                            "inlines": [
-                                {
-                                    "text": "Third page"
-                                }
-                            ]
-                        }
-                    ],
-                    "headersFooters": {},
-                }
-            ],
-            "characterFormat": {},
-            "paragraphFormat": {},
-            "background": {
-                "color": "#FFFFFFFF"
-            },
-            "styles": [
-                {
-                    "type": "Paragraph",
-                    "name": "Normal",
-                    "next": "Normal"
-                },
-                {
-                    "type": "Character",
-                    "name": "Default Paragraph Font"
-                }
-            ]
-        };
-
+                "styles": [
+                    {
+                        "type": "Paragraph",
+                        "name": "Normal",
+                        "next": "Normal"
+                    },
+                    {
+                        "type": "Character",
+                        "name": "Default Paragraph Font"
+                    }
+                ]
+            }`;
+            //Open the default document.
             this.documentEditor.open(JSON.stringify(sfdt));
         }
     }
 
     public onViewChange(args: any) {
+        //Set current page number in status bar.
         this.currentPage = args.startPage;
     }
     public onSelectionChange(args: any) {
+        ////Set current page number on selection change.
         this.currentPage = this.documentEditor.selection.startPage;
     }
     public onDocumentChange() {
+        //Get page count.
         this.pageCount = this.documentEditor.pageCount
         this.zoomContent = Math.round(this.documentEditor.zoomFactor * 100) + '%';
     }
@@ -342,6 +347,7 @@ export class AppComponent {
         } else if (zoomValue.match('Fit page width')) {
             this.documentEditor.fitPage('FitPageWidth');
         } else {
+            //Set zoom factor.
             this.documentEditor.zoomFactor = parseInt(zoomValue, 0) / 100;
         }
         this.zoomContent = Math.round(this.documentEditor.zoomFactor * 100) + '%';
@@ -353,6 +359,7 @@ export class AppComponent {
             if (pageNumber > this.documentEditor.pageCount) {
                 this.updatePageNumber();
             } else {
+                //Navigate to specified page number.
                 this.documentEditor.selection.goToPage(parseInt(document.getElementById("editablePageNumber").textContent, 0));
             }
             document.getElementById("editablePageNumber").contentEditable = 'false';
@@ -376,8 +383,8 @@ export class AppComponent {
         window.getSelection().selectAllChildren(document.getElementById("editablePageNumber"));
     }
     public updatePageNumber() {
+        //Update current page number.
         this.currentPage = this.documentEditor.selection.startPage.toString();
     }
 }
-
 ```

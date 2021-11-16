@@ -1,28 +1,29 @@
 ---
 title: "SpellCheck"
 component: "DocumentEditor"
-description: "Learn how to perform spell check in JavaScript document editor"
+description: "Learn how to perform spell check in Angular document editor"
 ---
 
 # Spell Check
 
-Document editor supports performing spell checking for any input text. You can perform spell checking for the text in Document Editor and it will provide suggestions for the mis-spelled words through dialog and in context menu.
+Document Editor supports performing spell checking for any input text. You can perform spell checking for the text in Document Editor and it will provide suggestions for the mis-spelled words through dialog and in context menu.
 
 ```typescript
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
-import { ToolbarService } from '@syncfusion/ej2-angular-documenteditor';
+import { ToolbarService, DocumentEditorContainerComponent } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-  selector: 'app-container',
-  // specifies the template string for the DocumentEditorContainer component
-  template: `<ejs-documenteditorcontainer #document_editor (created)="onCreated()" [enableToolbar]=true [enableSpellCheck]=true> </ejs-documenteditorcontainer>`,
-  providers: [ToolbarService]
+      selector: 'app-container',
+      // specifies the template string for the DocumentEditorContainer component
+      template: `<ejs-documenteditorcontainer #document_editor (created)="onCreated()" [enableToolbar]=true [enableSpellCheck]=true> </ejs-documenteditorcontainer>`,
+      providers: [ToolbarService]
 })
 export class AppComponent {
-@ViewChild('document_editor')
-  public container: DocumentEditorContainerComponent;
+    @ViewChild('document_editor')
+    public container: DocumentEditorContainerComponent;
     onCreated() {
-        this.container.documentEditor.spellChecker.languageID = 1033 //LCID of "en-us";
+        //Specifies the language id to map server side dictionary.
+        this.container.documentEditor.spellChecker.languageID = 1033;
         this.container.documentEditor.spellChecker.removeUnderline = false;
         this.container.documentEditor.spellChecker.allowSpellCheckAndSuggestion = true;
     }
@@ -72,7 +73,7 @@ this.container.documentEditor.spellChecker.languageID = 1033; //LCID of "en-us";
 
 ### EnableOptimizedSpellCheck
 
-Document editor provides option to spellcheck page by page when loading the documents. The default value of this property is false, so when opening the document spellcheck web API will be called for each word in the document. To optimize the frequency of spellcheck web API calls, you can enable this property.
+Document Editor provides option to spellcheck page by page when loading the documents. The default value of this property is false, so when opening the document spellcheck web API will be called for each word in the document. To optimize the frequency of spellcheck web API calls, you can enable this property.
 
 The following code example illustrates how to enable optimized spell checking.
 

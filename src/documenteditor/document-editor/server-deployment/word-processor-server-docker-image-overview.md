@@ -77,20 +77,20 @@ This YAML definition binds the data folder that is available in the Docker compo
 **Step 2:** In the data folder, include the dictionary files (.dic, .aff) and JSON file. The JSON file should contain the language based dictionary file configuration in the following format.
 
 ```yaml
-[
-  {
-    "LanguadeID": 1036,
-    "DictionaryPath": "fr_FR.dic",
-    "AffixPath": "fr_FR.aff",
-    "PersonalDictPath": "customDict.dic"
-  },
-  {
-    "LanguadeID": 1033,
-    "DictionaryPath": "en_US.dic",
-    "AffixPath": "en_US.aff",
-    "PersonalDictPath": "customDict.dic"
-  }
-]
+  [
+      {
+        "LanguadeID": 1036,
+        "DictionaryPath": "fr_FR.dic",
+        "AffixPath": "fr_FR.aff",
+        "PersonalDictPath": "customDict.dic"
+      },
+      {
+        "LanguadeID": 1033,
+        "DictionaryPath": "en_US.dic",
+        "AffixPath": "en_US.aff",
+        "PersonalDictPath": "customDict.dic"
+      }
+  ]
 ```
 
 >Note: By default, the json file name should be "spellcheck.json". You can also use different file name by mounting the file name to 'SPELLCHECK_JSON_FILENAME' attribute in Docker compose file as below,
@@ -144,29 +144,30 @@ import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import { ToolbarService } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-  selector: 'app-container',
-  // specifies the template string for the DocumentEditorContainer component
-  template: `<ejs-documenteditorcontainer #document_editor (created)="onCreated()" [enableToolbar]=true> </ejs-documenteditorcontainer>`,
-  providers: [ToolbarService]
+      selector: 'app-container',
+      // specifies the template string for the DocumentEditorContainer component
+      template: `<ejs-documenteditorcontainer #document_editor height="600px" style="display:block" (created)="onCreated()" [enableToolbar]=true> </ejs-documenteditorcontainer>`,
+      providers: [ToolbarService]
 })
 export class AppComponent {
-@ViewChild('document_editor')
-  public container: DocumentEditorContainerComponent;
+    @ViewChild('document_editor')
+    public container: DocumentEditorContainerComponent;
     onCreated() {
-    var dataContext = this;
-    var uploadDocument = new FormData();
-    uploadDocument.append('DocumentName', 'Getting Started.docx');
-    var baseUrl = 'http://localhost:6002/api/documenteditor/LoadDocument';
-    var httpRequest = new XMLHttpRequest();
-    httpRequest.open('POST', baseUrl, true);
-    httpRequest.onreadystatechange = function() {
-    if (httpRequest.readyState === 4) {
-      if (httpRequest.status === 200 || httpRequest.status === 304) {
-        dataContext.container.documentEditor.open(httpRequest.responseText);
-      }
-    }
-  };
-  httpRequest.send(uploadDocument);
+          var dataContext = this;
+          var uploadDocument = new FormData();
+          uploadDocument.append('DocumentName', 'Getting Started.docx');
+          var baseUrl = 'http://localhost:6002/api/documenteditor/LoadDocument';
+          var httpRequest = new XMLHttpRequest();
+          httpRequest.open('POST', baseUrl, true);
+          httpRequest.onreadystatechange = function () {
+              if (httpRequest.readyState === 4) {
+                  if (httpRequest.status === 200 || httpRequest.status === 304) {
+                      //Open the document in Document Editor.
+                      dataContext.container.documentEditor.open(httpRequest.responseText);
+                  }
+              }
+          };
+          httpRequest.send(uploadDocument);
     }
 }
 ```

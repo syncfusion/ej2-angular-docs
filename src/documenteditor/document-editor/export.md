@@ -1,12 +1,12 @@
 ---
 title: "Export"
 component: "DocumentEditor"
-description: "Learn how to export the contents of JavaScript document editor as SFDT, or DOCX document in client-side."
+description: "Learn how to export the contents of Angular document editor as SFDT, or DOCX document in client-side."
 ---
 
 # Export
 
-Document editor exports the document into various known file formats in client-side such as Microsoft Word document (.docx), text document (.txt), and its own format called **Syncfusion Document Text (.sfdt)**.
+Document Editor exports the document into various known file formats in client-side such as Microsoft Word document (.docx), text document (.txt), and its own format called **Syncfusion Document Text (.sfdt)**.
 
 ## SFDT export
 
@@ -21,21 +21,22 @@ import {
 } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-    selector: 'app-container',
-    template: `<div style="width:100%;height:330px"><button ejs-button (click)="saveAsSfdt()" >Save</button>
-    <ejs-documenteditor #document_editor  id="container" style="width:100%;height:100%;display:block" [isReadOnly]=false [enableEditor]=true [enableSfdtExport]=true> </ejs-documenteditor></div>`,
-    encapsulation: ViewEncapsulation.None,
-    providers: [EditorService, SelectionService, SfdtExportService]
+      selector: 'app-container',
+      //specifies the template string for the Document Editor Container component
+      template: `<div style="width:100%;"><button ejs-button (click)="saveAsSfdt()" >Save</button>
+      <ejs-documenteditor #document_editor  id="container" height="330px" style="display:block" [isReadOnly]=false [enableEditor]=true [enableSfdtExport]=true> </ejs-documenteditor></div>`,
+      encapsulation: ViewEncapsulation.None,
+      providers: [EditorService, SelectionService, SfdtExportService]
 })
 
 export class AppComponent {
- @ViewChild('document_editor')
- public documentEditor: DocumentEditorComponent;
+    @ViewChild('document_editor')
+    public documentEditor: DocumentEditorComponent;
 
- public saveAsSfdt() :void {
-    this.documentEditor.save('sample','Sfdt');
- }
-
+    public saveAsSfdt(): void {
+        //Download the document as SFDT.
+        this.documentEditor.save('sample', 'Sfdt');
+    }
 }
 ```
 
@@ -45,7 +46,7 @@ export class AppComponent {
 
 The following example shows how to export the document as Word document (.docx).
 
->Note: The Syncfusion Document editor component's document pagination (page-by-page display) can't be guaranteed for all the Word documents to match the pagination of Microsoft Word application. For more information about [why the document pagination (page-by-page display) differs from Microsoft Word](../document-editor/import/#why-the-document-pagination-differs-from-microsoft-word)
+>Note: The Syncfusion Document Editor component's document pagination (page-by-page display) can't be guaranteed for all the Word documents to match the pagination of Microsoft Word application. For more information about [why the document pagination (page-by-page display) differs from Microsoft Word](../document-editor/import/#why-the-document-pagination-differs-from-microsoft-word)
 
 {% tab template="document-editor/export",isDefaultActive=false, sourceFiles="app/**/*.ts" %}
 
@@ -56,21 +57,21 @@ import {
 } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-    selector: 'app-container',
-    template: `<div style="width:100%;height:330px"><button ejs-button (click)="saveAsDocx()" >Save</button>
-    <ejs-documenteditor #document_editor  id="container" style="width:100%;height:100%;display:block" [isReadOnly]=false [enableEditor]=true [enableWordExport]=true> </ejs-documenteditor></div>`,
-    encapsulation: ViewEncapsulation.None,
-    providers: [EditorService, SelectionService, SfdtExportService,WordExportService]
+      selector: 'app-container',
+      //specifies the template string for the Document Editor component
+      template: `<div style="width:100%"><button ejs-button (click)="saveAsDocx()" >Save</button>
+      <ejs-documenteditor #document_editor  id="container" height="330px" style="display:block" [isReadOnly]=false [enableEditor]=true [enableWordExport]=true> </ejs-documenteditor></div>`,
+      encapsulation: ViewEncapsulation.None,
+      providers: [EditorService, SelectionService, SfdtExportService, WordExportService]
 })
-
 export class AppComponent {
- @ViewChild('document_editor')
- public documentEditor: DocumentEditorComponent;
+    @ViewChild('document_editor')
+    public documentEditor: DocumentEditorComponent;
 
- public saveAsDocx() :void {
-    this.documentEditor.save('sample','Docx');
- }
-
+    public saveAsDocx(): void {
+        //Export the document in docx format.
+        this.documentEditor.save('sample', 'Docx');
+    }
 }
 ```
 
@@ -89,20 +90,22 @@ import {
 } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-    selector: 'app-container',
-    template: `<div style="width:100%;height:330px"><button ejs-button (click)="saveAsTxt()" >Save</button>
-    <ejs-documenteditor #document_editor  id="container" style="width:100%;height:100%;display:block" [isReadOnly]=false [enableEditor]=true [enableTextExport]=true> </ejs-documenteditor></div>`,
-    encapsulation: ViewEncapsulation.None,
-    providers: [EditorService, SelectionService, SfdtExportService,TextExportService]
+      selector: 'app-container',
+      //specifies the template string for the Document Editor component
+      template: `<div style="width:100%;"><button ejs-button (click)="saveAsTxt()" >Save</button>
+      <ejs-documenteditor #document_editor  id="container" height="330px" style="display:block" [isReadOnly]=false [enableEditor]=true [enableTextExport]=true> </ejs-documenteditor></div>`,
+      encapsulation: ViewEncapsulation.None,
+      providers: [EditorService, SelectionService, SfdtExportService, TextExportService]
 })
 
 export class AppComponent {
- @ViewChild('document_editor')
- public documentEditor: DocumentEditorComponent;
+    @ViewChild('document_editor')
+    public documentEditor: DocumentEditorComponent;
 
- public saveAsTxt() :void {
-    this.documentEditor.save('sample','Txt');
- }
+    public saveAsTxt(): void {
+        //Downlod the document as txt file.
+        this.documentEditor.save('sample', 'Txt');
+    }
 
 }
 ```
@@ -111,7 +114,7 @@ export class AppComponent {
 
 ## Export as blob
 
-Document editor also supports API to store the document into a blob. Refer to the following sample to export document into blob in client-side.
+Document Editor also supports API to store the document into a blob. Refer to the following sample to export document into blob in client-side.
 
 ```typescript
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
@@ -120,44 +123,44 @@ import {
 } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-    selector: 'app-container',
-    template: `<div style="width:100%;height:330px"><button ejs-button (click)="saveAsBlob()" >Save</button>
-    <ejs-documenteditor #document_editor  id="container" style="width:100%;height:100%;display:block" [isReadOnly]=false [enableEditor]=true [enableWordExport]=true [enableSfdtExport]=true> </ejs-documenteditor></div>`,
-    encapsulation: ViewEncapsulation.None,
-    providers: [EditorService, SelectionService, SfdtExportService,TextExportService]
+      selector: 'app-container',
+      //specifies the template string for the Document Editor component
+      template: `<div><button ejs-button (click)="saveAsBlob()" >Save</button>
+      <ejs-documenteditor #document_editor  id="container" height="330px" style="display:block" [isReadOnly]=false [enableEditor]=true [enableWordExport]=true [enableSfdtExport]=true> </ejs-documenteditor></div>`,
+      encapsulation: ViewEncapsulation.None,
+      providers: [EditorService, SelectionService, SfdtExportService, TextExportService]
 })
 
 export class AppComponent {
- @ViewChild('document_editor')
- public documentEditor: DocumentEditorComponent;
+    @ViewChild('document_editor')
+    public documentEditor: DocumentEditorComponent;
 
- public saveAsBlob() :void {
-     this.documentEditor.saveAsBlob('Docx').then((exportedDocument: Blob) => {
-      // The blob can be processed further
-    });
- }
-
+    public saveAsBlob(): void {
+        //Export the document as Blob object.
+        this.documentEditor.saveAsBlob('Docx').then((exportedDocument: Blob) => {
+            // The blob can be processed further
+        });
+    }
 }
 ```
 
 For instance, to export the document as Rich Text Format file, implement an ASP.NET MVC web API controller using DocIO library by passing the DOCX blob. Refer to the following code example.
 
 ```csharp
-//API controller for the conversion.
-[HttpPost]
-public HttpResponseMessage ExportAsRtf()
-{
-    System.Web.HttpPostedFile data = HttpContext.Current.Request.Files[0];
-    //Opens document stream
-    WordDocument wordDocument = new WordDocument(data.InputStream);
-    MemoryStream stream = new MemoryStream();
-    //Converts document stream as RTF
-    wordDocument.Save(stream, FormatType.Rtf);
-    wordDocument.Close();
-    stream.Position = 0;
-    return new HttpResponseMessage() { Content = new StreamContent(stream) };
-}
-
+  //API controller for the conversion.
+  [HttpPost]
+  public HttpResponseMessage ExportAsRtf()
+  {
+        System.Web.HttpPostedFile data = HttpContext.Current.Request.Files[0];
+        //Opens document stream
+        WordDocument wordDocument = new WordDocument(data.InputStream);
+        MemoryStream stream = new MemoryStream();
+        //Converts document stream as RTF
+        wordDocument.Save(stream, FormatType.Rtf);
+        wordDocument.Close();
+        stream.Position = 0;
+        return new HttpResponseMessage() { Content = new StreamContent(stream) };
+  }
 ```
 
 In client-side, you can consume this web service and save the document as Rich Text Format (.rtf) file. Refer to the following example.
@@ -165,11 +168,11 @@ In client-side, you can consume this web service and save the document as Rich T
 ```typescript
  public saveAsBlob() :void {
     this.documentEditor.saveAsBlob('Docx').then((exportedDocument: Blob) => {
-        // The blob can be processed further
-        let formData: FormData = new FormData();
-        formData.append('fileName', 'sample.docx');
-        formData.append('data', exportedDocument);
-        saveAsRtf(formData);
+          // The blob can be processed further
+          let formData: FormData = new FormData();
+          formData.append('fileName', 'sample.docx');
+          formData.append('data', exportedDocument);
+          saveAsRtf(formData);
     });
 }
 

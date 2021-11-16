@@ -1,12 +1,12 @@
 ---
 title: "Headers and Footers"
 component: "DocumentEditor"
-description: "Learn header footer support in JavaScript document editor and how to work with it."
+description: "Learn header footer support in Angular document editor and how to work with it."
 ---
 
 # Headers and Footers
 
-Document editor supports headers and footers in its document. Each section in the document can have the following types of headers and footers:
+Document Editor supports headers and footers in its document. Each section in the document can have the following types of headers and footers:
 
 * First page: Used only on the first page of the section.
 * Even pages: Used on all even numbered pages in the section.
@@ -16,9 +16,9 @@ You can define this by setting format properties of the corresponding section us
 
 ```typescript
 //Defines whether different header footer is required for first page of the section
-this.documentEditor.selection.sectionFormat.differentFirstPage= true;
+this.documentEditor.selection.sectionFormat.differentFirstPage = true;
 //Defines whether different header footer is required for odd and even pages in the section
-this.documentEditor.selection.sectionFormat.differentOddAndEvenPages= true;
+this.documentEditor.selection.sectionFormat.differentOddAndEvenPages = true;
 ```
 
 ## Go to header footer region
@@ -38,13 +38,13 @@ this.documentEditor.selection.goToFooter();
 You can define the distance of header region content from the top of the page. Refer to the following sample code.
 
 ```typescript
-this.documentEditor.selection.sectionFormat.headerDistance= 36;
+this.documentEditor.selection.sectionFormat.headerDistance = 36;
 ```
 
 Same way, you can define the distance of footer region content from the bottom of the page. Refer to the following sample code.
 
 ```typescript
-this.documentEditor.selection.sectionFormat.footerDistace=36;
+this.documentEditor.selection.sectionFormat.footerDistace = 36;
 ```
 
 ## Close header footer region

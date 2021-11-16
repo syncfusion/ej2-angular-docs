@@ -6,11 +6,11 @@ description: "Learn here all about Shapes support in DocumentEditor control and 
 
 # Shapes in DocumentEditor
 
-Shapes are drawing objects that include a text box, rectangles, lines, curves, circles, etc. It can be preset or custom geometry. At present, DocumentEditor does not have support to insert shapes. however, if the document contains a shape while importing, it will be preserved properly.
+Shapes are drawing objects that include a text box, rectangles, lines, curves, circles, etc. It can be preset or custom geometry. At present, Document Editor does not have support to insert shapes. however, if the document contains a shape while importing, it will be preserved properly.
 
 ## Supported shapes
 
-The DocumentEditor has preservation support for Text box, Rectangle, Rounded Rectangle and Line shapes.
+The Document Editor has preservation support for Text box, Rectangle, Rounded Rectangle and Line shapes.
 
 ![List of supported shapes in DocumentEditor](images/Shapes_images/supported_shapes.png)
 
@@ -24,7 +24,7 @@ A text box is a rectangular area on the document where you can enter text. When 
 
 ## Shape Resizer
 
-The DocumentEditor also supports a built-in shape resizer to resize the shapes present in the document. The shape resizer accepts both touch and mouse interactions.
+The Document Editor also supports a built-in shape resizer to resize the shapes present in the document. The shape resizer accepts both touch and mouse interactions.
 
 ![Shape resizer view in DocumentEditor](images/Shapes_images/shape_resizer.png)
 

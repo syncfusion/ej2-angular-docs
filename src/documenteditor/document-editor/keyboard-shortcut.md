@@ -1,7 +1,7 @@
 ---
 title: "Keyboard Shortcuts"
 component: "DocumentEditor"
-description: "Learn the keyboard shortcuts supported in JavaScript document editor and its behaviors."
+description: "Learn the keyboard shortcuts supported in Angular document editor and its behaviors."
 ---
 
 # Keyboard Shortcuts

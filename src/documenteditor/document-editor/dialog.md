@@ -1,12 +1,12 @@
 ---
 title: "Dialog"
 component: "DocumentEditor"
-description: "Learn the built-in dialog support in JavaScript document editor and how to open it."
+description: "Learn the built-in dialog support in Angular document editor and how to open it."
 ---
 
 # Dialog
 
-Document editor provides dialog support to major operations such as insert or edit hyperlink, formatting text, paragraph, style, list and table properties.
+Document Editor provides dialog support to major operations such as insert or edit hyperlink, formatting text, paragraph, style, list and table properties.
 
 ## Font Dialog
 
@@ -23,25 +23,27 @@ import {
 } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-    selector: 'app-container',
-    template: `<div style="height:330px">
-    <button ejs-button (click)="btnClick()" >Show Dialog</button>
-    <ejs-documenteditor #document_editor  id="container" style="width: 100%;height: 100%;display:block" [isReadOnly]=false [enableSelection]=true
-    [enableSfdtExport]=true [enableContextMenu]=true
-    [enableFontDialog]=true [enableEditor]=true>
-    </ejs-documenteditor>
-    </div>`,
-    encapsulation: ViewEncapsulation.None,
-    providers: [SfdtExportService, SelectionService, FontDialogService, EditorService, ContextMenuService]
+      selector: 'app-container',
+      //specifies the template string for the Document Editor component
+      template: `<div>
+      <button ejs-button (click)="btnClick()" >Show Dialog</button>
+      <ejs-documenteditor #document_editor  id="container" height="330px" style="display:block" [isReadOnly]=false [enableSelection]=true
+      [enableSfdtExport]=true [enableContextMenu]=true
+      [enableFontDialog]=true [enableEditor]=true>
+      </ejs-documenteditor>
+      </div>`,
+      encapsulation: ViewEncapsulation.None,
+      providers: [SfdtExportService, SelectionService, FontDialogService, EditorService, ContextMenuService]
 })
 
 export class AppComponent {
- @ViewChild('document_editor')
- public documentEditor: DocumentEditorComponent;
+    @ViewChild('document_editor')
+    public documentEditor: DocumentEditorComponent;
 
- public btnClick() :void {
-    this.documentEditor.showDialog('Font');
- }
+    public btnClick(): void {
+        //Open font dialog
+        this.documentEditor.showDialog('Font');
+    }
 }
 ```
 
@@ -62,24 +64,26 @@ import {
 } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-    selector: 'app-container',
-    template: `<div style="height:330px">
-    <button ejs-button (click)="btnClick()" >Show Dialog</button>
-    <ejs-documenteditor #document_editor  id="container" style="width: 100%;height: 100%;display:block" [isReadOnly]=false [enableSfdtExport]=true
-    [enableParagraphDialog]=true [enableEditor]=true>
-    </ejs-documenteditor>
-    </div>`,
-    encapsulation: ViewEncapsulation.None,
-    providers: [SfdtExportService, SelectionService, ParagraphDialogService, EditorService]
+      selector: 'app-container',
+      //specifies the template string for the Document Editor component
+      template: `<div>
+      <button ejs-button (click)="btnClick()" >Show Dialog</button>
+      <ejs-documenteditor #document_editor  id="container" height="330px" style="display:block" [isReadOnly]=false [enableSfdtExport]=true
+      [enableParagraphDialog]=true [enableEditor]=true>
+      </ejs-documenteditor>
+      </div>`,
+      encapsulation: ViewEncapsulation.None,
+      providers: [SfdtExportService, SelectionService, ParagraphDialogService, EditorService]
 })
 
 export class AppComponent {
- @ViewChild('document_editor')
- public documentEditor: DocumentEditorComponent;
+    @ViewChild('document_editor')
+    public documentEditor: DocumentEditorComponent;
 
- public btnClick() :void {
-    this.documentEditor.showDialog('Paragraph');
- }
+    public btnClick(): void {
+        //Open paragraph dialog.
+        this.documentEditor.showDialog('Paragraph');
+    }
 }
 ```
 
@@ -101,9 +105,9 @@ import {
 
 @Component({
     selector: 'app-container',
-    template: `<div style="height:330px">
+    template: `<div>
     <button ejs-button (click)="btnClick()" >Show Dialog</button>
-    <ejs-documenteditor #document_editor  id="container" style="width: 100%;height: 100%;display:block" [isReadOnly]=false [enableSfdtExport]=true
+    <ejs-documenteditor #document_editor  id="container" height="330px" style="display:block" [isReadOnly]=false [enableSfdtExport]=true
     [enableTableDialog]=true [enableEditor]=true>
     </ejs-documenteditor>
     </div>`,
@@ -112,12 +116,13 @@ import {
 })
 
 export class AppComponent {
- @ViewChild('document_editor')
- public documentEditor: DocumentEditorComponent;
+    @ViewChild('document_editor')
+    public documentEditor: DocumentEditorComponent;
 
- public btnClick() :void {
-    this.documentEditor.showDialog('Table');
- }
+    public btnClick(): void {
+        //Open table dialog.
+        this.documentEditor.showDialog('Table');
+    }
 }
 ```
 
@@ -142,24 +147,25 @@ import {
 } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-    selector: 'app-container',
-    template: `<div style="height:330px">
-    <button ejs-button (click)="btnClick()" >Show Dialog</button>
-    <ejs-documenteditor #document_editor  id="container" style="width: 100%;height: 100%;display:block" [isReadOnly]=false [enableSfdtExport]=true
-    [enableBookmarkDialog]=true [enableEditor]=true>
-    </ejs-documenteditor>
-    </div>`,
-    encapsulation: ViewEncapsulation.None,
-    providers: [SfdtExportService, SelectionService, BookmarkDialogService, EditorService]
+      selector: 'app-container',
+      //specifies the template string for the Document Editor component
+      template: `<div>
+      <button ejs-button (click)="btnClick()" >Show Dialog</button>
+      <ejs-documenteditor #document_editor  id="container" height="330px" style="display:block" [isReadOnly]=false [enableSfdtExport]=true
+      [enableBookmarkDialog]=true [enableEditor]=true>
+      </ejs-documenteditor>
+      </div>`,
+      encapsulation: ViewEncapsulation.None,
+      providers: [SfdtExportService, SelectionService, BookmarkDialogService, EditorService]
 })
-
 export class AppComponent {
- @ViewChild('document_editor')
- public documentEditor: DocumentEditorComponent;
+    @ViewChild('document_editor')
+    public documentEditor: DocumentEditorComponent;
 
- public btnClick() :void {
-    this.documentEditor.showDialog('Bookmark');
- }
+    public btnClick(): void {
+        //Open bookmark dialog.
+        this.documentEditor.showDialog('Bookmark');
+    }
 }
 ```
 
@@ -180,24 +186,26 @@ import {
 } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-    selector: 'app-container',
-    template: `<div style="height:330px">
-    <button ejs-button (click)="btnClick()" >Show Dialog</button>
-    <ejs-documenteditor #document_editor  id="container" style="width: 100%;height: 100%;display:block" [isReadOnly]=false [enableSfdtExport]=true
-    [enableHyperlinkDialog]=true [enableEditor]=true>
-    </ejs-documenteditor>
-    </div>`,
-    encapsulation: ViewEncapsulation.None,
-    providers: [SfdtExportService, SelectionService, HyperlinkDialogService, EditorService]
+      selector: 'app-container',
+      //specifies the template string for the Document Editor component
+      template: `<div>
+      <button ejs-button (click)="btnClick()" >Show Dialog</button>
+      <ejs-documenteditor #document_editor  id="container" height="330px" style="display:block" [isReadOnly]=false [enableSfdtExport]=true
+      [enableHyperlinkDialog]=true [enableEditor]=true>
+      </ejs-documenteditor>
+      </div>`,
+      encapsulation: ViewEncapsulation.None,
+      providers: [SfdtExportService, SelectionService, HyperlinkDialogService, EditorService]
 })
 
 export class AppComponent {
- @ViewChild('document_editor')
- public documentEditor: DocumentEditorComponent;
+    @ViewChild('document_editor')
+    public documentEditor: DocumentEditorComponent;
 
- public btnClick() :void {
-    this.documentEditor.showDialog('Hyperlink');
- }
+    public btnClick(): void {
+        //Open hyperlink dialog.
+        this.documentEditor.showDialog('Hyperlink');
+    }
 }
 ```
 
@@ -216,24 +224,25 @@ import {
 } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-    selector: 'app-container',
-    template: `<div style="height:330px">
-    <button ejs-button (click)="btnClick()" >Show Dialog</button>
-    <ejs-documenteditor #document_editor  id="container" style="width: 100%;height: 100%;display:block" [isReadOnly]=false [enableSfdtExport]=true
-    [enableTableOfContentsDialog]=true [enableEditor]=true>
-    </ejs-documenteditor>
-    </div>`,
-    encapsulation: ViewEncapsulation.None,
-    providers: [SfdtExportService, SelectionService, TableOfContentsDialogService, EditorService]
+      selector: 'app-container',
+      template: `<div">
+      <button ejs-button (click)="btnClick()" >Show Dialog</button>
+      <ejs-documenteditor #document_editor  id="container" height="330px" style="display:block" [isReadOnly]=false [enableSfdtExport]=true
+      [enableTableOfContentsDialog]=true [enableEditor]=true>
+      </ejs-documenteditor>
+      </div>`,
+      encapsulation: ViewEncapsulation.None,
+      providers: [SfdtExportService, SelectionService, TableOfContentsDialogService, EditorService]
 })
 
 export class AppComponent {
- @ViewChild('document_editor')
- public documentEditor: DocumentEditorComponent;
+    @ViewChild('document_editor')
+    public documentEditor: DocumentEditorComponent;
 
- public btnClick() :void {
-    this.documentEditor.showDialog('TableOfContents');
- }
+    public btnClick(): void {
+        //Open table of contents dialog.
+        this.documentEditor.showDialog('TableOfContents');
+    }
 }
 ```
 
@@ -248,24 +257,25 @@ import {
 } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-    selector: 'app-container',
-    template: `<div style="height:330px">
-    <button ejs-button (click)="btnClick()" >Show Dialog</button>
-    <ejs-documenteditor #document_editor  id="container" style="width: 100%;height: 100%;display:block" [isReadOnly]=false [enableSfdtExport]=true
-    [enableStyleDialog]=true [enableStylesDialog]=true [enableEditor]=true>
-    </ejs-documenteditor>
-    </div>`,
-    encapsulation: ViewEncapsulation.None,
-    providers: [SfdtExportService, SelectionService, StyleDialogService, StylesDialogService, EditorService]
+      selector: 'app-container',
+      template: `<div style="height:330px">
+      <button ejs-button (click)="btnClick()" >Show Dialog</button>
+      <ejs-documenteditor #document_editor  id="container" style="width: 100%;height: 100%;display:block" [isReadOnly]=false [enableSfdtExport]=true
+      [enableStyleDialog]=true [enableStylesDialog]=true [enableEditor]=true>
+      </ejs-documenteditor>
+      </div>`,
+      encapsulation: ViewEncapsulation.None,
+      providers: [SfdtExportService, SelectionService, StyleDialogService, StylesDialogService, EditorService]
 })
 
 export class AppComponent {
- @ViewChild('document_editor')
- public documentEditor: DocumentEditorComponent;
+    @ViewChild('document_editor')
+    public documentEditor: DocumentEditorComponent;
 
- public btnClick() :void {
-    this.documentEditor.showDialog('Styles');
- }
+    public btnClick(): void {
+        //Open styles dialog.
+        this.documentEditor.showDialog('Styles');
+    }
 }
 ```
 
@@ -282,24 +292,25 @@ import {
 } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-    selector: 'app-container',
-    template: `<div style="height:330px">
-    <button ejs-button (click)="btnClick()" >Show Dialog</button>
-    <ejs-documenteditor #document_editor  id="container" style="width: 100%;height: 100%;display:block" [isReadOnly]=false [enableSfdtExport]=true
-    [enableStyleDialog]=true [enableEditor]=true>
-    </ejs-documenteditor>
-    </div>`,
-    encapsulation: ViewEncapsulation.None,
-    providers: [SfdtExportService, SelectionService, StyleDialogService, EditorService]
+      selector: 'app-container',
+      template: `<div style="height:330px">
+      <button ejs-button (click)="btnClick()" >Show Dialog</button>
+      <ejs-documenteditor #document_editor  id="container" style="width: 100%;height: 100%;display:block" [isReadOnly]=false [enableSfdtExport]=true
+      [enableStyleDialog]=true [enableEditor]=true>
+      </ejs-documenteditor>
+      </div>`,
+      encapsulation: ViewEncapsulation.None,
+      providers: [SfdtExportService, SelectionService, StyleDialogService, EditorService]
 })
 
 export class AppComponent {
- @ViewChild('document_editor')
- public documentEditor: DocumentEditorComponent;
+    @ViewChild('document_editor')
+    public documentEditor: DocumentEditorComponent;
 
- public btnClick() :void {
-    this.documentEditor.showDialog('Style');
- }
+    public btnClick(): void {
+        //Open style dialog.
+        this.documentEditor.showDialog('Style');
+    }
 }
 ```
 
@@ -316,24 +327,26 @@ import {
 } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-    selector: 'app-container',
-    template: `<div style="height:330px">
-    <button ejs-button (click)="btnClick()" >Show Dialog</button>
-    <ejs-documenteditor #document_editor  id="container" style="width: 100%;height: 100%;display:block" [isReadOnly]=false [enableSfdtExport]=true
-    [enableListDialog]=true [enableEditor]=true>
-    </ejs-documenteditor>
-    </div>`,
-    encapsulation: ViewEncapsulation.None,
-    providers: [SfdtExportService, SelectionService, ListDialogService, EditorService]
+      selector: 'app-container',
+      //specifies the template string for the Document Editor component
+      template: `<div style="height:330px">
+      <button ejs-button (click)="btnClick()" >Show Dialog</button>
+      <ejs-documenteditor #document_editor  id="container" style="width: 100%;height: 100%;display:block" [isReadOnly]=false [enableSfdtExport]=true
+      [enableListDialog]=true [enableEditor]=true>
+      </ejs-documenteditor>
+      </div>`,
+      encapsulation: ViewEncapsulation.None,
+      providers: [SfdtExportService, SelectionService, ListDialogService, EditorService]
 })
 
 export class AppComponent {
- @ViewChild('document_editor')
- public documentEditor: DocumentEditorComponent;
+    @ViewChild('document_editor')
+    public documentEditor: DocumentEditorComponent;
 
- public btnClick() :void {
-    this.documentEditor.showDialog('List');
- }
+    public btnClick(): void {
+        //Open list dialog.
+        this.documentEditor.showDialog('List');
+    }
 }
 ```
 
@@ -350,24 +363,25 @@ import {
 } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-    selector: 'app-container',
-    template: `<div style="height:330px">
-    <button ejs-button (click)="btnClick()" >Show Dialog</button>
-    <ejs-documenteditor #document_editor  id="container" style="width: 100%;height: 100%;display:block" [isReadOnly]=false [enableSfdtExport]=true
-    [enableBordersAndShadingDialog]=true [enableEditor]=true>
-    </ejs-documenteditor>
-    </div>`,
-    encapsulation: ViewEncapsulation.None,
-    providers: [SfdtExportService, SelectionService, BordersAndShadingDialogService, EditorService]
+      selector: 'app-container',
+      //specifies the template string for the Document Editor component
+      template: `<div style="height:330px">
+      <button ejs-button (click)="btnClick()" >Show Dialog</button>
+      <ejs-documenteditor #document_editor  id="container" style="width: 100%;height: 100%;display:block" [isReadOnly]=false [enableSfdtExport]=true
+      [enableBordersAndShadingDialog]=true [enableEditor]=true>
+      </ejs-documenteditor>
+      </div>`,
+      encapsulation: ViewEncapsulation.None,
+      providers: [SfdtExportService, SelectionService, BordersAndShadingDialogService, EditorService]
 })
-
 export class AppComponent {
- @ViewChild('document_editor')
- public documentEditor: DocumentEditorComponent;
+    @ViewChild('document_editor')
+    public documentEditor: DocumentEditorComponent;
 
- public btnClick() :void {
-    this.documentEditor.showDialog('BordersAndShading');
- }
+    public btnClick(): void {
+        //Open borders and shading dialog.
+        this.documentEditor.showDialog('BordersAndShading');
+    }
 }
 ```
 
@@ -385,6 +399,7 @@ import {
 
 @Component({
     selector: 'app-container',
+    //specifies the template string for the Document Editor component
     template: `<div style="height:330px">
     <button ejs-button (click)="btnClick()" >Show Dialog</button>
     <ejs-documenteditor #document_editor  id="container" style="width: 100%;height: 100%;display:block" [isReadOnly]=false [enableSfdtExport]=true
@@ -396,12 +411,13 @@ import {
 })
 
 export class AppComponent {
- @ViewChild('document_editor')
- public documentEditor: DocumentEditorComponent;
+    @ViewChild('document_editor')
+    public documentEditor: DocumentEditorComponent;
 
- public btnClick() :void {
-    this.documentEditor.showDialog('TableOptions');
- }
+    public btnClick(): void {
+        //Open table options dialog.
+        this.documentEditor.showDialog('TableOptions');
+    }
 }
 ```
 
@@ -418,24 +434,26 @@ import {
 } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-    selector: 'app-container',
-    template: `<div style="height:330px">
-    <button ejs-button (click)="btnClick()" >Show Dialog</button>
-    <ejs-documenteditor #document_editor  id="container" style="width: 100%;height: 100%;display:block" [isReadOnly]=false [enableSfdtExport]=true
-    [enableTableOptionsDialog]=true [enableTablePropertiesDialog]=true [enableBordersAndShadingDialog]=true [enableEditor]=true>
-    </ejs-documenteditor>
-    </div>`,
-    encapsulation: ViewEncapsulation.None,
-    providers: [SfdtExportService, SelectionService, TableOptionsDialogService, TablePropertiesDialogService, BordersAndShadingDialogService, EditorService]
+      selector: 'app-container',
+      //specifies the template string for the Document Editor component
+      template: `<div style="height:330px">
+      <button ejs-button (click)="btnClick()" >Show Dialog</button>
+      <ejs-documenteditor #document_editor  id="container" style="width: 100%;height: 100%;display:block" [isReadOnly]=false [enableSfdtExport]=true
+      [enableTableOptionsDialog]=true [enableTablePropertiesDialog]=true [enableBordersAndShadingDialog]=true [enableEditor]=true>
+      </ejs-documenteditor>
+      </div>`,
+      encapsulation: ViewEncapsulation.None,
+      providers: [SfdtExportService, SelectionService, TableOptionsDialogService, TablePropertiesDialogService, BordersAndShadingDialogService, EditorService]
 })
 
 export class AppComponent {
- @ViewChild('document_editor')
- public documentEditor: DocumentEditorComponent;
+    @ViewChild('document_editor')
+    public documentEditor: DocumentEditorComponent;
 
- public btnClick() :void {
-    this.documentEditor.showDialog('TableProperties');
- }
+    public btnClick(): void {
+        //open table properties dialog.
+        this.documentEditor.showDialog('TableProperties');
+    }
 }
 ```
 
@@ -454,24 +472,25 @@ import {
 } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-    selector: 'app-container',
-    template: `<div style="height:330px">
-    <button ejs-button (click)="btnClick()" >Show Dialog</button>
-    <ejs-documenteditor #document_editor  id="container" style="width: 100%;height: 100%;display:block" [isReadOnly]=false [enableSfdtExport]=true
-    [enablePageSetupDialog]=true [enableEditor]=true>
-    </ejs-documenteditor>
-    </div>`,
-    encapsulation: ViewEncapsulation.None,
-    providers: [SfdtExportService, SelectionService, PageSetupDialogService, EditorService]
+      selector: 'app-container',
+      //specifies the template string for the Document Editor component
+      template: `<div>
+      <button ejs-button (click)="btnClick()" >Show Dialog</button>
+      <ejs-documenteditor #document_editor  id="container" height="330px" style="display:block" [isReadOnly]=false [enableSfdtExport]=true
+      [enablePageSetupDialog]=true [enableEditor]=true>
+      </ejs-documenteditor>
+      </div>`,
+      encapsulation: ViewEncapsulation.None,
+      providers: [SfdtExportService, SelectionService, PageSetupDialogService, EditorService]
 })
-
 export class AppComponent {
- @ViewChild('document_editor')
- public documentEditor: DocumentEditorComponent;
+    @ViewChild('document_editor')
+    public documentEditor: DocumentEditorComponent;
 
- public btnClick() :void {
-    this.documentEditor.showDialog('PageSetup');
- }
+    public btnClick(): void {
+        //Open page setup dialog.
+        this.documentEditor.showDialog('PageSetup');
+    }
 }
 ```
 

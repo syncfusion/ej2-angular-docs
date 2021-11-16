@@ -1,49 +1,51 @@
 ---
 title: "Hyperlink"
 component: "DocumentEditor"
-description: "Learn how to insert, delete, or navigate links in JavaScript document editor."
+description: "Learn how to insert, delete, or navigate links in Angular document editor."
 ---
 
 # Hyperlink
 
-Document editor supports hyperlink field. You can link a part of the document content to Internet or file location, mail address, or any text within the document.
+Document Editor supports hyperlink field. You can link a part of the document content to Internet or file location, mail address, or any text within the document.
 
 ## Navigate a hyperlink
 
-Document editor triggers `requestNavigate` event whenever user clicks Ctrl key or tap a hyperlink within the document. This event provides necessary details about link type, navigation URL, and local URL (if any) as arguments, and allows you to easily customize the hyperlink navigation functionality. Refer to the following example.
+Document Editor triggers `requestNavigate` event whenever user clicks Ctrl key or tap a hyperlink within the document. This event provides necessary details about link type, navigation URL, and local URL (if any) as arguments, and allows you to easily customize the hyperlink navigation functionality. Refer to the following example.
 
 {% tab template="document-editor/link",isDefaultActive=false, sourceFiles="app/**/*.ts" %}
 
 ```typescript
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import {
-    DocumentEditorComponent,  SfdtExportService, SelectionService, RequestNavigateEventArgs
+    DocumentEditorComponent, SfdtExportService, SelectionService, RequestNavigateEventArgs
 } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-    selector: 'app-container',
-    template: `<div style="height:330px">
-    <ejs-documenteditor #document_editor style="width: 100%;height: 100%;display:block" [isReadOnly]=false [enableSelection]=true [enableSfdtExport]=true [enableEditor]=true (requestNavigate)="onRequestNavigate($event)">
-    </ejs-documenteditor>
-    </div>`,
-    encapsulation: ViewEncapsulation.None,
-    providers: [ SfdtExportService, SelectionService]
+      selector: 'app-container',
+      //specifies the template string for the Document Editor component
+      template: `<div>
+      <ejs-documenteditor #document_editor height="330px" style="display:block" [isReadOnly]=false [enableSelection]=true [enableSfdtExport]=true [enableEditor]=true (requestNavigate)="onRequestNavigate($event)">
+      </ejs-documenteditor>
+      </div>`,
+      encapsulation: ViewEncapsulation.None,
+      providers: [SfdtExportService, SelectionService]
 })
 
 export class AppComponent {
- @ViewChild('document_editor')
- public documentEditor: DocumentEditorComponent;
+    @ViewChild('document_editor')
+    public documentEditor: DocumentEditorComponent;
 
- public onRequestNavigate(args : DocumentEditorKeyDownEventArgs) :void {
-    if (args.linkType !== 'Bookmark') {
-         let link: string = args.navigationLink;
-        if (args.localReference.length > 0) {
-            link += '#' + args.localReference;
+    public onRequestNavigate(args: DocumentEditorKeyDownEventArgs): void {
+        if (args.linkType !== 'Bookmark') {
+            let link: string = args.navigationLink;
+            if (args.localReference.length > 0) {
+                link += '#' + args.localReference;
+            }
+            //Navigate to the specified URL.
+            window.open(link);
+            args.isHandled = true;
         }
-        window.open(link);
-        args.isHandled = true;
     }
-}
 }
 ```
 
@@ -57,7 +59,7 @@ this.documentEditor.selection.navigateHyperlink();
 
 ## Copy link
 
-Document editor copies link text of a hyperlink field to the clipboard if the selection is in hyperlink. Refer to the following example.
+Document Editor copies link text of a hyperlink field to the clipboard if the selection is in hyperlink. Refer to the following example.
 
 ```typescript
 this.documentEditor.selection.copyHyperlink();
@@ -65,7 +67,7 @@ this.documentEditor.selection.copyHyperlink();
 
 ## Add hyperlink
 
-To create a basic hyperlink in the document, press `ENTER` / `SPACEBAR` / `SHIFT + ENTER` / `TAB` key after typing the address, for instance `http://www.google.com`. Document editor automatically converts this address to a hyperlink field. The text can be considered as a valid URL if it starts with any of the following.
+To create a basic hyperlink in the document, press `ENTER` / `SPACEBAR` / `SHIFT + ENTER` / `TAB` key after typing the address, for instance `http://www.google.com`. Document Editor automatically converts this address to a hyperlink field. The text can be considered as a valid URL if it starts with any of the following.
 
 > `<http://>`<br>
 > `<https://>`<br>
@@ -80,33 +82,33 @@ Refer to the following example.
 ```typescript
 import { Component, ViewEncapsulation, ViewChild } from '@angular/core';
 import {
-    DocumentEditorComponent,   SfdtExportService, SelectionService, EditorService, RequestNavigateEventArgs
+    DocumentEditorComponent, SfdtExportService, SelectionService, EditorService, RequestNavigateEventArgs
 } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-    selector: 'app-container',
-    template: `<div style="height:330px">
-    <ejs-documenteditor #document_editor style="width: 100%;height: 100%;display:block" [isReadOnly]=false [enableSelection]=true  [enableEditor]=true (requestNavigate)="onRequestNavigate($event)">
-    </ejs-documenteditor>
-    </div>`,
-    encapsulation: ViewEncapsulation.None,
-    providers: [ SfdtExportService, SelectionService, EditorService]
+      selector: 'app-container',
+      //specifies the template string for the Document Editor component
+      template: `<div>
+      <ejs-documenteditor #document_editor height="330px" style="display:block" [isReadOnly]=false [enableSelection]=true  [enableEditor]=true (requestNavigate)="onRequestNavigate($event)">
+      </ejs-documenteditor>
+      </div>`,
+      encapsulation: ViewEncapsulation.None,
+      providers: [SfdtExportService, SelectionService, EditorService]
 })
-
 export class AppComponent {
- @ViewChild('document_editor')
- public documentEditor: DocumentEditorComponent;
+    @ViewChild('document_editor')
+    public documentEditor: DocumentEditorComponent;
 
- public onRequestNavigate(args : DocumentEditorKeyDownEventArgs) :void {
-    if (args.linkType !== 'Bookmark') {
-         let link: string = args.navigationLink;
-        if (args.localReference.length > 0) {
-            link += '#' + args.localReference;
+    public onRequestNavigate(args: DocumentEditorKeyDownEventArgs): void {
+        if (args.linkType !== 'Bookmark') {
+            let link: string = args.navigationLink;
+            if (args.localReference.length > 0) {
+                link += '#' + args.localReference;
+            }
+            window.open(link);
+            args.isHandled = true;
         }
-        window.open(link);
-        args.isHandled = true;
     }
-}
 }
 ```
 
@@ -122,7 +124,7 @@ this.documentEditor.editor.removeHyperlink();
 
 ## Hyperlink dialog
 
-Document editor provides dialog support to insert or edit a hyperlink. Refer to the following example.
+Document Editor provides dialog support to insert or edit a hyperlink. Refer to the following example.
 
 {% tab template="document-editor/link",isDefaultActive=false, sourceFiles="app/**/*.ts" %}
 
@@ -134,20 +136,20 @@ import {
 
 @Component({
     selector: 'app-container',
-    template: `<div style="width:100%;height:330px"><button ejs-button (click)="showHyperlinkDialog()" >Show Dialog</button>
-    <ejs-documenteditor #document_editor  id="container" style="width:100%;height:100%;display:block" [isReadOnly]=false [enableEditor]=true [enableSelection]=true [enableSfdtExport]=true [enableEditorHistory]=true [enableHyperlinkDialog]=true> </ejs-documenteditor></div>`,
+    //specifies the template string for the Document Editor component
+    template: `<div><button ejs-button (click)="showHyperlinkDialog()" >Show Dialog</button>
+    <ejs-documenteditor #document_editor  id="container" height="330px" style="display:block" [isReadOnly]=false [enableEditor]=true [enableSelection]=true [enableSfdtExport]=true [enableEditorHistory]=true [enableHyperlinkDialog]=true> </ejs-documenteditor></div>`,
     encapsulation: ViewEncapsulation.None,
-    providers: [ EditorService, SelectionService, EditorHistoryService, HyperlinkDialogService, SfdtExportService]
+    providers: [EditorService, SelectionService, EditorHistoryService, HyperlinkDialogService, SfdtExportService]
 })
-
 export class AppComponent {
- @ViewChild('document_editor')
- public documentEditor: DocumentEditorComponent;
+    @ViewChild('document_editor')
+    public documentEditor: DocumentEditorComponent;
 
- public showHyperlinkDialog() :void {
-    this.documentEditor.showDialog('Hyperlink');;
- }
-
+    public showHyperlinkDialog(): void {
+        //Open hyperlink dialog.
+        this.documentEditor.showDialog('Hyperlink');;
+    }
 }
 ```
 
@@ -162,4 +164,4 @@ You can use the following keyboard shortcut to open the hyperlink dialog if the 
 ## See Also
 
 * [Feature modules](../document-editor/feature-module/)
-* [Hyperlink dialog](../document-editor/dialog#hyperlink-dialog/)
+* [Hyperlink dialog](../document-editor/dialog#hyperlink-dialog)

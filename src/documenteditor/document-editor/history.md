@@ -1,12 +1,12 @@
 ---
 title: "Undo and redo"
 component: "DocumentEditor"
-description: "Learn how undo and redo can be done in JavaScript document editor and how to customize its limit."
+description: "Learn how undo and redo can be done in Angular document editor and how to customize its limit."
 ---
 
 # History
 
-Document editor tracks the history of all editing actions done in the document, which allows undo and redo functionality.
+Document Editor tracks the history of all editing actions done in the document, which allows undo and redo functionality.
 
 ## Enable or disable history
 
@@ -14,14 +14,16 @@ Inject the `EditorHistory` module in your application to provide history preserv
 
 ```typescript
 import { Component, ViewEncapsulation } from '@angular/core';
-import { DocumentEditorComponent, SfdtExportService, SelectionService,  EditorService, EditorHistoryService} from '@syncfusion/ej2-angular-documenteditor';
+import { DocumentEditorComponent, SfdtExportService, SelectionService, EditorService, EditorHistoryService } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
     selector: 'app-container',
+    //specifies the template string for the Document Editor component
     template: `<ejs-documenteditor #document_editor  id="container" style="width: 100%;height: 100%;display:block" [isReadOnly]=false [enableSelection]=true [enableEditor]=true [enableEditorHistory]=true >
     </ejs-documenteditor>`,
     encapsulation: ViewEncapsulation.None,
-    providers: [SfdtExportService, SelectionService,  EditorService, EditorHistoryService]
+    //Inject require modules.
+    providers: [SfdtExportService, SelectionService, EditorService, EditorHistoryService]
 })
 
 export class AppComponent {
@@ -37,7 +39,7 @@ this.documentEditor.enableEditorHistory = false;
 
 ## Undo and redo
 
-You can perform undo and redo by `CTRL+Z` and `CTRL+Y` keyboard shortcuts. Document editor exposes API to do it programmatically.
+You can perform undo and redo by `CTRL+Z` and `CTRL+Y` keyboard shortcuts. Document Editor exposes API to do it programmatically.
 To undo the last editing operation in document editor, refer to the following sample code.
 
 ```typescript
@@ -55,7 +57,9 @@ this.documentEditor.editorHistory.redo();
 History of editing actions will be maintained in stack, so that the last item will be reverted first. By default, document editor limits the size of undo and redo stacks to 500 each respectively. However, you can customize this limit. Refer to the following sample code.
 
 ```typescript
+//Set undo limit.
 this.documentEditor.editorHistory.undoLimit = 400;
+//Set redo limit.
 this.documentEditor.editorHistory.redoLimit = 400;
 ```
 

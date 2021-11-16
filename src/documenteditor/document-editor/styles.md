@@ -1,7 +1,7 @@
 ---
 title: "Working with Styles"
 component: "DocumentEditor"
-description: "Learn the types of styles supported in JavaScript document editor and how to create a style for the document, and apply it for selected contents."
+description: "Learn the types of styles supported in Angular document editor and how to create a style for the document, and apply it for selected contents."
 ---
 
 # Styles
@@ -73,20 +73,20 @@ New Styles are defined and added to the style collection of the document. In thi
 The following example shows how to programmatically create a character style.
 
 ```typescript
-let styleJson: any = {
-    "type": "Character",
-    "name": "New CharacterStyle",
-    "basedOn": "Default Paragraph Font",
-    "characterFormat": {
-        "fontSize": 16.0,
-        "fontFamily": "Calibri Light",
-        "fontColor": "#2F5496",
-        "bold": true,
-        "italic": true,
-        "underline": "Single"
-    }
-};
-this.documentEditor.editor.createStyle(JSON.stringify(styleJson));
+    let styleJson: any = {
+        "type": "Character",
+        "name": "New CharacterStyle",
+        "basedOn": "Default Paragraph Font",
+        "characterFormat": {
+            "fontSize": 16.0,
+            "fontFamily": "Calibri Light",
+            "fontColor": "#2F5496",
+            "bold": true,
+            "italic": true,
+            "underline": "Single"
+        }
+    };
+    this.documentEditor.editor.createStyle(JSON.stringify(styleJson));
 ```
 
 ### Defining a paragraph style
@@ -94,31 +94,31 @@ this.documentEditor.editor.createStyle(JSON.stringify(styleJson));
 The following example shows how to programmatically create a paragraph style.
 
 ```typescript
-let styleJson: any = {
-    "type": "Paragraph",
-    "name": "New ParagraphStyle",
-    "basedOn": "Normal",
-    "characterFormat": {
-        "fontSize": 16.0,
-        "fontFamily": "Calibri Light",
-        "fontColor": "#2F5496",
-        "bold": true,
-        "italic": true,
-        "underline": "Single"
-    },
-    "paragraphFormat": {
-        "leftIndent": 0.0,
-        "rightIndent": 0.0,
-        "firstLineIndent": 0.0,
-        "beforeSpacing": 12.0,
-        "afterSpacing": 0.0,
-        "lineSpacing": 1.0791666507720947,
-        "lineSpacingType": "Multiple",
-        "textAlignment": "Left",
-        "outlineLevel": "Level1"
-    }
-};
-this.documentEditor.editor.createStyle(JSON.stringify(styleJson));
+    let styleJson: any = {
+        "type": "Paragraph",
+        "name": "New ParagraphStyle",
+        "basedOn": "Normal",
+        "characterFormat": {
+            "fontSize": 16.0,
+            "fontFamily": "Calibri Light",
+            "fontColor": "#2F5496",
+            "bold": true,
+            "italic": true,
+            "underline": "Single"
+        },
+        "paragraphFormat": {
+            "leftIndent": 0.0,
+            "rightIndent": 0.0,
+            "firstLineIndent": 0.0,
+            "beforeSpacing": 12.0,
+            "afterSpacing": 0.0,
+            "lineSpacing": 1.0791666507720947,
+            "lineSpacingType": "Multiple",
+            "textAlignment": "Left",
+            "outlineLevel": "Level1"
+        }
+    };
+    this.documentEditor.editor.createStyle(JSON.stringify(styleJson));
 ```
 
 ### Defining a linked style
@@ -126,30 +126,30 @@ this.documentEditor.editor.createStyle(JSON.stringify(styleJson));
 The following example shows how to programmatically create linked style.
 
 ```typescript
-let styleJson: any = {
-    "type": "Paragraph",
-    "name": "New Linked",
-    "basedOn": "Normal",
-    "next": "Normal",
-    "link": "New Linked Char",
-    "characterFormat": {
-        "fontSize": 16.0,
-        "fontFamily": "Calibri Light",
-        "fontColor": "#2F5496"
-    },
-    "paragraphFormat": {
-        "leftIndent": 0.0,
-        "rightIndent": 0.0,
-        "firstLineIndent": 0.0,
-        "beforeSpacing": 12.0,
-        "afterSpacing": 0.0,
-        "lineSpacing": 1.0791666507720947,
-        "lineSpacingType": "Multiple",
-        "textAlignment": "Left",
-        "outlineLevel": "Level1"
-    }
-};
-this.documentEditor.editor.createStyle(JSON.stringify(styleJson));
+    let styleJson: any = {
+        "type": "Paragraph",
+        "name": "New Linked",
+        "basedOn": "Normal",
+        "next": "Normal",
+        "link": "New Linked Char",
+        "characterFormat": {
+            "fontSize": 16.0,
+            "fontFamily": "Calibri Light",
+            "fontColor": "#2F5496"
+        },
+        "paragraphFormat": {
+            "leftIndent": 0.0,
+            "rightIndent": 0.0,
+            "firstLineIndent": 0.0,
+            "beforeSpacing": 12.0,
+            "afterSpacing": 0.0,
+            "lineSpacing": 1.0791666507720947,
+            "lineSpacingType": "Multiple",
+            "textAlignment": "Left",
+            "outlineLevel": "Level1"
+        }
+    };
+    this.documentEditor.editor.createStyle(JSON.stringify(styleJson));
 ```
 
 ## Applying a style

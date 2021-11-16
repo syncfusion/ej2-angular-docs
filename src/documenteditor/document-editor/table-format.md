@@ -1,12 +1,12 @@
 ---
 title: "Working with Table Formatting"
 component: "DocumentEditor"
-description: "Learn table, cell, and row formatting supported in JavaScript document editor and how to apply it for selected contents."
+description: "Learn table, cell, and row formatting supported in Angular document editor and how to apply it for selected contents."
 ---
 
 # Working with Table Formatting
 
-Document editor customizes the formatting of table, or table cells such as table width, cell margins, cell spacing, background color, and table alignment. This section describes how to customize these formatting for selected cells, rows, or table in detail.
+Document Editor customizes the formatting of table, or table cells such as table width, cell margins, cell spacing, background color, and table alignment. This section describes how to customize these formatting for selected cells, rows, or table in detail.
 
 ## Cell margins
 
@@ -94,21 +94,21 @@ this.documentEditor.selection.tableFormat.preferredWidth=300;
 
 ## Apply borders
 
-Document editor exposes API to customize the borders for table cells by specifying the settings. Refer to the following sample code.
+Document Editor exposes API to customize the borders for table cells by specifying the settings. Refer to the following sample code.
 
 ```typescript
-import { BorderSettings } from '@syncfusion/ej2-documenteditor';
-//To apply border
-let borderSettings: BorderSettings = {
-            type: 'AllBorders',
-            lineWidth: 12
-        };
-this.documentEditor.editor.applyBorders(borderSettings);
+    import { BorderSettings } from '@syncfusion/ej2-documenteditor';
+    //To apply border
+    let borderSettings: BorderSettings = {
+                type: 'AllBorders',
+                lineWidth: 12
+            };
+    this.documentEditor.editor.applyBorders(borderSettings);
 ```
 
 ## Working with row formatting
 
-Document editor allows various row formatting such as height and repeat header.
+Document Editor allows various row formatting such as height and repeat header.
 
 ### Row height
 
@@ -137,4 +137,4 @@ this.documentEditor.selection.rowFormat.allowRowBreakAcrossPages=false;
 
 ## See Also
 
-* [Table properties dialog](../document-editor/dialog#table-properties-dialog/)
+* [Table properties dialog](../document-editor/dialog#table-properties-dialog)

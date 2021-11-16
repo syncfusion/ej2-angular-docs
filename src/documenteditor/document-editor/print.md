@@ -1,7 +1,7 @@
 ---
 title: "Print"
 component: "DocumentEditor"
-description: "Learn how to print the document in JavaScript document editor and customize page size, margins, and more during print."
+description: "Learn how to print the document in Angular document editor and customize page size, margins, and more during print."
 ---
 
 # Print
@@ -19,53 +19,53 @@ import {
 } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-    selector: 'app-container',
-    template: `<div style="width:100%;height:330px">
-    <button ejs-button (click)="onPrint()" >Print</button>
-    <ejs-documenteditor #document_editor style="width:100%;height:100%;display:block" [enablePrint]=true (created)="onCreated()"></ejs-documenteditor>
-    </div>`,
-    encapsulation: ViewEncapsulation.None,
-    providers: [PrintService]
+      selector: 'app-container',
+      //specifies the template string for the Document Editor component
+      template: `<div>
+      <button ejs-button (click)="onPrint()" >Print</button>
+      <ejs-documenteditor #document_editor height="330px" style="display:block" [enablePrint]=true (created)="onCreated()"></ejs-documenteditor>
+      </div>`,
+      encapsulation: ViewEncapsulation.None,
+      providers: [PrintService]
 })
 
 export class AppComponent {
- @ViewChild('document_editor')
- public documentEditor: DocumentEditorComponent;
+    @ViewChild('document_editor')
+    public documentEditor: DocumentEditorComponent;
 
- onCreated(): void {
-    if(this.documentEditor.isDocumentLoaded) {
-        let sfdt: string =`{
-            "sections": [
-                {
-                    "blocks": [
-                        {
-                            "inlines": [
-                                {
-                                    "characterFormat": {
-                                        "bold": true,
-                                        "italic": true
-                                    },
-                                    "text": "Hello World"
-                                }
-                            ]
+    onCreated(): void {
+        if (this.documentEditor.isDocumentLoaded) {
+            let sfdt: string = `{
+                "sections": [
+                    {
+                        "blocks": [
+                            {
+                                "inlines": [
+                                    {
+                                        "characterFormat": {
+                                            "bold": true,
+                                            "italic": true
+                                        },
+                                        "text": "Hello World"
+                                    }
+                                ]
+                            }
+                        ],
+                        "headersFooters": {
                         }
-                    ],
-                    "headersFooters": {
                     }
-                }
-            ]
-        }`;
+                ]
+            }`;
+            //Open the default document.
+            this.documentEditor.open(sfdt);
+        }
+    }
 
-        this.documentEditor.open(sfdt);
+    public onPrint(): void {
+        //Print the document content.
+        this.documentEditor.print();
     }
 }
-
-public onPrint() :void {
-    this.documentEditor.print();
-}
-
-}
-
 ```
 
 {% endtab %}
@@ -81,53 +81,52 @@ import {
 } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-    selector: 'app-container',
-    template: `<div style="width:100%;height:330px">
-    <button ejs-button (click)="onPrint()" >Print</button>
-    <ejs-documenteditor #document_editor style="width:100%;height:100%;display:block" [isReadOnly]=true [enableSelection]=true [enableEditor]=true [enablePrint]=true (created)="onCreated()"></ejs-documenteditor>
-    </div>`,
-    encapsulation: ViewEncapsulation.None,
-    providers: [PrintService, SelectionService, EditorService, EditorHistoryService]
+      selector: 'app-container',
+      template: `<div>
+      <button ejs-button (click)="onPrint()" >Print</button>
+      <ejs-documenteditor #document_editor height="330px" style="display:block" [isReadOnly]=true [enableSelection]=true [enableEditor]=true [enablePrint]=true (created)="onCreated()"></ejs-documenteditor>
+      </div>`,
+      encapsulation: ViewEncapsulation.None,
+      providers: [PrintService, SelectionService, EditorService, EditorHistoryService]
 })
 
 export class AppComponent {
- @ViewChild('document_editor')
- public documentEditor: DocumentEditorComponent;
+    @ViewChild('document_editor')
+    public documentEditor: DocumentEditorComponent;
 
- onCreated(): void {
-    if(this.documentEditor.isDocumentLoaded) {
-        let sfdt: string =`{
-            "sections": [
-                {
-                    "blocks": [
-                        {
-                            "inlines": [
-                                {
-                                    "characterFormat": {
-                                        "bold": true,
-                                        "italic": true
-                                    },
-                                    "text": "Hello World"
-                                }
-                            ]
+    onCreated(): void {
+        if (this.documentEditor.isDocumentLoaded) {
+            let sfdt: string = `{
+                "sections": [
+                    {
+                        "blocks": [
+                            {
+                                "inlines": [
+                                    {
+                                        "characterFormat": {
+                                            "bold": true,
+                                            "italic": true
+                                        },
+                                        "text": "Hello World"
+                                    }
+                                ]
+                            }
+                        ],
+                        "headersFooters": {
                         }
-                    ],
-                    "headersFooters": {
                     }
-                }
-            ]
-        }`;
+                ]
+            }`;
+            //Open the document content.
+            this.documentEditor.open(sfdt);
+        }
+    }
 
-        this.documentEditor.open(sfdt);
+    public onPrint(): void {
+        //Print the document content.
+        this.documentEditor.print();
     }
 }
-
-public onPrint() :void {
-    this.documentEditor.print();
-}
-
-}
-
 ```
 
 {% endtab %}
@@ -143,25 +142,24 @@ import {
 } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-    selector: 'app-container',
-    template: `<div style="width:100%;height:330px">
-    <button ejs-button (click)="onPrint()" >Print</button>
-    <ejs-documenteditor #document_editor style="width:100%;height:100%;display:block" [enablePrint]=true></ejs-documenteditor>
-    </div>`,
-    encapsulation: ViewEncapsulation.None,
-    providers: [PrintService]
+      selector: 'app-container',
+      template: `<div>
+      <button ejs-button (click)="onPrint()" >Print</button>
+      <ejs-documenteditor #document_editor height="330px" style="display:block" [enablePrint]=true></ejs-documenteditor>
+      </div>`,
+      encapsulation: ViewEncapsulation.None,
+      providers: [PrintService]
 })
 
 export class AppComponent {
- @ViewChild('document_editor')
- public documentEditor: DocumentEditorComponent;
+    @ViewChild('document_editor')
+    public documentEditor: DocumentEditorComponent;
 
-public onPrint() :void {
-    this.documentEditor.print(window);
+    public onPrint(): void {
+        //Print the document content.
+        this.documentEditor.print(window);
+    }
 }
-
-}
-
 ```
 
 ## Page setup
@@ -190,31 +188,34 @@ import {
 } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-    selector: 'app-container',
-    template: `<div style="width:100%;height:330px">
-    <button ejs-button (click)="onPrint()" >Print</button>
-    <ejs-documenteditor #document_editor style="width:100%;height:100%;display:block" [isReadOnly]=false [enableSelection]=true [enableEditor]=true [enablePrint]=true [enableSfdtExport]=true></ejs-documenteditor>
-      <ejs-documenteditor #document_editor_preview style="width:100%;height:100%;display:block" [isReadOnly]=false [enableSelection]=true [enableEditor]=true [enablePrint]=true [enableSfdtExport]=true></ejs-documenteditor>
-    </div>`,
-    encapsulation: ViewEncapsulation.None,
-    providers: [PrintService, SelectionService, EditorService, EditorHistoryService, SfdtExportService]
+      selector: 'app-container',
+      //specifies the template string for the Document Editor component
+      template: `<div>
+          <button ejs-button (click)="onPrint()" >Print</button>
+          <ejs-documenteditor #document_editor height="330px" style="display:block" [isReadOnly]=false [enableSelection]=true [enableEditor]=true [enablePrint]=true [enableSfdtExport]=true></ejs-documenteditor>
+          <ejs-documenteditor #document_editor_preview height="330px" style="display:block" [isReadOnly]=false [enableSelection]=true [enableEditor]=true [enablePrint]=true [enableSfdtExport]=true></ejs-documenteditor>
+      </div>`,
+      encapsulation: ViewEncapsulation.None,
+      providers: [PrintService, SelectionService, EditorService, EditorHistoryService, SfdtExportService]
 })
 
 export class AppComponent {
- @ViewChild('document_editor')
- public documentEditor: DocumentEditorComponent;
+    @ViewChild('document_editor')
+    public documentEditor: DocumentEditorComponent;
 
- @ViewChild('document_editor_preview')
- public documentEditorPreview: DocumentEditorComponent;
+    @ViewChild('document_editor_preview')
+    public documentEditorPreview: DocumentEditorComponent;
 
-public onPrint() :void {
-   let sfdtData = this.documentEditor.serialize();
-    this.documentEditorPreview.open(sfdtData);
-    //Set A5 paper size
-    this.documentEditorPreview.selection.sectionFormat.pageWidth = 419.55;
-    this.documentEditorPreview.selection.sectionFormat.pageHeight = 595.30;
-    this.documentEditorPreview.print();
-}
+    public onPrint(): void {
+        let sfdtData = this.documentEditor.serialize();
+        //Open the document in preview document editor.
+        this.documentEditorPreview.open(sfdtData);
+        //Set A5 paper size
+        this.documentEditorPreview.selection.sectionFormat.pageWidth = 419.55;
+        this.documentEditorPreview.selection.sectionFormat.pageHeight = 595.30;
+        //Print the document content.
+        this.documentEditorPreview.print();
+    }
 }
 
 ```

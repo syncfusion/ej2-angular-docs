@@ -1,12 +1,12 @@
 ---
 title: "Tables"
 component: "DocumentEditor"
-description: "Learn how to insert, select, or delete table, row(s), and column(s) in JavaScript document editor."
+description: "Learn how to insert, select, or delete table, row(s), and column(s) in Angular document editor."
 ---
 
 # Tables
 
-Tables are an efficient way to present information. Document editor can display and edit the tables. You can select and edit tables through keyboard, mouse, or touch interactions. Document editor exposes a rich set of APIs to perform these operations programmatically.
+Tables are an efficient way to present information. Document Editor can display and edit the tables. You can select and edit tables through keyboard, mouse, or touch interactions. Document Editor exposes a rich set of APIs to perform these operations programmatically.
 
 ## Create a table
 
@@ -98,7 +98,7 @@ this.documentEditor.selection.selectCell();
 
 ## Delete table
 
-Document editor allows you to delete the entire table. You can use the `deleteTable()` method of editor instance, if selection is in table. Refer to the following sample code.
+Document Editor allows you to delete the entire table. You can use the `deleteTable()` method of editor instance, if selection is in table. Refer to the following sample code.
 
 ```typescript
 this.documentEditor.editor.deleteTable();
@@ -106,7 +106,7 @@ this.documentEditor.editor.deleteTable();
 
 ## Delete row
 
-Document editor allows you to delete the selected number of rows. You can use the `deleteRow()` method of editor instance to delete the selected number of rows, if selection is in table. Refer to the following sample code.
+Document Editor allows you to delete the selected number of rows. You can use the `deleteRow()` method of editor instance to delete the selected number of rows, if selection is in table. Refer to the following sample code.
 
 ```typescript
 this.documentEditor.editor.deleteRow();
@@ -114,7 +114,7 @@ this.documentEditor.editor.deleteRow();
 
 ## Delete column
 
-Document editor allows you to delete the selected number of columns. You can use the `deleteColumn ()` method of editor instance to delete the selected number of columns, if selection is in table. Refer to the following sample code.
+Document Editor allows you to delete the selected number of columns. You can use the `deleteColumn ()` method of editor instance to delete the selected number of columns, if selection is in table. Refer to the following sample code.
 
 ```typescript
 this.documentEditor.editor.deleteColumn();
@@ -129,6 +129,10 @@ Refer to the following sample code.
 this.documentEditor.editor.mergeCells()
 ```
 
+## Positioning the table
+
+Document Editor preserves the position properties of the table and displays the table based on position properties. It does not support modifying the position properties. Whereas the table will be automatically moved along with text edited if it is positioned relative to the paragraph.
+
 ## How to work with tables
 
 The following sample demonstrates how to delete the table row or columns, merge cells and how to bind the API with button.
@@ -142,34 +146,34 @@ import {
 } from '@syncfusion/ej2-angular-documenteditor';
 
 @Component({
-    selector: 'app-container',
-    styleUrls: ['styles.css'],
-    template: `<div style="width:100%;height:330px">
-    <div>
-        <ejs-toolbar (clicked)='toolbarButtonClick($event)'>
-            <e-items>
-                <e-item prefixIcon="e-de-icon-Table" tooltipText="Insert Table" id="table"></e-item>
-                <e-item type="Separator"></e-item>
-                <e-item prefixIcon="e-de-icon-InsertAbove" tooltipText="Insert new row above" id="insert_above"></e-item>
-                <e-item prefixIcon="e-de-icon-InsertBelow" tooltipText="Insert new row below" id="insert_below"></e-item>
-                <e-item type="Separator"></e-item>
-                <e-item prefixIcon="e-de-icon-InsertLeft" tooltipText="Insert new column to the left" id="insert_left"></e-item>
-                <e-item prefixIcon="e-de-icon-InsertRight" tooltipText="Insert new column to the right" id="insert_right"></e-item>
-                <e-item type="Separator"></e-item>
-                <e-item prefixIcon="e-de-icon-DeleteTable" tooltipText="Delete Entire table" id="delete_table"></e-item>
-                <e-item prefixIcon="e-de-icon-DeleteRows" tooltipText="Delete the selected row" id="delete_row"></e-item>
-                <e-item prefixIcon="e-de-icon-DeleteColumns" tooltipText="Delete the selected column" id="delete_column"></e-item>
-                <e-item type="Separator"></e-item>
-                <e-item prefixIcon="e-de-icon-Cell" tooltipText="Merge the selected cells" id="merge_cell"></e-item>
-                <e-item type="Separator"></e-item>
-                <e-item text="Dialog" tooltipText="Open insert table dialog" id="table_dialog"></e-item>
-            </e-items>
-        </ejs-toolbar>
-    </div>
-   <ejs-documenteditor #document_editor [isReadOnly]=false  [enableSelection]=true  [enableEditorHistory]=true  [enableEditor]=true [enableTableDialog]=true [enableContextMenu]=true [enableSfdtExport]=true style="display:block;width: 100%;height: 100%;" (created)="onCreated()"></ejs-documenteditor>
-    </div>`,
-    encapsulation: ViewEncapsulation.None,
-    providers: [EditorService, SelectionService, SfdtExportService, EditorHistoryService, TableDialogService, ContextMenuService]
+        selector: 'app-container',
+        styleUrls: ['styles.css'],
+        template: `<div>
+        <div>
+            <ejs-toolbar (clicked)='toolbarButtonClick($event)'>
+                <e-items>
+                    <e-item prefixIcon="e-de-ctnr-table e-icons" tooltipText="Insert Table" id="table"></e-item>
+                    <e-item type="Separator"></e-item>
+                    <e-item prefixIcon="e-de-ctnr-insertabove e-icons" tooltipText="Insert new row above" id="insert_above"></e-item>
+                    <e-item prefixIcon="e-de-ctnr-insertbelow e-icons" tooltipText="Insert new row below" id="insert_below"></e-item>
+                    <e-item type="Separator"></e-item>
+                    <e-item prefixIcon="e-de-ctnr-insertleft e-icons" tooltipText="Insert new column to the left" id="insert_left"></e-item>
+                    <e-item prefixIcon="e-de-ctnr-insertright e-icons" tooltipText="Insert new column to the right" id="insert_right"></e-item>
+                    <e-item type="Separator"></e-item>
+                    <e-item prefixIcon="e-de-delete-table e-icons" tooltipText="Delete Entire table" id="delete_table"></e-item>
+                    <e-item prefixIcon="e-de-ctnr-deleterows e-icons" tooltipText="Delete the selected row" id="delete_row"></e-item>
+                    <e-item prefixIcon="e-de-ctnr-deletecolumns e-icons" tooltipText="Delete the selected column" id="delete_column"></e-item>
+                    <e-item type="Separator"></e-item>
+                    <e-item prefixIcon="e-de-ctnr-mergecell e-icons" tooltipText="Merge the selected cells" id="merge_cell"></e-item>
+                    <e-item type="Separator"></e-item>
+                    <e-item text="Dialog" tooltipText="Open insert table dialog" id="table_dialog"></e-item>
+                </e-items>
+            </ejs-toolbar>
+        </div>
+    <ejs-documenteditor #document_editor [isReadOnly]=false  [enableSelection]=true  [enableEditorHistory]=true  [enableEditor]=true [enableTableDialog]=true [enableContextMenu]=true [enableSfdtExport]=true height="330px" style="display:block" (created)="onCreated()"></ejs-documenteditor>
+        </div>`,
+        encapsulation: ViewEncapsulation.None,
+        providers: [EditorService, SelectionService, SfdtExportService, EditorHistoryService, TableDialogService, ContextMenuService]
 })
 
 export class AppComponent {
@@ -225,7 +229,6 @@ export class AppComponent {
         }
     }
 }
-
 ```
 
 {% endtab %}
@@ -233,4 +236,4 @@ export class AppComponent {
 ## See Also
 
 * [Feature modules](../document-editor/feature-module/)
-* [Insert table dialog](../document-editor/dialog#table-dialog/)
+* [Insert table dialog](../document-editor/dialog#table-dialog)

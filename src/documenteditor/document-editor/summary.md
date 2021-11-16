@@ -43,3 +43,5 @@
 * [Customize toolbar](document-editor/how-to/customize-tool-bar.md)
 * [Open default document](document-editor/how-to/open-default-document.md)
 * [Open document in read only by default](document-editor/how-to/default-read-only.md)
+* [Deploy Document Editor component for Mobile](document-editor/how-to/deploy-document-editor-component-for-mobile.md)
+* [Disable Optimized Text Measuring](document-editor/how-to/disable-optimized-text-measuring.md)

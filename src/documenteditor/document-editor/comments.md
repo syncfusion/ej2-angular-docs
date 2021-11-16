@@ -6,7 +6,7 @@ description: "Learn how to perform comments in Angular document editor"
 
 # Comments
 
-Document editor allows you to add comments to documents. You can add, navigate and remove comments in code and from the UI.
+Document Editor allows you to add comments to documents. You can add, navigate and remove comments in code and from the UI.
 
 ## Add a new comment
 

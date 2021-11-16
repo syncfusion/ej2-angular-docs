@@ -6,7 +6,7 @@ description: "Learn here all about Text Wrapping style support in DocumentEditor
 
 # Text Wrapping Style in DocumentEditor
 
-Text wrapping refers to how images and shapes are fit with surrounding text in a document. Currently, DocumentEditor has only preservation support for image and textbox shape with below wrapping styles.
+Text wrapping refers to how images and shapes are fit with surrounding text in a document. Currently, Document Editor has only preservation support for image and textbox shape with below wrapping styles.
 
 ## In-Line with Text
 
@@ -42,6 +42,6 @@ In this option, the image or shape is placed behind the text. This can be used w
 
 In this option, Text wraps around the image or text box in a square shape.
 
->Note: Tight and Through styles will be preserved as square wrapping style in DocumentEditor which is supported from v19.2.0.x.
+>Note: Tight and Through styles will be preserved as square wrapping style in Document Editor which is supported from v19.2.0.x.
 
 ![view of shape with square wrapping style in DocumentEditor](images/Text-Wrapping-Style_images/square-textwrapping.PNG)

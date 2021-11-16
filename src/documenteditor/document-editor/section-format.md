@@ -1,12 +1,12 @@
 ---
 title: "Working with Section Formatting"
 component: "DocumentEditor"
-description: "Learn section formatting supported in JavaScript document editor like page size and margins, and how to customize it."
+description: "Learn section formatting supported in Angular document editor like page size and margins, and how to customize it."
 ---
 
 # Working with Section Formatting
 
-Document editor supports various section formatting such as page size, page margins, and more.
+Document Editor supports various section formatting such as page size, page margins, and more.
 
 ## Page size
 
@@ -49,4 +49,4 @@ this.documentEditor.selection.sectionFormat.footerDistance = 72;
 
 ## See Also
 
-*[Page setup dialog](../document-editor/dialog#page-setup-dialog/)
+*[Page setup dialog](../document-editor/dialog#page-setup-dialog)
