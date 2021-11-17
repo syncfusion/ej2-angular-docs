@@ -72,7 +72,6 @@ import { HomePageRoutingModule } from './home-routing.module';
 })
 export class HomePageModule {}
 
-
 ```
 
 ## Adding Syncfusion component

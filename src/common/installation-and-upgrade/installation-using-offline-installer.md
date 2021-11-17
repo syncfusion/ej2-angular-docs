@@ -2,6 +2,14 @@
 
 You can refer to the Download section to learn how to get the JavaScript – EJ2 trial or licensed installer.
 
+The frameworks listed below are supported in this installer.
+
+* JavaScript
+* Angular
+* React
+* Vue
+* JavaScript (ES5)
+
 ## Installing with UI
 
 The steps below show how to install the Essential Studio JavaScript – EJ2 installer.

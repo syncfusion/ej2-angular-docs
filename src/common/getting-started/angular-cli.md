@@ -6,7 +6,7 @@ Refer to the following steps to use for Syncfusion Angular UI Components (Essent
 
 To get started with Syncfusion Angular UI Components, ensure the compatible versions of Angular and Typescript.
 
-* `Angular` : 4+
+* `Angular` : 6+
 * `Typescript` : 2.6+
 
 ## Getting started with Angular CLI
@@ -126,7 +126,6 @@ export class AppComponent {
 
 Add button component styles in the `src/style.css` file as below.
 
-
 ```css
 @import "../node_modules/@syncfusion/ej2-base/styles/material.css";
 @import "../node_modules/@syncfusion/ej2-buttons/styles/material.css";
@@ -135,7 +134,7 @@ Add button component styles in the `src/style.css` file as below.
 
 To avoid SCSS compilation issues and to map the SCSS file path, add the stylePreprocessorOptions to the .angular-cli.json file.
 
-Add the `stylePreprocessorOptions` option under apps in the `.angular-cli.json` file.
+Add the `stylePreprocessorOptions` option under apps in the `angular.json` file.
 
 The following paths can be used globally in Angular app.
 

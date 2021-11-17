@@ -6,6 +6,14 @@ You can refer to the [Download](https://help.syncfusion.com/winui/installation-a
 
 For the Essential Studio JavaScript – EJ2 product, Syncfusion offers a Web Installer. This installer alleviates the burden of downloading a larger installer. You can simply download and run the online installer, which will be smaller in size and will download and install the Essential Studio products you have chosen. You can get the most recent version of Essential Studio Web Installer [here](https://www.syncfusion.com/account/downloads).
 
+The frameworks listed below are supported in this installer.
+
+* JavaScript
+* Angular
+* React
+* Vue
+* JavaScript (ES5)
+
 ## Installation
 
 The steps below show how to install Essential Studio JavaScript – EJ2 Web Installer.
