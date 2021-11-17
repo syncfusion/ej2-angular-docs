@@ -976,7 +976,7 @@ The following image illustrates how to edit the swimlane header.
 
 ```typescript
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
- import { SymbolPaletteComponent, SymbolPalette, SymbolPreviewModel, NodeModel, ConnectorModel, ExpandMode, PaletteModel } from '@syncfusion/ej2-angular-diagrams';
+ import { SymbolPaletteComponent, SymbolPalette, SymbolPreviewModel, NodeModel, ConnectorModel, ExpandMode, PaletteModel, SwimLaneModel, LaneModel, HeaderModel, MarginModel } from '@syncfusion/ej2-angular-diagrams';
 
 @Component({
     selector: "app-container",

@@ -18,7 +18,7 @@ A node can be created and added to the diagram, either programmatically or inter
 
 ## Add node through nodes collection
 
-To create a node, define the [`node`](../api/diagram/node) object and add that to nodes collection of the diagram model. The following code example illustrates how to add a node to the diagram.
+To create a node, define the [`node`](../api/diagram/nodeDirective) object and add that to nodes collection of the diagram model. The following code example illustrates how to add a node to the diagram.
 
 {% tab template="diagram/nodes/node", sourceFiles="app/**/*.ts", isDefaultActive=true %}
 
@@ -98,7 +98,7 @@ export class AppComponent {
 ## Add node from palette
 
 Nodes can be predefined and added to the palette, and can be dropped into the diagram when needed. For more information
-about adding nodes from symbol palette, refer to [`Symbol Palette`](../api/diagram/symbolPaletteModel).
+about adding nodes from symbol palette, refer to [`Symbol Palette`](../api/symbol-palette/#palettes).
 
 * Once you drag a node/connector from the palette to the diagram, the following events can be used to do your customization.
 * When a symbol is dragged into diagram from symbol palette, the [`dragEnter`](../api/diagram#dragEnter--emittypeidragentereventargs>) event gets triggered.
@@ -118,14 +118,14 @@ information about drawing nodes, refer to Draw Nodes.
 
 ## Position
 
-* Position of a node is controlled by using its [`offsetX`](../api/diagram/node#offsetX-number) and [`offsetY`](../api/diagram/node#offsetY-number) properties. By default, these offset properties represent the distance between the origin of the diagram’s page and node’s center point.
+* Position of a node is controlled by using its [`offsetX`](../api/diagram/nodeDirective#offsetX-number) and [`offsetY`](../api/diagram/nodeDirective#offsetY-number) properties. By default, these offset properties represent the distance between the origin of the diagram’s page and node’s center point.
 
-* You may expect this offset values to represent the distance between page origin and node’s top-left corner instead of center. The Pivot property helps to solve this problem. Default value of node’s [`pivot`](../api/diagram/node#pivot--pointmodel) point is (0.5, 0.5), that means center of the node.
+* You may expect this offset values to represent the distance between page origin and node’s top-left corner instead of center. The Pivot property helps to solve this problem. Default value of node’s [`pivot`](../api/diagram/nodeDirective#pivot--pointmodel) point is (0.5, 0.5), that means center of the node.
 
-* The size of the node can be controlled by using its [`width`](../api/diagram/node#width-number) and
-[`height`](../api/diagram/node#height-number) properties.
+* The size of the node can be controlled by using its [`width`](../api/diagram/nodeDirective#width-number) and
+[`height`](../api/diagram/nodeDirective#height-number) properties.
 
-* Rotation of a node is controlled by using its [`rotateAngle`](../api/diagram/node#rotateAngle-number) property.
+* Rotation of a node is controlled by using its [`rotateAngle`](../api/diagram/nodeDirective#rotateAngle-number) property.
 
 The following table illustrates how pivot relates offset values with node boundaries.
 
@@ -177,7 +177,7 @@ export class AppComponent {
 
 ## Flip
 
-The diagram Provides support to flip the node. [`flip`](../api/diagram/node#flip) is performed to
+The diagram Provides support to flip the node. [`flip`](../api/diagram/nodeDirective#flip) is performed to
 give the mirrored image of the original element.
 The flip types are as follows:
 
@@ -236,10 +236,10 @@ export class AppComponent {
 
 ## Appearance
 
-* The appearance of a node can be customized by changing its [`fill`](../api/diagram/shapeStyleModel#fill-string) color, [`borderColor`](../api/diagram/node#borderColor-string), [`borderWidth`](../api/diagram/node#borderWidth-number), [`strokeDashArray`](../api/diagram/shapeStyleModel#strokeDashArray-number),
+* The appearance of a node can be customized by changing its [`fill`](../api/diagram/shapeStyleModel#fill-string) color, [`borderColor`](../api/diagram/nodeDirective#borderColor-string), [`borderWidth`](../api/diagram/nodeDirective#borderWidth-number), [`strokeDashArray`](../api/diagram/shapeStyleModel#strokeDashArray-number),
 [`opacity`](../api/diagram/shapeStyleModel#opacity-number), and [`shadow`](../api/diagram/shapeStyleModel#shadow-number).
 
-* The [`visible`](../api/diagram/node#visible-boolean) property of the node enables or disables the visibility of the node.
+* The [`visible`](../api/diagram/nodeDirective#visible-boolean) property of the node enables or disables the visibility of the node.
 
 The following code illustrates how to customize the appearance of the shape.
 
@@ -412,7 +412,7 @@ export class AppComponent {
 
 ## Shadow
 
-Diagram provides support to add [`shadow`](../api/diagram/node#shadow-shadowmodel) effect to a node that is disabled, by default. It can be enabled with the
+Diagram provides support to add [`shadow`](../api/diagram/nodeDirective#shadow-shadowmodel) effect to a node that is disabled, by default. It can be enabled with the
 constraints property of the node. The following code illustrates how to drop shadow.
 
 {% tab template="diagram/nodes/shadow", sourceFiles="app/**/*.ts", isDefaultActive=true %}
@@ -500,7 +500,7 @@ Diagram provides support to describe the state of the node. i.e., the node is ex
 
 >Note: Icon can be created only when the node has outEdges.
 
-* To explore the properties of expand and collapse icon, refer to [`expandIcon`](../api/diagram/node#expandIcon-iconshapemodel) and [`collapseIcon`](../api/diagram/node#collapseIcon-iconshapemodel).
+* To explore the properties of expand and collapse icon, refer to [`expandIcon`](../api/diagram/nodeDirective#expandIcon-iconshapemodel) and [`collapseIcon`](../api/diagram/nodeDirective#collapseIcon-iconshapemodel).
 
 * The expandIcon’s and collapseIcon’s shape properties allow to define the shape of the icon.
 
@@ -589,7 +589,7 @@ Diagram provides support to drag, resize, or rotate the node interactively. For 
 
 ## Constraints
 
-The constraints property of the node allows you to enable/disable certain features. For more information about node constraints, refer to [`Node Constraints`](../api/diagram/node#constraints-nodeconstraints).
+The constraints property of the node allows you to enable/disable certain features. For more information about node constraints, refer to [`Node Constraints`](../api/diagram/nodeDirective#constraints-nodeconstraints).
 
 ## Custom properties
 

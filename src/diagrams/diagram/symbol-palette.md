@@ -534,9 +534,9 @@ export class AppComponent {
 
 ## Add/Remove symbols to palette at runtime
 
-* Symbols can be added to palette at runtime by using public method, [`addPaletteItem`](../api/diagram/palette#addPaletteItem-number).
+* Symbols can be added to palette at runtime by using public method, [`addPaletteItem`](https://ej2.syncfusion.com/angular/documentation/api/symbol-palette/#addpaletteitem).
 
-* Symbols can be removed from palette at runtime by using public method, [`removePaletteItem`](../api/diagram/palette#removePaletteItem-number).
+* Symbols can be removed from palette at runtime by using public method, [`removePaletteItem`](https://ej2.syncfusion.com/angular/documentation/api/symbol-palette/#removepaletteitem).
 
 ## Customize the size of symbols
 
