@@ -530,6 +530,78 @@ export class AppComponent implements OnInit {
 
 {% endtab %}
 
+#### Perform CRUD action programmatically
+
+Grid methods can be used to perform CRUD operations programmatically. The [addRecord](../api/grid/#addrecord), [deleteRecord](../api/grid/#deleterecord), and [startEdit](../api/grid/#startedit) methods are used to perform CRUD operations in the following demo.
+
+* To add a new record to the Grid, use the [addRecord](../api/grid/#addrecord) method. In this method, you can pass the data parameter to add a new record to the Grid, and the index parameter to add a record at a specific index. If you call this method with no parameters, it will create an empty row in the Grid.
+
+* To change the selected row to the edit state, use the [startEdit](../api/grid/#startedit) method.
+
+* If you need to update the row data in the Grid’s datasource, you can use the [updateRow](../api/grid/#updaterow) method. In this method, you need to pass the index value of the row to be updated along with the updated data.
+
+* If you need to update the particular cell in the row, you can use the [setCellValue](../api/grid/#setcellvalue) method. In this method, you need to pass the primary key value of the data source, field name, and new value for the particular cell.
+
+* To remove a selected row from the Grid, use the [deleteRecord](../api/grid/#deleterecord) method. For both edit and delete operations, you must select a row first.
+
+> **Note:** In both normal and dialog editing modes, these methods can be used.
+
+{% tab template="grid/edit", sourceFiles="app/app.component.ts,app/app.module.ts,app/main.ts" %}
+
+```typescript
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { data } from './datasource';
+import { EditSettingsModel,  GridComponent } from '@syncfusion/ej2-angular-grids';
+
+@Component({
+    selector: 'app-root',
+    template: `<button ej-button id='edit' (click)='clickEdit()'>Edit</button>
+    <button ej-button id='add' (click)='clickAdd()'>Add</button>
+    <button ej-button id='delete' (click)='clickDelete()'>Delete</button>
+    <button ej-button id='updaterow' (click)='clickUpdateRow()'>Update Row</button>
+    <button ej-button id='updatecell' (click)='clickUpdateCell()'>Update cell</button>
+               <ejs-grid #grid id="Grid" [dataSource]='data' [editSettings]='editSettings'
+           height='210px'>
+                <e-columns>
+                    <e-column field='OrderID' headerText='Order ID' textAlign='Right' width=120  isPrimaryKey='true'></e-column>
+                    <e-column field='CustomerID' headerText='Customer ID' width=150></e-column>
+                    <e-column field='ShipCity' headerText='Ship City' width=150></e-column>
+                    <e-column field='ShipName' headerText='Ship Name' width=150></e-column>
+                </e-columns>
+                </ejs-grid>`
+})
+export class AppComponent implements OnInit {
+    public editSettings: EditSettingsModel;
+    public data: object[];
+    @ViewChild('grid')
+    public grid: GridComponent;
+
+    ngOnInit(): void {
+        this.data = data;
+        this.editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true };
+    }
+
+    clickEdit(){
+        this.grid.startEdit();
+    }
+    clickAdd(){
+        this.grid.addRecord({ "OrderID": "10248", "CustomerID": "RTER", "ShipCity": "America", "ShipName": "Hanari"  });
+    }
+    clickDelete(){
+        this.grid.deleteRecord();
+    }
+    clickUpdateRow(){
+        this.grid.updateRow(0, { OrderID: 10248, CustomerID: 'RTER', ShipCity: 'America', ShipName: 'Hanari'});
+    }
+    clickUpdateCell(){
+         this.grid.setCellValue((this.grid.currentViewData[0] as any).OrderID,'CustomerID','Value Changed');
+    }
+}
+
+```
+
+{% endtab %}
+
 ### Dialog
 
 In Dialog edit mode, when you start editing the currently selected row data will be shown on a dialog.
