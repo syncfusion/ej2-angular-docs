@@ -6,7 +6,7 @@ description: "The Syncfusion angular autocomplete component provides the matched
 
 # Overview
 
-The AutoComplete component provides the matched suggestion list when type into the input, from which the user can select one.
+AutoComplete component provides the matched suggestion list when type into the input, from which the user can select one.
 
 ## Key features
 

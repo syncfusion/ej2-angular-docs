@@ -4,7 +4,7 @@ component: "AutoComplete"
 description: "This section explains how to acheive autofill functionality in autocomplete control."
 ---
 
-# Autofill supported with AutoComplete
+# Autofill supported with Angular AutoComplete
 
 The AutoComplete supports the autofill behavior with the help of
 [`autofill`](../../api/auto-complete/#autofill) property. Whenever you change the

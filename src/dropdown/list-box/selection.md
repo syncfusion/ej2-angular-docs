@@ -11,7 +11,7 @@ The ListBox provides support to select an item or a group of item by mouse or ke
 * Single -  To select single item in the list box.
 * Multiple -  To select multiple items in the list box.
 
-> On selection of each list box item, [`change`](../api/list-box/#change) event is triggered.
+On selection of each list box item, [`change`](../api/list-box/#change) event is triggered.
 
 ## Single selection
 

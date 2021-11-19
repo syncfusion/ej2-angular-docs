@@ -11,7 +11,7 @@ functionalities in Angular.
 
 ## Dependencies
 
-The following list of dependencies are required to use the ComboBox component in your application.
+The following list of dependencies are required to use the Angular ComboBox component in your application.
 
 ```javascript
 |-- @syncfusion/ej2-angular-dropdowns
@@ -108,7 +108,7 @@ This can be referenced in [src/styles.css] using following code.
 
 ## Adding ComboBox component
 
-Modify the template in [src/app/app.component.ts] file to render the ComboBox component.
+Modify the template in [src/app/app.component.ts] file to render the Angular ComboBox component.
 Add the Angular ComboBox by using `<ejs-combobox>` selector in `template` section of the app.component.ts file.
 
 ```javascript
@@ -271,6 +271,8 @@ export class AppComponent {
 ```
 
 {% endtab %}
+
+> You can refer to our [Angular ComboBox]( https://www.syncfusion.com/angular-ui-components/angular-combobox) feature tour page for its groundbreaking feature representations. You can also explore our [Angular ComboBox example](https://ej2.syncfusion.com/angular/demos/#/material/combo-box/default) that shows how to render the ComboBox in Angular.
 
 ## See Also
 

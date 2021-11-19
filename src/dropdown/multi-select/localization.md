@@ -62,7 +62,7 @@ export class AppComponent implements onInit {
     ngOnInit(): void {
         L10n.load({
             'fr-BE': {
-            'dropdowns': {
+            'multi-select': {
                     'noRecordsTemplate': "Aucun enregistrement trouvé",
                     'actionFailureTemplate': "Modèle d'échec d'action",
                     'overflowCountTemplate': "+${count} plus..",
