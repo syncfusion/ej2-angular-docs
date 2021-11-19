@@ -512,3 +512,4 @@ export class AppComponent implements OnInit {
 ## See also
 
 * [Binding a firebase data source to Grid using AngularFire2](https://www.syncfusion.com/blogs/post/binding-a-firebase-data-source-to-grid-using-angularfire2.aspx)
+* [How to bind SQL Server data in Angular DataGrid using SqlClient data provider](https://www.syncfusion.com/kb/11453/how-to-bind-sql-server-data-in-angular-datagrid-using-sqlclient-data-provider)

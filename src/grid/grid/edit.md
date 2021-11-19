@@ -1827,3 +1827,4 @@ If **primaryKey** is not defined in the grid, then edit or delete action take pl
 * [How to use CellEditArgs event in Angular Grid](https://www.syncfusion.com/forums/153617/how-to-use-celleditargs-event-in-angular-grid)
 * [How to render Grid with add form always in Angular Grid](https://www.syncfusion.com/forums/161716/how-to-render-grid-with-add-form-always-in-angular-grid)
 * [How to show the numeric key pad in mobile device when edit the number column in Angular Grid](https://www.syncfusion.com/forums/147184/how-to-show-the-numeric-keypad-in-mobile-device-when-edit-the-number-column-in-angular-grid)
+* [How to enable inline editing in Angular 4 Data Grid/Table](https://www.syncfusion.com/kb/10851/how-to-enable-inline-editing-in-angular-4-data-grid-table)
