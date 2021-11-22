@@ -156,7 +156,7 @@ Add button component styles in the `src/style.scss` file as below.
 
 Run the `ng serve` command in the console, it will serve your application and you can open the browser window. The Output will appear as follows.
 
-![output](images/angular-cli.png)
+![output](images/angular-cli-output.png)
 
 Refer the below sample for more information.
 
