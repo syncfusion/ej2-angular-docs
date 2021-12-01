@@ -10,7 +10,7 @@ description: "Learn here about getting started with Syncfusion Angular Linear Ga
 
 <!-- markdownlint-disable MD013 -->
 
-This section explains you the steps required to create a simple Linear Gauge and demonstrate the basic usage of the Linear Gauge component.
+This section explains the steps required to create a simple Linear Gauge and demonstrate the basic usage of the Linear Gauge component.
 
 ## Dependencies
 
@@ -19,111 +19,44 @@ Below is the list of minimum dependencies required to use the Linear Gauge compo
 ```javascript
 |-- @syncfusion/ej2-angular-lineargauge
     |-- @syncfusion/ej2-angular-base
-    |-- @syncfusion/ej2-angular-buttons
-    |-- @syncfusion/ej2-angular-popups
+    |-- @syncfusion/ej2-angular-lineargauge
     |-- @syncfusion/ej2-lineargauge
     |-- @syncfusion/ej2-base
-    |-- @syncfusion/ej2-buttons
-    |-- @syncfusion/ej2-popups
+    |-- @syncfusion/ej2-svg-base
 ```
 
-## Setting up an angular project
+## Setup Angular Environment
 
-Angular provides the easiest way to set angular CLI projects using Angular CLI tool.
+[`Angular CLI`](https://github.com/angular/angular-cli) can be used to setup the Angular applications. To install Angular CLI use the following command.
 
-Install the CLI application globally to your machine using the below command.
-
-```javascript
+```bash
 npm install -g @angular/cli
 ```
 
-## Installation and Configuration
+## Create an Angular Application
 
-* To get started with the basic `Angular` sample, use the following commands.
+Start a new Angular application using below Angular CLI command.
 
-```javascript
-git clone https://github.com/angular/quickstart.git quickstart
-cd quickstart
-npm install
+```bash
+ng new my-app
+cd my-app
 ```
 
-For more information, refer to [Angular sample setup](https://angular.io/guide/setup)
+## Adding Syncfusion Linear Gauge package
 
-* Install the Linear Gauge packages using below command. The Syncfusion packages can be be get from the npm [`link`](https://www.npmjs.com/search?q=%40syncfusion%2Fej2-angular-).
+All the available Essential JS 2 packages are published in [`npmjs.com`](https://www.npmjs.com/~syncfusionorg) registry. To install linear gauge component, use the following command.
 
-Add `@syncfusion/ej2-angular-lineargauge` package to the application.
-
-```javascript
+```bash
 npm install @syncfusion/ej2-angular-lineargauge --save
 ```
 
-The above package installs `Linear Gauge dependencies` which are required to render the Linear Gauge component in Angular environment
+> The **--save** will instruct NPM to include the linear gauge package inside of the `dependencies` section of the `package.json`.
 
-* Syncfusion `ej2-angular-lineargauge` packages needs to be mapped in `systemjs.config.js` configuration file.
+## Registering LinearGauge Module
 
-```javascript
-/**
- * System configuration for Angular samples
- * Adjust as necessary for your application needs.
- */
-(function (global) {
-  System.config({
-    paths: {
-      // paths serve as alias
-      'npm:': 'node_modules/',
-      "syncfusion:": "node_modules/@syncfusion/", // syncfusion alias
+Import **LinearGaugeModule** into Angular application in the **src/app/app.module.ts** file from the package `@syncfusion/ej2-angular-lineargauge`.
 
-    },
-    // map tells the System loader where to look for things
-    map: {
-      // our app is within the app folder
-      'app': 'app',
-
-      // angular bundles
-      '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
-      '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
-      '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
-      '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
-      '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
-      '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
-      '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
-      '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
-
-      // syncfusion bundles
-      "@syncfusion/ej2-base": "node_modules/@syncfusion/ej2-base/dist/ej2-base.umd.min.js",
-      "@syncfusion/ej2-lineargauge": "node_modules/@syncfusion/ej2-lineargauge/dist/ej2-lineargauge.umd.min.js",
-      "@syncfusion/ej2-angular-base": "node_modules/@syncfusion/ej2-angular-base/dist/ej2-angular-base.umd.min.js",
-      "@syncfusion/ej2-angular-lineargauge": "node_modules/@syncfusion/ej2-angular-lineargauge/dist/ej2-angular-lineargauge.umd.min.js",
-      "@syncfusion/ej2-buttons": "syncfusion:ej2-buttons/dist/ej2-buttons.umd.min.js",
-      "@syncfusion/ej2-popups": "syncfusion:ej2-popups/dist/ej2-popups.umd.min.js",
-      "@syncfusion/ej2-angular-buttons": "syncfusion:ej2-angular-buttons/dist/ej2-angular-buttons.umd.min.js",
-      "@syncfusion/ej2-angular-popups": "syncfusion:ej2-angular-popups/dist/ej2-angular-popups.umd.min.js",
-
-      // other libraries
-      'rxjs':                      'npm:rxjs',
-      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
-    },
-    // packages tells the System loader how to load when no filename and/or no extension
-    packages: {
-      app: {
-        defaultExtension: 'js',
-        meta: {
-          './*.js': {
-            loader: 'systemjs-angular-loader.js'
-          }
-        }
-      },
-      rxjs: {
-        defaultExtension: 'js'
-      }
-    }
-  });
-})(this);
-```
-
-* Import LinearGauge module in the **app.module.ts** file into Angular application from the package `@syncfusion/ej2-angular-lineargauge`.
-
-```javascript
+```typescript
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 // import the LinearGaugeModule for the LinearGauge component
@@ -131,7 +64,7 @@ import { LinearGaugeModule } from '@syncfusion/ej2-angular-lineargauge';
 import { AppComponent }  from './app.component';
 
 @NgModule({
-  //declaration of ej2-angular-lineargauge module into NgModule
+  //declaration of Linear Gauge module in NgModule
   imports:      [ BrowserModule, LinearGaugeModule ],
   declarations: [ AppComponent ],
   bootstrap:    [ AppComponent ]
@@ -139,24 +72,33 @@ import { AppComponent }  from './app.component';
 export class AppModule { }
 ```
 
-* Change the template in `app.component.ts` file to render the `ej2-angular-lineargauge` component.
+* Modify the template in **app.component.ts** file to render the Linear Gauge component.
+`[src/app/app.component.ts]`.
 
 ```javascript
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'my-app',
-  // specifies the template string for the linear gauge component
-  template: `<ejs-lineargauge id='container'></ejs-lineargauge>`,
+  selector: 'app-container',
+  // specifies the template string for the LinearGauge component
+  template: `<ejs-lineargauge id='linear-container'></ejs-lineargauge>`,
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent  { }
 ```
 
+<!-- markdownlint-disable MD033 -->
+
+Now use the `<code>app-container</code>` in the index.html instead of default one.
+
+```html
+<app-container></app-container>
+```
+
 * Now run the application in the browser using the below command.
 
 ```cmd
-ng serve
+npm start
 ```
 
 The below example shows a basic Linear Gauge.
